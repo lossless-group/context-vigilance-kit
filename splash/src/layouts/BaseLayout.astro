@@ -1,80 +1,165 @@
 ---
+import MetaTags from '@components/MetaTags.astro';
+import Header from '@components/Header.astro';
+import { STATIC_SEO } from '@lib/seo';
+import '@styles/theme.css';
+import '@styles/prose.css';
+
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogImageType?: string;
+  ogImageAlt?: string;
+  ogType?: string;
+  noindex?: boolean;
+  canonical?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  tags?: string[];
+  /** Hide the global header — used on the index hero so it can render its own. */
+  hideHeader?: boolean;
 }
-const { title, description } = Astro.props;
+
+const {
+  title,
+  description = STATIC_SEO.root.description,
+  ogImage,
+  ogImageWidth,
+  ogImageHeight,
+  ogImageType,
+  ogImageAlt,
+  ogType,
+  noindex,
+  canonical,
+  publishedTime,
+  modifiedTime,
+  author,
+  tags,
+  hideHeader = false,
+} = Astro.props;
+
 const base = import.meta.env.BASE_URL;
 ---
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    {description && <meta name="description" content={description} />}
-    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
-    <style is:global>
-      :root {
-        --c-bg: #0d0e12;
-        --c-surface: #14161d;
-        --c-border: #232733;
-        --c-text: #e5e7eb;
-        --c-text-soft: #9aa3b2;
-        --c-text-dim: #6b7280;
-        --c-accent: #f0abfc;
-        --c-accent-2: #818cf8;
-        --c-code-bg: #1a1d27;
-        --space-1: 0.25rem;
-        --space-2: 0.5rem;
-        --space-3: 0.75rem;
-        --space-4: 1rem;
-        --space-6: 1.5rem;
-        --space-8: 2rem;
-        --space-12: 3rem;
-        --radius-md: 8px;
-        --radius-sm: 4px;
-        --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-        --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
-      }
-      * { box-sizing: border-box; }
-      html, body {
-        margin: 0;
-        padding: 0;
-        background: var(--c-bg);
-        color: var(--c-text);
-        font-family: var(--font-sans);
-        font-size: 16px;
-        line-height: 1.55;
-        -webkit-font-smoothing: antialiased;
-      }
-      a { color: var(--c-accent); text-decoration: none; transition: color 120ms; }
-      a:hover { color: var(--c-accent-2); text-decoration: underline; }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.02em; }
-      h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; }
-      h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-top: var(--space-12); }
-      h3 { font-size: 1.15rem; }
-      code { font-family: var(--font-mono); font-size: 0.9em; padding: 0.1em 0.35em; background: var(--c-code-bg); border-radius: var(--radius-sm); }
-      .container { max-width: 1100px; margin: 0 auto; padding: 0 var(--space-6); }
-      .mono { font-family: var(--font-mono); }
-      .dim { color: var(--c-text-dim); }
-      .soft { color: var(--c-text-soft); }
-      hr { border: 0; border-top: 1px solid var(--c-border); margin: var(--space-8) 0; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <MetaTags
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      ogImageWidth={ogImageWidth}
+      ogImageHeight={ogImageHeight}
+      ogImageType={ogImageType}
+      ogImageAlt={ogImageAlt}
+      ogType={ogType}
+      noindex={noindex}
+      canonical={canonical}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      author={author}
+      tags={tags}
+    />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      // Resolve persisted mode before paint to avoid FOUC.
+      (() => {
+        try {
+          const stored = localStorage.getItem('cvk-splash-mode');
+          if (stored === 'light' || stored === 'dark' || stored === 'vibrant') {
+            document.documentElement.setAttribute('data-mode', stored);
+          }
+        } catch {}
+      })();
+    </script>
   </head>
   <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    {!hideHeader && <Header />}
     <slot />
-    <footer class="container" style="padding: var(--space-12) var(--space-6); color: var(--c-text-dim); font-size: 0.85rem;">
-      <hr />
-      <p>
-        <strong>Context Vigilance Kit</strong> ·
-        <a href={`${base}`}>Catalog</a> ·
-        <a href="https://github.com/lossless-group/context-vigilance-kit">GitHub</a> ·
-        <a href="https://contextvigilance.com">contextvigilance.com</a>
-      </p>
-      <p class="dim">A Lossless Group project · MIT.</p>
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__col">
+          <p class="eyebrow">Read</p>
+          <p>
+            <a href={`${base}corpus/`}>corpus</a>
+            ·
+            <a href={`${base}search/`}>search</a>
+          </p>
+        </div>
+        <div class="site-footer__col">
+          <p class="eyebrow">Build</p>
+          <p>
+            <a
+              href="https://github.com/lossless-group/context-vigilance-kit"
+              target="_blank"
+              rel="noopener"
+            >
+              github
+            </a>
+            ·
+            <a href="https://contextvigilance.com" target="_blank" rel="noopener">
+              contextvigilance.com
+            </a>
+          </p>
+        </div>
+        <div class="site-footer__col">
+          <p class="eyebrow">Org</p>
+          <p>
+            <a href="https://lossless.group" target="_blank" rel="noopener">lossless.group</a>
+          </p>
+        </div>
+        <div class="site-footer__legal">
+          <p>MIT licensed. An open specification — fork it, adopt it, build with us.</p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-24);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-12) 0 var(--space-16);
+  }
+  .site-footer__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: var(--space-8);
+    align-items: end;
+  }
+  .site-footer__col p:not(.eyebrow) {
+    margin-top: var(--space-2);
+    color: var(--color-text-soft);
+    font-size: 0.9rem;
+    font-family: var(--font__mono);
+  }
+  .site-footer__legal {
+    color: var(--color-text-dim);
+    font-size: 0.8rem;
+    font-family: var(--font__mono);
+  }
+  @media (max-width: 800px) {
+    .site-footer__inner {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .site-footer__legal {
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--space-4);
+    }
+  }
+</style>

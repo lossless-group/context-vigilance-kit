@@ -1,0 +1,24 @@
+---
+title: Create an Audio Transcriber, with extra layers of value
+lede: ''
+date_created: 2026-05-06
+date_modified: 2026-05-06
+authors:
+- Michael Staton
+augmented_with: []
+semantic_version: 0.0.0.1
+tags:
+- Context-Vigilance-Spec
+- Obsidian-Plugins
+- Content-Farm
+status: Draft
+source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
+source_relative_path: specs/Create-an-Audio-Transcriber-plus-Layered-Value.md
+source_repo_slug: content-farm
+collated_at: '2026-05-08'
+source_path: "content-farm/context-v/specs/Create-an-Audio-Transcriber-plus-Layered-Value.md"
+---
+
+[Youtube2Webpage Github repo](https://github.com/obra/Youtube2Webpage)
+
+- Listen 
