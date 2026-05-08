@@ -30,6 +30,16 @@ DEFAULT_CORPUS = KIT_ROOT / "corpus"
 # Filenames inside a context-v/ directory that are infrastructure, not content.
 SKIP_FILES = {".gitkeep", ".DS_Store"}
 
+# Path substrings that exclude a file from collation. `context-v/extra/` is
+# the convention for "scratch / out-of-band" content inside a context-v dir
+# that should not flow into the corpus.
+SKIP_PATH_SUBSTRINGS = (
+    "/context-v/extra/",
+    "/context-v/skills/",  # skills go through build-skills-manifest.py / a future skills collator
+    "/context-v/changelog/",   # ship-log entries get their own downstream path
+    "/context-v/changelogs/",  # plural-form variant exists in the wild
+)
+
 
 def parse_sources_file(path: Path) -> dict:
     text = path.read_text(encoding="utf-8")
@@ -80,6 +90,9 @@ def iter_markdown_files(source_path: Path, kind: str, subdirs: list[str] | None)
     for root in roots:
         for p in root.rglob("*.md"):
             if p.name in SKIP_FILES:
+                continue
+            p_str = str(p)
+            if any(s in p_str for s in SKIP_PATH_SUBSTRINGS):
                 continue
             files.append(p)
     return sorted(files)

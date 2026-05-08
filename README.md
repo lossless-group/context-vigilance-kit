@@ -6,14 +6,34 @@
 
 Tooling for the **Context Vigilance** practice — collating, indexing, and eventually publishing the `context-v/` directories scattered across [The Lossless Group](https://github.com/lossless-group) tree (and beyond) as a single, queryable corpus. Brand site: [contextvigilance.com](https://contextvigilance.com) (forthcoming). Scope, rationale, and decision history live in the parent exploration: [[Collate-Context-Files-into-Context-Vigilance-as-Repo-&-Project]] (under `ai-labs/context-v/explorations/`).
 
+## Corpus state — May 2026
+
+First full pass over the curated `sources.md`:
+
+| metric | count |
+|---|---:|
+| total files | **787** |
+| `worked-on` (≥500 content lines) | 138 |
+| `idea-started` (100–499 content lines) | 353 |
+| `stub` (<100 content lines) | 296 |
+| without YAML frontmatter | 100 |
+
+The *without YAML frontmatter* row is **orthogonal** to the three buckets — a file lands in exactly one bucket (by `content_lines`) and is *separately* tagged as missing frontmatter (`yaml_lines == 0`). The 100 frontmatter-less files are scattered across all three buckets; a doc can be `worked-on` and still be missing its frontmatter.
+
+**Publishing strategy.** Ship the 138 `worked-on` docs first while building a systematic, agent-assisted process to fill out the 296 stubs and 353 idea-started entries. The corpus manifest is the gate that makes this triage tractable — re-run `python scripts/build-corpus-manifest.py` after every fill-out batch to track progress against this baseline.
+
 ## What's in here (v0)
 
 ```
 context-vigilance-kit/
 ├── README.md                          ← you are here
 ├── sources.md                         ← curated list of source dirs (generated, then human-curated)
+├── corpus-manifest.md                 ← per-file triage view (yaml & content line counts; auto-generated)
+├── skills-manifest.md                 ← agent-skills inventory; tracked separately from corpus
 ├── scripts/
 │   ├── assemble-context-v-sources.py  ← walks the tree, populates sources.md
+│   ├── build-corpus-manifest.py       ← reads sources.md, emits per-file inventory with bucket labels
+│   ├── build-skills-manifest.py       ← reads sources.md, inventories context-v/skills/* per source
 │   └── collate.py                     ← reads sources.md, copies files into corpus/ with provenance
 ├── context-v/                         ← this kit's own specs/plans/etc. (rolled up by ai-labs splash)
 └── corpus/                            ← collated output (gitignored; outside the splash rollup boundary)
@@ -29,11 +49,25 @@ Run from the kit directory after dependencies are installed (handled at the `ai-
 python scripts/assemble-context-v-sources.py
 
 # 2. Open sources.md, flip `include: true` on entries you want, add notes,
-#    add legacy-shaped directories by hand with `kind: legacy`.
+#    add legacy/open-call directories by hand with `kind: legacy` (with `subdirs:`)
+#    or `kind: open-call`.
 
-# 3. Run the collator. Reads sources.md, copies files into corpus/ with provenance keys.
+# 3. Build the pre-collation manifest. Counts yaml-frontmatter and content lines
+#    per file, buckets each into stub / idea-started / worked-on. Use it to triage
+#    what needs agent fill-out BEFORE you commit to a corpus build.
+python scripts/build-corpus-manifest.py
+
+# 4. Inventory agent skills separately. Walks every context-v/skills/<skill>/ under
+#    your included sources, parses each SKILL.md frontmatter, counts assets.
+#    Skills are excluded from corpus-manifest so they don't pollute the to-do list,
+#    but indexed downstream alongside the corpus.
+python scripts/build-skills-manifest.py
+
+# 5. Run the collator. Reads sources.md, copies files into corpus/ with provenance keys.
 python scripts/collate.py
 ```
+
+**Clickable paths.** Both manifests render file paths as markdown links with editor-relative paths. In VS Code, Cursor, Windsurf, and Trae's markdown preview, clicking the path opens the source file in the same editor window. Configured to relativize against the manifest's own directory; no editor-specific URI scheme required.
 
 Optional flags on the assembler:
 
@@ -49,7 +83,11 @@ python scripts/assemble-context-v-sources.py --output sources.md
 Each entry in the `sources:` list has:
 
 - `path` — absolute filesystem path to a `context-v/` directory or a legacy root
-- `kind` — `context-v` (canonical six-folder structure), `legacy` (pre-context-v notes), or `study-context-v` (lives inside a study)
+- `kind` — one of:
+  - `context-v` — canonical six-folder structure
+  - `legacy` — pre-context-v notes; pair with `subdirs:` whitelist to scope what's collated
+  - `study-context-v` — lives inside a `studies/<name>/` collection
+  - `open-call` — published proposals in the Hyperloop-paper spirit ("we thought of this, someone please build it"); flat directories, whole tree collated
 - `include` — `true` to collate, `false` to skip
 - `note` — free-form curation rationale (optional)
 - `subdirs` — for `kind: legacy` only, a whitelist of subdirectories to walk
@@ -63,6 +101,12 @@ Each entry in the `sources:` list has:
 Per-file escape hatch: setting `private: true` in a file's frontmatter causes the collator to skip it. Reserved for edge cases the location-based boundary doesn't cover.
 
 The kit's own `ai-labs/context-vigilance-kit/context-v/` is normal Lossless content (the kit's specs, plans, prompts, etc.) and **is** rolled up by the ai-labs splash — that's intentional.
+
+**Path-substring exclusions.** Files whose absolute paths match any entry in `SKIP_PATH_SUBSTRINGS` (in both `build-corpus-manifest.py` and `collate.py`) are skipped:
+
+- `/context-v/extra/` — per-directory escape hatch for scratch, out-of-band, or work-in-progress notes that should not flow into the corpus.
+- `/context-v/skills/` — agent skills are tracked by `build-skills-manifest.py` as a separate concern. They're indexed downstream (ChromaDB), but excluded from the corpus to-do list so they don't dilute the fill-out work queue.
+- `/context-v/changelog/` and `/context-v/changelogs/` — ship-log entries follow the [[changelog-conventions]] skill and are a different artifact class than fill-out-needing context-v docs. They land in the ChromaDB stream alongside the corpus, but stay out of the "complete a bunch of context-v files soon after splash launch" workflow. Both singular and plural forms exist in the wild; both are excluded.
 
 ## Provenance keys added by the collator
 
