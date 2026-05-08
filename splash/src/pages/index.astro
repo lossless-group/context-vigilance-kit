@@ -1,0 +1,214 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const all = await getCollection('corpus');
+
+// Group by source_repo_slug — the natural unit of "which project this came from".
+const byRepo = new Map<string, typeof all>();
+for (const entry of all) {
+  const slug = (entry.data as any).source_repo_slug ?? 'unknown';
+  if (!byRepo.has(slug)) byRepo.set(slug, []);
+  byRepo.get(slug)!.push(entry);
+}
+
+const groups = Array.from(byRepo.entries())
+  .map(([slug, entries]) => ({
+    slug,
+    entries: entries.sort((a, b) => a.id.localeCompare(b.id)),
+  }))
+  .sort((a, b) => b.entries.length - a.entries.length);
+
+const totalDocs = all.length;
+const totalRepos = groups.length;
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Context Vigilance — A Catalog of Context Across Projects"
+  description="A live catalog of context-v files across the Lossless Group tree. Every spec, prompt, blueprint, reminder, exploration, and issue we've authored as our context discipline grew."
+>
+  <main>
+    <section class="hero container">
+      <p class="folio mono dim">¶ Context Vigilance Kit</p>
+      <h1>
+        Treat context files like code <em>and the context becomes the parent to the code.</em>
+      </h1>
+      <p class="hero__lede soft">
+        A live catalog of context-v files across <strong>{totalRepos}</strong> projects in the
+        Lossless Group tree — <strong>{totalDocs}</strong> specs, prompts, blueprints, reminders,
+        explorations, and issues. Collated, deduplicated, and indexed by the
+        <a href="https://github.com/lossless-group/context-vigilance-kit">context-vigilance-kit</a>.
+      </p>
+      <p class="hero__detail soft">
+        Generating a fully-featured splash page now takes <strong>5 minutes</strong>, not days.
+        Refactoring across languages and tech stacks compresses to minutes, not weeks.
+        Only with context vigilance.
+      </p>
+    </section>
+
+    <section class="catalog container">
+      <h2>Catalog</h2>
+      <p class="soft" style="max-width: 70ch;">
+        Each section below collects context-v files from one repo. Click any title to read the
+        full document. Sections are ordered by document count, descending.
+      </p>
+
+      {groups.map((group) => (
+        <details class="repo" open={group.entries.length <= 12}>
+          <summary class="repo__summary">
+            <span class="repo__slug mono">{group.slug}</span>
+            <span class="repo__count dim mono">{group.entries.length} docs</span>
+          </summary>
+          <ul class="repo__list">
+            {group.entries.map((entry) => {
+              const data = entry.data as any;
+              const title = data.title || entry.id;
+              const lede = data.lede || data.description || data.summary || '';
+              const status = data.status;
+              const tags: string[] = data.tags || [];
+              return (
+                <li class="entry">
+                  <a class="entry__link" href={`${base}docs/${entry.id}/`}>
+                    <h3 class="entry__title">{title}</h3>
+                    {lede && <p class="entry__lede soft">{lede}</p>}
+                    <div class="entry__meta mono dim">
+                      <span class="entry__path">{data.source_relative_path || entry.id}</span>
+                      {status && <span class="entry__status">{status}</span>}
+                      {tags.length > 0 && <span class="entry__tags">{tags.slice(0, 3).join(' · ')}</span>}
+                    </div>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </details>
+      ))}
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: var(--space-12) var(--space-6);
+    max-width: 880px;
+  }
+  .folio {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 var(--space-4);
+  }
+  .hero h1 em {
+    font-family: var(--font-display);
+    font-style: italic;
+    background: linear-gradient(90deg, var(--c-accent), var(--c-accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 400;
+  }
+  .hero__lede {
+    font-size: 1.1rem;
+    margin-top: var(--space-6);
+    max-width: 65ch;
+  }
+  .hero__detail {
+    font-size: 0.95rem;
+    margin-top: var(--space-4);
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--c-accent);
+    max-width: 65ch;
+  }
+  .hero__detail strong {
+    color: var(--c-accent);
+  }
+  .catalog {
+    padding: var(--space-8) var(--space-6) var(--space-12);
+  }
+  .repo {
+    border-top: 1px solid var(--c-border);
+    padding: var(--space-4) 0;
+  }
+  .repo:last-child {
+    border-bottom: 1px solid var(--c-border);
+  }
+  .repo__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    cursor: pointer;
+    padding: var(--space-3) 0;
+    font-size: 1.05rem;
+    list-style: none;
+  }
+  .repo__summary::-webkit-details-marker { display: none; }
+  .repo__summary::before {
+    content: '▸';
+    color: var(--c-text-dim);
+    margin-right: var(--space-3);
+    transition: transform 120ms;
+  }
+  details[open] .repo__summary::before {
+    transform: rotate(90deg);
+    display: inline-block;
+  }
+  .repo__slug {
+    color: var(--c-text);
+    font-weight: 600;
+  }
+  .repo__count {
+    font-size: 0.85rem;
+  }
+  .repo__list {
+    list-style: none;
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+  .entry {
+    border-top: 1px dashed var(--c-border);
+  }
+  .entry:first-child {
+    border-top: none;
+  }
+  .entry__link {
+    display: block;
+    padding: var(--space-4) var(--space-2);
+    color: var(--c-text);
+  }
+  .entry__link:hover {
+    background: color-mix(in oklab, var(--c-accent) 6%, transparent);
+    text-decoration: none;
+  }
+  .entry__link:hover .entry__title {
+    color: var(--c-accent);
+  }
+  .entry__title {
+    margin: 0 0 var(--space-2);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--c-text);
+    transition: color 120ms;
+  }
+  .entry__lede {
+    margin: 0 0 var(--space-2);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    max-width: 80ch;
+  }
+  .entry__meta {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+  .entry__path {
+    overflow-wrap: anywhere;
+  }
+  .entry__status {
+    color: var(--c-accent);
+  }
+</style>

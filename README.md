@@ -8,19 +8,26 @@ Tooling for the **Context Vigilance** practice — collating, indexing, and even
 
 ## Corpus state — May 2026
 
-First full pass over the curated `sources.md`:
+After first-pass curation (excluding `context-v/skills/`, `context-v/changelogs/`, and Astro page routes / rollup outputs that turned up as discovery false-positives):
 
 | metric | count |
 |---|---:|
-| total files | **787** |
-| `worked-on` (≥500 content lines) | 138 |
-| `idea-started` (100–499 content lines) | 353 |
-| `stub` (<100 content lines) | 296 |
-| without YAML frontmatter | 100 |
+| total files | **583** |
+| `worked-on` (≥500 content lines) | 110 |
+| `idea-started` (100–499 content lines) | 263 |
+| `stub` (<100 content lines) | 210 |
+| without YAML frontmatter | 59 |
 
-The *without YAML frontmatter* row is **orthogonal** to the three buckets — a file lands in exactly one bucket (by `content_lines`) and is *separately* tagged as missing frontmatter (`yaml_lines == 0`). The 100 frontmatter-less files are scattered across all three buckets; a doc can be `worked-on` and still be missing its frontmatter.
+| skills (tracked separately in `skills-manifest.md`) | 12 |
+|---|---:|
+| with `SKILL.md` | 11 |
+| `complete` (per Anthropic agent-skills spec) | 9 |
 
-**Publishing strategy.** Ship the 138 `worked-on` docs first while building a systematic, agent-assisted process to fill out the 296 stubs and 353 idea-started entries. The corpus manifest is the gate that makes this triage tractable — re-run `python scripts/build-corpus-manifest.py` after every fill-out batch to track progress against this baseline.
+The *without YAML frontmatter* row in the corpus table is **orthogonal** to the three buckets — a file lands in exactly one bucket (by `content_lines`) and is *separately* tagged as missing frontmatter (`yaml_lines == 0`). The 59 frontmatter-less files are scattered across all three buckets; a doc can be `worked-on` and still be missing its frontmatter.
+
+**Publishing strategy.** Ship the 110 `worked-on` docs first while building a systematic, agent-assisted process to fill out the 210 stubs and 263 idea-started entries. The corpus manifest is the gate that makes this triage tractable — re-run `python scripts/build-corpus-manifest.py` after every fill-out batch to track progress against this baseline.
+
+> *(Pre-curation pass for reference: 787 total / 138 worked-on / 353 idea-started / 296 stub / 100 no-frontmatter. The 204-file delta came from the `context-v/skills/` and `context-v/changelogs/` exclusions plus eight false-positive flips. See git history of `sources.md` for the curation diff.)*
 
 ## What's in here (v0)
 
@@ -30,18 +37,111 @@ context-vigilance-kit/
 ├── sources.md                         ← curated list of source dirs (generated, then human-curated)
 ├── corpus-manifest.md                 ← per-file triage view (yaml & content line counts; auto-generated)
 ├── skills-manifest.md                 ← agent-skills inventory; tracked separately from corpus
+├── requirements.txt                   ← Python dependencies (install with `uv pip install -r ...`)
 ├── scripts/
 │   ├── assemble-context-v-sources.py  ← walks the tree, populates sources.md
 │   ├── build-corpus-manifest.py       ← reads sources.md, emits per-file inventory with bucket labels
 │   ├── build-skills-manifest.py       ← reads sources.md, inventories context-v/skills/* per source
-│   └── collate.py                     ← reads sources.md, copies files into corpus/ with provenance
+│   ├── collate.py                     ← reads sources.md, copies files into corpus/ with provenance
+│   └── smoke-test-chroma.py           ← end-to-end probe of the Chroma integration; throwaway
 ├── context-v/                         ← this kit's own specs/plans/etc. (rolled up by ai-labs splash)
-└── corpus/                            ← collated output (gitignored; outside the splash rollup boundary)
+├── corpus/                            ← collated output (gitignored; outside the splash rollup boundary)
+└── splash/                            ← Astro 5 catalog of every context-v file in the corpus
 ```
+
+## Install
+
+This kit's dependencies live in `requirements.txt` (kit-scoped; not in the ai-labs root manifest).
+
+```bash
+# Preferred — uv (faster, deterministic, project-default for this team):
+uv pip install -r requirements.txt
+
+# Or, with pip:
+pip install -r requirements.txt
+```
+
+First run of any Chroma-touching script will auto-download the default embedding model (`all-MiniLM-L6-v2`, ~79 MB) into `~/.cache/chroma/`. One-time cost; cached afterwards.
+
+To verify the Chroma integration end-to-end:
+
+```bash
+python3 scripts/smoke-test-chroma.py
+```
+
+Ingests a handful of real corpus files, runs sample queries, prints similarity-ranked hits.
+
+## Ingest the corpus
+
+After curating `sources.md`, build (or rebuild) the searchable corpus in Chroma:
+
+```bash
+# Full ingest into the canonical collection (idempotent on stable IDs):
+python3 scripts/ingest-to-chroma.py
+
+# Drop and recreate the collection from scratch (use after schema changes):
+python3 scripts/ingest-to-chroma.py --reset
+
+# Smoke ingest just the first N files:
+python3 scripts/ingest-to-chroma.py --limit 50
+
+# Query the live collection without re-ingesting:
+python3 scripts/ingest-to-chroma.py --query "your question here"
+```
+
+Chunks markdown by `## ` headings; each chunk gets a stable ID
+(`<repo-slug>::<safe-relative-path>::<chunk-index>`) so re-runs upsert
+cleanly. Files with `private: true` in their frontmatter are skipped.
+
+The collection lives at `.chroma/` (gitignored). Default name:
+`context-vigilance-corpus`.
+
+## Splash page — public catalog
+
+`splash/` is a small Astro 5 site that renders `corpus/` as a public catalog: every collated context-v file gets its own page, all files are grouped by source repo on the index, and the whole thing builds to static HTML in seconds. v0 is local-only; deploy to GitHub Pages once the kit's repo is wired.
+
+```bash
+cd splash
+pnpm install --ignore-workspace   # one-time; ai-labs's pnpm-workspace doesn't include this dir
+pnpm dev                          # http://localhost:4321/context-vigilance-kit/
+pnpm build                        # writes static site to splash/dist/
+pnpm preview                      # serves dist/ locally
+```
+
+Build output today: **573 pages from 583 corpus files** (small handful skipped due to schema or duplicate-id edge cases). Index page groups entries by `source_repo_slug`; detail pages render the full markdown with frontmatter as a metadata block.
+
+Visual posture is intentionally minimal for v0 — single dark-theme stylesheet inline in `BaseLayout.astro`, no Pagefind, no custom components beyond the layout. Per the [[maintain-splash-pages]] skill's "creative posture" prompt, this splash is a candidate for divergent layout/typographic *moves* in v0.1.
+
+## Claude Code MCP integration
+
+The kit ships a `.mcp.json` that wires the Chroma MCP server into Claude Code at **project scope** (so the config persists across sessions and travels with the repo). The same config is mirrored at `ai-labs/.mcp.json` so a Claude Code session opened anywhere in the ai-labs tree picks it up.
+
+```jsonc
+// .mcp.json (root of kit and root of ai-labs)
+{
+  "mcpServers": {
+    "chroma": {
+      "command": "uvx",
+      "args": [
+        "chroma-mcp", "--client-type", "persistent",
+        "--data-dir", "/abs/path/to/context-vigilance-kit/.chroma"
+      ]
+    }
+  }
+}
+```
+
+Once `.mcp.json` is in place:
+
+1. **Restart Claude Code** in the project. `.mcp.json` is loaded on session start, not hot-reloaded.
+2. Verify the server is discovered: `claude mcp list` (should show `chroma` as connected).
+3. In a prompt, type `@chroma:` to see exposed resources, or call its tools directly.
+
+Whenever the corpus changes (you re-run `ingest-to-chroma.py`), the MCP server already reads the same `.chroma/` directory — no MCP restart needed. Only the `.mcp.json` itself needing to change requires a session restart.
 
 ## Quickstart
 
-Run from the kit directory after dependencies are installed (handled at the `ai-labs/` root via `python-requirements.txt`):
+Run from the kit directory after dependencies are installed:
 
 ```bash
 # 1. Walk the tree and discover context-v/ directories.

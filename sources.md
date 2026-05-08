@@ -28,8 +28,8 @@ sources:
   note: auto-discovered 2026-05-07; review.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-site/src/pages/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-05-07; review.
+  include: false
+  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
   kind: context-v
   include: true
@@ -64,12 +64,12 @@ sources:
   note: auto-discovered 2026-05-07; review.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/mpstaton-site/src/components/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-05-07; review.
+  include: false
+  note: false-positive — Astro components directory, not a source. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/mpstaton-site/src/content/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-05-07; review.
+  include: false
+  note: false-positive — Astro content collection that *renders* context-v, not a source. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/reach-edu-hub/context-v
   kind: context-v
   include: true
@@ -80,12 +80,12 @@ sources:
   note: auto-discovered 2026-05-07; review.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/splash/src/pages/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-05-07; review.
+  include: false
+  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/splash/src/rollup/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-05-07; review.
+  include: false
+  note: false-positive — splash rollup OUTPUT directory, not a source. Re-collating would create duplicates of already-collated content. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
   kind: context-v
   include: true
@@ -124,12 +124,12 @@ sources:
   note: auto-discovered 2026-05-07; review.
 - path: /Users/mpstaton/code/lossless-monorepo/content-farm/splash/src/pages/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-05-07; review.
+  include: false
+  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/content-farm/splash/src/rollup/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-05-07; review.
+  include: false
+  note: false-positive — splash rollup OUTPUT directory, not a source. Re-collating would create duplicates of already-collated content. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/context-v
   kind: context-v
   include: true
@@ -140,8 +140,8 @@ sources:
   note: auto-discovered 2026-05-07; review.
 - path: /Users/mpstaton/code/lossless-monorepo/lfm/splash/src/pages/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-05-07; review.
+  include: false
+  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
   kind: legacy
   include: true

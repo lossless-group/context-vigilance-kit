@@ -7,3 +7,6 @@ venv/
 # corpus/ is regenerated from sources.md; do not commit collated copies
 corpus/*
 !corpus/.gitkeep
+
+# Chroma persistent client data — local, regenerable from the corpus
+.chroma/

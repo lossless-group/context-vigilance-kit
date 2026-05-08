@@ -26,6 +26,7 @@ import yaml
 KIT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SOURCES = KIT_ROOT / "sources.md"
 DEFAULT_CORPUS = KIT_ROOT / "corpus"
+DEFAULT_MONOREPO_ROOT = Path("/Users/mpstaton/code/lossless-monorepo")
 
 # Filenames inside a context-v/ directory that are infrastructure, not content.
 SKIP_FILES = {".gitkeep", ".DS_Store"}
@@ -104,6 +105,7 @@ def collate_file(
     repo_slug: str,
     corpus_root: Path,
     today: str,
+    monorepo_root: Path,
 ) -> tuple[bool, str]:
     """Copy one file into the corpus with provenance keys appended.
 
@@ -116,6 +118,11 @@ def collate_file(
         return False, "private: true"
 
     fm_out = dict(fm) if fm else {}
+    # Strip any pre-existing provenance keys so re-collation produces clean output.
+    for key in ("source_root", "source_relative_path", "source_repo_slug",
+                "collated_at", "source_path"):
+        fm_out.pop(key, None)
+
     fm_out["source_root"] = str(source_root)
     try:
         rel = src_file.relative_to(source_root)
@@ -125,7 +132,17 @@ def collate_file(
     fm_out["source_repo_slug"] = repo_slug
     fm_out["collated_at"] = today
 
+    # Compute the bottom-line `source_path` — the file's path relative to the
+    # lossless-monorepo root. Quoted explicitly with double quotes per
+    # team convention so it's easy to grep / template / process downstream.
+    try:
+        source_path = src_file.resolve().relative_to(monorepo_root.resolve())
+    except ValueError:
+        source_path = src_file  # fallback: outside monorepo, keep absolute
+
     fm_text = yaml.safe_dump(fm_out, sort_keys=False, allow_unicode=True).rstrip()
+    fm_text = f'{fm_text}\nsource_path: "{source_path}"'
+
     out_text = f"---\n{fm_text}\n---\n\n{body}" if body else f"---\n{fm_text}\n---\n"
 
     dest = corpus_root / repo_slug / rel
@@ -138,6 +155,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sources", type=Path, default=DEFAULT_SOURCES)
     parser.add_argument("--corpus", type=Path, default=DEFAULT_CORPUS)
+    parser.add_argument(
+        "--monorepo-root",
+        type=Path,
+        default=DEFAULT_MONOREPO_ROOT,
+        help=f"Root for `source_path` frontmatter key (default: {DEFAULT_MONOREPO_ROOT})",
+    )
     parser.add_argument(
         "--clean",
         action="store_true",
@@ -182,7 +205,7 @@ def main() -> int:
 
         files = iter_markdown_files(src, kind, subdirs)
         for f in files:
-            ok, reason = collate_file(f, src, slug, args.corpus, today)
+            ok, reason = collate_file(f, src, slug, args.corpus, today, args.monorepo_root)
             if ok:
                 written += 1
             elif reason == "private: true":
