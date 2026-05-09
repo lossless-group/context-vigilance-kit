@@ -1,6 +1,7 @@
 ---
 import MetaTags from '@components/MetaTags.astro';
 import Header from '@components/Header.astro';
+import Analytics from '@components/Analytics.astro';
 import { STATIC_SEO } from '@lib/seo';
 import '@styles/theme.css';
 import '@styles/prose.css';
@@ -84,6 +85,7 @@ const base = import.meta.env.BASE_URL;
         } catch {}
       })();
     </script>
+    <Analytics />
   </head>
   <body>
     <div class="bg-grid" aria-hidden="true"></div>

@@ -4,7 +4,7 @@
  */
 
 export const STATIC_SEO = {
-  siteName: 'Context Vigilance',
+  siteName: 'A neurotic model of Human + AI Product Development.',
   titleSuffix: ' · Context Vigilance',
   root: {
     title: 'Context Vigilance',
