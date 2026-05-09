@@ -3,23 +3,24 @@
  *
  * Spec: https://llmstxt.org/
  *
- * Emits a markdown file at the deployed site root listing every published
- * corpus entry, grouped by source repo. LLM crawlers / agentic tools that
- * follow the llms.txt convention will fetch this file directly from the
- * site root to learn what's available without crawling 500+ HTML pages.
+ * The human-editable prose template for this file lives at
+ * `splash/src/llms/llms.md` (with token documentation in
+ * `splash/src/llms/README.md`). This file is the dumb assembler: it loads
+ * the template, computes dynamic values, and substitutes tokens. To tweak
+ * the voice or framing of /llms.txt, edit the markdown — not this file.
  *
  * Conformance note: the spec assumes the file lives at the host root
- * (https://host/llms.txt). Until DNS for contextvigilance.com lands, this
+ * (https://host/llms.txt). Until DNS for contextvigilance.com lands, the
  * splash deploys under a path (/context-vigilance-kit/), so the file lives
- * at https://lossless-group.github.io/context-vigilance-kit/llms.txt. Tools
- * pointed explicitly at that URL still work; convention-based discovery
- * starts working when the custom domain lands and `astro.config.mjs` flips
- * `base` to '/'.
+ * at https://lossless-group.github.io/context-vigilance-kit/llms.txt.
+ * Tools pointed explicitly at that URL still work; convention-based
+ * discovery starts working once `astro.config.mjs` flips `base` to '/'.
  */
 
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { STATIC_SEO } from '@lib/seo';
+import template from '../llms/llms.md?raw';
 
 export const GET: APIRoute = async () => {
   const site = import.meta.env.SITE ?? 'https://lossless-group.github.io';
@@ -46,52 +47,35 @@ export const GET: APIRoute = async () => {
     });
   }
 
-  const lines: string[] = [];
-  lines.push('# Context Vigilance');
-  lines.push('');
-  lines.push(`> ${STATIC_SEO.siteName}`);
-  lines.push('');
-  lines.push(
-    'Treat context with the same vigilance as code — versioned, reviewed, cross-linked. ' +
-      'This site is the public face of the Context Vigilance Kit: a live catalog of ' +
-      `${published.length} context-v documents collected from ${repos.length} Lossless Group ` +
-      'projects, plus the open spec and the schema agents follow when authoring or updating ' +
-      'those documents.',
-  );
-  lines.push('');
-  lines.push('## Reference');
-  lines.push('');
-  lines.push(`- [Full-text search](${root}/search/): Pagefind-indexed across the corpus.`);
-  lines.push(
-    `- [Full corpus content](${root}/llms-full.txt): every corpus entry concatenated as raw ` +
-      'markdown — preferred ingest target for LLMs that can handle a single large document.',
-  );
-  lines.push('- [Source repository](https://github.com/lossless-group/context-vigilance-kit): the kit, the spec, and the collator.');
-  lines.push('- [Lossless Group](https://lossless.group): the org that maintains this practice.');
-  lines.push('');
-  lines.push('## Corpus');
-  lines.push('');
-  lines.push(
-    'Hand-authored context-v files from real projects in the Lossless tree. Each entry is a ' +
-      'spec, prompt, blueprint, reminder, exploration, issue, or other context-v artifact. ' +
-      'Grouped by source repository.',
-  );
-  lines.push('');
-
+  const corpusLines: string[] = [];
   for (const repo of repos) {
-    lines.push(`### ${repo}`);
-    lines.push('');
+    corpusLines.push(`### ${repo}`);
+    corpusLines.push('');
     for (const entry of byRepo.get(repo)!) {
       const data = entry.data as any;
       const title = data.title ?? entry.id;
       const url = `${root}/corpus/${entry.id}/`;
       const lede = data.lede ?? data.description ?? data.summary;
-      lines.push(lede ? `- [${title}](${url}): ${lede}` : `- [${title}](${url})`);
+      corpusLines.push(lede ? `- [${title}](${url}): ${lede}` : `- [${title}](${url})`);
     }
-    lines.push('');
+    corpusLines.push('');
   }
 
-  return new Response(lines.join('\n'), {
+  const tokens: Record<string, string> = {
+    SITE_NAME: STATIC_SEO.siteName,
+    ENTRY_COUNT: String(published.length),
+    REPO_COUNT: String(repos.length),
+    SEARCH_URL: `${root}/search/`,
+    LLMS_FULL_URL: `${root}/llms-full.txt`,
+    LLMS_INDEX_URL: `${root}/llms.txt`,
+    CORPUS_INDEX: corpusLines.join('\n').trimEnd(),
+  };
+
+  const body = template.replace(/\{\{(\w+)\}\}/g, (match, name) =>
+    Object.prototype.hasOwnProperty.call(tokens, name) ? tokens[name] : match,
+  );
+
+  return new Response(body, {
     headers: { 'Content-Type': 'text/markdown; charset=utf-8' },
   });
 };
