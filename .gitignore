@@ -12,3 +12,6 @@ corpus/.chroma/
 
 # Chroma persistent client data — local, regenerable from the corpus
 .chroma/
+
+# Claude Code per-machine local settings (enabled MCP servers, etc.)
+.claude/
