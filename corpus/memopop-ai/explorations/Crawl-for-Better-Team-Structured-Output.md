@@ -35,7 +35,7 @@ date_modified: 2026-05-07
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: explorations/Crawl-for-Better-Team-Structured-Output.md
 source_repo_slug: memopop-ai
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/memopop-ai/context-v/explorations/Crawl-for-Better-Team-Structured-Output.md"
 ---
 

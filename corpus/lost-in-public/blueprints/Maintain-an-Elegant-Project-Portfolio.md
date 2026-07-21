@@ -20,7 +20,7 @@ square_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/2025-sept/Mainta
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: blueprints/Maintain-an-Elegant-Project-Portfolio.md
 source_repo_slug: lost-in-public
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/lost-in-public/blueprints/Maintain-an-Elegant-Project-Portfolio.md"
 ---
 

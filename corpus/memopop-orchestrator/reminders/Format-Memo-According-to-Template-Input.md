@@ -29,7 +29,7 @@ date_modified: 2025-11-21
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: reminders/Format-Memo-According-to-Template-Input.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/reminders/Format-Memo-According-to-Template-Input.md"
 ---
 

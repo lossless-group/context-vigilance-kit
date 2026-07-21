@@ -22,7 +22,7 @@ status: Open
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: explorations/ChromaDB-as-Context-Improvement-Across-Everything-Everyone.md
 source_repo_slug: ai-labs
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/context-v/explorations/ChromaDB-as-Context-Improvement-Across-Everything-Everyone.md"
 ---
 

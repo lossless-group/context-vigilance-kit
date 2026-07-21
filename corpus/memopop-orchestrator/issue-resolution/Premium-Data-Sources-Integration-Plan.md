@@ -25,7 +25,7 @@ augmented_with: Claude Code with Claude Opus 4.6
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: issue-resolution/Premium-Data-Sources-Integration-Plan.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/issue-resolution/Premium-Data-Sources-Integration-Plan.md"
 ---
 

@@ -31,7 +31,7 @@ square_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Churn-Conte
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Churn-Content-Editor-for-the-Web.md
 source_repo_slug: specs
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/specs/Churn-Content-Editor-for-the-Web.md"
 ---
 
@@ -160,7 +160,7 @@ Citations are considered safe INSIDE callouts.
 [[Tooling/Enterprise Jobs-to-be-Done/Coda|Coda]]
 [[Tooling/Productivity/Advanced Documents/Obsidian|Obsidian]]
 [[Tooling/Productivity/Affinity Publisher]]
-[[Tooling/AI-Toolkit/Generative AI/Code Generators/Windsurf IDE|Windsurf IDE]]
+[[Tooling/AI-Toolkit/Generative AI/Code Generators/Devin IDE|Devin IDE]]
 [[Tooling/AI-Toolkit/Generative AI/Code Generators/Zed|Zed]]
 [[Tooling/Enterprise Jobs-to-be-Done/Content Management Systems/Hygraph|Hygraph]]
 [[Tooling/Enterprise Jobs-to-be-Done/Content Management Systems/Payload|Payload]]

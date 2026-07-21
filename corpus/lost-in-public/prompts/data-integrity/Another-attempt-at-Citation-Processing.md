@@ -32,7 +32,7 @@ image_prompt: 'A split-screen visualization: on the left, a chaotic tangle of nu
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: prompts/data-integrity/Another-attempt-at-Citation-Processing.md
 source_repo_slug: lost-in-public
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/lost-in-public/prompts/data-integrity/Another-attempt-at-Citation-Processing.md"
 ---
 

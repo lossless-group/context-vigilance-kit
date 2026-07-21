@@ -29,7 +29,7 @@ date_modified: 2025-11-16
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: reminders/Generate-Investment-Memo-for-Portfolio-Company.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/reminders/Generate-Investment-Memo-for-Portfolio-Company.md"
 ---
 

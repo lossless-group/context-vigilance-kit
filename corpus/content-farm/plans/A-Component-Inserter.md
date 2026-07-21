@@ -21,7 +21,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: plans/A-Component-Inserter.md
 source_repo_slug: content-farm
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content-farm/context-v/plans/A-Component-Inserter.md"
 ---
 

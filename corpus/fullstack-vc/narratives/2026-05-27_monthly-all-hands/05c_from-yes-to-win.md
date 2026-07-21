@@ -1,0 +1,37 @@
+---
+title: From Yes to Win
+eyebrow: Three breakout tracks
+headline: Full body yes on a deal. What's between you and the wire transfer?
+subhead: Three obstacles, three breakouts. Pick the one closest to your operating
+  reality.
+compose: Section__BreakoutsTeaser (or static three-card grid)
+entry_state: Whatever sourcing, triage, and personal DD you did, it's done. You're
+  convinced.
+tracks_teaser:
+- Internal Conviction → IC
+- Syndicate to VCs
+- Offer to LPs
+source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
+source_relative_path: narratives/2026-05-27_monthly-all-hands/05c_from-yes-to-win.md
+source_repo_slug: fullstack-vc
+collated_at: '2026-07-21'
+source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/05c_from-yes-to-win.md"
+---
+
+## What this slide is
+
+The overall breakouts framing slide. The entry state (you have personal conviction) and the three forks.
+
+## Why it's here
+
+Sets up the next three track slides. The structural insight: every breakout starts at the same hinge (full body yes) and forks by which wall comes next.
+
+## What to surface
+
+- The big question: "What's between you and the wire transfer?"
+- The entry state — you already did the sourcing/triage/personal DD
+- The three forks as a teaser (don't explain them yet — that's slides 07–09)
+
+## Visual hierarchy suggestion
+
+Big headline question, subhead below, then three card teasers in a horizontal grid (or `Section__BreakoutsTeaser` composed directly). Each card has a short label + one-line reality. `--color-accent` on the section title to signal "this is the structural moment of the deck."

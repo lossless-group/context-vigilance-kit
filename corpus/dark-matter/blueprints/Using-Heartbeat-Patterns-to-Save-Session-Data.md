@@ -2,7 +2,7 @@
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/dark-matter/context-v
 source_relative_path: blueprints/Using-Heartbeat-Patterns-to-Save-Session-Data.md
 source_repo_slug: dark-matter
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "astro-knots/sites/dark-matter/context-v/blueprints/Using-Heartbeat-Patterns-to-Save-Session-Data.md"
 ---
 

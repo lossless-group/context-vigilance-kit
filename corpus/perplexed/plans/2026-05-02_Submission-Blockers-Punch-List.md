@@ -21,7 +21,7 @@ source_audit: 'Audit triggered by re-reading the canonical submission docs:
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: plans/2026-05-02_Submission-Blockers-Punch-List.md
 source_repo_slug: perplexed
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content-farm/plugin-modules/perplexed/context-v/plans/2026-05-02_Submission-Blockers-Punch-List.md"
 ---
 

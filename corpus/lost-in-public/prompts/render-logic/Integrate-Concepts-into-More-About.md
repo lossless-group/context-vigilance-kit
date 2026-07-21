@@ -29,7 +29,7 @@ banner_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/prompts/render-l
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: prompts/render-logic/Integrate-Concepts-into-More-About.md
 source_repo_slug: lost-in-public
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/lost-in-public/prompts/render-logic/Integrate-Concepts-into-More-About.md"
 ---
 

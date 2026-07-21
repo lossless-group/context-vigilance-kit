@@ -16,7 +16,7 @@ status: Active
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: reminders/Preferred-Stack.md
 source_repo_slug: ai-labs
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/context-v/reminders/Preferred-Stack.md"
 ---
 

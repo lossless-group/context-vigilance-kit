@@ -62,11 +62,11 @@ cta_or_footer: 'The funding rounds show the world is paying attention and the ac
 
   '
 sources: []
-source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/calmstorm-decks/context-v
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/07-market-momentum.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-05-08'
-source_path: "astro-knots/sites/calmstorm-decks/context-v/narratives/07-market-momentum.md"
+collated_at: '2026-07-21'
+source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/07-market-momentum.md"
 ---
 
 # Slide 7 — Momentum

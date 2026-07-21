@@ -15,7 +15,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: explorations/Streamlining-Deployment-of-Multiple-Instances-of-Twenty-CRM.md
 source_repo_slug: lost-in-public
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/lost-in-public/explorations/Streamlining-Deployment-of-Multiple-Instances-of-Twenty-CRM.md"
 ---
 

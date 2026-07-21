@@ -32,6 +32,6 @@ site_uuid: efac18f5-e224-4359-4d27-fe642c27a241
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Search-and-Summarize-Obsidian-App.md
 source_repo_slug: specs
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/specs/Search-and-Summarize-Obsidian-App.md"
 ---

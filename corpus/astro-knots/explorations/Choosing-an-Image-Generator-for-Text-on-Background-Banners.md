@@ -31,7 +31,7 @@ authors:
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: explorations/Choosing-an-Image-Generator-for-Text-on-Background-Banners.md
 source_repo_slug: astro-knots
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "astro-knots/context-v/explorations/Choosing-an-Image-Generator-for-Text-on-Background-Banners.md"
 ---
 

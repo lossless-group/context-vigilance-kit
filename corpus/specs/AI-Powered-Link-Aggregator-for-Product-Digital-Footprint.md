@@ -33,7 +33,7 @@ site_uuid: 7fdc18f5-e224-4359-8327-fe642c27a241
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: AI-Powered-Link-Aggregator-for-Product-Digital-Footprint.md
 source_repo_slug: specs
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/specs/AI-Powered-Link-Aggregator-for-Product-Digital-Footprint.md"
 ---
 
@@ -274,7 +274,7 @@ async function scrapeSocialLinks(url) {
 
 #### 3.3.2 Search Engine Queries
 
-**Technology**: [[Tooling/Data Utilities/SerpAPI|SerpAPI]] (free tier: 100 searches/month) or [[Tooling/AI-Toolkit/Searxng|Searxng]] (self-hosted)
+**Technology**: [[Tooling/AI-Toolkit/Data Augmenters/SerpAPI|SerpAPI]] (free tier: 100 searches/month) or [[Tooling/AI-Toolkit/Searxng|Searxng]] (self-hosted)
 
 **Queries**:
 ```

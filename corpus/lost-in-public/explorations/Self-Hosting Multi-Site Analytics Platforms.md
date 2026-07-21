@@ -4,7 +4,7 @@ date_modified: 2026-05-06
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: explorations/Self-Hosting Multi-Site Analytics Platforms.md
 source_repo_slug: lost-in-public
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/lost-in-public/explorations/Self-Hosting Multi-Site Analytics Platforms.md"
 ---
 
@@ -31,8 +31,8 @@ Based on your "show don't tell" ethos and need to track interest across ~20 site
 - Perfect for agencies - best sites-per-dollar ratio
 - Not self-hostable, but extremely low maintenance
 
-**[[OpenPanel]]** [^v61rti] [^o1vaum]
-- Combines web + product analytics ([[Mixpanel]]-like features)
+**[[Tooling/Enterprise Jobs-to-be-Done/OpenPanel]]** [^v61rti] [^o1vaum]
+- Combines web + product analytics ([[Tooling/Enterprise Jobs-to-be-Done/Mixpanel]]-like features)
 - AGPL-3.0 license, self-host free
 - Cloud starts at $2.50/month
 - Real-time tracking, cookieless

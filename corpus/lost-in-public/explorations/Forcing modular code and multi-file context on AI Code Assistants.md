@@ -11,6 +11,6 @@ source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: explorations/Forcing modular code and multi-file context on
   AI Code Assistants.md
 source_repo_slug: lost-in-public
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/lost-in-public/explorations/Forcing modular code and multi-file context on AI Code Assistants.md"
 ---

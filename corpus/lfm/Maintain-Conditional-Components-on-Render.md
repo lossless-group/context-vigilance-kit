@@ -23,7 +23,7 @@ square_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/2025-sept/Mainta
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Maintain-Conditional-Components-on-Render.md
 source_repo_slug: lfm
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "lfm/context-v/Maintain-Conditional-Components-on-Render.md"
 ---
 

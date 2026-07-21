@@ -18,7 +18,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-a-Github-Splash-Page-for-each-Repo.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "context-v/habits/Maintain-a-Github-Splash-Page-for-each-Repo.md"
 ---
 
@@ -47,6 +47,8 @@ Every repo should ship:
 3. **A context-v renderer** — list grouped by subdirectory (`/context-v/`) + per-entry detail (`/context-v/[...slug]`).
 4. **A deploy pipeline** — push to `main` builds and deploys. No manual deploy.
 5. **A README at `splash/README.md`** — local dev, deploy, where content lives, how to update.
+6. **`/llms.txt` (and `/llms-full.txt` when content is markdown-first)** — machine-readable corpus for LLM crawlers and agentic tools, per the [`Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md`](Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md) habit. Endpoints at `src/pages/llms.txt.ts` + `src/pages/llms-full.txt.ts`; prose templates at `src/llms/{llms.md, llms-full.md}`.
+7. **`/sitemap-index.xml` + `/sitemap-0.xml` + `/robots.txt`** — search-engine discoverability, auto-generated via `@astrojs/sitemap`, per the [`Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md`](Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md) habit. Filter excludes `/llms.txt`, `/llms-full.txt`, and `/404` so the sitemap stays HTML-only.
 
 > [!NOTE] Iteration towards consistent and usable frontmatter
 > 
@@ -170,6 +172,8 @@ Verify before declaring the habit met:
 - [ ] GitHub Pages source is set to **"GitHub Actions"** in repo settings
 - [ ] First deploy reaches `https://lossless-group.github.io/<repo>/` and loads cleanly
 - [ ] (Pseudomonorepos only) `pnpm rollup:sync` runs locally; `splash/src/rollup/` is committed; rolled-up content appears on the live site with provenance
+- [ ] `/llms.txt` (and `/llms-full.txt` when content is markdown-first) deploys at the splash root, per the [`Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md`](Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md) habit's acceptance checklist
+- [ ] `/sitemap-index.xml`, `/sitemap-0.xml`, and `/robots.txt` all deploy correctly with the absolute Sitemap URL, per the [`Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md`](Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md) habit's acceptance checklist
 
 ## Maintenance cadence
 
@@ -199,6 +203,8 @@ Verify before declaring the habit met:
   - `Maintain-a-Current-README-and-other-Docs.md` — the splash is one of "those Docs."
   - `Maintain-an-Astro-Knots-site-for-Major-Projects.md` — major projects also get a custom-domain Astro Knots site beyond the splash.
   - `Maintain-Projects-Collections-on-Lossless-Site.md` — splash + main-site gallery cross-link.
+  - [`Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md`](Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md) — every splash with a substantive content collection also serves `/llms.txt` and `/llms-full.txt` for LLM ingest. The splash is the primary surface this habit applies to.
+  - [`Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md`](Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md) — every splash also ships `@astrojs/sitemap` + `robots.txt` for search-engine discoverability. The companion to the llms.txt habit, optimizing for the other class of crawler.
 - **Skills the agent should consult when scaffolding a new splash:**
   - `astro-knots` — framework rules and prohibitions.
   - `pseudomonorepos` — parent-repo patterns, search-first behavior, roll-up convention.

@@ -23,7 +23,7 @@ authors:
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/Fetch-Brand-and-Tokens-from-Site.md
 source_repo_slug: astro-knots
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "astro-knots/context-v/prompts/Fetch-Brand-and-Tokens-from-Site.md"
 ---
 

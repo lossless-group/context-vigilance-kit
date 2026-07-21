@@ -23,7 +23,7 @@ status: Draft
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v
 source_relative_path: plans/Tidy-Context-Vigilance-Files-Across-All.md
 source_repo_slug: context-vigilance-kit
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/context-vigilance-kit/context-v/plans/Tidy-Context-Vigilance-Files-Across-All.md"
 ---
 

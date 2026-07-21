@@ -2,7 +2,7 @@
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: issues/Updating-Naming-to-Reflect-Provider-Rebrand.md
 source_repo_slug: perplexed
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content-farm/plugin-modules/perplexed/context-v/issues/Updating-Naming-to-Reflect-Provider-Rebrand.md"
 ---
 

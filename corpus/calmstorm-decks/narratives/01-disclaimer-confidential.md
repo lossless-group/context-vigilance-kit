@@ -38,11 +38,11 @@ disclaimer: 'Not an offer to invest. The information contained herein is a draft
   '
 cta_or_footer: © 2023 Calm/Storm Ventures
 sources: []
-source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/calmstorm-decks/context-v
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/01-disclaimer-confidential.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-05-08'
-source_path: "astro-knots/sites/calmstorm-decks/context-v/narratives/01-disclaimer-confidential.md"
+collated_at: '2026-07-21'
+source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/01-disclaimer-confidential.md"
 ---
 
 # Slide 1 — Disclaimer / Confidential

@@ -72,11 +72,11 @@ key_stat: 100+
 key_stat_label: Health Investments
 cta_or_footer: null
 sources: []
-source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/calmstorm-decks/context-v
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/10-track-record.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-05-08'
-source_path: "astro-knots/sites/calmstorm-decks/context-v/narratives/10-track-record.md"
+collated_at: '2026-07-21'
+source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/10-track-record.md"
 ---
 
 # Slide 10 — HealthTech track record

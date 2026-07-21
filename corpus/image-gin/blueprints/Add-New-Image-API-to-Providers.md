@@ -15,7 +15,7 @@ external_reference:
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/image-gin/context-v
 source_relative_path: blueprints/Add-New-Image-API-to-Providers.md
 source_repo_slug: image-gin
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content-farm/plugin-modules/image-gin/context-v/blueprints/Add-New-Image-API-to-Providers.md"
 ---
 

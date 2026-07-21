@@ -2,7 +2,7 @@
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: issue-resolutions/Troubleshooting-SSG-Authentication-and-Port-to-SSR-w-Database.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "astro-knots/sites/fullstack-vc/context-v/issue-resolutions/Troubleshooting-SSG-Authentication-and-Port-to-SSR-w-Database.md"
 ---
 

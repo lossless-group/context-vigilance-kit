@@ -15,7 +15,7 @@ augmented_with: Claude Code on Claude Opus 4.7 (1M context)
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: reminders/Pseudomonorepo-Settings.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "context-v/reminders/Pseudomonorepo-Settings.md"
 ---
 

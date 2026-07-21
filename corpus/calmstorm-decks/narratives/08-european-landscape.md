@@ -91,11 +91,11 @@ cta_or_footer: 'Note: Below logos indicate the fund''s HQ geography; figures rep
 
   '
 sources: []
-source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/calmstorm-decks/context-v
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/08-european-landscape.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-05-08'
-source_path: "astro-knots/sites/calmstorm-decks/context-v/narratives/08-european-landscape.md"
+collated_at: '2026-07-21'
+source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/08-european-landscape.md"
 ---
 
 # Slide 8 — European HealthTech VC Landscape

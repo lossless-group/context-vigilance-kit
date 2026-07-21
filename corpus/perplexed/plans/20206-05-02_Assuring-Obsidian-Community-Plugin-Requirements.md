@@ -10,7 +10,7 @@ related_reference: ../../cite-wide/context-v/reminders/Obsidian-Type-Safety.md
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: plans/20206-05-02_Assuring-Obsidian-Community-Plugin-Requirements.md
 source_repo_slug: perplexed
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content-farm/plugin-modules/perplexed/context-v/plans/20206-05-02_Assuring-Obsidian-Community-Plugin-Requirements.md"
 ---
 

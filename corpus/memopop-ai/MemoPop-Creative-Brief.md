@@ -27,7 +27,7 @@ square_image: https://ik.imagekit.io/xvpgfijuw/Image-Gin/2026-05/MemoPop_AI_squa
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: MemoPop-Creative-Brief.md
 source_repo_slug: memopop-ai
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/memopop-ai/context-v/MemoPop-Creative-Brief.md"
 ---
 

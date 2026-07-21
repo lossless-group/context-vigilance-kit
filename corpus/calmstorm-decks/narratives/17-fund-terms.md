@@ -32,11 +32,11 @@ key_stat: €50M
 key_stat_label: target fund size
 cta_or_footer: null
 sources: []
-source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/calmstorm-decks/context-v
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/17-fund-terms.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-05-08'
-source_path: "astro-knots/sites/calmstorm-decks/context-v/narratives/17-fund-terms.md"
+collated_at: '2026-07-21'
+source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/17-fund-terms.md"
 ---
 
 # Slide 17 — Our Proposed Terms (Fund III Factsheet)

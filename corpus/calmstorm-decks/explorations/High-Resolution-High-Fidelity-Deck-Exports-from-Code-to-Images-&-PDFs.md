@@ -16,11 +16,11 @@ tags:
 - Puppeteer
 - Static-Site-Constraints
 - Known-Limitations
-source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/calmstorm-decks/context-v
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: explorations/High-Resolution-High-Fidelity-Deck-Exports-from-Code-to-Images-&-PDFs.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-05-08'
-source_path: "astro-knots/sites/calmstorm-decks/context-v/explorations/High-Resolution-High-Fidelity-Deck-Exports-from-Code-to-Images-&-PDFs.md"
+collated_at: '2026-07-21'
+source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/explorations/High-Resolution-High-Fidelity-Deck-Exports-from-Code-to-Images-&-PDFs.md"
 ---
 
 ## The ask, in one line

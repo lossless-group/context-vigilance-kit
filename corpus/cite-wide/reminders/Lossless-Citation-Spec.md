@@ -12,7 +12,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/cite-wide/context-v
 source_relative_path: reminders/Lossless-Citation-Spec.md
 source_repo_slug: cite-wide
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content-farm/plugin-modules/cite-wide/context-v/reminders/Lossless-Citation-Spec.md"
 ---
 

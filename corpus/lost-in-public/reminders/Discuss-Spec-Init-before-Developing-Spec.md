@@ -25,7 +25,7 @@ banner_image: null
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: reminders/Discuss-Spec-Init-before-Developing-Spec.md
 source_repo_slug: lost-in-public
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/lost-in-public/reminders/Discuss-Spec-Init-before-Developing-Spec.md"
 ---
 

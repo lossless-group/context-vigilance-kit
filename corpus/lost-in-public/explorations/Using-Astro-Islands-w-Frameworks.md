@@ -27,7 +27,7 @@ site_uuid: d7c6ee45-f4f7-48e1-a3f0-f870f7ec0bef
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: explorations/Using-Astro-Islands-w-Frameworks.md
 source_repo_slug: lost-in-public
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/lost-in-public/explorations/Using-Astro-Islands-w-Frameworks.md"
 ---
 

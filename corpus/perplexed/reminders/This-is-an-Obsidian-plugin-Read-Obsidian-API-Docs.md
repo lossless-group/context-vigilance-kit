@@ -13,7 +13,7 @@ augmented_with: Claude Code on Claude Opus 4.7 (1M context)
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: reminders/This-is-an-Obsidian-plugin-Read-Obsidian-API-Docs.md
 source_repo_slug: perplexed
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content-farm/plugin-modules/perplexed/context-v/reminders/This-is-an-Obsidian-plugin-Read-Obsidian-API-Docs.md"
 ---
 

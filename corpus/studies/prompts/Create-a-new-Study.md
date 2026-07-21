@@ -5,7 +5,7 @@ audience: future Claude sessions taking over this work
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/context-v
 source_relative_path: prompts/Create-a-new-Study.md
 source_repo_slug: studies
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/studies/context-v/prompts/Create-a-new-Study.md"
 ---
 

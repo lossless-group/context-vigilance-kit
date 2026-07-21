@@ -25,12 +25,12 @@ site_uuid: 8b6dc7b4-da54-4cfb-b9e2-36bd5ad0ac87
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Build-Out-WhatsApp-Plugins-Ecosystem.md
 source_repo_slug: specs
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/specs/Build-Out-WhatsApp-Plugins-Ecosystem.md"
 ---
 
 [[organizations/WhatsApp]]
-[[concepts/Channel Fragmentation|Channel Fragmentation]]
+[[concepts/Marketing Channel Fragmentation|Marketing Channel Fragmentation]]
 [[concepts/Omnichannel Marketing|Omnichannel Marketing]]
 
 

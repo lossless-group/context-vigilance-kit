@@ -2,7 +2,7 @@
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/image-gin/context-v
 source_relative_path: Chore-to-Update-All-Dependencies.md
 source_repo_slug: image-gin
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content-farm/plugin-modules/image-gin/context-v/Chore-to-Update-All-Dependencies.md"
 ---
 

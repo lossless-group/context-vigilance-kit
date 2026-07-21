@@ -11,7 +11,7 @@ sibling_plan: ../../../perplexed/context-v/plans/20206-05-02_Assuring-Obsidian-C
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/image-gin/context-v
 source_relative_path: plans/2026-05-03_Assuring-Obsidian-Community-Plugin-Requirements.md
 source_repo_slug: image-gin
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content-farm/plugin-modules/image-gin/context-v/plans/2026-05-03_Assuring-Obsidian-Community-Plugin-Requirements.md"
 ---
 

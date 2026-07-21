@@ -10,11 +10,11 @@ tags:
 - Threat-Modeling
 - Cover-Page
 - Astro-Middleware
-source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/calmstorm-decks/context-v
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: explorations/Gate-Sensitive-Information-with-Simple-Code.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-05-08'
-source_path: "astro-knots/sites/calmstorm-decks/context-v/explorations/Gate-Sensitive-Information-with-Simple-Code.md"
+collated_at: '2026-07-21'
+source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/explorations/Gate-Sensitive-Information-with-Simple-Code.md"
 ---
 
 ## The ask, in one line

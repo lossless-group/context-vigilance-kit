@@ -66,11 +66,11 @@ key_stat: '30'
 key_stat_label: category-defining startups in Fund III
 cta_or_footer: null
 sources: []
-source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/calmstorm-decks/context-v
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/16-portfolio-construction-product-offering.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-05-08'
-source_path: "astro-knots/sites/calmstorm-decks/context-v/narratives/16-portfolio-construction-product-offering.md"
+collated_at: '2026-07-21'
+source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/16-portfolio-construction-product-offering.md"
 ---
 
 # Slide 16 — Our Offering (Portfolio Construction)

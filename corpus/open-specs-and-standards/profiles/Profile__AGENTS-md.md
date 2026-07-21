@@ -13,7 +13,7 @@ date_created: 2026-05-05
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/open-specs-and-standards/context-v
 source_relative_path: profiles/Profile__AGENTS-md.md
 source_repo_slug: open-specs-and-standards
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/studies/open-specs-and-standards/context-v/profiles/Profile__AGENTS-md.md"
 ---
 

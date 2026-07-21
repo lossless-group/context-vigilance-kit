@@ -7,7 +7,7 @@ remote-candidate: lossless-group/study-content-authoring-tools
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/context-v
 source_relative_path: Create-Study-of-Content-Authoring-Tools.md
 source_repo_slug: studies
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "ai-labs/studies/context-v/Create-Study-of-Content-Authoring-Tools.md"
 ---
 

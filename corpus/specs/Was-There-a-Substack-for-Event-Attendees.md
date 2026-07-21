@@ -23,7 +23,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Was-There-a-Substack-for-Event-Attendees.md
 source_repo_slug: specs
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/specs/Was-There-a-Substack-for-Event-Attendees.md"
 ---
 
@@ -95,7 +95,7 @@ Sources
 [[Tooling/Enterprise Jobs-to-be-Done/Coda|Coda]]
 [[Tooling/Productivity/Advanced Documents/Obsidian|Obsidian]]
 [[Tooling/Productivity/Affinity Publisher]]
-[[Tooling/AI-Toolkit/Generative AI/Code Generators/Windsurf IDE|Windsurf IDE]]
+[[Tooling/AI-Toolkit/Generative AI/Code Generators/Devin IDE|Devin IDE]]
 [[Tooling/Enterprise Jobs-to-be-Done/Content Management Systems/Hygraph|Hygraph]]
 [[Tooling/Software Development/Lego-Kit Engineering Tools/UI Builders/WebStudio|WebStudio]]
 [[Tooling/Enterprise Jobs-to-be-Done/GrapesJS|GrapesJS]]

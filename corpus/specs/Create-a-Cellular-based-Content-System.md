@@ -23,7 +23,7 @@ portrait_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/specs/2025-05-
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Create-a-Cellular-based-Content-System.md
 source_repo_slug: specs
-collated_at: '2026-05-08'
+collated_at: '2026-07-21'
 source_path: "content/specs/Create-a-Cellular-based-Content-System.md"
 ---
 
