@@ -28,11 +28,12 @@ const teaser = [...published]
 // ─── Act 2: matrix examples — pick one canonical example per kind ────────
 // Walk the corpus once and keep the first hit per canonical kind. The Act 2
 // diagram surfaces these as the "click a folder, see a real example" affordance.
-const canonicalKinds = ['specs', 'prompts', 'blueprints', 'reminders', 'explorations', 'issues'] as const;
+const canonicalKinds = ['specs', 'plans', 'prompts', 'blueprints', 'reminders', 'agent-skills', 'explorations', 'issues'] as const;
 type CanonicalKind = (typeof canonicalKinds)[number];
 
 const matrixExamples: Record<CanonicalKind, { id: string; title: string; lede?: string; repo: string } | null> = {
-  specs: null, prompts: null, blueprints: null, reminders: null, explorations: null, issues: null,
+  specs: null, plans: null, prompts: null, blueprints: null, reminders: null,
+  'agent-skills': null, explorations: null, issues: null,
 };
 for (const entry of published) {
   const data = entry.data as any;
@@ -63,13 +64,25 @@ const tailKinds = Array.from(tailCounts.entries())
 const base = import.meta.env.BASE_URL;
 
 const KIND_BLURB: Record<CanonicalKind, string> = {
-  specs:        'What we plan to build, written so it can be regenerated.',
-  prompts:      'Reusable prompts the team has tuned over months.',
-  blueprints:   'Patterns proven enough to lift into the next project.',
-  reminders:    'Things we keep forgetting until we wrote them down.',
-  explorations: 'The painful debugging paths and what they taught us.',
-  issues:       'Failure modes worth naming so they don\'t recur.',
+  specs:          'What we plan to build, written so it can be regenerated.',
+  plans:          'Sequenced, scoped work plans — between a spec and a prompt.',
+  prompts:        'Reusable prompts the team has tuned over months.',
+  blueprints:     'Patterns proven enough to lift into the next project.',
+  reminders:      'Things we keep forgetting until we wrote them down.',
+  'agent-skills': 'Executable know-how agents load and follow, not just read.',
+  explorations:   'Research where the destination isn\'t clear yet.',
+  issues:         'The painful debugging paths and what they taught us.',
 };
+
+// The skill's experimental tier — proposed folders whose shape is
+// deliberately not yet enforced across repos. Keep in sync with the
+// context-vigilance skill (lossless-agent-skills repo).
+const EXPERIMENTAL_TIER: { slug: string; blurb: string }[] = [
+  { slug: 'loops',    blurb: 'Recurring operational loops — scope, cadence, per-iteration procedure, exit conditions.' },
+  { slug: 'handoffs', blurb: 'End-of-session state capture so the next session — human or agent — resumes without re-derivation.' },
+  { slug: 'decisions', blurb: 'Isolated artifacts of decisions made — what, when, why, and the alternatives passed over. Kin to ADRs.' },
+  { slug: 'contracts', blurb: 'Not suggestions: constitution rules agents must always follow, or ironclad API-level data-flow contracts.' },
+];
 
 const MODE_LABEL: Record<'prep' | 'reflection' | 'journey', string> = {
   prep: 'Prep',
@@ -167,7 +180,7 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
       <div class="container">
         <header class="section__head">
           <p class="folio" data-num="§ 02">The Practice</p>
-          <h2 class="section__title">Six folders. Three cognitive modes.</h2>
+          <h2 class="section__title">Eight folders. Three cognitive modes.</h2>
           <p class="section__lede">
             Every file is written for three readers: the human editing it, the agent loading it
             as context tomorrow, and the public reader who lands on it cold.
@@ -214,13 +227,33 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
           </ul>
         </div>
 
+        <div class="tail">
+          <p class="tail__lede">
+            <span class="eyebrow">Experimental tier</span>
+          </p>
+          <p class="tail__copy">
+            Four proposed folders the practice is actively trialing. Their shape is deliberately
+            not yet enforced — divergence between repos is expected and surfaced, not normalized.
+            This is the on-ramp every canonical folder took: <span class="mono">plans/</span> and
+            <span class="mono">agent-skills/</span> both started here.
+          </p>
+          <ul class="tail__list tail__list--stacked">
+            {EXPERIMENTAL_TIER.map((f) => (
+              <li class="tail__item">
+                <span class="tail__slug mono">{f.slug}/</span>
+                <span class="tail__blurb">{f.blurb}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {tailKinds.length > 0 && (
           <div class="tail">
             <p class="tail__lede">
               <span class="eyebrow">In practice, also</span>
             </p>
             <p class="tail__copy">
-              Real-world context-v has a long tail beyond the canonical six. Counted across the
+              Real-world context-v has a long tail beyond the canonical eight. Counted across the
               corpus, the most common extra surfaces:
             </p>
             <ul class="tail__list">
@@ -232,8 +265,9 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
               ))}
             </ul>
             <p class="tail__copy tail__copy--dim">
-              In isolation each makes sense; we just haven't fit them all into the matrix yet.
-              The discipline tolerates the long tail — that's part of the proof.
+              In isolation each makes sense; some are domain-specific and correct where they are.
+              The discipline tolerates the long tail — that's part of the proof — and promotes
+              what earns it: assimilation, not enforcement.
             </p>
           </div>
         )}
@@ -694,6 +728,23 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
     color: var(--color-text-dim);
     font-size: 0.74rem;
   }
+  .tail__list--stacked {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .tail__list--stacked .tail__item {
+    display: flex;
+    align-items: baseline;
+    padding: 8px 12px;
+  }
+  .tail__list--stacked .tail__slug { flex: 0 0 7.5rem; }
+  .tail__blurb {
+    color: var(--color-text-soft);
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+  /* The tail blocks stack — space the experimental tier above the long tail. */
+  .tail + .tail { margin-top: var(--space-4); }
 
   /* ─── Proof teaser (Act 3) ───────────────────────────────────────── */
   .teaser {

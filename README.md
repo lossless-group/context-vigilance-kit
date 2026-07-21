@@ -29,6 +29,16 @@ The *without YAML frontmatter* row in the corpus table is **orthogonal** to the 
 
 > *(Earlier baselines for reference — May 2026 post-curation: 583 total / 110 worked-on / 263 idea-started / 210 stub / 59 no-frontmatter. Original pre-curation pass: 787 total / 138 worked-on / 353 idea-started / 296 stub / 100 no-frontmatter. See git history of `sources.md` for the curation diffs.)*
 
+## The folder taxonomy (as of 2026-07-21)
+
+The [[context-vigilance]] skill is the source of truth; summary here for orientation:
+
+- **Canonical, eight folders, three cognitive modes** — Prep: `specs/` → `plans/` → `prompts/` (descending altitude); Reflective: `blueprints/`, `reminders/`, `agent-skills/` (executable know-how in the Anthropic SKILL.md shape); Journey: `explorations/`, `issues/`.
+- **Universal utilities** — `extra/` (scratch / out-of-band; gitignored by default, always excluded from the corpus) and `sitemap/` (maps of a project's own pages/routes/slides/surfaces).
+- **Experimental tier** (proposed; shape deliberately not yet enforced) — `loops/` (recurring operational loop definitions), `handoffs/` (end-of-session state capture for the next session or collaborator), `decisions/` (isolated decision artifacts, kin to ADRs), `contracts/` (constitution rules agents must always follow, or ironclad API-level data-flow contracts).
+
+`plans/` and `agent-skills/` were promoted from the long tail to canon on 2026-07-21 after tree-wide adoption (14 and 5 repos respectively) — the assimilation path the experimental tier now formalizes.
+
 ## What's in here (v0)
 
 ```

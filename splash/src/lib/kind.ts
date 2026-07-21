@@ -1,22 +1,32 @@
 /**
  * Derive a "kind" label from a corpus entry's path. The corpus aggregates
- * context-v files written under varying conventions across 28 repos — some
- * follow the canonical six folders (specs/prompts/blueprints/reminders/
- * explorations/issues), others have authored under habits/, workflow/,
- * plans/, journals/, brainstorms/, etc.
+ * context-v files written under varying conventions across 40 repos — some
+ * follow the canonical eight folders (specs/plans/prompts/blueprints/
+ * reminders/agent-skills/explorations/issues, per the context-vigilance
+ * skill as of 2026-07), others carry the experimental tier (loops/,
+ * handoffs/, decisions/, contracts/) or have authored under habits/,
+ * workflow/, journals/, brainstorms/, etc.
  *
  * The brief asks the splash to be honest about that long tail rather than
- * forcing every entry into the codified six. So we recognize a wider set
+ * forcing every entry into the codified set. So we recognize a wider set
  * and bucket "everything else" into "other".
  */
 
 const CANONICAL = new Set([
-  'specs', 'prompts', 'blueprints', 'reminders', 'explorations', 'issues',
+  'specs', 'plans', 'prompts', 'blueprints', 'reminders', 'agent-skills',
+  'explorations', 'issues',
+]);
+
+/** Proposed folders in the experimental tier — named by the skill but with
+ *  shapes deliberately not yet enforced across repos. */
+const EXPERIMENTAL = new Set([
+  'loops', 'handoffs', 'decisions', 'contracts',
 ]);
 
 const LONG_TAIL = new Set([
-  'habits', 'workflow', 'workflows', 'plans', 'journals', 'brainstorms',
+  'habits', 'workflow', 'workflows', 'journals', 'brainstorms',
   'reflections', 'experiments', 'patterns', 'guides', 'changelog',
+  'sitemap', 'narratives', 'profiles', 'inquiry', 'models', 'strategy',
 ]);
 
 export interface KindLabel {
@@ -24,8 +34,10 @@ export interface KindLabel {
   slug: string;
   /** Display label (capitalized). */
   label: string;
-  /** True when the slug is one of the codified six. */
+  /** True when the slug is one of the codified eight. */
   canonical: boolean;
+  /** True when the slug is in the skill's experimental tier. */
+  experimental?: boolean;
 }
 
 export function deriveKind(
@@ -37,6 +49,9 @@ export function deriveKind(
   for (const seg of segments) {
     if (CANONICAL.has(seg)) {
       return { slug: seg, label: cap(singularize(seg)), canonical: true };
+    }
+    if (EXPERIMENTAL.has(seg)) {
+      return { slug: seg, label: cap(singularize(seg)), canonical: false, experimental: true };
     }
     if (LONG_TAIL.has(seg)) {
       return { slug: seg, label: cap(singularize(seg)), canonical: false };
@@ -60,17 +75,22 @@ function cap(s: string): string {
  *  most often expresses. Keep in sync with the narrative brief. */
 export const COGNITIVE_MODE: Record<string, 'prep' | 'reflection' | 'journey'> = {
   specs: 'prep',
+  plans: 'prep',
   prompts: 'prep',
   blueprints: 'reflection',
   reminders: 'reflection',
+  'agent-skills': 'reflection',
   patterns: 'reflection',
   habits: 'reflection',
   reflections: 'reflection',
+  contracts: 'reflection',
+  decisions: 'prep',
+  loops: 'reflection',
+  handoffs: 'journey',
   explorations: 'journey',
   issues: 'journey',
   journals: 'journey',
   workflow: 'journey',
   brainstorms: 'journey',
   experiments: 'journey',
-  plans: 'prep',
 };

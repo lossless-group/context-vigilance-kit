@@ -10,13 +10,13 @@ export const STATIC_SEO = {
     title: 'Context Vigilance',
     description:
       'Treat context with the same vigilance as code — versioned, reviewed, cross-linked. ' +
-      'A live catalog of 583 context-v files across 28 projects, plus the open spec, schema, and kit.',
+      'A live catalog of 1,000+ context-v files across 40 projects, plus the open spec, schema, and kit.',
   },
   corpus: {
     title: 'Corpus — Context Vigilance',
     description:
-      'Browse 583 context-v files from 28 Lossless Group projects: specs, prompts, blueprints, ' +
-      'reminders, explorations, issues. The proof that the practice is real.',
+      'Browse 1,000+ context-v files from 40 Lossless Group projects: specs, plans, prompts, ' +
+      'blueprints, reminders, agent-skills, explorations, issues. The proof that the practice is real.',
   },
   search: {
     title: 'Search — Context Vigilance',
