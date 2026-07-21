@@ -6,28 +6,28 @@
 
 Tooling for the **Context Vigilance** practice — collating, indexing, and eventually publishing the `context-v/` directories scattered across [The Lossless Group](https://github.com/lossless-group) tree (and beyond) as a single, queryable corpus. Brand site: [contextvigilance.com](https://contextvigilance.com) (forthcoming). Scope, rationale, and decision history live in the parent exploration: [[Collate-Context-Files-into-Context-Vigilance-as-Repo-&-Project]] (under `ai-labs/context-v/explorations/`).
 
-## Corpus state — May 2026
+## Corpus state — July 2026
 
-After first-pass curation (excluding `context-v/skills/`, `context-v/changelogs/`, and Astro page routes / rollup outputs that turned up as discovery false-positives):
+After the 2026-07-21 refresh (16 new repos opted in — augment-it, corpora-builder, id-didi-sh, the dididecks-ai client-sites family, four new studies, and more — plus reconciliation of three relocated repos):
 
 | metric | count |
 |---|---:|
-| total files | **583** |
-| `worked-on` (≥500 content lines) | 110 |
-| `idea-started` (100–499 content lines) | 263 |
-| `stub` (<100 content lines) | 210 |
-| without YAML frontmatter | 59 |
+| total files | **1,001** |
+| `worked-on` (≥500 content lines) | 107 |
+| `idea-started` (100–499 content lines) | 540 |
+| `stub` (<100 content lines) | 354 |
+| without YAML frontmatter | 112 |
 
-| skills (tracked separately in `skills-manifest.md`) | 12 |
+| skills (tracked separately in `skills-manifest.md`) | 27 |
 |---|---:|
-| with `SKILL.md` | 11 |
-| `complete` (per Anthropic agent-skills spec) | 9 |
+| with `SKILL.md` | 24 |
+| `complete` (per Anthropic agent-skills spec) | 14 |
 
-The *without YAML frontmatter* row in the corpus table is **orthogonal** to the three buckets — a file lands in exactly one bucket (by `content_lines`) and is *separately* tagged as missing frontmatter (`yaml_lines == 0`). The 59 frontmatter-less files are scattered across all three buckets; a doc can be `worked-on` and still be missing its frontmatter.
+The *without YAML frontmatter* row in the corpus table is **orthogonal** to the three buckets — a file lands in exactly one bucket (by `content_lines`) and is *separately* tagged as missing frontmatter (`yaml_lines == 0`). The frontmatter-less files are scattered across all three buckets; a doc can be `worked-on` and still be missing its frontmatter.
 
-**Publishing strategy.** Ship the 110 `worked-on` docs first while building a systematic, agent-assisted process to fill out the 210 stubs and 263 idea-started entries. The corpus manifest is the gate that makes this triage tractable — re-run `python scripts/build-corpus-manifest.py` after every fill-out batch to track progress against this baseline.
+**Publishing strategy.** Ship the 107 `worked-on` docs first while building a systematic, agent-assisted process to fill out the 354 stubs and 540 idea-started entries. The corpus manifest is the gate that makes this triage tractable — re-run `python scripts/build-corpus-manifest.py` after every fill-out batch to track progress against this baseline.
 
-> *(Pre-curation pass for reference: 787 total / 138 worked-on / 353 idea-started / 296 stub / 100 no-frontmatter. The 204-file delta came from the `context-v/skills/` and `context-v/changelogs/` exclusions plus eight false-positive flips. See git history of `sources.md` for the curation diff.)*
+> *(Earlier baselines for reference — May 2026 post-curation: 583 total / 110 worked-on / 263 idea-started / 210 stub / 59 no-frontmatter. Original pre-curation pass: 787 total / 138 worked-on / 353 idea-started / 296 stub / 100 no-frontmatter. See git history of `sources.md` for the curation diffs.)*
 
 ## What's in here (v0)
 
@@ -39,13 +39,17 @@ context-vigilance-kit/
 ├── skills-manifest.md                 ← agent-skills inventory; tracked separately from corpus
 ├── requirements.txt                   ← Python dependencies (install with `uv pip install -r ...`)
 ├── scripts/
-│   ├── assemble-context-v-sources.py  ← walks the tree, populates sources.md
-│   ├── build-corpus-manifest.py       ← reads sources.md, emits per-file inventory with bucket labels
-│   ├── build-skills-manifest.py       ← reads sources.md, inventories context-v/skills/* per source
-│   ├── collate.py                     ← reads sources.md, copies files into corpus/ with provenance
-│   └── smoke-test-chroma.py           ← end-to-end probe of the Chroma integration; throwaway
+│   ├── assemble-context-v-sources.py       ← walks the tree, populates sources.md
+│   ├── build-corpus-manifest.py            ← reads sources.md, emits per-file inventory with bucket labels
+│   ├── build-skills-manifest.py            ← reads sources.md, inventories context-v/skills/* per source
+│   ├── collate.py                          ← reads sources.md, copies files into corpus/ with provenance
+│   ├── ingest-all.sh                       ← master orchestrator: runs every Chroma ingester in sequence
+│   ├── ingest-to-chroma.py                 ← context-v rollup → `context-vigilance-corpus` collection
+│   ├── ingest-changelogs-to-chroma.py      ← every <repo>/changelog/ → `lossless-changelog` collection
+│   ├── ingest-claude-sessions-to-chroma.py ← transcripts → `claude-code-sessions` + `claude-code-tool-traces` (opt-in)
+│   └── smoke-test-chroma.py                ← end-to-end probe of the Chroma integration; throwaway
 ├── context-v/                         ← this kit's own specs/plans/etc. (rolled up by ai-labs splash)
-├── corpus/                            ← collated output (gitignored; outside the splash rollup boundary)
+├── corpus/                            ← collated output with provenance frontmatter (committed; the splash renders it)
 └── splash/                            ← Astro 5 catalog of every context-v file in the corpus
 ```
 
@@ -73,7 +77,19 @@ Ingests a handful of real corpus files, runs sample queries, prints similarity-r
 
 ## Ingest the corpus
 
-After curating `sources.md`, build (or rebuild) the searchable corpus in Chroma:
+After curating `sources.md`, build (or rebuild) the searchable corpus in Chroma. The master orchestrator runs every ingester in sequence:
+
+```bash
+# Default: context-v rollup + changelog rollup (both safe to rerun):
+./scripts/ingest-all.sh
+
+# Opt in the privacy-sensitive Claude Code transcript collections:
+./scripts/ingest-all.sh --with-claude
+
+# See ./scripts/ingest-all.sh --help for --reset, --dry-run, and --only-* flags.
+```
+
+Four collections land in the same `.chroma/` persistent client: `context-vigilance-corpus`, `lossless-changelog`, and (opt-in) `claude-code-sessions` + `claude-code-tool-traces`. Or run the context-v ingester directly:
 
 ```bash
 # Full ingest into the canonical collection (idempotent on stable IDs):
@@ -98,7 +114,7 @@ The collection lives at `.chroma/` (gitignored). Default name:
 
 ## Splash page — public catalog
 
-`splash/` is a small Astro 5 site that renders `corpus/` as a public catalog: every collated context-v file gets its own page, all files are grouped by source repo on the index, and the whole thing builds to static HTML in seconds. v0 is local-only; deploy to GitHub Pages once the kit's repo is wired.
+`splash/` is a small Astro 5 site that renders `corpus/` as a public catalog: every collated context-v file gets its own page, all files are grouped by source repo on the index, and the whole thing builds to static HTML in seconds. **Live at <https://lossless-group.github.io/context-vigilance-kit/>** — deployed by `.github/workflows/pages.yml` on push to `master`, `main`, or `development`.
 
 ```bash
 cd splash
@@ -108,9 +124,7 @@ pnpm build                        # writes static site to splash/dist/
 pnpm preview                      # serves dist/ locally
 ```
 
-Build output today: **573 pages from 583 corpus files** (small handful skipped due to schema or duplicate-id edge cases). Index page groups entries by `source_repo_slug`; detail pages render the full markdown with frontmatter as a metadata block.
-
-Visual posture is intentionally minimal for v0 — single dark-theme stylesheet inline in `BaseLayout.astro`, no Pagefind, no custom components beyond the layout. Per the [[maintain-splash-pages]] skill's "creative posture" prompt, this splash is a candidate for divergent layout/typographic *moves* in v0.1.
+Build output today: **904 pages from 1,001 corpus files** (small handful skipped due to schema or duplicate-id edge cases). Index page groups entries by `source_repo_slug`; detail pages render the full markdown with frontmatter as a metadata block. The site ships Pagefind full-text search, a sitemap + robots.txt, `/llms.txt` + `/llms-full.txt` endpoints for LLM ingest, and an OG share card — see `changelog/` for how each landed.
 
 ## Claude Code MCP integration
 
@@ -184,7 +198,7 @@ Each entry in the `sources:` list has:
 
 - `path` — absolute filesystem path to a `context-v/` directory or a legacy root
 - `kind` — one of:
-  - `context-v` — canonical six-folder structure
+  - `context-v` — canonical context-v structure (eight folders plus utility/experimental tiers, per the [[context-vigilance]] skill)
   - `legacy` — pre-context-v notes; pair with `subdirs:` whitelist to scope what's collated
   - `study-context-v` — lives inside a `studies/<name>/` collection
   - `open-call` — published proposals in the Hyperloop-paper spirit ("we thought of this, someone please build it"); flat directories, whole tree collated
@@ -217,31 +231,9 @@ The collator does not modify originals. It writes copies into `corpus/` with the
 - `source_repo_slug` — short identifier derived from the source path (last meaningful component)
 - `collated_at` — ISO date the copy was written
 
-## Promotion to its own repo
+## Repo status
 
-This kit is currently a plain directory inside `ai-labs/`. The next step is promoting it to its own repository under `lossless-group/`, then re-attaching as a git submodule. The standard recipe:
-
-```bash
-# from ai-labs/context-vigilance-kit/
-git init
-git add .
-git commit -m "init(context-vigilance-kit): scaffold + v0 collator"
-
-# create the empty repo on GitHub and push (gh auth required)
-gh repo create lossless-group/context-vigilance-kit --public --source=. --remote=origin --push
-
-# back up one level, remove the directory, re-add as submodule
-cd ..
-rm -rf context-vigilance-kit
-git submodule add git@github.com:lossless-group/context-vigilance-kit.git context-vigilance-kit
-git submodule update --init --recursive
-
-# stage the .gitmodules + submodule pointer change in ai-labs and commit
-git add .gitmodules context-vigilance-kit
-git commit -m "init(submodule): add context-vigilance-kit as submodule"
-```
-
-After promotion, future work happens inside the submodule; ai-labs only tracks the gitlink.
+The kit lives at **<https://github.com/lossless-group/context-vigilance-kit>** (public) and is mounted in `ai-labs/` as a git submodule — the promotion this section once described as "next step" is done. Work happens inside the submodule; ai-labs tracks the gitlink. Branch tiers follow the tree-wide model: `development` → `main` → `master`.
 
 ## Related
 
