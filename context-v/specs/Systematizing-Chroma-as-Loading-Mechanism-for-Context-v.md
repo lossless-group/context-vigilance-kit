@@ -22,6 +22,7 @@ authors:
   - Michael Staton
 date_created: 2026-06-01
 date_modified: 2026-06-01
+publish: true
 ---
 
 # Systematizing Chroma as the Loading Mechanism for context-v

@@ -2,11 +2,11 @@
 title: "MVP: context-v as a Claude Code Plugin"
 lede: "The fastest path to a true kit is not the Chroma memory system the June specs planned — it's a plugin: the context-vigilance skill we already wrote, a scaffolder, and doc templates, packaged so `/plugin install` is the whole onboarding. Chroma becomes an upgrade an adopter grows into, invoked as `/cv:init chroma` only when their tree earns it."
 date_authored_initial_draft: 2026-07-21
-date_authored_current_draft: 2026-07-21
+date_authored_current_draft: 2026-08-02
 date_authored_final_draft:
 date_first_published:
-date_last_updated: 2026-07-21
-at_semantic_version: 0.0.0.4
+date_last_updated: 2026-08-02
+at_semantic_version: 0.0.0.5
 status: Draft
 augmented_with: Claude Code (Fable 5)
 category: Specification
@@ -21,7 +21,8 @@ tags:
 authors:
   - Michael Staton
 date_created: 2026-07-21
-date_modified: 2026-07-21
+date_modified: 2026-08-02
+publish: true
 ---
 
 # MVP: context-v as a Claude Code Plugin
@@ -218,6 +219,11 @@ Each step reviewable before the next lands:
 - [[context-vigilance]] — the practice skill; the plugin's payload.
 - [[pseudomonorepos]] — the tree-shape skill; bundled so the agent carries the concept adopters won't know.
 - **OpenSpec** and **Spec-Kit** — the prior-art plugin shapes: skills + commands + templates, installed in one step; the model this MVP follows.
+- **[spec-workflow-mcp](https://github.com/Pimzino/spec-workflow-mcp)** (`Pimzino/spec-workflow-mcp`, GPL-3.0, 4.3k★) — the same spec-driven-development prior art as OpenSpec/Spec-Kit, but delivered as an **MCP server** (+ web dashboard on :5000, + VSCode extension) rather than a plugin, and worth reading against this spec on three specific seams:
+  - **The arc-as-explicit-artifacts.** It hard-codes a Requirements → Design → Tasks sequence with **approval gates** and **task progress tracking** — a near-exact analog to our `/cv:prep` (explore → spec → plan) sign-off gate and `/cv:implement` execution loop. Concrete prior art for what the prep sign-off and the implement loop look like when made first-class, and for the on-disk shape (it lands artifacts in a `.spec-workflow/` dir: `specs/`, `design/`, `tasks/`, `approvals/`) — directly comparable to our `context-v/` taxonomy.
+  - **The dashboard we don't have yet.** Its real-time spec/task dashboard is exactly the surface our kit lacks — today we only emit markdown manifests (`corpus-manifest.md`, `skills-manifest.md`). A plausible tier-2 / splash-adjacent idea, and a working reference for it.
+  - **Plugin-vs-MCP build shape.** It's the counterfactual to this spec's core bet: it chose an MCP server (a running process, a port, a dashboard) where we chose a zero-infrastructure plugin. Reading *why* it went MCP-first sharpens our own "plugin now, `/cv:init chroma` MCP seam later" tiering.
+  - **Caveat: GPL-3.0.** Unlike the permissive OpenSpec/Spec-Kit we model on, this is copyleft — fine to *study*, but a real constraint if any code (not just ideas) were ever vendored. Read for patterns, not for lifting.
 
 ## Outcome
 

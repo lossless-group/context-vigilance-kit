@@ -21,6 +21,7 @@ authors:
   - Michael Staton
 date_created: 2026-06-01
 date_modified: 2026-06-01
+publish: true
 ---
 
 # Commands and Agent Skills for context-v

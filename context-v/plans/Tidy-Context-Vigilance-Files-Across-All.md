@@ -17,6 +17,7 @@ tags:
   - Splash-Page
   - ChromaDB
 status: Draft
+publish: true
 ---
 
 # Tidy Context Vigilance Files Across All

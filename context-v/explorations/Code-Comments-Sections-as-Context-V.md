@@ -17,6 +17,7 @@ tags:
   - AST-Extraction
   - Build-Time-Tooling
   - Drift
+publish: true
 ---
 
 # Code-Comment Sections as Context-V Source
