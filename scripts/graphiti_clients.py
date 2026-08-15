@@ -43,11 +43,13 @@ DEFAULT_NEO4J_URI = "bolt://localhost:7687"
 DEFAULT_NEO4J_USER = "neo4j"
 DEFAULT_NEO4J_PASSWORD = "losslessgraph"
 
-# claude-haiku-4-5-latest is graphiti-core's own DEFAULT_MODEL for the
-# Anthropic client (llm_client/anthropic_client.py:68). Extraction is a
-# high-volume, structured-output job — this is the right tier for it.
-DEFAULT_ANTHROPIC_MODEL = "claude-haiku-4-5-latest"
-DEFAULT_ANTHROPIC_SMALL_MODEL = "claude-haiku-4-5-latest"
+# Extraction is a high-volume structured-output job, so Haiku is the right tier.
+#
+# NOTE: graphiti-core's own DEFAULT_MODEL is `claude-haiku-4-5-latest`
+# (llm_client/anthropic_client.py:68) and that alias does NOT resolve — the API
+# returns 404 not_found_error on every call. Pin the dated model ID instead.
+DEFAULT_ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
+DEFAULT_ANTHROPIC_SMALL_MODEL = "claude-haiku-4-5-20251001"
 
 # all-minilm is the same 384-dim MiniLM family the Chroma collections
 # already use, which keeps the two indexes comparable.
