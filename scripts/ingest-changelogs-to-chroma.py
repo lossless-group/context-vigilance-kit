@@ -73,8 +73,20 @@ SKIP_PATH_SUBSTRINGS = (
 
 # Frontmatter keys lifted into Chroma metadata. Chroma only stores
 # str/int/float/bool primitives; lists join to comma-separated strings.
+# `date_authored_initial_draft` / `date_authored_current_draft` are the
+# tree-wide editorial dates — when the content was first *set* and when it last
+# received a substantive revision. They are what timeline questions should read,
+# not `date_created` / `date_modified`, which are filesystem facts and get bumped
+# by merely opening a file in Obsidian.
+#
+# `date` is retained only for back-compat: entries authored before the
+# convention landed used a bare `date:` key, which is being renamed to
+# `date_authored_initial_draft` as those files are touched. Drop `date` once
+# the tree-wide sweep is finished.
 METADATA_FRONTMATTER_KEYS = (
-    "title", "lede", "publish", "semantic_version",
+    "title", "lede", "publish", "semantic_version", "at_semantic_version",
+    "date_authored_initial_draft", "date_authored_current_draft",
+    "date_last_updated",
     "date", "date_created", "date_modified",
     "authors", "tags",
 )

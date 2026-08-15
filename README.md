@@ -122,6 +122,56 @@ cleanly. Files with `private: true` in their frontmatter are skipped.
 The collection lives at `.chroma/` (gitignored). Default name:
 `context-vigilance-corpus`.
 
+## Graphiti — the temporal knowledge graph (experimental)
+
+Chroma answers *"what did we write that sounds like this."* It has no mechanism
+for *"what changed about this, and when"* — there is no **between** in a vector
+index. [Graphiti](https://github.com/getzep/graphiti) stores typed entities and
+bi-temporally versioned edges, where every fact carries `valid_at` / `invalid_at`
+(when it was true in the world) separately from `created_at` / `expired_at`
+(when the graph learned and retired it).
+
+This is **additive, not a migration.** Chroma stays and still covers all ~28,000
+chunks. The graph currently covers one slice — the **479 changelog entries**
+across the tree — because dated ship records are the data shape the bi-temporal
+model was designed for, and because Graphiti runs an LLM extraction call per
+episode rather than a cheap local embedding per chunk.
+
+```bash
+# 1. Dependencies (separate from requirements.txt — only needed for the graph).
+uv pip install -r requirements-graphiti.txt
+
+# 2. Local embeddings via Ollama — 384-dim, no API key, same MiniLM family Chroma uses.
+ollama pull all-minilm && ollama serve
+
+# 3. Neo4j.
+docker compose -f docker-compose.graphiti.yml up -d    # browser at :7474
+
+# 4. Anthropic key for extraction. graphiti-core needs a RAW key — it cannot
+#    borrow Claude Code's session auth.
+cp .env.example .env && $EDITOR .env
+
+# 5. Ingest. Always dry-run first; --limit gives you a cheap smoke run.
+python scripts/ingest-changelogs-to-graphiti.py --dry-run
+python scripts/ingest-changelogs-to-graphiti.py --limit 10
+python scripts/ingest-changelogs-to-graphiti.py
+
+# 6. Query it.
+python scripts/query-graphiti.py --stats
+python scripts/query-graphiti.py "when did we ship the Chroma corpus"
+python scripts/query-graphiti.py --mode around --center "augment-it" "decile"
+```
+
+Ingest is **resumable and idempotent** — `.graphiti-state/changelog-ingest.json`
+maps each source path to a content hash and is written after every successful
+episode, so a Ctrl-C or a failure costs you one entry, not the whole run.
+Discovery is imported from `ingest-changelogs-to-chroma.py` rather than
+reimplemented, so both indexes always cover exactly the same files.
+
+Rationale, upstream gotchas (there is no sentence-transformers embedder in
+graphiti-core despite the MCP server README advertising one), the entity
+ontology, and the open questions: **`context-v/explorations/Graphiti-Over-The-Lossless-Corpus.md`**.
+
 ## Splash page — public catalog
 
 `splash/` is a small Astro 5 site that renders `corpus/` as a public catalog: every collated context-v file gets its own page, all files are grouped by source repo on the index, and the whole thing builds to static HTML in seconds. **Live at <https://lossless-group.github.io/context-vigilance-kit/>** — deployed by `.github/workflows/pages.yml` on push to `master`, `main`, or `development`.
