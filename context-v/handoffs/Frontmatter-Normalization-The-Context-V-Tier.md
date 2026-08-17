@@ -14,7 +14,7 @@ authors:
   - Michael Staton
 augmented_with:
   - Claude Code on Claude Opus 5 (1M context)
-at_semantic_version: 0.0.1.0
+at_semantic_version: 0.0.2.0
 status: In-Progress
 tags:
   - Frontmatter
@@ -37,9 +37,9 @@ graph. A document with no `lede` returns a bare title in a search hit. A
 document with no `site_uuid` mints a fresh node on every re-ingest, so its
 history through the graph is unrecoverable.
 
-The changelog tier is where this started. It is now done to the extent it can
-be — see [[Frontmatter-Normalization-Remaining-Repos]]. **This tier is larger
-and different in kind.**
+The changelog tier is where this started and it is **complete** — all 436
+entries, see [[Frontmatter-Normalization-Remaining-Repos]]. **This tier is
+larger and different in kind.**
 
 ## How this differs from the changelog tier — read before starting
 
@@ -116,6 +116,58 @@ Largest blocks:
 Note `memopop-orchestrator` (77) and `dididecks-ai` (69) are already swept —
 they appear here only for their missing ledes, which the earlier sweep
 correctly declined to fabricate.
+
+## What the changelog tier learned that applies here
+
+Four things, in descending order of how much they will cost if ignored.
+
+### 1. The publish flag is not an aggregation control — and this tier is where that bites hardest
+
+The changelog sweep ended with a client's confidential fundraise position on a
+live public URL. Cause: a private client repo had marked its entries
+`publish: true`, meaning "publish on the client's own gated site," and a public
+roll-up script read that flag as consent.
+
+Both roll-up scripts now gate on repository visibility and on whether the source
+is client work, default-deny and failing closed. **But context-v is the richer
+target.** Changelog entries describe what shipped; `context-v/` holds the specs,
+plans, and explorations — the reasoning, the alternatives rejected, the client
+detail that motivated a decision. If an aggregation boundary is going to leak
+something expensive, it leaks it from here.
+
+Before setting a single `publish` value in this tier, confirm which roll-ups
+consume the repo and what they do with the flag.
+
+### 2. Visibility is necessary but not sufficient
+
+`reach-edu-hub` is a **public** repo and a named client engagement. A gate that
+checks only repository visibility will pass it. "Private" and "confidential" are
+different properties — client work is excluded structurally, by where it lives in
+the tree, not by whether GitHub calls the repo private.
+
+### 3. Screen before setting publish, never after
+
+Setting the value and screening afterwards is precisely how the leak happened.
+On every repo swept after that lesson the screen ran first, and it earned its
+keep: a memo pipeline enumerated by company name, an LP share-label naming a real
+firm, a lead investor in four incidental asides, and an internal deal-directory
+layout.
+
+The screen is three greps — credential-shaped assignments, known client and
+portfolio names, financial figures — and takes under a minute per repo.
+
+### 4. Trap 1b: a lenient schema hides a broken consumer
+
+Recorded in full in the changelog handoff. The short version: a schema that
+requires nothing still lets the *consuming* code break, because that code walks
+a list of field names that may predate the editorial convention. Found live, with
+the newest entry rendering at the bottom of a list.
+
+**This tier has more of these waiting.** Roughly fourteen `context-v/` page
+chains across the splashes still do not know the editorial keys. They are not
+broken yet only because this tier is unswept — the moment a context-v document
+depends solely on `date_authored_*`, they blank. Fix the chains *before*
+sweeping, not after. The changelog tier proved that order matters.
 
 ## The procedure
 
