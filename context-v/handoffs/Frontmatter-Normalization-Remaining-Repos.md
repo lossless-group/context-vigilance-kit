@@ -2,7 +2,7 @@
 site_uuid: dc046628-0c3a-417a-86c0-5b8198918a1c
 hex_code: 5p7nj9
 title: "Frontmatter Normalization — Remaining Repos"
-lede: "The legacy `date:` key is now fully retired from its first repo, and the build-breaking trap that forced the original exception survives in a single line of a single file. What remains is 303 files of mechanical work, 504 publish decisions, and one scoping question only the operator can answer."
+lede: "The legacy `date:` key is retired from every changelog in the tree and the build-breaking trap is gone — but 'no legacy key' turned out not to mean 'conforms to the standard.' 145 entries across 26 repos still lack the editorial pair or any frontmatter at all."
 summary: "Tracking document for the tree-wide frontmatter normalization sweep. Records which repos are complete, the fresh per-repo audit of what remains, the three repo-specific traps that are not inferable from the standard, the resolver pattern that makes a `date:` rename safe in an Astro site, and the worked precedent for retiring the legacy key and minting identity fields in one pass. Read this before starting any frontmatter work in the tree; it supersedes its own earlier file counts, which double-counted third-party pinned repos. The two frontmatter-spec references it points at are the authority on the standard itself — this document only tracks state and hazards."
 publish: true
 date_created: 2026-08-15
@@ -14,8 +14,8 @@ authors:
   - Michael Staton
 augmented_with:
   - Claude Code on Claude Opus 5 (1M context)
-at_semantic_version: 0.0.3.0
-status: In-Progress
+at_semantic_version: 0.0.4.0
+status: Partially-Shipped
 tags:
   - Frontmatter
   - Normalization
@@ -39,7 +39,40 @@ from the standard. Trap 1 now has a **proven remedy**, applied three times.
 
 ## Current state
 
-**Done** — six repos:
+### What is finished, and what "finished" does not mean
+
+**The legacy `date:` key is retired from every changelog frontmatter in the
+tree.** Zero remain. The only surviving occurrence is inside a fenced
+documentation example in `banner-site`, which is body text and correctly left
+alone. The build-breaking trap is gone with it — no content collection anywhere
+still declares a required `date`.
+
+**That is not the same as the changelog tier conforming to the standard, and
+this document previously conflated the two.** The sweep targeted repos by
+*rename count*. Repos that had skipped straight from no-convention to
+`date_created` — never using `date:` at all — registered zero renames and were
+never visited.
+
+**145 entries across 26 repos remain**, of 433 total:
+
+| | Files | Nature |
+|---|---|---|
+| Missing the editorial pair | **132** | Mechanical — derive from `date_created` |
+| No frontmatter at all | **13** | Authoring — needs a title and a written lede |
+
+Largest: `self-host-stack` (23), `self-host-stack/hubs/lossless-at` (23),
+`content-farm/plugin-modules/perplexed` (14), `astro-knots` (12),
+`context-v/skills` (9), `content-farm` (8), `hypernova-site` (7),
+`ai-labs/id-didi-sh` (7), `chroma-decks` (7).
+
+**A miss worth naming:** `mpstaton-site` has **two** changelog directories —
+`changelog/` and `src/content/changelog/`. The sweep did the second and never
+saw the first. Enumerate directories per repo before assuming there is one.
+
+### 137 entries swept, 11 repos
+
+| Repo | Files | Commit | Scope |
+|---|---|---|---|
 
 | Repo | Files | Commit | Scope |
 |---|---|---|---|
@@ -50,8 +83,15 @@ from the standard. Trap 1 now has a **proven remedy**, applied three times.
 | `astro-knots/sites/dark-matter` + nested `changelog` repo | 29 + 4 | *uncommitted* | changelog renames + `context-v/` frontmatter |
 | `astro-knots/sites/banner-site` | 12 | *uncommitted* | changelog renames |
 
-**Remaining: 303 files of mechanical work across ~38 repos**, plus **504 files
-wanting a `publish` decision**. See the fresh audit below.
+Plus, from this session: `mpstaton-site` (8), `memopop-ai` (14),
+`image-gin` (10), `lfm` (9), `arthouse-site` (4), `lmstud-yo` (3),
+`metafetch` (2), `eventcut-ai` (1), `ai-labs` (13). All committed and pushed.
+
+**The `context-v/` tier is handed off separately** — see
+[[Frontmatter-Normalization-The-Context-V-Tier]]. It is 753 documents across 41
+repos and differs in kind: no filename dates, living documents, and a
+publish-gate asymmetry that makes `publish: false` mean something different
+there.
 
 ### `fullstack-vc` is complete — and is the worked precedent
 
@@ -219,6 +259,51 @@ curl -s localhost:4399/changelog | grep -c "Invalid Date\|NaN"   # must be 0
 `dark-matter` renders changelog SSR and needed exactly this; its three views
 (`/changelog`, `/changelog/variant-1`, `/changelog/variant-3`) plus detail pages
 were driven live before the work was called done.
+
+#### 1b. A LENIENT schema is not proof the rename is safe — the harder variant
+
+Trap 1 as scanned above finds *strict* schemas. `lfm` proved that is only half
+the check, and the half that fails loudly.
+
+`lfm`'s splash schema accepted every date spelling and even falls back to
+storing raw frontmatter when validation fails. The scan said "clean." It was
+the most dangerous repo in the sweep.
+
+The exposure was in the **consumer**, not the schema. Both changelog pages
+resolved a date through a list of field names, taking the first that resolves:
+
+```js
+date_modified ?? date_first_published ?? date_created ?? date
+```
+
+`date_authored_initial_draft` is not on that list — the list was written when
+`date` was the newest spelling that existed. And
+`changelog/2026-04-22_01.md` carried **only** `date:`.
+
+Renaming it away would have left the chain nothing to resolve: build passes,
+page renders, entry appears — with a **blank where the date was**, and a sort
+key of `0` sinking it to the bottom of the index. No error, no warning, no log
+line. Detectable only by opening that one page.
+
+**The strict schema is the safer case.** It fails loudly and you fix it. The
+lenient one lets the problem through silently.
+
+**The check is therefore two questions, not one:**
+
+1. Does any schema *require* the key being removed? *(build failure)*
+2. Does every chain that reads a date know the editorial keys — and does any
+   file depend **solely** on the key being removed? *(silent blank)*
+
+**The remedy:** append the editorial keys to the end of each chain, preserving
+existing precedence, and verify that change is zero-diff **on its own** before
+renaming any content. Worked example in `lfm/splash/src/pages/changelog/`.
+
+Any consumer written before the editorial convention landed has this blind
+spot. Grep for chains, not just schemas:
+
+```bash
+grep -rn "date_modified ??\|date_created ??\|\.data\.date\b" src --include="*.astro" --include="*.ts"
+```
 
 ### 2. Filesystem dates lie — `stat` is the last resort
 
