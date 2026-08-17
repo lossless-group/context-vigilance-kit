@@ -2,7 +2,7 @@
 site_uuid: dc046628-0c3a-417a-86c0-5b8198918a1c
 hex_code: 5p7nj9
 title: "Frontmatter Normalization — Remaining Repos"
-lede: "The legacy `date:` key is retired from every changelog in the tree and the build-breaking trap is gone — but 'no legacy key' turned out not to mean 'conforms to the standard.' 145 entries across 26 repos still lack the editorial pair or any frontmatter at all."
+lede: "The legacy `date:` key is retired from every changelog in the tree and the build-breaking trap is gone — but 'no legacy key' turned out not to mean 'conforms to the standard.' 143 entries across 25 repos still lack the editorial pair or any frontmatter at all."
 summary: "Tracking document for the tree-wide frontmatter normalization sweep. Records which repos are complete, the fresh per-repo audit of what remains, the three repo-specific traps that are not inferable from the standard, the resolver pattern that makes a `date:` rename safe in an Astro site, and the worked precedent for retiring the legacy key and minting identity fields in one pass. Read this before starting any frontmatter work in the tree; it supersedes its own earlier file counts, which double-counted third-party pinned repos. The two frontmatter-spec references it points at are the authority on the standard itself — this document only tracks state and hazards."
 publish: true
 date_created: 2026-08-15
@@ -53,11 +53,11 @@ this document previously conflated the two.** The sweep targeted repos by
 `date_created` — never using `date:` at all — registered zero renames and were
 never visited.
 
-**145 entries across 26 repos remain**, of 433 total:
+**143 entries across 25 repos remain**, of 435 total:
 
 | | Files | Nature |
 |---|---|---|
-| Missing the editorial pair | **132** | Mechanical — derive from `date_created` |
+| Missing the editorial pair | **130** | Mechanical — derive from `date_created` |
 | No frontmatter at all | **13** | Authoring — needs a title and a written lede |
 
 Largest: `self-host-stack` (23), `self-host-stack/hubs/lossless-at` (23),
@@ -65,9 +65,19 @@ Largest: `self-host-stack` (23), `self-host-stack/hubs/lossless-at` (23),
 `context-v/skills` (9), `content-farm` (8), `hypernova-site` (7),
 `ai-labs/id-didi-sh` (7), `chroma-decks` (7).
 
-**A miss worth naming:** `mpstaton-site` has **two** changelog directories —
-`changelog/` and `src/content/changelog/`. The sweep did the second and never
-saw the first. Enumerate directories per repo before assuming there is one.
+**Enumerate a repo's content directories before assuming there is one.** Do not
+locate entries by reading the collection config — that finds only what the site
+already renders, and anything the config does not point at is invisible to the
+sweep in exactly the way it is invisible to the site. Walk the filesystem
+instead:
+
+```bash
+find . -type d -name changelog -not -path '*/node_modules/*' -not -path '*/dist/*'
+```
+
+A repo can also split its log across two directories, with each half looking
+complete from where it stands. That is worth checking for its own sake, not
+just for the sweep — the halves can be visible to different audiences.
 
 ### 137 entries swept, 11 repos
 
@@ -205,14 +215,22 @@ only**, and in an Astro site it is not safe by default.
   validation without the key **silently vanishes from the changelog index**.
   Nothing announces it. `banner-site` and `dark-matter` both had this.
 
-**Status: the trap is down to one file in the whole tree.**
+**Status: RESOLVED tree-wide.** No content collection anywhere still declares a
+required `date`. Verified 2026-08-17.
 
 | Repo | State |
 |---|---|
-| `astro-knots/sites/mpstaton-site` — `src/content.config.ts:8` | **Still trapped.** `date: z.coerce.date()` required. Blocks 8 renames. |
-| `fullstack-vc`, `dark-matter`, `banner-site` | Fixed — schema tolerant, renderers resolve through a fallback chain |
-| `twf_site`, `reach-edu-hub` | Were already `.optional()` |
+| `fullstack-vc`, `dark-matter`, `banner-site`, `mpstaton-site` | Fixed — schema tolerant, renderers resolve through a fallback chain |
+| `twf_site`, `reach-edu-hub`, `memopop-site` (`lenientDate`) | Were already lenient |
 | Everything else | No schema reads `date` |
+
+Re-run the check before trusting this, since a new collection can reintroduce it:
+
+```bash
+grep -rn --include="*.ts" -E "^\s*date:\s*z\.(coerce\.)?date\(\)\s*,?\s*$" . | grep -v node_modules
+```
+
+**But see 1b below — this check alone is not sufficient.**
 
 #### The remedy — applied three times, now routine
 
@@ -359,17 +377,36 @@ holds an unrelated in-flight Turso migration (new `scripts/*-turso.mjs`, new
 tool entries, `package.json`, and `context-v/issues/Retire-Legacy-Astro-DB-Layer-for-Direct-Turso-Access.md`).
 `git add -A` there would sweep up someone else's work.
 
-### Next: `mpstaton-site` — 8 renames behind the last trap in the tree
+### ✅ Done — every rename, and every trap
 
-The only repo still carrying trap 1. Apply the remedy to
-`src/content.config.ts:8`, then rename. Fourth application of a now-routine
-pattern — `fullstack-vc`, `banner-site`, and `dark-matter` are three worked
-references, and `banner-site` is the closest analogue in size.
+All renames are complete and trap 1 is resolved tree-wide. The remaining work
+is a different shape: entries that never used `date:` at all, and so never
+registered as renames.
 
-### Then: the rename tail — 19 files, no schema in the way
+### Next: the editorial pair — 130 entries, mechanical
 
-`memopop-ai` (5), `content-farm/plugin-modules/image-gin` (5), `lfm` (4), then
-singles in `arthouse-site`, `lmstud-yo`, `metafetch`, `eventcut-ai`.
+These carry `date_created` / `date_modified` but no `date_authored_initial_draft`,
+so Graphiti anchors them on a filesystem date instead of an authored one.
+Derive the pair from `date_created` and leave `date_modified` alone — it is
+bumped by a mere file open and is not evidence of a substantive revision. For a
+write-once changelog entry the spec expects both editorial dates to stay equal.
+
+| Repo | Files |
+|---|---|
+| `self-host-stack` | 23 |
+| `self-host-stack/hubs/lossless-at` | 23 |
+| `content-farm/plugin-modules/perplexed` | 14 |
+| `astro-knots` | 12 |
+| `context-v/skills` | 9 |
+| `content-farm` | 8 |
+| `ai-labs/id-didi-sh` | 7 |
+| `ai-labs/dididecks-ai/client-sites/chroma-decks` | 7 |
+| `astro-knots/sites/hypernova-site` | 1 (plus 6 with no frontmatter) |
+| …18 more repos | 1–5 each |
+
+Mostly additive and low-risk, but **run the 1b check per repo** — several of
+these render their changelog, and a lenient schema is not proof the change is
+safe.
 
 ### Then: the no-frontmatter files — 120
 

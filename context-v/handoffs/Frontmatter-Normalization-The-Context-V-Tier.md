@@ -141,9 +141,16 @@ find . -name .git -maxdepth 6 -not -path "*/node_modules/*" | while read g; do
 done
 ```
 
-**Watch for repos with two content directories.** `mpstaton-site` has both
-`changelog/` and `src/content/changelog/`; the changelog sweep did one and
-missed the other. Enumerate directories before assuming there is one.
+**Enumerate a repo's `context-v/` directories from the filesystem, not from a
+config.** Locating files by reading what a site renders finds only what the
+site already points at — anything else is invisible to the sweep in exactly the
+way it is invisible to the site. The changelog tier hit this: one repo had
+split its log across two directories and each half looked complete from where
+it stood. Walk the tree instead:
+
+```bash
+find . -type d -name context-v -not -path '*/node_modules/*' -not -path '*/dist/*'
+```
 
 ### 2. Derive the date from git — there is no filename fallback here
 
