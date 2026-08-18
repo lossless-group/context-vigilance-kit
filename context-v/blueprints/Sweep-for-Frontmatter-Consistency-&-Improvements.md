@@ -2,7 +2,7 @@
 site_uuid: be782923-68a6-49cc-860e-bf1000124262
 hex_code: 5js64i
 title: "Sweep for Frontmatter Consistency & Improvements"
-lede: "A frontmatter sweep looks like a find-and-replace and behaves like a migration. This is the running order that survived doing one across 40+ repos — including the two steps that, taken out of order, published a client's confidential material to the open internet."
+lede: "The running order for a frontmatter sweep across 40+ repos — including the two steps that, taken out of order, published client material."
 summary: "The reusable method for normalizing frontmatter across a pseudomonorepo tree, distilled from the changelog-tier sweep completed 2026-08-17. Covers the phase order and why each phase must precede the next, the four traps that are not inferable from the standard, the aggregation-boundary rule that makes `publish` unsafe as a disclosure control, the three-point build-diff that constitutes proof, and the script guards worth reusing. Read this before starting a sweep of any tier in any repo; read the two handoffs for the state of a specific tier."
 publish: true
 date_created: 2026-08-17
