@@ -6,17 +6,17 @@
 
 Tooling for the **Context Vigilance** practice — collating, indexing, and eventually publishing the `context-v/` directories scattered across [The Lossless Group](https://github.com/lossless-group) tree (and beyond) as a single, queryable corpus. Brand site: [contextvigilance.com](https://contextvigilance.com) (forthcoming). Scope, rationale, and decision history live in the parent exploration: [[Collate-Context-Files-into-Context-Vigilance-as-Repo-&-Project]] (under `ai-labs/context-v/explorations/`).
 
-## Corpus state — July 2026
+## Corpus state — August 2026
 
-After the 2026-07-21 refresh (16 new repos opted in — augment-it, corpora-builder, id-didi-sh, the dididecks-ai client-sites family, four new studies, and more — plus reconciliation of three relocated repos):
+After the 2026-08-18 context-v tier sweep (every `context-v/` document across the tree brought to frontmatter conformity, then re-collated):
 
 | metric | count |
 |---|---:|
-| total files | **1,001** |
-| `worked-on` (≥500 content lines) | 107 |
-| `idea-started` (100–499 content lines) | 540 |
-| `stub` (<100 content lines) | 354 |
-| without YAML frontmatter | 112 |
+| total files | **1,166** |
+| `worked-on` (≥500 content lines) | 108 |
+| `idea-started` (100–499 content lines) | 648 |
+| `stub` (<100 content lines) | 410 |
+| without YAML frontmatter | 59 |
 
 | skills (tracked separately in `skills-manifest.md`) | 27 |
 |---|---:|
@@ -184,7 +184,7 @@ pnpm build                        # writes static site to splash/dist/
 pnpm preview                      # serves dist/ locally
 ```
 
-Build output today: **904 pages from 1,001 corpus files** (small handful skipped due to schema or duplicate-id edge cases). Index page groups entries by `source_repo_slug`; detail pages render the full markdown with frontmatter as a metadata block. The site ships Pagefind full-text search, a sitemap + robots.txt, `/llms.txt` + `/llms-full.txt` endpoints for LLM ingest, and an OG share card — see `changelog/` for how each landed.
+Build output today: **1,166 corpus files** (small handful skipped due to schema or duplicate-id edge cases). Index page groups entries by `source_repo_slug`; detail pages render the full markdown with frontmatter as a metadata block. The site ships Pagefind full-text search, a sitemap + robots.txt, `/llms.txt` + `/llms-full.txt` endpoints for LLM ingest, and an OG share card — see `changelog/` for how each landed.
 
 ## Claude Code MCP integration
 

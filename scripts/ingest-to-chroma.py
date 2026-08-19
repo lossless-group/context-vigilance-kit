@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -134,7 +135,7 @@ def chunk_by_heading(body: str) -> list[tuple[str, str]]:
     pattern = re.compile(r"(?m)^##\s+(.+)$")
     matches = list(pattern.finditer(body))
     if not matches:
-        return [("", body.strip())]
+        return _split_oversized("", body.strip())
 
     chunks: list[tuple[str, str]] = []
     first_start = matches[0].start()
@@ -149,12 +150,80 @@ def chunk_by_heading(body: str) -> list[tuple[str, str]]:
         chunk_end = matches[i + 1].start() if i + 1 < len(matches) else len(body)
         chunk_text = body[chunk_start:chunk_end].strip()
         chunks.append((heading, chunk_text))
-    return chunks
+
+    capped: list[tuple[str, str]] = []
+    for h, c in chunks:
+        capped.extend(_split_oversized(h, c))
+    return capped
+
+
+# Chroma Cloud rejects any single document over 16,384 bytes on upsert.
+# Section chunking alone does not bound size: a doc with no `## ` headings
+# returns its whole body as one chunk, and one long section does the same.
+# 15,000 leaves headroom for the heading prefix we re-attach to each part.
+MAX_CHUNK_BYTES = 15_000
+
+
+def _split_oversized(heading: str, text: str) -> list[tuple[str, str]]:
+    """Sub-split a chunk that exceeds MAX_CHUNK_BYTES.
+
+    Tries progressively blunter seams: `### ` subheadings, then blank-line
+    paragraph breaks, then a hard byte cut. Each part keeps the parent
+    heading so chunks stay self-contained for retrieval, and is labelled
+    `Heading (part n/N)` so a reader knows it was divided.
+    """
+    if len(text.encode()) <= MAX_CHUNK_BYTES:
+        return [(heading, text)]
+
+    for pattern in (r"(?m)^(?=###\s+)", r"\n\n"):
+        pieces = [s for s in re.split(pattern, text) if s.strip()]
+        if len(pieces) < 2:
+            continue
+        parts, buf = [], ""
+        for piece in pieces:
+            candidate = (buf + "\n\n" + piece) if buf else piece
+            if buf and len(candidate.encode()) > MAX_CHUNK_BYTES:
+                parts.append(buf)
+                buf = piece
+            else:
+                buf = candidate
+        if buf:
+            parts.append(buf)
+        if all(len(s.encode()) <= MAX_CHUNK_BYTES for s in parts) and len(parts) > 1:
+            n = len(parts)
+            return [(f"{heading} (part {i}/{n})" if heading else f"(part {i}/{n})", s)
+                    for i, s in enumerate(parts, 1)]
+
+    # Nothing seamed cleanly — hard-cut on bytes, decoding-safe.
+    raw, parts = text.encode(), []
+    while raw:
+        head, raw = raw[:MAX_CHUNK_BYTES], raw[MAX_CHUNK_BYTES:]
+        while raw and (raw[0] & 0xC0) == 0x80:      # don't split a UTF-8 sequence
+            head, raw = head + raw[:1], raw[1:]
+        parts.append(head.decode("utf-8", "ignore"))
+    n = len(parts)
+    return [(f"{heading} (part {i}/{n})" if heading else f"(part {i}/{n})", s)
+            for i, s in enumerate(parts, 1)]
+
+
+# Chroma Cloud caps document IDs at 128 bytes on upsert. Readable IDs are
+# worth keeping — they make a raw collection dump diagnosable — so only the
+# handful that overflow get shortened, and those keep a hash of the full
+# path so they stay unique and stable across re-ingests.
+MAX_ID_BYTES = 128
 
 
 def stable_chunk_id(repo_slug: str, relative_path: str, chunk_idx: int) -> str:
     safe_rel = relative_path.replace("/", "__").replace(" ", "_")
-    return f"{repo_slug}::{safe_rel}::{chunk_idx:04d}"
+    chunk_id = f"{repo_slug}::{safe_rel}::{chunk_idx:04d}"
+    if len(chunk_id.encode()) <= MAX_ID_BYTES:
+        return chunk_id
+
+    digest = hashlib.sha1(f"{repo_slug}/{relative_path}".encode()).hexdigest()[:10]
+    suffix = f"::~{digest}::{chunk_idx:04d}"
+    budget = MAX_ID_BYTES - len(repo_slug.encode()) - len(suffix.encode()) - 2
+    tail = safe_rel.encode()[-budget:].decode("utf-8", "ignore") if budget > 0 else ""
+    return f"{repo_slug}::{tail}{suffix}"
 
 
 def build_chunks_for_file(
