@@ -26,10 +26,13 @@ image_prompt: A modern terminal application with colored panels, progress indica
   and professional, not a raw command line.
 date_created: 2026-03-24
 date_modified: 2026-03-24
+publish: false
+site_uuid: b54331ed-79e5-4a0a-894f-38a34703e431
+hex_code: oj3vw7
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Interactive-Terminal-Application-Easy-Interface-for-Casual-Users.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Interactive-Terminal-Application-Easy-Interface-for-Casual-Users.md"
 ---
 

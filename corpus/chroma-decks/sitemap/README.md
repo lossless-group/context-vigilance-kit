@@ -21,10 +21,13 @@ tags:
 - Per-Slide-Components
 authors:
 - Michael Staton
+site_uuid: a38b898d-1c95-45d5-93ec-d9d258e48464
+hex_code: hc5co2
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: sitemap/README.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/sitemap/README.md"
 ---
 

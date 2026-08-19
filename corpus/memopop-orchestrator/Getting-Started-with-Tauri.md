@@ -1,13 +1,18 @@
 ---
+title: Getting Started with Tauri
+date_created: 2026-05-01
+date_modified: 2026-05-03
+publish: false
+site_uuid: dd492edd-f90b-4614-a022-f49336eec929
+hex_code: wtieca
+date_authored_initial_draft: 2026-05-03
+date_authored_current_draft: 2026-05-03
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Getting-Started-with-Tauri.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Getting-Started-with-Tauri.md"
 ---
-
-
-
 
   Tauri Setup Plan (6 Phases)
 

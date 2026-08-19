@@ -31,10 +31,17 @@ takeaway_questions:
 - What does 'better housekeeping for agents' actually look like in practice?
 audience_relevance: Most direct relevance for solo / small-team funds without dedicated
   ops headcount.
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: d966966f-7e31-4358-8681-e441e5e917e1
+hex_code: 2d234u
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/06a_cortado-claude-teams.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/06a_cortado-claude-teams.md"
 ---
 

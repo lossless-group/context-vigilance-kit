@@ -22,10 +22,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: 76edf0ce-a958-43fa-a934-2b5f70db1011
+hex_code: iuticm
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Exploring a simple GUI for the terminal averse.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Exploring a simple GUI for the terminal averse.md"
 ---
 

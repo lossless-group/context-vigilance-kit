@@ -17,10 +17,15 @@ authors:
 - Michael Staton
 related_blueprint: '[[Managing-Complex-Markdown-Content-at-Build-Time]]'
 related_reminder: '[[YAML-Frontmatter-Parsing-Must-Be-Lenient]]'
+site_uuid: a7458066-d04c-4509-b552-8128ae332fe4
+hex_code: juiwwv
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: reminders/Wrap-Long-String-Values-in-Double-Quotes.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/reminders/Wrap-Long-String-Values-in-Double-Quotes.md"
 ---
 

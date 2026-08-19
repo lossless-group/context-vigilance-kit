@@ -1,11 +1,7 @@
 ---
 title: Substantiation corpus — source decks, intake material, raw assets
-lede: The deliberately-not-tracked-by-git layer. Founder-supplied PDFs, page-burst
-  PNGs, memopop-generated memos, brand-asset libraries, raw scraped HTML. Lives at
-  <client>/corpus/ (gitignored) per the chroma pattern. A parent-level dddecks-corpus
-  submodule was newly stood up on 2026-06-07 to give the team a private home for cross-engagement
-  substantiation. The DB doesn't store this content — it's blob-on-disk by design
-  — but should track references.
+lede: The gitignored `<client>/corpus/` layer — founder PDFs, page-burst PNGs, memos,
+  raw assets. The DB stores pointers to it, never the content.
 date_authored_initial_draft: 2026-06-07
 date_last_updated: 2026-06-07
 at_semantic_version: 0.0.1.0
@@ -20,10 +16,16 @@ runtime_mutability: low (mostly authored at ingest time; appended as new substan
   lands)
 storage: Local filesystem only — gitignored at the per-client level; tracked at the
   parent corpus/ submodule level
+date_created: 2026-06-07
+date_modified: 2026-06-07
+publish: false
+site_uuid: d3d7fc6b-c131-4e3f-9b1b-1195b1cc8473
+hex_code: mjnq2o
+date_authored_current_draft: 2026-06-07
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: models/Substantiation-Corpus-Data-Model.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/models/Substantiation-Corpus-Data-Model.md"
 ---
 

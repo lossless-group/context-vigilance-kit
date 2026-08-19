@@ -14,10 +14,15 @@ tags:
 status: Draft
 authors:
 - Michael Staton
+site_uuid: 14eb62f5-4dc3-429a-9096-1536921597d6
+hex_code: ai7ah5
+date_authored_initial_draft: 2026-06-08
+date_authored_current_draft: 2026-06-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/lossless-decks/context-v
 source_relative_path: slides-content/lossless-group--ideal-engagement.md
 source_repo_slug: lossless-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/lossless-decks/context-v/slides-content/lossless-group--ideal-engagement.md"
 ---
 

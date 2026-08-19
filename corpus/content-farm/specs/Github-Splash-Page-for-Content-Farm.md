@@ -16,10 +16,15 @@ tags:
 - Github-Pages
 - Content-Farm
 status: Draft
+site_uuid: 77d58b13-a71f-4a3c-ba41-b6e22d378acf
+hex_code: pdlqre
+date_authored_initial_draft: 2026-05-04
+date_authored_current_draft: 2026-05-04
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: specs/Github-Splash-Page-for-Content-Farm.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/specs/Github-Splash-Page-for-Content-Farm.md"
 ---
 

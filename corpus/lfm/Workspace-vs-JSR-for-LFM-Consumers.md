@@ -17,10 +17,14 @@ tags:
 - Pseudomonorepo
 - Consumption-Pattern
 publish: true
+site_uuid: 8ded83b5-700a-4e4d-9946-d2c9d4fc8dee
+hex_code: 0hc3ww
+date_authored_initial_draft: 2026-05-05
+date_authored_current_draft: 2026-05-05
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Workspace-vs-JSR-for-LFM-Consumers.md
 source_repo_slug: lfm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "lfm/context-v/Workspace-vs-JSR-for-LFM-Consumers.md"
 ---
 

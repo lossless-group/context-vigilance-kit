@@ -16,10 +16,15 @@ tags:
 - AI-Agent-Infrastructure
 - MCP
 status: Open
+site_uuid: fda45c94-60f2-41d4-a5d8-f9f00d75b5d7
+hex_code: tcah86
+date_authored_initial_draft: 2026-07-08
+date_authored_current_draft: 2026-07-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/self-host-stack/context-v
 source_relative_path: explorations/Hermes-Agent-Colocation-and-Hackability.md
 source_repo_slug: self-host-stack
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "self-host-stack/context-v/explorations/Hermes-Agent-Colocation-and-Hackability.md"
 ---
 

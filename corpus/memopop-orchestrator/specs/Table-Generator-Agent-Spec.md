@@ -22,10 +22,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: ce58d805-b2f2-4025-84b5-ecf507c08b20
+hex_code: atxd2f
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Table-Generator-Agent-Spec.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Table-Generator-Agent-Spec.md"
 ---
 

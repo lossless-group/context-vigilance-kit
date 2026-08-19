@@ -1,9 +1,7 @@
 ---
 title: Wall-clock timeout cuts off long deep-research streams
-lede: The directory-template runtime caps every stream by total wall-clock duration,
-  but the legacy modal flow already moved to per-chunk idle-timeout discipline two
-  iterations ago — and the discrepancy is now actively truncating analyst-grade market-map
-  drafts mid-sentence.
+lede: The directory-template runtime caps every stream by wall clock, so a 7,500-word
+  deep-research draft terminated mid-sentence.
 date_created: 2026-05-26
 date_modified: 2026-05-26
 date_resolved: 2026-05-26
@@ -25,10 +23,15 @@ related:
 - '[[market-map-profile]]'
 - '[[Multi-Stage-Cooperative-Claude-and-Perplexity-with-RAG]]'
 - '[[Partials-And-Preambles-For-Perplexed-Templates]]'
+site_uuid: 63d2b036-8262-469c-a52a-be7f466d049f
+hex_code: 9cm09u
+date_authored_initial_draft: 2026-05-26
+date_authored_current_draft: 2026-05-26
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: issues/Wall-Clock-Timeout-Cuts-Off-Long-Deep-Research-Streams.md
 source_repo_slug: perplexed
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/plugin-modules/perplexed/context-v/issues/Wall-Clock-Timeout-Cuts-Off-Long-Deep-Research-Streams.md"
 ---
 

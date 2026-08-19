@@ -22,10 +22,13 @@ authors:
 - AI Labs Team
 date_created: 2026-03-25
 date_modified: 2026-03-25
+site_uuid: 8b073729-9d08-4268-82db-c9e013c6da31
+hex_code: 0rud0l
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/Implement-Context-V-Fetcher-for-mpstaton-site.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/prompts/Implement-Context-V-Fetcher-for-mpstaton-site.md"
 ---
 

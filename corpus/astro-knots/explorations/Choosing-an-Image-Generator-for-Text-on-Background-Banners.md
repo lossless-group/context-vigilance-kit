@@ -1,9 +1,7 @@
 ---
 title: Choosing an Image Generator for Text-on-Background Banners
-lede: A snapshot of the AI image-generation landscape as of April 2026, focused on
-  the specific job of producing release-banner-style images with legible title text
-  and brand-consistent visual style — the kind of asset Anthropic, Windsurf, Linear,
-  and Vercel attach to changelog entries and release announcements.
+lede: 'An April 2026 snapshot of image generators judged on one job: release-banner
+  images with legible title text and a consistent brand feel.'
 date_authored_initial_draft: '2026-04-25'
 date_authored_current_draft: '2026-04-26'
 date_created: '2026-04-25'
@@ -28,10 +26,13 @@ tags:
 authors:
 - Michael Staton
 - AI Labs Team
+site_uuid: efc625b6-a4d2-4782-bbee-4657f463a5ae
+hex_code: s4v615
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: explorations/Choosing-an-Image-Generator-for-Text-on-Background-Banners.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/explorations/Choosing-an-Image-Generator-for-Text-on-Background-Banners.md"
 ---
 

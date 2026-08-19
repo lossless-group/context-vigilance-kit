@@ -1,13 +1,7 @@
 ---
 title: Prompt-Template-Manager — Walking Skeleton Plan
-lede: 'The second federated app for augment-it: a place to author prompt templates
-  with {{column}} placeholders and run them per-row against a record set, producing
-  a derived record set with the LLM''s output as a new column. Two new microservices
-  land — prompt-store (template CRUD, JSON-backed, same shape as row-store) and prompt-runner
-  (the only container that calls the Anthropic API). The proof-of-life is the url-enrichment
-  prompt: the pipeline-tracker CSV has no url column, so the first useful prompt is
-  ''given the organisation name, find its URL'' — and its output becomes the url column
-  the next prompt needs.'
+lede: Author `{{column}}` templates and run them per row — `prompt-runner` is the
+  only container that calls the Anthropic API.
 date_created: 2026-05-21
 date_modified: 2026-05-25
 date_completed: 2026-05-21
@@ -31,10 +25,15 @@ tags:
 - Module-Federation
 - Anthropic-API
 status: Shipped
+site_uuid: a724b530-d1b5-4845-94f7-41aff5c97bf2
+hex_code: 9r21lc
+date_authored_initial_draft: 2026-05-25
+date_authored_current_draft: 2026-05-25
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: plans/Prompt-Template-Manager-Walking-Skeleton.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/plans/Prompt-Template-Manager-Walking-Skeleton.md"
 ---
 

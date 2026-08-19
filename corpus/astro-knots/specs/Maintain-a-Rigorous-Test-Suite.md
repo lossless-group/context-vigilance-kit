@@ -26,10 +26,12 @@ slug: maintain-a-rigorous-test-suite
 tags:
 - Acceptance-Testing
 - Test-Driven-Development
+site_uuid: 3082223b-3908-4c3c-a7ca-5895341e1f44
+hex_code: flt6ot
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Maintain-a-Rigorous-Test-Suite.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/Maintain-a-Rigorous-Test-Suite.md"
 ---
 

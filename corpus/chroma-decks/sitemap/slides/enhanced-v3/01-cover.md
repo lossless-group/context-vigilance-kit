@@ -27,10 +27,14 @@ at_semantic_version: 0.1.0
 status_tags:
 - Shipped
 - Phase-A-Plus-Seed
+site_uuid: aeecffe1-9665-4fac-acf9-0db8e018f7ce
+hex_code: svra7k
+date_authored_current_draft: 2026-05-12
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: sitemap/slides/enhanced-v3/01-cover.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/sitemap/slides/enhanced-v3/01-cover.md"
 ---
 

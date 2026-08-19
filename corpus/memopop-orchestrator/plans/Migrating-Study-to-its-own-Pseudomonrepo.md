@@ -7,10 +7,17 @@ authors:
 - Claude (Opus 4.7)
 target_repo_to_create: lossless-group/study-open-specs-and-standards
 visibility: public
+date_created: 2026-05-02
+date_modified: 2026-05-08
+publish: true
+site_uuid: 30177018-0b39-414d-9857-dcb2efb5b41e
+hex_code: y3qs76
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: plans/Migrating-Study-to-its-own-Pseudomonrepo.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/plans/Migrating-Study-to-its-own-Pseudomonrepo.md"
 ---
 

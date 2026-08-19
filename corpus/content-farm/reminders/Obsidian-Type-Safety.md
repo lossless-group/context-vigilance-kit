@@ -10,10 +10,22 @@ applies_to: cite-wide Obsidian community plugin
 authors:
 - Michael Staton
 augmented_with: Claude Code (Opus 4.7, 1M context)
+site_uuid: 3194c0fc-52bd-4586-9f6d-eb8205ef052e
+hex_code: jgz1zj
+lede: Cite-wide was rejected for `any` with no appeal — even eslint-disable counts.
+  Plus the coercion boundary treating frontmatter as untrusted.
+summary: Authoritative type-safety reference, written against cite-wide but applied
+  family-wide. Covers the hard rules as the review bot actually enforces them, the
+  five replacements that cover most `any` uses, when a cast is legitimate and its
+  three constraints, the three-layer YAML coercion boundary with recommended coercer
+  functions, and five named anti-patterns with the corrected form. Read alongside
+  Obsidian-Marketplace-Compliance.md, which covers everything the bot enforces other
+  than types.
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: reminders/Obsidian-Type-Safety.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/reminders/Obsidian-Type-Safety.md"
 ---
 

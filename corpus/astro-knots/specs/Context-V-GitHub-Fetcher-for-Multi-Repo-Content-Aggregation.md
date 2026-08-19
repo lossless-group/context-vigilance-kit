@@ -1,8 +1,7 @@
 ---
 title: Context-V GitHub Fetcher for Multi-Repo Content Aggregation
-lede: A build-time content fetcher that pulls context-v documents (Specs, Blueprints,
-  Prompts, Reminders) from multiple GitHub repositories, enabling lossless.group and
-  mpstaton.com to render current project documentation without manual copying or submodules.
+lede: A build-time fetcher that pulls context-v documents from ~20 repos, so lossless.group
+  can render them without copying or submodules.
 date_authored_initial_draft: 2026-03-25
 date_authored_current_draft: 2026-03-25
 date_authored_final_draft: null
@@ -27,10 +26,13 @@ image_prompt: A network diagram showing multiple GitHub repository nodes each wi
   nodes — all connected by clean directional arrows on a dark background.
 date_created: 2026-03-25
 date_modified: 2026-03-25
+site_uuid: 0fe38097-9455-40f6-9ac5-bb07d6b20767
+hex_code: pqvypb
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Context-V-GitHub-Fetcher-for-Multi-Repo-Content-Aggregation.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/Context-V-GitHub-Fetcher-for-Multi-Repo-Content-Aggregation.md"
 ---
 

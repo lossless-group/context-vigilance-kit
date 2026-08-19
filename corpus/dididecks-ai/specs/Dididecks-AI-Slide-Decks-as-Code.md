@@ -1,9 +1,7 @@
 ---
 title: 'Dididecks-AI: Slide Decks as Code'
-lede: A code-first paradigm for slide deck generation, iteration, and management —
-  where AI coding assistants treat slides as components, decks as repositories, and
-  presentations as living, versioned software rather than artifacts trapped in proprietary
-  binary formats.
+lede: A code-first paradigm where AI assistants treat slides as components, decks
+  as repositories, and presentations as versioned software.
 date_authored_initial_draft: 2026-05-11
 date_authored_current_draft: 2026-05-11
 date_authored_final_draft: null
@@ -29,10 +27,13 @@ image_prompt: A draftsman's workbench in a steam-punk study, where slide carouse
   and gear motif.
 date_created: 2026-05-11
 date_modified: 2026-05-11
+publish: false
+site_uuid: 209a4765-7805-4890-a49e-468b8c87d6b9
+hex_code: vdzymm
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: specs/Dididecks-AI-Slide-Decks-as-Code.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/specs/Dididecks-AI-Slide-Decks-as-Code.md"
 ---
 

@@ -14,10 +14,15 @@ tags:
 - Layout
 authors:
 - Michael Staton
+site_uuid: 485d7251-d59c-40f0-98bf-370834fdbd69
+hex_code: 9816tz
+date_authored_initial_draft: 2025-11-15
+date_authored_current_draft: 2025-11-15
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/In-The-News.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/In-The-News.md"
 ---
 

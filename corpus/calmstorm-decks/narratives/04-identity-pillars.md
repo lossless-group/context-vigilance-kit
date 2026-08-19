@@ -44,10 +44,14 @@ key_stat: null
 key_stat_label: null
 cta_or_footer: null
 sources: []
+site_uuid: 1abd4a72-117d-4262-9b77-24470160c5e7
+hex_code: fep6qe
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/04-identity-pillars.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/04-identity-pillars.md"
 ---
 

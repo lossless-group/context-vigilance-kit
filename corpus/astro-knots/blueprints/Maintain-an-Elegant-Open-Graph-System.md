@@ -27,10 +27,12 @@ image_prompt: A robot conducting a symphony.  Each musician is playing a social 
 banner_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/2025-sept/Maintain-an-Elegant-Open-Graph-System_banner_image_1760114662425_616dxZwfn.webp
 portrait_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/2025-sept/Maintain-an-Elegant-Open-Graph-System_portrait_image_1760114663984_D3P-Xr_MB.webp
 square_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/2025-sept/Maintain-an-Elegant-Open-Graph-System_square_image_1760114665324__jTn7ykb9.webp
+site_uuid: 7b4c5275-16a2-4b59-a2d6-71ecaf1f8538
+hex_code: 0x55oh
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Maintain-an-Elegant-Open-Graph-System.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/blueprints/Maintain-an-Elegant-Open-Graph-System.md"
 ---
 

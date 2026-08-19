@@ -5,10 +5,17 @@ headline: Monthly All-Hands
 subhead: Wednesday · May 27, 2026 · 9:00 AM PT
 presenters_short: Mike Moradi & Raeed Zainuddin · Cortado Ventures
 partner: Kauffman Fellows
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: 5f0e9507-b195-4ec9-b92f-f8de1fc6572b
+hex_code: iu9ef9
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/01-cover.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/01-cover.md"
 ---
 

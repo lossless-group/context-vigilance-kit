@@ -20,10 +20,15 @@ tags:
 - Module-Federation
 - Person-Enrichment
 status: Draft
+site_uuid: b83c9250-18f1-4ffc-9715-48d82b4bfe56
+hex_code: 7vqdeg
+date_authored_initial_draft: 2026-06-21
+date_authored_current_draft: 2026-06-21
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: blueprints/Connecting-To-And-Using-SurrealDB.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/blueprints/Connecting-To-And-Using-SurrealDB.md"
 ---
 

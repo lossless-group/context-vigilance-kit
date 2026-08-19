@@ -1,9 +1,7 @@
 ---
 title: Create an Image-Heavy Portfolio Website for Boutique E-Commerce
-lede: A specification for a mobile-first, image-heavy portfolio site with dark and
-  vibrant modes, carousel-driven galleries, tiered pricing cards, WhatsApp CTA, and
-  SEO landing pages — all managed through markdown content and deployable independently
-  from the Astro-Knots pseudomonorepo.
+lede: 'A mobile-first, image-heavy portfolio site: carousel galleries, tiered pricing
+  cards, WhatsApp CTA, all managed through markdown.'
 date_authored_initial_draft: 2026-04-21
 date_authored_current_draft: 2026-04-21
 date_authored_final_draft: null
@@ -34,10 +32,13 @@ image_prompt: A chat interface on a mobile phone is visible with a hand behind i
   a website with a portfolio of images.
 date_created: 2026-04-21
 date_modified: 2026-04-21
+site_uuid: edd8f440-3d99-400b-bf30-d2732bc1c4c9
+hex_code: blyj6i
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Maintain-an-Image-Heavy-Portfolio-Site.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/Maintain-an-Image-Heavy-Portfolio-Site.md"
 ---
 

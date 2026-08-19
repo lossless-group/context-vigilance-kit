@@ -12,10 +12,14 @@ applies_to: every project, plugin, site, and child repo under `~/code/lossless-m
 authors:
 - Michael Staton
 augmented_with: Claude Code on Claude Opus 4.7 (1M context)
+site_uuid: 98953eed-25e0-4563-bb2b-30119577ffcc
+hex_code: 8di7ct
+date_created: 2026-05-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: reminders/Pseudomonorepo-Settings.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/reminders/Pseudomonorepo-Settings.md"
 ---
 

@@ -13,10 +13,15 @@ tags:
 status: Draft
 authors:
 - Michael Staton
+site_uuid: a2231f27-160e-4258-96cd-66ca7b35104d
+hex_code: wp1ef6
+date_authored_initial_draft: 2026-06-08
+date_authored_current_draft: 2026-06-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/lossless-decks/context-v
 source_relative_path: slides-content/lossless-group--firm-wide-emergent-practices.md
 source_repo_slug: lossless-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/lossless-decks/context-v/slides-content/lossless-group--firm-wide-emergent-practices.md"
 ---
 

@@ -24,10 +24,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-10
 date_modified: 2026-05-10
+site_uuid: 0244fcbb-c305-4411-98a8-437828935437
+hex_code: f4ooh9
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: specs/Confidential-Access-v2-Persistent-Sessions-and-Telemetry.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/specs/Confidential-Access-v2-Persistent-Sessions-and-Telemetry.md"
 ---
 

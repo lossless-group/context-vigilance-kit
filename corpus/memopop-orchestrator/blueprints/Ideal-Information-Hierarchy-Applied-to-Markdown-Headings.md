@@ -1,8 +1,16 @@
 ---
+title: Ideal Information Hierarchy Applied to Markdown Headings
+date_created: 2026-03-24
+date_modified: 2026-05-03
+publish: false
+site_uuid: 424f61cb-f23b-47bb-ac77-6cfbfe73dc4d
+hex_code: rwr0qz
+date_authored_initial_draft: 2026-03-24
+date_authored_current_draft: 2026-03-24
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: blueprints/Ideal-Information-Hierarchy-Applied-to-Markdown-Headings.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/blueprints/Ideal-Information-Hierarchy-Applied-to-Markdown-Headings.md"
 ---
 

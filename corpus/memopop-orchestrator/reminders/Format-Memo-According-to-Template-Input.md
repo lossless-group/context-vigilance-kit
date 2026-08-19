@@ -26,10 +26,13 @@ image_prompt: A modular system architecture with YAML configuration files feedin
   flow arrows.
 date_created: 2025-11-21
 date_modified: 2025-11-21
+publish: false
+site_uuid: eee66139-7518-4db8-9515-cc3ff05cf0d4
+hex_code: b4iocm
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: reminders/Format-Memo-According-to-Template-Input.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/reminders/Format-Memo-According-to-Template-Input.md"
 ---
 

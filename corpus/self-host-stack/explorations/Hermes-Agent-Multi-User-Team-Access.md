@@ -17,10 +17,15 @@ tags:
 - Multi-User
 - WhatsApp
 status: Open
+site_uuid: 3d1c0747-5970-4409-9aa0-ecc95aa75534
+hex_code: v1jc9c
+date_authored_initial_draft: 2026-07-08
+date_authored_current_draft: 2026-07-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/self-host-stack/context-v
 source_relative_path: explorations/Hermes-Agent-Multi-User-Team-Access.md
 source_repo_slug: self-host-stack
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "self-host-stack/context-v/explorations/Hermes-Agent-Multi-User-Team-Access.md"
 ---
 

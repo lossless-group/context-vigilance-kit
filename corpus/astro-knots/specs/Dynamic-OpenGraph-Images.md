@@ -1,9 +1,7 @@
 ---
 title: Dynamic OpenGraph Images
-lede: As website content grows more numerous, across different audiences and different
-  contexts, dynamically generated OpenGraph images can amplify shares and referral
-  marketing while not bogging down the team with the need to create and maintain a
-  separate image for each piece of content.
+lede: Generate an OpenGraph image per page from content and variables, so shares stay
+  on-brand without hand-making an image for every post.
 date_authored_initial_draft: 2025-10-13
 date_authored_current_draft: 2025-10-13
 date_authored_final_draft: 2025-10-13
@@ -25,10 +23,12 @@ slug: dynamic-opengraph-images
 tags:
 - Marketing-Site
 - Digital-Marketing
+site_uuid: 2d4d45af-8b5d-4a2e-9b8a-a7e70890b900
+hex_code: 0q6q2b
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Dynamic-OpenGraph-Images.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/Dynamic-OpenGraph-Images.md"
 ---
 

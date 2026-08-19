@@ -62,10 +62,14 @@ cta_or_footer: 'The funding rounds show the world is paying attention and the ac
 
   '
 sources: []
+site_uuid: f0d0d6db-6143-41fc-8811-3aa15e46e94a
+hex_code: r66rlp
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/07-market-momentum.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/07-market-momentum.md"
 ---
 

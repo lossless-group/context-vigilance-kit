@@ -14,10 +14,15 @@ tags:
 - Train-Case
 authors:
 - Michael Staton
+site_uuid: d61f4447-ffbe-4764-82c8-bfea91b3babf
+hex_code: f6p4v9
+date_authored_initial_draft: 2026-03-26
+date_authored_current_draft: 2026-03-26
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: reminders/Tags-Must-Use-Train-Case.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/reminders/Tags-Must-Use-Train-Case.md"
 ---
 

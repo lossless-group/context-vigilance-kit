@@ -22,10 +22,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: 1a74b5b7-156e-41c7-a1e8-a179bd5fd766
+hex_code: mfa4oj
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: reminders/Extended-Markdown-Flavor-Remix.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/reminders/Extended-Markdown-Flavor-Remix.md"
 ---
 

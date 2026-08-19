@@ -1,10 +1,7 @@
 ---
 title: Cross-Product Native Agent Shell — Synthesis and Architecture Decision
-lede: Phase 3 of the study plan, and its actual deliverable. Resolves the fork the
-  2026-05-18 in-app-agent docs left open — extend memopop-native or build standalone
-  — with a recommendation, then defines what 'context switching' and 'dynamic skill/MCP
-  loading' concretely mean, grounded in sixteen pinned repos' actual source rather
-  than either the original spec or training-data folklore.
+lede: Resolves the fork the in-app-agent docs left open — extend memopop-native or
+  build standalone — against sixteen pinned repos' actual source.
 date_created: 2026-07-13
 date_modified: 2026-07-13
 authors:
@@ -22,10 +19,15 @@ tags:
 - Agent-Harnesses
 - Conversational-UI
 status: Draft
+site_uuid: 9dff0ef7-4002-423d-a332-35d5fcebcf1a
+hex_code: sl6rhc
+date_authored_initial_draft: 2026-07-13
+date_authored_current_draft: 2026-07-13
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: explorations/Cross-Product-Native-Agent-Shell.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/explorations/Cross-Product-Native-Agent-Shell.md"
 ---
 

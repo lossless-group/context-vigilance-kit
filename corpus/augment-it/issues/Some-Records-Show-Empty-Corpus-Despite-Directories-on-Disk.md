@@ -8,25 +8,8 @@ title: Some records show empty corpus in the Sort & Filter Lens despite per-fund
   already populates) the primary join key, which limits each call to one small directory
   and dissolves the timeout race — this supersedes the originally-proposed corpus-overrides.yaml
   because the override surface is now the records-sheet cell
-lede: 'End of 2026-06-09 session: corpus content built for ~21 new records (warm 17
-  → 38 between v9 and v10). Operator saw four rows showing `corpus 0` despite per-funder
-  directories on disk — sobrato-philanthropies, stand-together-trust, steve-and-alexandra-cohen-fnd,
-  todd-fisher. UPDATED 2026-06-10 follow-on session: a hard-refresh cleanly resolved
-  those four but exposed three more — hewlett-foundation (2 files on disk), howard-schultz-foundation
-  (6), kellogg-foundation (6). A second backend probe confirmed `corpus.list_for_record`
-  is returning the correct counts for those three too. The actual bug is in the wire:
-  `corpus.list_for_record` has no `CAPABILITY_TIMEOUTS_MS` entry so it falls through
-  to the default 5000ms, the content-ingest handler is a serial `for await` loop,
-  and each call walks every funder directory. With 96 visible rows firing 96 parallel
-  requests, late ones in the burst time out and the lens `catch` block swallows the
-  error → chip never updates. The simpler, durable fix the operator proposed — join
-  via `corpus_funder_slug`, a column the records sheet already populates per row —
-  dissolves all three causes at once: each request now walks one ≤13-file directory
-  instead of 301 files, the override surface is a sheet cell instead of a new YAML
-  format, and lineage stays as a fallback for rows without a slug. The originally-proposed
-  `corpus-overrides.yaml` mechanism is SUPERSEDED. Backfill of `record_uuid` into
-  201 unstamped files stands as independent hygiene (script built this session, dry-run
-  found zero stale conflicts).'
+lede: No `CAPABILITY_TIMEOUTS_MS` entry for `corpus.list_for_record` — 96 parallel
+  calls hit the 5000ms default and the lens swallows the error.
 date_created: 2026-06-10
 date_modified: 2026-06-10
 authors:
@@ -63,10 +46,15 @@ tags:
 - Defense-In-Depth
 status: Open · Real Root Cause Identified (Workspace Timeout + Serial Handler + Walks-All-Dirs)
   · corpus_funder_slug Join Strategy Supersedes corpus-overrides.yaml · Fix In Progress
+site_uuid: d399a7a6-d4e4-4fe6-9c6d-fe9b406fc145
+hex_code: m1mdv1
+date_authored_initial_draft: 2026-06-10
+date_authored_current_draft: 2026-06-10
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: issues/Some-Records-Show-Empty-Corpus-Despite-Directories-on-Disk.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/issues/Some-Records-Show-Empty-Corpus-Despite-Directories-on-Disk.md"
 ---
 

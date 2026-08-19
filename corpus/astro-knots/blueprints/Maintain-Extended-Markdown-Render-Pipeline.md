@@ -17,10 +17,14 @@ tags:
 - Markdown
 - Extended-Markdown
 - Render-Pipeline
+site_uuid: 58a9fc59-72a1-4030-8918-43f00c2454bd
+hex_code: 011fdo
+date_authored_initial_draft: 2025-12-15
+date_authored_current_draft: 2025-12-15
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Maintain-Extended-Markdown-Render-Pipeline.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/blueprints/Maintain-Extended-Markdown-Render-Pipeline.md"
 ---
 

@@ -17,10 +17,15 @@ tags:
 - Context-Vigilance
 - RAG
 status: Open
+site_uuid: 91a5d3a5-0883-4914-945c-c6752dc6a768
+hex_code: exp936
+date_authored_initial_draft: 2026-07-20
+date_authored_current_draft: 2026-07-20
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/corpora-builder/context-v
 source_relative_path: explorations/Corpora-Builder-System-Design.md
 source_repo_slug: corpora-builder
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/corpora-builder/context-v/explorations/Corpora-Builder-System-Design.md"
 ---
 

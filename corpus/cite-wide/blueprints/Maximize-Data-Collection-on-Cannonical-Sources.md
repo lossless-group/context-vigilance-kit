@@ -1,11 +1,31 @@
 ---
+site_uuid: 4cc3cd7c-2937-482c-b5f9-593b35f30b34
+hex_code: tvt2jo
+title: Maximize Data Collection on Cannonical Sources
+date_created: 2026-05-01
+date_authored_initial_draft: 2026-05-01
+date_authored_current_draft: 2026-05-01
+authors:
+- Michael Staton
+at_semantic_version: 0.0.1.0
+tags:
+- Blueprint
+lede: Only 1–5 of the 40 sources in a memo earn the rich schema — and a field-by-field
+  split of what is deterministic versus what needs AI.
+summary: 'Blueprint stating the intent behind cite-wide''s canonical-source schema:
+  content treated as durable, portable data for a future RAG/KAG pipeline, not just
+  formatted references. The load-bearing artifact is the field-by-field filling-strategy
+  table (deterministic / hybrid / AI-required) at the bottom. Explains why each overkill-looking
+  field exists (uuid, accessed_at_url, structured_data_path, downloaded_content_path).
+  Note that the Academic, Market Analyst, Web Ready, and Obsidian style sections are
+  headings with no bodies and still need filling.'
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/cite-wide/context-v
 source_relative_path: blueprints/Maximize-Data-Collection-on-Cannonical-Sources.md
 source_repo_slug: cite-wide
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/plugin-modules/cite-wide/context-v/blueprints/Maximize-Data-Collection-on-Cannonical-Sources.md"
 ---
-
 
 # Context
 

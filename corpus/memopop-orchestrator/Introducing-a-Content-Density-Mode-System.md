@@ -26,10 +26,13 @@ image_prompt: A toggle switch between two document layouts—one dense and compa
   across multiple sections.
 date_created: 2026-03-10
 date_modified: 2026-03-10
+publish: true
+site_uuid: c5394691-11a7-451f-9c32-bcb0f6d0daff
+hex_code: orx2l1
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Introducing-a-Content-Density-Mode-System.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Introducing-a-Content-Density-Mode-System.md"
 ---
 

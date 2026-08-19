@@ -24,10 +24,13 @@ image_prompt: A modern professional in causal business attire, giving a presenta
   the investors.
 date_created: 2026-03-25
 date_modified: 2026-03-25
+site_uuid: 6cff1914-8937-46ff-9570-ffd0fb98070e
+hex_code: xtp7z5
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Develop-a-Slides-only-Astro-Site-for-a-Fundraise-Process.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/Develop-a-Slides-only-Astro-Site-for-a-Fundraise-Process.md"
 ---
 

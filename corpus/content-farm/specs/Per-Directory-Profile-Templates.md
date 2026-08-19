@@ -6,10 +6,24 @@ status: spike
 related:
 - '[[Moving-Beyond-Simple-API-Calls]]'
 - '[[Textgenerator-Analysis]]'
+site_uuid: e1131a1f-0704-4855-89bb-80ec0013d923
+hex_code: a6n1g6
+date_authored_initial_draft: 2026-05-09
+date_authored_current_draft: 2026-05-09
+lede: One Perplexity call per file, four template zones, and `***` as the scratch
+  terminator — aborts rather than merge if the body has prose.
+summary: The v0.1 spike spec — the narrow first slice of Moving-Beyond-Simple-API-Calls,
+  with everything else in that exploration explicitly deferred. Defines the template
+  file's four zones, the zone-to-request map, the two interpolation variables, the
+  single run command and its flow, output write logic, settings, execution pseudocode,
+  and seven acceptance criteria. Also carries v0.2 feedback that supersedes parts
+  of the spec (stream instead of buffer-then-write; wrap reasoning-model think blocks
+  in a fenced block) and five open questions intended for sign-off before implementation.
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: specs/Per-Directory-Profile-Templates.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/specs/Per-Directory-Profile-Templates.md"
 ---
 

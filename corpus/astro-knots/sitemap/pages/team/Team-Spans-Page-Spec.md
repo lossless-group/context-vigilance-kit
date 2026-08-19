@@ -13,10 +13,15 @@ tags:
 - Components
 authors:
 - Michael Staton
+site_uuid: c28fb081-a994-4ec7-832a-a231f9226c9c
+hex_code: a4ult6
+date_authored_initial_draft: 2025-11-15
+date_authored_current_draft: 2025-11-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: sitemap/pages/team/Team-Spans-Page-Spec.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/sitemap/pages/team/Team-Spans-Page-Spec.md"
 ---
 

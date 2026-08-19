@@ -23,10 +23,20 @@ image_prompt: A small robot stands with a small projector on top of a computer d
 banner_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Maintain-Embeddable-Slides_banner_image_1755815513881_vG9H27ZKx.webp
 portrait_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Maintain-Embeddable-Slides_portrait_image_1755815520946_NlMeL6qdl.webp
 square_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Maintain-Embeddable-Slides_square_image_1755815527652_HEYKVBKOm.webp
+hex_code: kmj1qe
+lede: Markdown slide decks already embed via a `:::slides` directive; Astro-component
+  decks do not — the embed route only reads `.md` files.
+summary: 'Blueprint for the Reveal.js slide-embedding pipeline shared across lossless.group,
+  hypernova-site, and twf_site. Documents the whole chain — the `:::slides` remark
+  directive, `SlidesEmbed.astro`, the `/slides/embed/[...slug]` route, and `OneSlideDeck.astro`
+  — plus the configuration table and the path-sanitization constraints. Read it before
+  adding slides to a new site (fullstack-vc was the trigger), and note the open question
+  it flags: whether to stay on Reveal.js or move to Svelte + GSAP. The unfinished
+  work is making Astro-component decks embeddable, not just markdown ones.'
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Maintain-Embeddable-Slides.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/blueprints/Maintain-Embeddable-Slides.md"
 ---
 

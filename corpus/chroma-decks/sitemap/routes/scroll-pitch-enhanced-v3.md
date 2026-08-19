@@ -29,10 +29,13 @@ at_semantic_version: 0.1.0
 status_tags:
 - Shipped
 - Migration-Pending-To-DeckOverlay
+site_uuid: 769a5b9a-170d-4856-842e-948f7d4d8d55
+hex_code: 6sk80z
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: sitemap/routes/scroll-pitch-enhanced-v3.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/sitemap/routes/scroll-pitch-enhanced-v3.md"
 ---
 

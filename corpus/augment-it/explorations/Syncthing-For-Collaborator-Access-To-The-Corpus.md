@@ -20,10 +20,15 @@ tags:
 - Path-Off-Local
 - Corpus
 - Collaboration
+site_uuid: 108297f8-c766-48fb-a43e-3518225723ea
+hex_code: 50pdz4
+date_authored_initial_draft: 2026-07-17
+date_authored_current_draft: 2026-07-17
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: explorations/Syncthing-For-Collaborator-Access-To-The-Corpus.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/explorations/Syncthing-For-Collaborator-Access-To-The-Corpus.md"
 ---
 

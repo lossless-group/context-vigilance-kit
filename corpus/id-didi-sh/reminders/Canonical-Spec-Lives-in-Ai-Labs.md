@@ -13,10 +13,15 @@ tags:
 - Reminder
 - Id-Didi-Sh
 - Context-Vigilance
+site_uuid: e196a296-2af5-4525-891e-3ca5500c5d34
+hex_code: punols
+date_authored_initial_draft: 2026-07-06
+date_authored_current_draft: 2026-07-06
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/id-didi-sh/context-v
 source_relative_path: reminders/Canonical-Spec-Lives-in-Ai-Labs.md
 source_repo_slug: id-didi-sh
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/id-didi-sh/context-v/reminders/Canonical-Spec-Lives-in-Ai-Labs.md"
 ---
 

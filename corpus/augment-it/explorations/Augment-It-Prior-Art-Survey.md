@@ -1,13 +1,8 @@
 ---
 title: Augment-It Prior Art Survey — What's Already Been Built, and What It Tells
   Us
-lede: 'Before we rewrite Augment-It on the new stack, we owe ourselves a clear-eyed
-  look at what''s already been built. Two parallel attempts exist: Tanuj''s split-into-microfrontends
-  approach across three Next.js / Vite repos (record-collector, prompt-manager, request-reviewer
-  — the only one that actually got Module Federation working) and an earlier monolith
-  by Michael on the archive/bolt-code branch that covers more pipeline stages with
-  multi-provider LLM handling and Supabase auth. Both capture most of the core functionality.
-  Neither is what we''ll ship. This survey is the map.'
+lede: Two prior attempts exist — Tanuj's three federated repos and Michael's bolt
+  monolith. Both cover the core; neither is what we ship.
 date_created: 2026-05-18
 date_modified: 2026-05-25
 date_archived: 2026-05-25
@@ -25,10 +20,15 @@ tags:
 - Pipeline-as-UI
 - Microfrontends
 status: Archived
+site_uuid: c0d6157b-798d-4fcb-a6c0-159e86eacb1b
+hex_code: 5eeprm
+date_authored_initial_draft: 2026-05-25
+date_authored_current_draft: 2026-05-25
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: explorations/Augment-It-Prior-Art-Survey.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/explorations/Augment-It-Prior-Art-Survey.md"
 ---
 

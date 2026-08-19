@@ -22,7 +22,7 @@ description: The operator-facing workflow layer for getting real-world data INTO
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: agent-skills/decile-hub-interface/SKILL.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/agent-skills/decile-hub-interface/SKILL.md"
 ---
 

@@ -21,10 +21,15 @@ tags:
 - Market-Research
 - DD-Citation-Discipline
 status: Draft
+site_uuid: 3da803ff-793f-4c78-8a73-e4cd2cadb714
+hex_code: z75vrz
+date_authored_initial_draft: 2026-05-11
+date_authored_current_draft: 2026-05-11
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: plans/Author-Enhanced-v1-from-MemoPop-Research.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/plans/Author-Enhanced-v1-from-MemoPop-Research.md"
 ---
 

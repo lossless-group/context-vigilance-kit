@@ -1,9 +1,7 @@
 ---
 title: Maintain the llms.txt standard across significant sites & splash pages
-lede: Every Lossless Group site that publishes a substantive content collection serves
-  /llms.txt (a markdown link index) and /llms-full.txt (the concatenated raw markdown)
-  at its root, regenerated on every deploy, so LLM crawlers and agentic tools can
-  ingest the corpus in one fetch instead of crawling 500 HTML pages.
+lede: Every substantive site serves `/llms.txt` and `/llms-full.txt`, regenerated
+  on deploy, so crawlers ingest the corpus in one fetch.
 date_created: 2026-05-09
 date_modified: 2026-05-09
 semantic_version: 0.1.0.0
@@ -19,10 +17,15 @@ tags:
 - Splash-Page
 - Astro-Knots
 - Context-Vigilance
+site_uuid: 2bacb512-bca7-4090-a653-b08148526df0
+hex_code: 95nm2p
+date_authored_initial_draft: 2026-05-09
+date_authored_current_draft: 2026-05-09
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/habits/Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md"
 ---
 

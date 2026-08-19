@@ -12,10 +12,17 @@ agent_hints:
 - Warm-intro draft generator per target fund + partner
 - Round-build status tracker (who's in, who's looking, who passed)
 - Talking-points generator for each fund's known thesis
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: ec60c828-043f-4309-8ea1-18dfc406db79
+hex_code: pe9sbz
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/08-track-syndicate-to-vcs.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/08-track-syndicate-to-vcs.md"
 ---
 

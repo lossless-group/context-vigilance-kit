@@ -1,21 +1,8 @@
 ---
 title: Integrate reach-edu-hub into the shared @dididecks/shell — scroll-UI first,
   adopting the shell's /scroll/[deck]/[variant] URL convention
-lede: 'reach-edu-hub is the one client-site still standing fully outside the shell:
-  it is not in the root pnpm-workspace, carries zero @dididecks/shell references,
-  ships output: ''static'' with no auth, and renders three bespoke scroll decks (/story,
-  /story/version-2, /automation) on a locally-ported PageAsDeckWrapper with its own
-  scroll-decks.ts variant registry and seo.ts. Every sibling (chroma-decks, humain-vc-decks,
-  lossless-decks) already consumes the shell as a workspace integration. This plan
-  onboards reach using chroma-decks as the canonical template: join the workspace,
-  add the integration call, author the decks.ts / slides.ts / audits.json contract
-  files, migrate the three decks to the shell''s /scroll/[deck]/[variant] routing,
-  and add slot-discovery annotations to the T01–T11 section components — incrementally
-  (scroll-UI through the shell now; the rigid no-JS Play-UI per-slide conversion is
-  deferred to a later pass). The session this plan opens also has two adjacent tracks:
-  build a few new reach decks on the freshly-integrated shell, and push any shell
-  friction the integration surfaces back into apps/deck-shell rather than working
-  it around in reach.'
+lede: reach-edu-hub is the last client-site outside `@dididecks/shell` — onboard it
+  scroll-first onto the `/scroll/[deck]/[variant]` convention.
 date_authored_initial_draft: 2026-06-29
 date_authored_current_draft: 2026-06-29
 date_authored_final_draft: null
@@ -43,10 +30,15 @@ related:
 - '[[Stand-Up-Dididecks-Shell-and-Ship-Chroma-TOC-Ranking]]'
 - '[[Init-Chroma-Decks-Client-Site]]'
 - ../../client-sites/humain-vc-decks/context-v/plans/Install-Auth-Surface-from-Calmstorm-Pattern.md
+date_created: 2026-06-29
+date_modified: 2026-06-29
+publish: false
+site_uuid: 2baf9267-4398-4fb1-be37-dff8f96e9c16
+hex_code: h97rq3
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Integrate-Reach-Edu-Hub-into-Dididecks-Shell.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Integrate-Reach-Edu-Hub-into-Dididecks-Shell.md"
 ---
 

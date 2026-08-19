@@ -25,10 +25,17 @@ data_snapshot:
     seeded:
       true: 4
       false: 1
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: bc31f6aa-719b-4887-9dc0-c58a290de478
+hex_code: agn7tz
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/05b_lp-conundrum.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/05b_lp-conundrum.md"
 ---
 

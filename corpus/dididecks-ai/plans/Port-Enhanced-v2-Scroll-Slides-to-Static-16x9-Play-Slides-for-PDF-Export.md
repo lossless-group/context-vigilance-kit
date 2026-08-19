@@ -1,14 +1,7 @@
 ---
 title: Port Enhanced-v2 Scroll Slides to Static 16:9 Play Slides for PDF Export
-lede: The scroll deck for chroma's pitch/enhanced-v2 is shippable by the founder's
-  design eye, but its sections live in a scroll-flow context — `min-h-screen` heights,
-  brand-orb gradients that bleed across section boundaries, the customer marquee animation
-  — that won't export cleanly to PDF. This plan ports each of the 16 v2 sections,
-  non-destructively, into static 16:9 per-slide files under `src/components/slides/enhanced-v2/{slot}-{slug}.astro`
-  so the existing /play/[deck]/[variant]/[slot]/ runtime renders them at a predictable
-  aspect ratio. Then a one-shot print route stacks all 16 vertically, ⌘P saves as
-  PDF, deck ships to founder tonight. Tomorrow's Phase A++ (calmstorm-grade /play
-  chrome + SlideCanvas/ContentFit lift) is orthogonal and not blocked by this.
+lede: Port chroma's 16 enhanced-v2 scroll sections into static 16:9 play slides, then
+  stack them on a print route so ⌘P yields a shippable PDF.
 date_authored_initial_draft: 2026-05-12
 date_authored_current_draft: 2026-05-12
 date_authored_final_draft: 2026-05-12
@@ -32,10 +25,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-12
 date_modified: 2026-05-12
+publish: false
+site_uuid: d8d53a17-26e8-4b24-835f-d2b174467d86
+hex_code: ztzej8
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Port-Enhanced-v2-Scroll-Slides-to-Static-16x9-Play-Slides-for-PDF-Export.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Port-Enhanced-v2-Scroll-Slides-to-Static-16x9-Play-Slides-for-PDF-Export.md"
 ---
 
@@ -225,7 +221,7 @@ Goal: 05, 06, 11, 14 done. These are the ones whose scroll versions got the most
 
 1. **Slot 05 — Bottleneck → Solution.** Two-column flow diagram with cobalt beam. Risks: SVG arrow positioning, orb clipping. Port at 1920×1080.
 2. **Slot 06 — Difficult problems.** Two lists (system + data). Largely typographic. Easy port — bake the clamp() values and go.
-3. **Slot 11 — Backed by.** Quiet Capital hero + operators grid. Risks: the operator-grid flex-wrap behavior at 1920px width may need a column-count adjustment to look balanced.
+3. **Slot 11 — Backed by.** Lead hero + operators grid. Risks: the operator-grid flex-wrap behavior at 1920px width may need a column-count adjustment to look balanced.
 4. **Slot 14 — Use of funds.** Already done in Phase 0.
 
 Validation: visit each `/play/.../{slot}/` in dev, eyeball against the scroll counterpart, confirm visual register holds. Print preview each.

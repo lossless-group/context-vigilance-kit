@@ -22,10 +22,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: cccb2086-4ab7-4b8d-b229-94822b6b6507
+hex_code: cajk6u
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: issue-resolution/Getting-AI-to-Refocus-when-Web-Research-is-empty.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/issue-resolution/Getting-AI-to-Refocus-when-Web-Research-is-empty.md"
 ---
 

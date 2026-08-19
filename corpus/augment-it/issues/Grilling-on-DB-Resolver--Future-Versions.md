@@ -1,9 +1,7 @@
 ---
 title: Grilling on the DB Resolver — questions to settle before v0.0.0.2 / v0.0.0.3
-lede: Before building the next resolver iterations, a hard pass over the open decisions
-  — where the join key lives, whether a slug can be edited without breaking everything,
-  and whether 'opportunities' reopens the CRM-stays-in-Decile call. Answers get folded
-  back into the spec.
+lede: 'Three decisions before v0.0.0.2: where the join key lives, whether a slug can
+  be renamed safely, and whether opportunities reopens Decile.'
 date_created: 2026-06-22
 date_modified: 2026-06-22
 authors:
@@ -21,10 +19,15 @@ tags:
 - SurrealDB
 - CRM
 - Opportunities
+site_uuid: e178c262-3f8a-48f8-919b-0082984739bf
+hex_code: g44mvi
+date_authored_initial_draft: 2026-06-22
+date_authored_current_draft: 2026-06-22
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: issues/Grilling-on-DB-Resolver--Future-Versions.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/issues/Grilling-on-DB-Resolver--Future-Versions.md"
 ---
 

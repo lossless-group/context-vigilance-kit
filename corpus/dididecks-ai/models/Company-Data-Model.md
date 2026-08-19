@@ -1,9 +1,7 @@
 ---
 title: Company — portfolio companies + brand-asset metadata
-lede: One markdown file per portfolio company, with sibling-colocated brand assets
-  (trademark + favicon + optional og:image URL). The Person model also lives under
-  portfolio/ — the discriminator is the presence/absence of `role_class`. Companies
-  are everything in portfolio/ that does NOT carry role_class.
+lede: One markdown file per portfolio company with colocated brand assets; the discriminator
+  against Person is the absence of `role_class`.
 date_authored_initial_draft: 2026-06-07
 date_last_updated: 2026-06-07
 at_semantic_version: 0.0.1.0
@@ -13,10 +11,16 @@ applies_to:
 - client-sites/chroma-decks
 - client-sites/humain-vc-decks
 schema_authority: apps/deck-shell/src/routes/data-assets/companies.astro
+date_created: 2026-06-07
+date_modified: 2026-06-07
+publish: false
+site_uuid: 6c6de6d1-de3d-45c9-82c5-91d9042e0c34
+hex_code: 8d3vga
+date_authored_current_draft: 2026-06-07
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: models/Company-Data-Model.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/models/Company-Data-Model.md"
 ---
 

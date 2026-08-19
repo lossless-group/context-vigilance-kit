@@ -8,10 +8,15 @@ status: Active
 tags:
 - Context-Vigilance
 - Convention
+site_uuid: 60a76104-2421-4263-ad44-405d9dfabfaa
+hex_code: bxhzq2
+date_authored_initial_draft: 2026-05-12
+date_authored_current_draft: 2026-05-12
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: README.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/README.md"
 ---
 
@@ -28,6 +33,7 @@ Subdirectories appear as content arrives:
 - `reminders/` — short notes future-you will be glad past-you wrote
 - `explorations/` — open questions, partially-answered
 - `issues/` — known problems, not yet fixed
+- `loops/` — repeatable fidelity sweep procedures. See `loops/references/` for supporting rationale.
 
 The splash at `splash/` renders every `.md` in this tree (and `changelog/`)
 on push to `main`.

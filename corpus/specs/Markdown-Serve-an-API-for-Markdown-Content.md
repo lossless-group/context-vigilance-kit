@@ -30,7 +30,7 @@ square_image: null
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Markdown-Serve-an-API-for-Markdown-Content.md
 source_repo_slug: specs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content/specs/Markdown-Serve-an-API-for-Markdown-Content.md"
 ---
 

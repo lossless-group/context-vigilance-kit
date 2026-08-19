@@ -24,10 +24,13 @@ authors:
 image_prompt: A jenga tower with Hypernova branding, and a stack of code files with
   Astro, Svelte, and Tailwind. A robot and a hacker are taking turns removing jenga
   blocks.
+site_uuid: 4b42f460-3254-4b95-b732-b3180d80185b
+hex_code: 53o3d9
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/Introducing-Features-and-UI-Components.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/prompts/Introducing-Features-and-UI-Components.md"
 ---
 

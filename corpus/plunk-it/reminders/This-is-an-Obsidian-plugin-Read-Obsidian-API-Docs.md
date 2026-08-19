@@ -10,10 +10,21 @@ applies_to: any plugin in the lossless-group/content-farm ecosystem
 authors:
 - Michael Staton
 augmented_with: Claude Code on Claude Opus 4.7 (1M context)
+site_uuid: f6337b2b-492b-4e3e-9bee-a238703d1253
+hex_code: 4vkuqw
+date_created: 2026-05-04
+lede: 'The Obsidian API is the source of truth: `any`, innerHTML, and var are all
+  outright bans, and Electron breaks browser muscle memory.'
+summary: Short authoritative reminder in plunk-it's context-v; an identical copy exists
+  in every content-farm plugin. Read it before writing code against the Obsidian API,
+  and re-read it whenever the community review bot flags something. It lists the seven
+  most frequent rejection reasons and the three canonical documentation links. The
+  deeper rules live in content-farm's Obsidian-Type-Safety.md and Obsidian-Marketplace-Compliance.md.
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/plunk-it/context-v
 source_relative_path: reminders/This-is-an-Obsidian-plugin-Read-Obsidian-API-Docs.md
 source_repo_slug: plunk-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/plugin-modules/plunk-it/context-v/reminders/This-is-an-Obsidian-plugin-Read-Obsidian-API-Docs.md"
 ---
 

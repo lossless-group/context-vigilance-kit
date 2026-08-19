@@ -25,7 +25,7 @@ image_prompt: A nice portfolio page with logos.
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Dynamic-Webpage-to-Display-Portfolio-w-Authentication.md
 source_repo_slug: specs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content/specs/Dynamic-Webpage-to-Display-Portfolio-w-Authentication.md"
 ---
 

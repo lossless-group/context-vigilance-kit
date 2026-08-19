@@ -23,10 +23,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-11
 date_modified: 2026-05-11
+site_uuid: cb7112f2-39a5-4460-8e85-2edab6ad8346
+hex_code: 2iqaev
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v
 source_relative_path: narratives/pipeline-building-automation.md
 source_repo_slug: reach-edu-hub
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v/narratives/pipeline-building-automation.md"
 ---
 

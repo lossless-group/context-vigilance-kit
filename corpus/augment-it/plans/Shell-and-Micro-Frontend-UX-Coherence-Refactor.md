@@ -1,61 +1,59 @@
 ---
-source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
-source_relative_path: plans/Shell-and-Micro-Frontend-UX-Coherence-Refactor.md
-source_repo_slug: augment-it
-collated_at: '2026-07-21'
-source_path: "ai-labs/augment-it/context-v/plans/Shell-and-Micro-Frontend-UX-Coherence-Refactor.md"
----
-
----
-title: "Shell & Micro-Frontend UX Coherence — Refactor Plan"
-lede: "Sequence the eight locked decisions from the UX Coherence spec into five phases that land on `refactor/ux-streamlining`. Foundation first (Deck→Flow rename so every later phase speaks the right vocabulary), then mechanical polish that's independently shippable (peek labels, pack-selection helpers, off-mode hide), then the hierarchical Flow widget (bubble progress strip + icon-tooltip layout sub-options), then 'Augment This Set' with the record-set pre-selection unification, then harvest the cross-cutting principles into a living doc. Architectural open questions (enrichment-surface composition, Flow-widget default position) are spiked but not allowed to block the visible UX wins."
+title: Shell & Micro-Frontend UX Coherence — Refactor Plan
+lede: Eight locked UX decisions sequenced into five phases — the Deck→Flow rename
+  first, so every later phase speaks the right vocabulary.
 date_created: 2026-06-01
 date_modified: 2026-06-01
 authors:
-  - Michael Staton
+- Michael Staton
 augmented_with:
-  - Claude Code on Claude Opus 4.7
+- Claude Code on Claude Opus 4.7
 semantic_version: 0.0.0.3
 revisions:
-  - 2026-06-01 — Initial draft (0.0.0.1).
-  - 2026-06-01 — Replaced Phase 2a's "none/solo/all helpers on flat pack
-    list" with a new Phase 3 — **bundle-first Pack Runner**. The original
-    spec Decision §1 was conservative on purpose, but reconciling against
-    [[../blueprints/Packs-and-Bundles-Pattern]] showed that polishing the
-    flat-list model would cement the wrong mental model right before the
-    bundle migration. Better to introduce Bundle as the primary selector
-    now and let `none`/`solo`/`all` become roster-override helpers on a
-    bundle's pack roster, where they belong. Subsequent phases renumbered.
-  - 2026-06-01 — Added Phase 2d: the user landed on the Phase 2c result in
-    Split mode and observed the toggle only worked there — Flow mode walked
-    `REMOTES`, which composites weren't part of. Introduced `ROTATION: string[]`
-    as a peer to `REMOTES` (rotation order of slot ids, including composite
-    ids) and switched peek-flow / full / `commitFocus` / nav-handler /
-    `layout.setFocusIndex` clamping to walk `ROTATION` via `slotById`.
-    Composites are now first-class in every layout mode.
-  - 2026-06-01 — **Spike resolved: Option C — composite slot in the shell
-    + shared toggle component.** Trying Phase 2b's intra-remote off-mode-
-    hide in the browser made the architectural error visible — both
-    remotes stayed mounted side-by-side; one just rendered empty. The
-    correct shape is one slot in the shell that hosts one-of-N remotes
-    based on shared state. Phase 2b is superseded by a new Phase 2c that
-    (a) reverts the intra-remote mode UI in PTM and Pack Runner,
-    (b) introduces a `CompositeEntry` concept in the shell,
-    (c) adds a shared-ui `ToggleHeader__PromptOrPackage--Icons.svelte`,
-    (d) defines `ENRICHMENT_COMPOSITE` ({ PTM, Pack Runner }) and a
-    `recordCollector+enrichment` pairing that replaces the now-obsolete
-    `packRunner+promptTemplateManager` and `recordCollector+promptTemplateManager`
-    pairings. The spike no longer gates Phase 5.
+- 2026-06-01 — Initial draft (0.0.0.1).
+- 2026-06-01 — Replaced Phase 2a's "none/solo/all helpers on flat pack list" with
+  a new Phase 3 — **bundle-first Pack Runner**. The original spec Decision §1 was
+  conservative on purpose, but reconciling against [[../blueprints/Packs-and-Bundles-Pattern]]
+  showed that polishing the flat-list model would cement the wrong mental model right
+  before the bundle migration. Better to introduce Bundle as the primary selector
+  now and let `none`/`solo`/`all` become roster-override helpers on a bundle's pack
+  roster, where they belong. Subsequent phases renumbered.
+- '2026-06-01 — Added Phase 2d: the user landed on the Phase 2c result in Split mode
+  and observed the toggle only worked there — Flow mode walked `REMOTES`, which composites
+  weren''t part of. Introduced `ROTATION: string[]` as a peer to `REMOTES` (rotation
+  order of slot ids, including composite ids) and switched peek-flow / full / `commitFocus`
+  / nav-handler / `layout.setFocusIndex` clamping to walk `ROTATION` via `slotById`.
+  Composites are now first-class in every layout mode.'
+- '2026-06-01 — **Spike resolved: Option C — composite slot in the shell + shared
+  toggle component.** Trying Phase 2b''s intra-remote off-mode- hide in the browser
+  made the architectural error visible — both remotes stayed mounted side-by-side;
+  one just rendered empty. The correct shape is one slot in the shell that hosts one-of-N
+  remotes based on shared state. Phase 2b is superseded by a new Phase 2c that (a)
+  reverts the intra-remote mode UI in PTM and Pack Runner, (b) introduces a `CompositeEntry`
+  concept in the shell, (c) adds a shared-ui `ToggleHeader__PromptOrPackage--Icons.svelte`,
+  (d) defines `ENRICHMENT_COMPOSITE` ({ PTM, Pack Runner }) and a `recordCollector+enrichment`
+  pairing that replaces the now-obsolete `packRunner+promptTemplateManager` and `recordCollector+promptTemplateManager`
+  pairings. The spike no longer gates Phase 5.'
 tags:
-  - Plan
-  - Augment-It
-  - Shell
-  - Micro-Frontends
-  - Refactor
-  - UX
-  - Flow-Widget
-  - Discoverability
+- Plan
+- Augment-It
+- Shell
+- Micro-Frontends
+- Refactor
+- UX
+- Flow-Widget
+- Discoverability
 status: Draft
+site_uuid: fc500c1f-8d66-459b-b4da-dc1c3a834cb8
+hex_code: abczj9
+date_authored_initial_draft: 2026-06-01
+date_authored_current_draft: 2026-06-01
+publish: true
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
+source_relative_path: plans/Shell-and-Micro-Frontend-UX-Coherence-Refactor.md
+source_repo_slug: augment-it
+collated_at: '2026-08-18'
+source_path: "ai-labs/augment-it/context-v/plans/Shell-and-Micro-Frontend-UX-Coherence-Refactor.md"
 ---
 
 # Shell & Micro-Frontend UX Coherence — Refactor Plan

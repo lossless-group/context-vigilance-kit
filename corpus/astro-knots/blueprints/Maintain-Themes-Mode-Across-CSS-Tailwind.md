@@ -19,10 +19,15 @@ tags:
 - Two-Tier-Tokens
 authors:
 - Michael Staton
+site_uuid: 0607e601-5398-455f-852d-e42dc7caaaea
+hex_code: juf7h6
+date_authored_initial_draft: 2025-11-15
+date_authored_current_draft: 2025-11-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Maintain-Themes-Mode-Across-CSS-Tailwind.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/blueprints/Maintain-Themes-Mode-Across-CSS-Tailwind.md"
 ---
 

@@ -1,12 +1,22 @@
 ---
+site_uuid: 969a7c78-8b58-4e2b-bc05-bee8a2dcc2d2
+hex_code: dy4ad9
+title: Tidy Root with Pseudo Monorepos
+date_created: 2026-05-08
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
+authors:
+- Michael Staton
+at_semantic_version: 0.0.1.0
+tags:
+- Plan
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: plans/Tidy-Root-with-Pseudo-Monorepos.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/plans/Tidy-Root-with-Pseudo-Monorepos.md"
 ---
-
-
 
 # Remove entirely, delete from github. 
 

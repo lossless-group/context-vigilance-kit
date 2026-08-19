@@ -19,10 +19,15 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code (Opus 4.7)
+site_uuid: 0198c9ea-bb8e-488a-88ed-fc1badecb123
+hex_code: tvqwxe
+date_authored_initial_draft: 2026-04-29
+date_authored_current_draft: 2026-04-29
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: explorations/Practices-to-Sense-Make-Context-Vigilance-at-Scale.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/explorations/Practices-to-Sense-Make-Context-Vigilance-at-Scale.md"
 ---
 

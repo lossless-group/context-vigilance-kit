@@ -28,7 +28,7 @@ square_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/2025-sept/Mainta
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: blueprints/Maintain-a-Map-of-Content-Paradigm.md
 source_repo_slug: lost-in-public
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content/lost-in-public/blueprints/Maintain-a-Map-of-Content-Paradigm.md"
 ---
 

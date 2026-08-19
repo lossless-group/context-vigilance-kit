@@ -14,10 +14,15 @@ tags:
 - Self-Hosted
 authors:
 - Michael Staton
+site_uuid: 2ddfc5df-e678-44a4-abff-58f67c3ffa5b
+hex_code: klv58w
+date_authored_initial_draft: 2025-11-15
+date_authored_current_draft: 2025-11-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: Papermark-Self-Hosted-Dataroom-Deployment.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/Papermark-Self-Hosted-Dataroom-Deployment.md"
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: MemoPop AI — Ideogram OG Image Brief
-lede: Creative brief for generating OpenGraph and changelog hero images via Ideogram.
-  A house-style prefix and suffix that any per-image scene description plugs into
-  so the family stays coherent across the splash page, changelog entries, and context-v
-  notes.
+lede: A house-style Ideogram prefix and suffix any scene description plugs into, so
+  splash, changelog, and context-v imagery stay one family.
 date_created: 2026-05-05
 date_modified: 2026-05-06
 at_semantic_version: 0.1.0.0
@@ -24,10 +22,14 @@ applies_to: memopop-ai
 banner_image: https://ik.imagekit.io/xvpgfijuw/Image-Gin/2026-05/MemoPop_AI_banner_image_1778062509552_xx6m5xkS4.webp
 portrait_image: https://ik.imagekit.io/xvpgfijuw/Image-Gin/2026-05/MemoPop_AI_portrait_image_1778062510781_U9YgfZq12.webp
 square_image: https://ik.imagekit.io/xvpgfijuw/Image-Gin/2026-05/MemoPop_AI_square_image_1778062511281_HsQ6nGdqD.webp
+site_uuid: 71c4946e-0010-42fd-8ba3-2a028f416388
+hex_code: ofolxb
+date_authored_initial_draft: 2026-05-06
+date_authored_current_draft: 2026-05-06
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: MemoPop-Creative-Brief.md
 source_repo_slug: memopop-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/context-v/MemoPop-Creative-Brief.md"
 ---
 

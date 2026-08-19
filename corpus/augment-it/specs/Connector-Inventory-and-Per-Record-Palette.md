@@ -1,24 +1,17 @@
 ---
 title: Connector Inventory & Per-Record Palette — Hot-Swap Providers, Re-Fire One
   Record at a Time
-lede: 'Today''s connectors are hardcoded into a small ProviderId union and bound to
-  specific packs at compile time. The reality of LLM web research is that providers
-  churn — new ones launch, old ones rate-limit, costs shift, a specific entity needs
-  a specific connector to crack a stubborn search. The system needs to (a) accept
-  any connector at runtime via a registry that resolves by *capability* not by hardcoded
-  id, and (b) give the human, at triage time, a per-record palette of short-labeled
-  buttons — click `f` to re-fire just this record through the next Facebook connector
-  in priority order, or long-press to pick a specific one. The killer UX from prior
-  live attempts: per-row, per-intent, per-connector, one click. This spec scopes the
-  registry, the pack-intent declarations, the bundle-level chain config, the per-record
-  palette, and the integration with the Pulse Curation Layer.'
+lede: 'Per-record connector palette: click `f` to re-fire one row through the next
+  Facebook provider, over a registry that resolves by capability.'
 date_created: 2026-06-02
-date_modified: 2026-06-02
+date_modified: 2026-07-21
+date_first_published: 2026-06-02
 authors:
 - Michael Staton
 augmented_with:
 - Claude Code on Claude Opus 4.7
-semantic_version: 0.0.0.1
+- Claude Code on Claude Fable 5
+semantic_version: 0.0.0.2
 tags:
 - Spec
 - Augment-It
@@ -29,11 +22,16 @@ tags:
 - Hot-Swap
 - Capabilities
 - Pulse-Curation
-status: Draft
+status: Partially-Shipped
+site_uuid: d2290a8e-5d61-4e37-b282-1574d11328f5
+hex_code: 8dzi5c
+date_authored_initial_draft: 2026-06-02
+date_authored_current_draft: 2026-06-02
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: specs/Connector-Inventory-and-Per-Record-Palette.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/specs/Connector-Inventory-and-Per-Record-Palette.md"
 ---
 
@@ -490,3 +488,38 @@ migration sequence:
 - Existing memory feedback
   *"Additive enrichment never overrides accepted"* — re-fire is
   additive; never destroys human-curated items.
+
+## Remaining work (as of 2026-07-21)
+
+Assessed against a code scan on 2026-07-21 (branch
+`rebuild/turbo-rsbuild`) — flag-don't-fix; correct this list if the
+scan missed something.
+
+**Shipped** (commit `904704a`, 2026-06-02 "Connector-Inventory step
+1"):
+
+- The capability registry —
+  `services/social-search/src/registry/{types,capabilities,registry,register-connectors}.ts` —
+  resolving connectors by capability, with searxng / tavily /
+  serpapi / gdelt / google-news-rss registered
+- GDELT connector; SerpApi shape captured; Profile Builder pack
+  migrated onto the registry
+- Palette UI components exist:
+  `apps/pack-runner/src/ConnectorPalette.svelte` +
+  `ConnectorChip.svelte` (mirrored in response-reviewer) — pre-fire
+  connector selection
+
+**Not confirmed in code:**
+
+- The *per-record, at-triage* palette as specced — short-labeled
+  buttons on the triage card, click to re-fire this one record
+  through the next connector in priority order, long-press to pick
+  (the existing palettes select before firing; the re-fire-from-triage
+  loop isn't wired)
+- Bundle-level connector-chain config with priority order
+- Cost-tier surfacing / pre-fire estimate line
+- Pulse Curation Layer integration (that layer itself is unshipped)
+
+The editable-search-term + provider-swap surface in
+[[../explorations/Augment-From-DB-Flow-Two-New-Microfrontends]]
+(Remote B) is the next natural carrier of this spec's re-fire loop.

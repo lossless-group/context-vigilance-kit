@@ -13,10 +13,17 @@ coordination_spine:
 - One async surface (Slack channel or shared doc — pick one)
 - A convener per track from the doer cohort (not the host)
 next_session_date: Wednesday · June 24, 2026
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: 77741a1c-0074-4545-966d-12b04c198199
+hex_code: fsxi5e
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/11-willing-and-able.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/11-willing-and-able.md"
 ---
 

@@ -22,10 +22,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: d228de4a-1eb8-4ddf-b7a6-35628c07b3e9
+hex_code: a56ehz
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: issue-resolution/Getting-Sonar-Pro-to-work-in-first-Research-Agent.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/issue-resolution/Getting-Sonar-Pro-to-work-in-first-Research-Agent.md"
 ---
 

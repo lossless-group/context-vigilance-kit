@@ -28,10 +28,13 @@ image_prompt: A network diagram showing a central hub (the VC firm website) with
   cards that funnel into a unified grid display.
 date_created: 2026-04-16
 date_modified: 2026-04-16
+site_uuid: 1cd98a61-0495-4261-8c1e-c21374c70f77
+hex_code: 76f1e6
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Portfolio-Wide-Job-Aggregator.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/Portfolio-Wide-Job-Aggregator.md"
 ---
 

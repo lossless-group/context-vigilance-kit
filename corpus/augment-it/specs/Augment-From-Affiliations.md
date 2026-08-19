@@ -1,40 +1,74 @@
 ---
-source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
-source_relative_path: specs/Augment-From-Affiliations.md
-source_repo_slug: augment-it
-collated_at: '2026-07-21'
-source_path: "ai-labs/augment-it/context-v/specs/Augment-From-Affiliations.md"
----
-
----
-title: "Augment from Affiliations — the first flow that starts from SurrealDB instead of a CSV, turning an event's speaker/org pairs into a rated, sourced prospect list"
-lede: "Every flow in augment-it so far starts with a CSV — upload, map columns, resolve. This one starts with data already in the canonical layer: pick an event, export every person↔org [[Client-Tagging-on-Canonical-Writes|affiliations]] edge tied to it as a CSV, rate relevance offline in a spreadsheet, reimport — while links and corpus content get added through the existing per-affiliation surface, not a new one. Building the sourced short-list a Reach.Edu team member needs to walk into FreedomFest 2026 and know who's worth a conversation."
+title: Augment from Affiliations — the first flow that starts from SurrealDB instead
+  of a CSV, turning an event's speaker/org pairs into a rated, sourced prospect list
+lede: 'The first flow that starts in the canonical layer, not a CSV: export an event''s
+  affiliations, rate relevance offline, reimport.'
 date_created: 2026-07-07
 date_modified: 2026-07-08
 authors:
-  - Michael Staton
+- Michael Staton
 augmented_with:
-  - Claude Code on Claude Sonnet 5
+- Claude Code on Claude Sonnet 5
 semantic_version: 0.2.1.0
 date_first_published: 2026-07-07
 revisions:
-  - 2026-07-08 — v0.2.1.0: MVP confirmed shipped and in active use (9 real FreedomFest 2026 affiliations rated, linked, and enriched end to end, plus the relevance-dropdown pre-select fix in `965173e`). Named the next desired features — see "Next desired features" below — deferred, not started.
-  - 2026-07-07 — v0.2.0.0: reversed the v0.0.0.2 split, per direct operator feedback after using the shipped v0.1.0.0 screen. "Two loops, two apps" was the wrong shape — the operator wants ONE screen per affiliation that does what `record-db-resolver`/`person-db-resolver` already do for their entities: view the record and edit it in place, including adding canonical links and corpus content, not just reading a CSV-supplied rating. `affiliation-rating-resolver` now also carries interactive relevance editing plus person-side and org-side link/corpus add — the CSV round-trip stays (bulk-editing 61 rows in a spreadsheet is still genuinely faster than 61 clicks), but it's now a *pre-fill* for this screen, not the only way to set a rating. `person-enrichment` is no longer this flow's link/corpus surface.
-  - 2026-07-07 — v0.1.0.0: shipped and live-tested against the real FreedomFest 2026 batch. Two real deviations from the v0.0.0.2 plan, both discovered during implementation, not guessed in advance — (1) the export is a NEW script (`export-affiliation-ratings-csv.mjs`), not an extension of `export-event-attendees-csv.mjs`, because that script is person-per-row while ratings need affiliation-per-row (a person with two orgs needs two independently-rateable rows) — extending it would have meant changing its shape for every other consumer of that roster; (2) `person-enrichment` needed more than the planned "swap EVENT_SLUG for a picker" — its worklist and attendee query were architecturally coupled to the Gatsby-invite person shape (a `!full_name` worklist gate, a fixed RSVP-predicate allowlist), which would have shown zero or silently-wrong results for FreedomFest's `person-db-resolver`-sourced, `.name`-only persons. Fixed properly: the worklist is now every attendee (not just unnamed ones), the attendee query drops the predicate allowlist entirely (any observation pointing at the event counts), and the UI falls back to `.name` for display when `.full_name` is absent. See "What Shipped" below for the full account.
-  - 2026-07-07 — v0.0.0.2: split into a hybrid — relevance rating moves to a CSV export/reimport round-trip (bulk-editable, reuses Record Collector's existing upload path); links + corpus point at `person-enrichment`'s existing per-affiliation surface (de-hardcoded from one event) instead of a new worklist UI. Smaller build, more reuse, per operator direction.
-  - 2026-07-07 — v0.0.0.1: initial draft — single new all-DB-native worklist app covering rating + links + corpus together.
+- '2026-07-08 — v0.2.1.0: MVP confirmed shipped and in active use (9 real FreedomFest
+  2026 affiliations rated, linked, and enriched end to end, plus the relevance-dropdown
+  pre-select fix in `965173e`). Named the next desired features — see "Next desired
+  features" below — deferred, not started.'
+- '2026-07-07 — v0.2.0.0: reversed the v0.0.0.2 split, per direct operator feedback
+  after using the shipped v0.1.0.0 screen. "Two loops, two apps" was the wrong shape
+  — the operator wants ONE screen per affiliation that does what `record-db-resolver`/`person-db-resolver`
+  already do for their entities: view the record and edit it in place, including adding
+  canonical links and corpus content, not just reading a CSV-supplied rating. `affiliation-rating-resolver`
+  now also carries interactive relevance editing plus person-side and org-side link/corpus
+  add — the CSV round-trip stays (bulk-editing 61 rows in a spreadsheet is still genuinely
+  faster than 61 clicks), but it''s now a *pre-fill* for this screen, not the only
+  way to set a rating. `person-enrichment` is no longer this flow''s link/corpus surface.'
+- '2026-07-07 — v0.1.0.0: shipped and live-tested against the real FreedomFest 2026
+  batch. Two real deviations from the v0.0.0.2 plan, both discovered during implementation,
+  not guessed in advance — (1) the export is a NEW script (`export-affiliation-ratings-csv.mjs`),
+  not an extension of `export-event-attendees-csv.mjs`, because that script is person-per-row
+  while ratings need affiliation-per-row (a person with two orgs needs two independently-rateable
+  rows) — extending it would have meant changing its shape for every other consumer
+  of that roster; (2) `person-enrichment` needed more than the planned "swap EVENT_SLUG
+  for a picker" — its worklist and attendee query were architecturally coupled to
+  the Gatsby-invite person shape (a `!full_name` worklist gate, a fixed RSVP-predicate
+  allowlist), which would have shown zero or silently-wrong results for FreedomFest''s
+  `person-db-resolver`-sourced, `.name`-only persons. Fixed properly: the worklist
+  is now every attendee (not just unnamed ones), the attendee query drops the predicate
+  allowlist entirely (any observation pointing at the event counts), and the UI falls
+  back to `.name` for display when `.full_name` is absent. See "What Shipped" below
+  for the full account.'
+- '2026-07-07 — v0.0.0.2: split into a hybrid — relevance rating moves to a CSV export/reimport
+  round-trip (bulk-editable, reuses Record Collector''s existing upload path); links
+  + corpus point at `person-enrichment`''s existing per-affiliation surface (de-hardcoded
+  from one event) instead of a new worklist UI. Smaller build, more reuse, per operator
+  direction.'
+- '2026-07-07 — v0.0.0.1: initial draft — single new all-DB-native worklist app covering
+  rating + links + corpus together.'
 status: Shipped
 tags:
-  - Spec
-  - Augment-It
-  - Affiliations
-  - Canonical-Layer
-  - Relevance-Rating
-  - Person-Enrichment
-  - Org-Resolution
-  - CSV-Round-Trip
-  - Reach-Edu
-  - FreedomFest
+- Spec
+- Augment-It
+- Affiliations
+- Canonical-Layer
+- Relevance-Rating
+- Person-Enrichment
+- Org-Resolution
+- CSV-Round-Trip
+- Reach-Edu
+- FreedomFest
+site_uuid: 1117ba1f-c259-417d-b7fe-54d656c068eb
+hex_code: 1et9b7
+date_authored_initial_draft: 2026-07-08
+date_authored_current_draft: 2026-07-08
+publish: true
+source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
+source_relative_path: specs/Augment-From-Affiliations.md
+source_repo_slug: augment-it
+collated_at: '2026-08-18'
+source_path: "ai-labs/augment-it/context-v/specs/Augment-From-Affiliations.md"
 ---
 
 # Augment from Affiliations

@@ -23,7 +23,7 @@ title: Rolling back in time with BTRFS
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: issue-resolution/Rolling-back-in-time-with-BTRFS.md
 source_repo_slug: lost-in-public
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content/lost-in-public/issue-resolution/Rolling-back-in-time-with-BTRFS.md"
 ---
 

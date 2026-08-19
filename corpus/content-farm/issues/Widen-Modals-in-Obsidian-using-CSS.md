@@ -9,10 +9,21 @@ related_files:
 - src/styles/claude-modal.css
 - src/styles/perplexity-modal.css
 - src/styles/text-enhancement-modal.css
+site_uuid: 69ac11d1-0a1e-4fe8-bf83-8ac0f681f0d7
+hex_code: sd34o5
+lede: Modal width lives on this.modalEl, not this.contentEl — the plugin-template
+  convention that everyone copies is why modals stay narrow.
+summary: Resolved issue that doubles as the canonical how-to for modal sizing in any
+  Lossless Obsidian plugin. Includes a copy-paste CSS starter file, the theme-token
+  table, width budgets per modal kind, the BEM scoping rationale, a responsive breakpoint,
+  and six named gotchas. Verification receipts point at a working example, a counter-example,
+  and a partial-fix attempt in the perplexed repo. An agent asked to widen, restyle,
+  or lay out an Obsidian modal should follow this rather than improvising.
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: issues/Widen-Modals-in-Obsidian-using-CSS.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/issues/Widen-Modals-in-Obsidian-using-CSS.md"
 ---
 

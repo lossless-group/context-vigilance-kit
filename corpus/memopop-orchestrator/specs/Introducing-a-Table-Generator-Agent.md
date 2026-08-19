@@ -26,10 +26,13 @@ image_prompt: A markdown table with clean columns and rows displaying competitor
   table types like funding history and team credentials.
 date_created: 2026-03-10
 date_modified: 2026-03-10
+publish: false
+site_uuid: 88c22b27-913e-4512-b026-c42a5fa1b3e5
+hex_code: n0c2gf
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Introducing-a-Table-Generator-Agent.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Introducing-a-Table-Generator-Agent.md"
 ---
 

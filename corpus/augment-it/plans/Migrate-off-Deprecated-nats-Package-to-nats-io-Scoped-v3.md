@@ -3,18 +3,8 @@ title: Migrate off the deprecated `nats` package to the `@nats-io/*` scoped v3 c
   — swap `nats@2` for `@nats-io/transport-node@3` across all 10 services, drop the
   removed `JSONCodec` in favor of `JSON.stringify` + `msg.json()`, and prove the inter-service
   bus still round-trips live before committing
-lede: The monolithic `nats` package (we're on `^2.28.0`) is fully deprecated — pnpm
-  flags it on every install. nats.js v3 split the library into scoped `@nats-io/*`
-  packages; for our pure-core usage the whole bus moves to `@nats-io/transport-node@3.4.0`.
-  The surface is small and uniform — `connect`, `subscribe` (84×), `publish` (46×),
-  `request` (30×), and `JSONCodec` encode/decode across 27 files in 10 services, with
-  zero JetStream, KV, queue groups, or headers — so the migration is mechanical, but
-  it touches every service's message plumbing at once, and the one real API change
-  (the removed codec) rewrites how every message is encoded and decoded. This plan
-  gives the next session an exact old→new mapping, a one-service pilot that proves
-  the round-trip on a live bus, a per-service migration checklist, and a full-stack
-  verification gate. The NATS server itself is untouched — this is a client-library
-  swap; the wire protocol is unchanged.
+lede: '`nats` → `@nats-io/transport-node` v3 across 27 files: mechanical, except the
+  removed `JSONCodec` rewrites every encode and decode.'
 date_created: 2026-07-01
 date_modified: 2026-07-01
 authors:
@@ -47,10 +37,15 @@ tags:
 - Services
 - Deprecation
 status: Implemented
+site_uuid: 6e8e09a9-0e44-474b-b6df-a6ed901c7869
+hex_code: emiaxu
+date_authored_initial_draft: 2026-07-01
+date_authored_current_draft: 2026-07-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: plans/Migrate-off-Deprecated-nats-Package-to-nats-io-Scoped-v3.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/plans/Migrate-off-Deprecated-nats-Package-to-nats-io-Scoped-v3.md"
 ---
 

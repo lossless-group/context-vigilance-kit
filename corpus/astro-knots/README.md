@@ -16,10 +16,15 @@ tags:
 - Index
 authors:
 - Michael Staton
+site_uuid: 79d3ff09-a484-4e4e-b821-aa00af9e5411
+hex_code: 0j7ki4
+date_authored_initial_draft: 2026-04-29
+date_authored_current_draft: 2026-04-29
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: README.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/README.md"
 ---
 

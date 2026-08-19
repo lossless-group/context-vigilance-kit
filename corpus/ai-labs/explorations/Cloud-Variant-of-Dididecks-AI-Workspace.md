@@ -1,17 +1,8 @@
 ---
 title: Cloud Variant of the Dididecks-AI Workspace — Recreating Local Privacy When
   the Filesystem Isn't Yours
-lede: 'Podium Education has a deck they want redesigned, and the engagement raises
-  a question we''ve been deferring: the main dididecks-ai spec mandates a native (Tauri)
-  workspace because that''s where the hard data-privacy constraint lives, but several
-  plausible clients can''t or won''t install a desktop app to participate. This exploration
-  walks what it would take to ship a cloud variant of the dididecks-ai workspace that
-  *meets the same privacy bar local-fs gets for free* — without abandoning open-source
-  contributors who use the local filesystem path. The destination isn''t pinned: the
-  goal is to name the privacy properties local-fs is silently providing, decompose
-  them into things a cloud runtime would have to do explicitly, and surface the forks
-  (per-client containers vs shared runtime with row-level isolation vs local-fs-with-cloud-publish
-  vs browser-only ephemeral) so the right one can be picked rather than drifted into.'
+lede: Clients who won't install a desktop app still need the privacy local-fs gives
+  for free. What a cloud runtime would have to do explicitly.
 date_created: 2026-06-05
 date_modified: 2026-06-05
 authors:
@@ -32,10 +23,15 @@ tags:
 - Podium-Education
 - Trigger-Engagement
 - Applied-AI-Labs
+site_uuid: bb237f2c-d6c2-4486-8e9e-75b1a72d5923
+hex_code: 4kqfzr
+date_authored_initial_draft: 2026-06-05
+date_authored_current_draft: 2026-06-05
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: explorations/Cloud-Variant-of-Dididecks-AI-Workspace.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/explorations/Cloud-Variant-of-Dididecks-AI-Workspace.md"
 ---
 

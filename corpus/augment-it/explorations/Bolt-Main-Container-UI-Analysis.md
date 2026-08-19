@@ -1,11 +1,8 @@
 ---
 title: Bolt-Era Main Container UI Analysis
-lede: Lifted from `augment-it-bolt/specs/MainContainerUI-Analysis.md`. The longest
-  of the bolt-era analyses (~750 lines). Describes the app shell, authentication gate,
-  routing, and layout structure of the bolt monolith. Most directly relevant to the
-  rewrite's shell decision — does augment-it have one host shell (with mounted microfrontends),
-  or is each app its own host?
-date_created: 2026-05-18
+lede: 'The bolt shell''s five-column layout and auth gate — prior art for the rewrite''s
+  open question: one host shell, or a host per app?'
+date_created: 2025-08-08
 date_modified: 2026-05-25
 date_archived: 2026-05-25
 authors:
@@ -26,10 +23,15 @@ status: Archived
 deferral_note: Describes the archive/bolt-code app shell — the auth model (Supabase)
   will not survive, but the layout decisions are reference material for the rewrite's
   shell.
+site_uuid: 593b7b02-40ba-44fe-b70d-acab3154f409
+hex_code: 3253rw
+date_authored_initial_draft: 2025-08-08
+date_authored_current_draft: 2025-08-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: explorations/Bolt-Main-Container-UI-Analysis.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/explorations/Bolt-Main-Container-UI-Analysis.md"
 ---
 

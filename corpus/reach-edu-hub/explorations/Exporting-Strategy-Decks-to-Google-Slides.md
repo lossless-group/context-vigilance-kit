@@ -30,10 +30,13 @@ related:
 - ../../../calmstorm-decks/context-v/explorations/High-Resolution-High-Fidelity-Deck-Exports-from-Code-to-Images-&-PDFs.md
 - ./Deck-Collections-A-Menu-Layer-Above-Single-Deck-Convergence.md
 - ../../CLAUDE.md — Scroll-UI vs. Play-UI naming discipline
+site_uuid: 5012a540-cae5-4de5-bdb5-776f0250f8e3
+hex_code: c2dei2
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v
 source_relative_path: explorations/Exporting-Strategy-Decks-to-Google-Slides.md
 source_repo_slug: reach-edu-hub
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v/explorations/Exporting-Strategy-Decks-to-Google-Slides.md"
 ---
 

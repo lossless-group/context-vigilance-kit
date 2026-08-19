@@ -60,10 +60,14 @@ sources:
 - WHO
 - OECD
 - EFPIA
+site_uuid: 9ba4d2b1-8500-475c-b02b-b164e75f0273
+hex_code: kc8c42
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/06-opportunity-intro.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/06-opportunity-intro.md"
 ---
 

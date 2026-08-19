@@ -17,10 +17,15 @@ tags:
 - Splash-Page
 - Inspection-Tooling
 status: Draft
+site_uuid: 648b9efe-7431-4fac-808a-906037f91f95
+hex_code: qisp1e
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: plans/Add-Chroma-Local-UI-Interface.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/plans/Add-Chroma-Local-UI-Interface.md"
 ---
 

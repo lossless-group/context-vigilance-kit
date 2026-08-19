@@ -26,10 +26,13 @@ image_prompt: A diagram showing a main git repository with two submodule arrows 
   labeled "exports" containing branded PDFs.
 date_created: 2025-11-27
 date_modified: 2025-11-27
+publish: false
+site_uuid: 8fb0e1eb-b3f1-4aec-b7a9-03f758c4e73f
+hex_code: 8uz4w8
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: blueprints/Git-Submodules-for-Private-Data-and-Exports.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/blueprints/Git-Submodules-for-Private-Data-and-Exports.md"
 ---
 

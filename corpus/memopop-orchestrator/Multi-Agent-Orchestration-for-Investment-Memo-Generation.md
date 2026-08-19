@@ -11,10 +11,13 @@ augmented_with: Claude Code (Sonnet 4.5)
 site_uuid: d926a656-1323-456f-8b48-4195ca31d371
 lede: An exploration into using AI supervisors and specialized agents to generate
   high-quality content and documents.
+hex_code: jqdts0
+date_authored_initial_draft: 2025-11-16
+date_authored_current_draft: 2025-11-16
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Multi-Agent-Orchestration-for-Investment-Memo-Generation.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Multi-Agent-Orchestration-for-Investment-Memo-Generation.md"
 ---
 

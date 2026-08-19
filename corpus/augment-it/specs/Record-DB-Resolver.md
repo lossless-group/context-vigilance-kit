@@ -1,18 +1,22 @@
 ---
 title: Record ↔ DB Resolver — operator-driven match/create bridge from row-store records
   to canonical organizations
-lede: 'The row-store records and the SurrealDB canonical orgs never got bridged. The
-  resolver is the per-record surface that closes the gap: for each record, confirm
-  which canonical org it is (→ additive enrich) or create a new one — one at a time,
-  operator in the driver''s seat.'
+lede: Row-store records and canonical SurrealDB orgs were never bridged; the resolver
+  closes the gap one record at a time, operator driving.
 date_created: 2026-06-22
-date_modified: 2026-06-22
+date_modified: 2026-07-21
+date_first_published: 2026-06-22
 authors:
 - Michael Staton
 augmented_with:
 - Claude Code on Claude Opus 4.8 (1M context)
-semantic_version: 0.0.0.1
-status: Draft
+- Claude Code on Claude Fable 5
+semantic_version: 0.0.0.2
+status: Shipped
+post_ship_note: Shipped the day it was written — changelog carries four entries on
+  2026-06-22 (v0.0.0.1 bridge, v0.0.0.2 round-trip bond + editable canonical, edit-with-traceability,
+  v0.0.0.3 auto-minted opportunities). Live as apps/record-db-resolver (:3008) + services/record-surrealdb-resolver;
+  the person-aware sibling followed 2026-07-07.
 tags:
 - Spec
 - Augment-It
@@ -22,10 +26,15 @@ tags:
 - Org-Enrichment
 - Media-Streams
 - reach-edu
+site_uuid: 5d7c93bb-c477-4da8-b590-563c30d55f63
+hex_code: 1y8qg4
+date_authored_initial_draft: 2026-06-22
+date_authored_current_draft: 2026-06-22
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: specs/Record-DB-Resolver.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/specs/Record-DB-Resolver.md"
 ---
 

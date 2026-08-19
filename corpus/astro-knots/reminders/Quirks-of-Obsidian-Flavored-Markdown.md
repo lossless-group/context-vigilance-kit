@@ -13,10 +13,15 @@ tags:
 - Preferences
 authors:
 - Michael Staton
+site_uuid: 76dcbf45-bdd5-432d-b523-8e5a80ebfb00
+hex_code: cn14w0
+date_authored_initial_draft: 2026-04-26
+date_authored_current_draft: 2026-04-26
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: reminders/Quirks-of-Obsidian-Flavored-Markdown.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/reminders/Quirks-of-Obsidian-Flavored-Markdown.md"
 ---
 

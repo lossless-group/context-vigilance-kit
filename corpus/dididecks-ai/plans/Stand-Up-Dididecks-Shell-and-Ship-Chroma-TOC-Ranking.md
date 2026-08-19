@@ -1,13 +1,7 @@
 ---
 title: Stand Up @dididecks/shell and Ship the Chroma TOC + Slide-Ranking UI
-lede: Phase A of the exploration that landed on `@dididecks/shell` as the path to
-  chroma-↔-calmstorm parity. Scaffold `apps/deck-shell/` inside the dididecks-ai monorepo
-  as an Astro integration; ship two seed routes (TOC + slide-ranking pills) and one
-  decomposition-stub generator that bridges the deck-iteration-workflow Phase 1 →
-  Phase 2 transition; install in `client-sites/chroma-decks/` first via local link,
-  then via a v0.1.0 publish to a private pnpm-scoped npm registry. Each client-site
-  stays a standalone repo on its own Vercel project; the shell is the only thing that
-  travels.
+lede: 'Phase A: scaffold `apps/deck-shell/` as an Astro integration and ship the TOC
+  + slide-ranking UI into chroma-decks via workspace link.'
 date_authored_initial_draft: 2026-05-12
 date_authored_current_draft: 2026-05-12
 date_authored_final_draft: null
@@ -33,10 +27,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-12
 date_modified: 2026-05-12
+publish: false
+site_uuid: 6bce5fab-be65-4a8a-88c9-3930a9b8629a
+hex_code: 21u3fp
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Stand-Up-Dididecks-Shell-and-Ship-Chroma-TOC-Ranking.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Stand-Up-Dididecks-Shell-and-Ship-Chroma-TOC-Ranking.md"
 ---
 

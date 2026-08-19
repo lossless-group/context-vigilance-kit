@@ -22,10 +22,13 @@ image_prompt: A group of young professionals in casual business attire, standing
   dock. Their luggage is scattered on the dock, and they look anxious and overwhelmed.
 date_created: 2026-04-29
 date_modified: 2026-04-29
+site_uuid: 8a130fa5-588b-4be9-a167-a059927c59ce
+hex_code: g4ycef
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: specs/An-Onboarding-User-Journey-for-Memopop-Native.md
 source_repo_slug: memopop-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/context-v/specs/An-Onboarding-User-Journey-for-Memopop-Native.md"
 ---
 

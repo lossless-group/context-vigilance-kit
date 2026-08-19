@@ -1,11 +1,7 @@
 ---
 title: Rethinking Confidential Access with Persistent Sessions and Auth Telemetry
-lede: 'The hypernova/dark-matter passcode pattern got us shipping, but the calmstorm-decks
-  lockout — busy client, no telemetry, can''t tell whether the cookie failed or the
-  passcode was mistyped — exposes its limits. This exploration scopes the decisions
-  for a v2 confidential-access shape: persistent (FB-style) sessions, durable auth
-  telemetry, and a topology that keeps Astro SSG for content while letting a thin
-  server tier own auth and identity.'
+lede: 'The calmstorm-decks lockout — busy client, no telemetry — exposed the passcode
+  pattern''s limit: you can''t tell a failed cookie from a typo.'
 date_authored_initial_draft: 2026-05-10
 date_authored_current_draft: 2026-05-10
 date_authored_final_draft: null
@@ -31,10 +27,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-10
 date_modified: 2026-05-10
+site_uuid: 82559aaa-ca0b-4af2-af6c-0e8b855c895a
+hex_code: pl12yg
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: explorations/Rethinking-Confidential-Access-with-Persistent-Sessions-and-Auth-Telemetry.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/explorations/Rethinking-Confidential-Access-with-Persistent-Sessions-and-Auth-Telemetry.md"
 ---
 

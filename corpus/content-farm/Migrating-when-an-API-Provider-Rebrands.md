@@ -17,10 +17,15 @@ tags:
 - API-Integrations
 - Rebrands
 - Migrations
+site_uuid: 6472f8ec-75cc-4b64-8e9d-9ea7e5ebe1ff
+hex_code: p3x48y
+date_authored_initial_draft: 2026-05-05
+date_authored_current_draft: 2026-05-05
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: Migrating-when-an-API-Provider-Rebrands.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/Migrating-when-an-API-Provider-Rebrands.md"
 ---
 

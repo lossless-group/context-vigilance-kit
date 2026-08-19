@@ -25,10 +25,13 @@ authors:
 image_prompt: An airplane engineer at the airport walking up to a sophisticated looking
   plane. He is doing a safety check, examining the aircraft systems. He is carrying
   an obscenely large clipboard with a really long checklist.
+site_uuid: 2bdb7585-8a75-4611-81aa-1e12439f8c9a
+hex_code: qijllf
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/Sequential-Steps-or-Tasks-to-Workthrough.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/prompts/Sequential-Steps-or-Tasks-to-Workthrough.md"
 ---
 

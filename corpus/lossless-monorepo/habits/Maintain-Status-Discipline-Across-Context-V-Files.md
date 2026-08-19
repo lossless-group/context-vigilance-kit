@@ -1,11 +1,7 @@
 ---
 title: Maintain status discipline across context-v files
-lede: 'A periodic sweep through every context-v/ directory in a repo, promoting status
-  fields to match reality. Plans that shipped become Shipped (with date_first_published).
-  Plans that half-shipped become Partially-Shipped (with a Remaining-work section).
-  Plans explicitly held become Deferred (with a deferral_note). The directory stays
-  loadable: an agent or human landing cold can read status: Draft and trust that it
-  means nothing has happened yet.'
+lede: 'A periodic sweep promoting `status` to match reality, so an agent landing cold
+  can read `status: Draft` and trust that nothing has happened.'
 date_created: 2026-05-16
 date_modified: 2026-05-16
 semantic_version: 0.1.0.0
@@ -22,10 +18,15 @@ tags:
 - Periodic-Sweep
 - Anti-Stale-Drafts
 - Plan-Lifecycle
+site_uuid: bd8e0c6b-4d19-4bf8-92bb-b81303f74013
+hex_code: yi3lu8
+date_authored_initial_draft: 2026-05-16
+date_authored_current_draft: 2026-05-16
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-Status-Discipline-Across-Context-V-Files.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/habits/Maintain-Status-Discipline-Across-Context-V-Files.md"
 ---
 

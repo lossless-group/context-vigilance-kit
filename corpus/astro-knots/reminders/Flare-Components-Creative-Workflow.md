@@ -19,10 +19,15 @@ tags:
 - Workflow
 authors:
 - Michael Staton
+site_uuid: dc75de91-cf48-4ee8-a781-977009d8c91d
+hex_code: til99g
+date_authored_initial_draft: 2026-04-20
+date_authored_current_draft: 2026-04-20
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: reminders/Flare-Components-Creative-Workflow.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/reminders/Flare-Components-Creative-Workflow.md"
 ---
 

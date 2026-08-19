@@ -91,10 +91,14 @@ cta_or_footer: 'Note: Below logos indicate the fund''s HQ geography; figures rep
 
   '
 sources: []
+site_uuid: 34be1236-28ca-4560-aa57-65bca94e8ce0
+hex_code: 2ca8lk
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/08-european-landscape.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/08-european-landscape.md"
 ---
 

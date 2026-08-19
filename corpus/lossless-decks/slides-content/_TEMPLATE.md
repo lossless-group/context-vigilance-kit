@@ -1,28 +1,21 @@
 ---
+title: '{Slide title — human readable, Title Case}'
+slug: '{engagement}-{slide-name}              # kebab-case, globally unique within
+  slides-content/'
+date_created: 2026-MM-DD
+date_modified: 2026-MM-DD
+tags:
+- '{Engagement-Deck}                         # e.g., Lossless-Group-Deck'
+- '{Structural-Tag}                          # e.g., Hero-Slide, Vision, Substantiation,
+  Closing'
+site_uuid: 27f5bcdb-9dc9-406c-aeaf-bc80d539e345
+hex_code: p3tmsx
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/lossless-decks/context-v
 source_relative_path: slides-content/_TEMPLATE.md
 source_repo_slug: lossless-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/lossless-decks/context-v/slides-content/_TEMPLATE.md"
----
-
----
-title: "{Slide title — human readable, Title Case}"
-slug: {engagement}-{slide-name}              # kebab-case, globally unique within slides-content/
-date_created: 2026-MM-DD
-date_modified: 2026-MM-DD
-tags:                                         # Train-Case (Capitalized-Words-Joined-By-Hyphens)
-  - {Engagement-Deck}                         # e.g., Lossless-Group-Deck
-  - {Structural-Tag}                          # e.g., Hero-Slide, Vision, Substantiation, Closing
-
-# Optional fields — uncomment as they earn their place
-# lede: "One-line summary, used for indexing and previews."
-# slot: "05"                                  # deck-OS slot identifier when known
-# variant: enhanced-v1                        # or `all` if variant-invariant
-# status: Draft                               # Draft | In-Review | Final
-# authors:
-#   - Michael Staton
-# derived_from: {parent-outline-filename}.md  # if this slide was split out of a top-level outline
 ---
 
 # {Slide title}

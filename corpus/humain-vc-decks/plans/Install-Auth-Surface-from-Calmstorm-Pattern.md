@@ -8,10 +8,14 @@ related:
 - /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/src/lib/auth/
 - /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/db/
 - /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/CLAUDE.md#auth-surface-conventions
+site_uuid: e78ce658-3432-46c2-9bb8-6a9ee984c7b8
+hex_code: k41crz
+date_created: 2026-06-06
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/humain-vc-decks/context-v
 source_relative_path: plans/Install-Auth-Surface-from-Calmstorm-Pattern.md
 source_repo_slug: humain-vc-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/humain-vc-decks/context-v/plans/Install-Auth-Surface-from-Calmstorm-Pattern.md"
 ---
 

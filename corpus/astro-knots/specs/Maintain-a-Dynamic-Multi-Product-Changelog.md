@@ -1,9 +1,7 @@
 ---
 title: Maintain a Multi-Product Changelog with Git Modules
-lede: Organizations increasingly deliver and maintain multiple products, each necessitating
-  its own changelog. However, as an organization its good to display those changelogs
-  in a unified way, so that users can easily see the changes across all products and
-  the team can feel motivation from organization-wide progress.
+lede: Each product keeps its own changelog in its own submodule; the org renders them
+  as one feed so progress reads as organization-wide.
 date_authored_initial_draft: 2025-10-14
 date_authored_current_draft: 2025-10-14
 date_authored_final_draft: 2025-10-14
@@ -27,10 +25,12 @@ slug: maintain-a-dynamic-multi-product-changelog
 tags:
 - State-Of-The-Art-Practices
 - CI-CD-Pipelines
+site_uuid: cad8920a-222a-460b-9c39-4b5699c722fa
+hex_code: 71znuz
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Maintain-a-Dynamic-Multi-Product-Changelog.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/Maintain-a-Dynamic-Multi-Product-Changelog.md"
 ---
 

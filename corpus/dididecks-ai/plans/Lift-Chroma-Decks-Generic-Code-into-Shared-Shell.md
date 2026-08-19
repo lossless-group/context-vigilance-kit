@@ -2,20 +2,8 @@
 title: Lift chroma-decks' generic layouts, utilities, and registry-derivation helpers
   into the shared @dididecks/shell so every client-site inherits the same primitives
   instead of forking from chroma
-lede: Chroma-decks was built before the @dididecks/shell carve-out, so it carries
-  the original implementations of several deck-generic primitives (PageAsDeckWrapper,
-  SlideShell, mode-switcher, ModeToggle, deck-overview) inside client-specific paths.
-  Each new client-site onboarded since then has either re-implemented the same behavior
-  locally (humain-vc-decks initially had no keyboard nav at all) or copy-pasted from
-  chroma without a clean import boundary. The humain-vc-decks onboarding on 2026-06-06
-  surfaced this drift directly when the new client's scroll pages shipped without
-  scroll-snap, keyboard arrows, or a section counter — affordances every client should
-  get for free from the shell. PageAsDeckWrapper has already been lifted (commit c87c643)
-  as the first cut; this plan formalizes the rest of the audit list and sequences
-  the remaining promotions so that (a) every client-site can consume the same vocabulary,
-  (b) chroma's local copies migrate off cleanly without breaking the working production
-  deck, and (c) future client onboardings start with a fresh-shell audit pass before
-  any copy-paste.
+lede: Chroma still owns deck-generic primitives that predate the shell carve-out —
+  SlideShell, mode-switcher, deck-overview. Lift them.
 date_authored_initial_draft: 2026-06-06
 date_authored_current_draft: 2026-06-06
 date_authored_final_draft: null
@@ -47,10 +35,15 @@ related:
 - '[[Stand-Up-Dididecks-Shell-and-Ship-Chroma-TOC-Ranking]]'
 - '[[Phase-A-Plus-In-Deck-Ranking-Shared-Nav-and-Play-Runtime]]'
 - ../../client-sites/humain-vc-decks/context-v/plans/Install-Auth-Surface-from-Calmstorm-Pattern.md
+date_created: 2026-06-06
+date_modified: 2026-06-07
+publish: false
+site_uuid: eb069ccc-cce8-413b-9d88-37ccc286004e
+hex_code: t6d2t4
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Lift-Chroma-Decks-Generic-Code-into-Shared-Shell.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Lift-Chroma-Decks-Generic-Code-into-Shared-Shell.md"
 ---
 

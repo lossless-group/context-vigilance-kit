@@ -1,16 +1,8 @@
 ---
 title: ScrollDeckPage — THE single shell overlay for a scroll-deck variant page; one-import
   wiring
-lede: 'Bundles every shell concern a scroll-deck variant page needs into ONE component:
-  pagination (scroll-snap + keyboard via `PageAsDeckWrapper`), the four-state rating
-  pill bottom-right (via `DeckOverlay--Scroll-UI` which hosts `SlideRankPill`), and
-  the three-mode color toggle top-right (via `ModeToggle`). The consumer authors only
-  the `<section data-slot data-variant>` blocks inside the slot; ScrollDeckPage handles
-  all the wiring. The `client` value (per-deployment localStorage namespace for ModeToggle)
-  is read from the shell''s resolved options on `globalThis.__dididecksShellOptions`
-  — consumers don''t have to re-pass it on every page. Authored 2026-06-07 after the
-  chroma-to-shell lift pass exposed that humain was making three separate imports
-  and three mount sites per variant — this collapses to one.'
+lede: Collapses the three shell imports a variant page used to need — pagination,
+  rating pill, mode toggle — into one component and mount site.
 artifact_kind: component
 ownership: shell
 mode: scroll-ui
@@ -46,10 +38,16 @@ at_semantic_version: 0.2.0
 status_tags:
 - Shipped
 - Canonical-Entry-Point
+date_created: 2026-06-07
+date_modified: 2026-06-07
+publish: true
+site_uuid: 7df1251a-302b-4c6f-8ac5-e9d60c8634d2
+hex_code: p19m53
+date_authored_current_draft: 2026-06-07
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/components/ScrollDeckPage.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/components/ScrollDeckPage.md"
 ---
 

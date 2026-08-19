@@ -24,10 +24,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-03
 date_modified: 2026-05-03
+publish: false
+site_uuid: 866014a3-84f7-4c46-b071-44afb015048c
+hex_code: ucntf5
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: plans/Generic-Scorecard-Generation.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/plans/Generic-Scorecard-Generation.md"
 ---
 

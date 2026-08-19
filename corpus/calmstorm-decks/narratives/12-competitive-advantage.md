@@ -46,10 +46,14 @@ key_stat: 60+
 key_stat_label: experienced founders support Calm/Storm
 cta_or_footer: null
 sources: []
+site_uuid: 01980c8f-04e8-4a92-b005-cf9db57fcdd5
+hex_code: m4ixme
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/12-competitive-advantage.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/12-competitive-advantage.md"
 ---
 

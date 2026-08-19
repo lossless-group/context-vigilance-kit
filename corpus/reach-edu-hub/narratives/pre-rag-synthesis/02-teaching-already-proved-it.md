@@ -23,10 +23,13 @@ authors:
 - Michael Staton
 date_created: 2026-06-18
 date_modified: 2026-06-18
+site_uuid: f4605140-82e5-45d1-85aa-c1f2b3190b04
+hex_code: ij03ls
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v
 source_relative_path: narratives/pre-rag-synthesis/02-teaching-already-proved-it.md
 source_repo_slug: reach-edu-hub
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v/narratives/pre-rag-synthesis/02-teaching-already-proved-it.md"
 ---
 

@@ -1,5 +1,5 @@
 ---
-date_created: 2026-1-27
+date_created: 2026-01-27
 date_modified: 2026-1-27
 publish: true
 title: PDF Parser Agent Specification
@@ -11,10 +11,11 @@ augmented_with: Claude Code on Opus 4.5
 site_uuid: a346a222-5313-b53f-7e4e-3196ca31d371
 lede: A small specification for an agent and script to parse PDFs and convert them
   to markdown with properly formatted citations.
+hex_code: axzadg
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Introducing-a-PDF-Parser-Agent.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Introducing-a-PDF-Parser-Agent.md"
 ---
 

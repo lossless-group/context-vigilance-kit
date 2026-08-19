@@ -23,10 +23,13 @@ tags:
 authors:
 - Michael Staton
 - AI Labs Team
+site_uuid: f329ab92-e0cc-41bd-a05f-30b67358f4ae
+hex_code: hzvsj5
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: explorations/New-Homebrew-Formulae-Worth-Knowing-About.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/explorations/New-Homebrew-Formulae-Worth-Knowing-About.md"
 ---
 

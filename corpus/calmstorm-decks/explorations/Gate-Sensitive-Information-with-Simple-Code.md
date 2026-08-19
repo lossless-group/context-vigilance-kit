@@ -10,10 +10,13 @@ tags:
 - Threat-Modeling
 - Cover-Page
 - Astro-Middleware
+site_uuid: 3350b604-b18a-46bb-99bd-43a95265e470
+hex_code: 02a0ny
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: explorations/Gate-Sensitive-Information-with-Simple-Code.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/explorations/Gate-Sensitive-Information-with-Simple-Code.md"
 ---
 

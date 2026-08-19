@@ -1,35 +1,48 @@
 ---
+title: Sparse-Person Enrichment Surface — per-email triage where the operator finds
+  the human behind the address, picks or creates the org they belong to, and writes
+  both back to the canonical layer
+lede: 177 event attendees landed as 177 bare emails — the opposite shape from the
+  URL-bearing records every other augment-it flow assumes.
+date_created: 2026-06-15
+date_modified: 2026-07-21
+date_first_published: 2026-06-16
+authors:
+- Michael Staton
+augmented_with:
+- Claude Code on Claude Opus 4.7 (1M context)
+semantic_version: 0.0.0.3
+revisions:
+- '2026-07-21 — v0.0.0.3: status sweep — promoted to Shipped. The surface shipped
+  2026-06-16 as apps/person-enrichment (:3015, registered in the shell) per changelog
+  2026-06-16_01_Person-Enrichment-Surface-Ships; many-per-person affiliations + org
+  autocomplete followed 2026-06-17.'
+- '2026-06-15 — v0.0.0.2: four open questions resolved per operator. Search becomes
+  "open a new tab," not a connector. Worklist is always scoped to one event, not generic-sparse.
+  Verb palette named: `create_org`, `add_profile` (smart single-field parser), `fill_out_query`
+  (URL → extract). Fuzzy matching dropped — no cross-client overlap to chase.'
+- '2026-06-15 — v0.0.0.1: initial draft.'
+status: Shipped
+tags:
+- Spec
+- Augment-It
+- Per-Record-Iteration
+- Person-Enrichment
+- Org-Resolution
+- Sparse-Records
+- Canonical-Layer
+- Network-First
+- Operator-Built-Flows
+site_uuid: 66f7b401-1585-4c32-a077-1bd730123ea3
+hex_code: by9cee
+date_authored_initial_draft: 2026-06-15
+date_authored_current_draft: 2026-06-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: specs/Sparse-Person-Enrichment-Surface.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/specs/Sparse-Person-Enrichment-Surface.md"
----
-
----
-title: "Sparse-Person Enrichment Surface — per-email triage where the operator finds the human behind the address, picks or creates the org they belong to, and writes both back to the canonical layer"
-lede: "The 177 Turning-Jobs-Into-Degrees attendees just landed in SurrealDB as 177 emails with almost nothing else — no names, no titles, no LinkedIn URLs, and (for the 63 with personal-email domains) no org signal either. The default augment-it flow assumes records are URL-bearing and scrape-targetable; this set is the opposite shape. What the operator needs is a per-row enrichment surface: pick a sparse person, search for who they are (web search → LinkedIn → SerpApi), match to an existing `persons` row or create a new one, then pick or create the `organizations` row they belong to (with multi-domain handling for orgs like Sterling Foundations that spell themselves three ways), and save the result as observations on both sides. This is a *sibling* to [[Per-Record-Iteration-as-Primary-Surface-for-Pack-Fires]] — same chrome pattern, same shell integration, different verbs and a two-entity save target. Bulk fan-out stays *secondary* (per that spec's hard-won lesson) until manual enrichment has surfaced what works."
-date_created: 2026-06-15
-date_modified: 2026-06-15
-authors:
-  - Michael Staton
-augmented_with:
-  - Claude Code on Claude Opus 4.7 (1M context)
-semantic_version: 0.0.0.2
-revisions:
-  - 2026-06-15 — v0.0.0.2: four open questions resolved per operator. Search becomes "open a new tab," not a connector. Worklist is always scoped to one event, not generic-sparse. Verb palette named: `create_org`, `add_profile` (smart single-field parser), `fill_out_query` (URL → extract). Fuzzy matching dropped — no cross-client overlap to chase.
-  - 2026-06-15 — v0.0.0.1: initial draft.
-status: Draft
-tags:
-  - Spec
-  - Augment-It
-  - Per-Record-Iteration
-  - Person-Enrichment
-  - Org-Resolution
-  - Sparse-Records
-  - Canonical-Layer
-  - Network-First
-  - Operator-Built-Flows
 ---
 
 # Sparse-Person Enrichment Surface

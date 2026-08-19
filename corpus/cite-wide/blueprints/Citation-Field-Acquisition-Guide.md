@@ -1,11 +1,8 @@
 ---
 title: Citation Field Acquisition Guide — Per-Field Reference for Filling the Lossless
   Schema
-lede: 'The operational reference for the citation acquisition agent. For each field
-  in the Lossless Citation schema: where the value comes from, the cheap path the
-  agent should try first, the expensive path it falls back to, the validation rule,
-  the failure behavior, and the publisher_types that warrant filling it. Designed
-  to be loaded as prompt context for the agent and as a checklist for human reviewers.'
+lede: 'Per-field reference for the acquisition agent: source of truth, cheap path,
+  expensive fallback, validation rule, and failure behavior.'
 date_authored_initial_draft: 2026-05-01
 date_authored_current_draft: 2026-05-01
 status: Draft
@@ -22,10 +19,13 @@ tags:
 sibling_docs:
 - Lossless-Citation-Standards.md
 - Citation-Acquisition-Pipeline.md
+site_uuid: 0ecc4baf-c4ca-4267-b2a0-9f4021a5bb63
+hex_code: xw1xco
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/cite-wide/context-v
 source_relative_path: blueprints/Citation-Field-Acquisition-Guide.md
 source_repo_slug: cite-wide
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/plugin-modules/cite-wide/context-v/blueprints/Citation-Field-Acquisition-Guide.md"
 ---
 

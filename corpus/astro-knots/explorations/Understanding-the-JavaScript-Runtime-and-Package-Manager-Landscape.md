@@ -26,10 +26,13 @@ tags:
 authors:
 - Michael Staton
 - AI Labs Team
+site_uuid: 09d3c9aa-1f01-4ea2-8b98-295e4d70278e
+hex_code: mwkdso
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: explorations/Understanding-the-JavaScript-Runtime-and-Package-Manager-Landscape.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/explorations/Understanding-the-JavaScript-Runtime-and-Package-Manager-Landscape.md"
 ---
 

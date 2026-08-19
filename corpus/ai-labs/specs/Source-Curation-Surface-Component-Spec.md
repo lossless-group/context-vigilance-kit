@@ -1,9 +1,7 @@
 ---
 title: The Source Curation Surface — A Component Architecture for a Svelte Rebuild
-lede: A working single-file tool proved out what curating a research source list needs
-  to feel like; this spec decomposes that proven behavior into a component-based Svelte
-  surface — a runes store, a tree of small components, and a clean capability/API
-  contract — so the rebuild is best-practice from line one.
+lede: 'Decomposes a proven single-file curation tool into Svelte components: a runes
+  store, a tree of small components, one API contract.'
 date_created: 2026-06-28
 date_modified: 2026-06-28
 authors:
@@ -23,10 +21,15 @@ tags:
 - Jina
 - Autosave
 - Verb-Surface
+site_uuid: 38689958-c357-471a-9e84-9262c32d4953
+hex_code: v2lij3
+date_authored_initial_draft: 2026-06-28
+date_authored_current_draft: 2026-06-28
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: specs/Source-Curation-Surface-Component-Spec.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/specs/Source-Curation-Surface-Component-Spec.md"
 ---
 

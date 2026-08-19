@@ -1,15 +1,8 @@
 ---
 title: Record-Set Family Grouping — internal lineage vs. external-variant families
   in the Record Collector sidebar
-lede: 'The Record Collector sidebar lists every record set as a peer, which makes
-  a tracker uploaded as v4 / v5 / v6 / v7 / v8 look like five unrelated CSVs and an
-  in-app promotion chain look the same as a fresh upload. Two distinct family signals
-  deserve first-class representation: the **internal-lineage family** (already in
-  the data model via `promoted_from`) and the **external-variant family** (not modeled
-  — separate uploads the user explicitly groups, or whose filenames share a stem).
-  This spec defines the field, the grouping mechanism, the sidebar rendering, and
-  the interaction with [[Enhanced-Records-List-and-Promotion-Checkpoint]] and the
-  new two-CTA `Augment this Set` panel.'
+lede: The sidebar shows a tracker uploaded as v4–v8 as five unrelated CSVs. Two family
+  kinds — promotion lineage and external variant — fix that.
 date_created: 2026-06-05
 date_modified: 2026-06-05
 authors:
@@ -27,10 +20,15 @@ tags:
 - Family-Grouping
 - Sidebar
 - Workspace-Schema
+site_uuid: f359d6c4-e56f-4861-9479-95670fb312de
+hex_code: wiy7w6
+date_authored_initial_draft: 2026-06-05
+date_authored_current_draft: 2026-06-05
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: specs/Record-Set-Family-Grouping.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/specs/Record-Set-Family-Grouping.md"
 ---
 

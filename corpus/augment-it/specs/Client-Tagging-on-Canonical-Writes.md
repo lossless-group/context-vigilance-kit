@@ -2,17 +2,8 @@
 title: Client tagging on canonical writes — every observation carries the client that
   produced it, and every canonical entity carries the materialized set of clients
   that can see it
-lede: 'The canonical layer (persons, organizations, events, locations on SurrealDB
-  main/main) is cross-client by design — one row per real-world entity, deliberately
-  shareable across reach-edu, humain-vc, and any future client. That sharing is the
-  point. But the operator still needs to know, at a glance, *which clients have touched
-  this entity*: who first surfaced them, who''s edited them since, who currently has
-  them visible in their workspace. The pattern: every observation carries a `client`
-  field; every entity carries a materialized `client_access` array (sorted by first-touch
-  time). Reads are filtered by `WHERE client_access CONTAINS ''<current-workspace-slug>''`.
-  Writes always stamp the current workspace into the observation. Three forms of ''touched''
-  (entered, updated, currently available) all collapse into the observation log —
-  no separate access table, no separate audit table.'
+lede: The canonical layer is cross-client by design — a materialized `client_access`
+  array is how each workspace still sees only its own.
 date_created: 2026-06-15
 date_modified: 2026-06-15
 authors:
@@ -30,10 +21,15 @@ tags:
 - Workspaces
 - Provenance
 - FAIR
+site_uuid: 6f7ddc9e-6036-4565-9ad5-24a20afe36a4
+hex_code: 58x9ig
+date_authored_initial_draft: 2026-06-15
+date_authored_current_draft: 2026-06-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: specs/Client-Tagging-on-Canonical-Writes.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/specs/Client-Tagging-on-Canonical-Writes.md"
 ---
 

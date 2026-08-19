@@ -1,13 +1,8 @@
 ---
 title: /toc/[deckSlug]/ — deck-level dual-surface review matrix (one row per slot
   × one column per variant)
-lede: The deck-level audit surface — distinct from `/toc/[deckSlug]/[variantSlug]/`
-  which is the per-variant TOC. This route renders the full variants × slots matrix
-  with dual-surface (Scroll + Play) ratings per cell, per-variant shippability rollups
-  in the column headers, and a per-row drift indicator (`≠`) when scroll and play
-  disagree. Effectively just embeds the `DeckMatrix` component with `showNav={true}`
-  so the variant-chooser pills sit at the top. Reads from the same audits registry
-  the per-slot SlideRankPill writes to — values match what reviewers actually clicked.
+lede: 'The deck-level review matrix: variants × slots with dual-surface ratings per
+  cell, distinct from the per-variant `/toc/[deck]/[variant]/`.'
 artifact_kind: route
 ownership: shell
 mode: n/a
@@ -36,10 +31,16 @@ status_tags:
 - Shipped
 related_models:
 - '[[../../models/Slide-Audit-Registry-Data-Model]]'
+date_created: 2026-05-15
+date_modified: 2026-06-07
+publish: true
+site_uuid: 750b2f94-d7b7-4118-b6d9-7d57ce74046e
+hex_code: c57t6v
+date_authored_current_draft: 2026-05-15
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/routes/toc-deck.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/routes/toc-deck.md"
 ---
 

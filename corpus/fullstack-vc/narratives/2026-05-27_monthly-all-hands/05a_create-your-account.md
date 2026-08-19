@@ -45,10 +45,17 @@ cta_short: Top-right → Log in → pick a provider → done.
 disclaimer_vibe_coded: We're vibe-coding / agentic-engineering this whole thing with
   Claude Code + Pi.dev. If something glitches mid-login, that's par for the course
   — we'll fix it once we understand it (Claude usually has to explain it to us first).
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: 8069d08d-d7e9-4eae-8aa5-c134405b53ef
+hex_code: bfx203
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/05a_create-your-account.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/05a_create-your-account.md"
 ---
 

@@ -1,17 +1,7 @@
 ---
 title: Phase A+ — In-Deck Ranking, Shared Nav Chrome, and a Working /play Runtime
-lede: 'After Phase A landed `@dididecks/shell` with a working TOC + slide-ranking
-  API + decomposition-stub generator, three concrete gaps surfaced on first founder
-  smoke-test: no global navigation chrome connecting Scroll · TOC · Play, no way to
-  rank a slide *from within* the scroll deck (you have to leave for a separate route),
-  and nothing to verify the /play runtime works because the shell injects no /play
-  route yet and chroma has no per-slide files for one to render. Phase A+ closes all
-  three together — shell-injected global nav, a shell-exported `<SlideRankPill>` floating
-  overlay the founder drops into the scroll deck via data-attrs, a minimum-viable
-  `/play/[deckSlug]/[variantSlug]/[slot]?` route with ← / → keyboard nav, and two
-  seeded per-slide files in chroma so the whole loop (rank → decompose → recreate
-  → present) is provable end-to-end. All in workspace-link mode; Phase A.7''s publish
-  step is orthogonal.'
+lede: Closes Phase A's three gaps — shell-injected global nav, an in-scroll `<SlideRankPill>`,
+  and a working `/play/[deck]/[variant]/[slot]`.
 date_authored_initial_draft: 2026-05-12
 date_authored_current_draft: 2026-05-12
 date_authored_final_draft: 2026-05-12
@@ -50,10 +40,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-12
 date_modified: 2026-05-12
+publish: false
+site_uuid: 174bb3c1-3a46-49b1-8a0f-7b447976b543
+hex_code: 4gglbm
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Phase-A-Plus-In-Deck-Ranking-Shared-Nav-and-Play-Runtime.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Phase-A-Plus-In-Deck-Ranking-Shared-Nav-and-Play-Runtime.md"
 ---
 

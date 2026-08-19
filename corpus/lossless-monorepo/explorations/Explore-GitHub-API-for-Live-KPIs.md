@@ -1,10 +1,7 @@
 ---
 title: 'Explore: GitHub API for Live KPIs — Credibility Without Stars'
-lede: We average 60+ commits/day per person across ~9 repos, ship 4,400+ content files
-  mapping 1,600+ tools, and document our methodology in 397 context-v files. We do
-  not have 50K stars. This exploration maps what we can pull from GitHub (and the
-  local content vault) to tell a credibility-by-shipping story instead of a popularity
-  story.
+lede: 60+ commits/day per person, 4,400+ content files, no 50K stars. What GitHub
+  can give us for a credibility-by-shipping story.
 date_authored_initial_draft: '2026-05-06'
 date_authored_current_draft: '2026-05-06'
 date_created: '2026-05-06'
@@ -24,10 +21,13 @@ tags:
 authors:
 - Michael Staton
 - AI Labs Team
+site_uuid: c86b3772-a8e0-459f-a69a-93490f309169
+hex_code: 43l0mc
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: explorations/Explore-GitHub-API-for-Live-KPIs.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/explorations/Explore-GitHub-API-for-Live-KPIs.md"
 ---
 

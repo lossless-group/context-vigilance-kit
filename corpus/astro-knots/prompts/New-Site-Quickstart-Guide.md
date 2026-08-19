@@ -23,10 +23,13 @@ authors:
 - Michael Staton
 image_prompt: A clean architectural blueprint showing the skeleton of a website being
   assembled piece by piece
+site_uuid: 18e81c3c-a2e9-4172-a7f6-966702b24bc3
+hex_code: 1xl90c
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/New-Site-Quickstart-Guide.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/prompts/New-Site-Quickstart-Guide.md"
 ---
 

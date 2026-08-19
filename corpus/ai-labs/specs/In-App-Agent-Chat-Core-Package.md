@@ -1,10 +1,7 @@
 ---
 title: In-App Agent Chat — Core Package Spec
-lede: 'Concretizes the chat-as-agent-surface exploration into a shippable package:
-  capability registry schema, BYOK storage and proxy contract, chat UI component API,
-  transcript schema, and a v1 acceptance scenario for dididecks. One shared package
-  under ai-labs/packages/, per-app capability definitions, three guards that keep
-  the agent inside our methods.'
+lede: One package — capability registry, BYOK proxy contract, chat UI API, transcript
+  schema — targeting web and Tauri, proven first on dididecks.
 date_authored_initial_draft: 2026-05-17
 date_authored_current_draft: 2026-05-17
 date_authored_final_draft: null
@@ -30,10 +27,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-17
 date_modified: 2026-05-17
+site_uuid: c3e50dcd-14b1-4550-acdd-7da8f9b02c54
+hex_code: z2zlyz
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: specs/In-App-Agent-Chat-Core-Package.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/specs/In-App-Agent-Chat-Core-Package.md"
 ---
 

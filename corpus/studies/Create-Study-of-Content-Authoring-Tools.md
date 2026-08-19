@@ -4,10 +4,13 @@ status: pre-draft, working discussion
 date: 2026-05-02
 slug-candidate: content-authoring-tools
 remote-candidate: lossless-group/study-content-authoring-tools
+site_uuid: 97f63f26-9992-4777-ac0a-54517231d5a2
+hex_code: bpsrgd
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/context-v
 source_relative_path: Create-Study-of-Content-Authoring-Tools.md
 source_repo_slug: studies
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/studies/context-v/Create-Study-of-Content-Authoring-Tools.md"
 ---
 

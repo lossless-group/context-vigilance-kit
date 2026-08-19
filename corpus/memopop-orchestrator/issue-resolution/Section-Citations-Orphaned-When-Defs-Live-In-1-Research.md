@@ -1,13 +1,7 @@
 ---
 title: Section Citations Orphaned When Definitions Live in 1-research/
-lede: Writer agents emit `[^N]` references in `2-sections/NN-foo.md` but the actual
-  citation *definitions* live in `1-research/NN-foo-research.md`. The downstream `cli/utils/consolidate_citations.py`
-  only reads `### Citations` blocks inside section files, so every ref whose definition
-  lives in the research file becomes an orphan in the exported memo. On the Panthalassa-Deck-Series-B
-  v0.0.3 export, 17 distinct ref IDs in body but only 8 defs survived — most of the
-  bibliography didn't render. A new `cli/utils/hydrate_section_citations.py` pulls
-  missing defs from 1-research/ into each section file as a pre-step, wired into `recompile_memo.py`
-  so it runs on every assembly.
+lede: '`consolidate_citations.py` reads `### Citations` only inside section files,
+  so defs living in `1-research/` become orphans.'
 date_authored_initial_draft: 2026-06-15
 date_authored_current_draft: 2026-06-15
 date_authored_final_draft: null
@@ -33,10 +27,12 @@ files_changed:
 - apps/memopop-orchestrator/cli/recompile_memo.py
 date_created: 2026-06-15
 date_modified: 2026-06-15
+site_uuid: 4ad8a5e1-979f-4ae9-a7a8-0dac1d78df95
+hex_code: iev7s2
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: issue-resolution/Section-Citations-Orphaned-When-Defs-Live-In-1-Research.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/issue-resolution/Section-Citations-Orphaned-When-Defs-Live-In-1-Research.md"
 ---
 

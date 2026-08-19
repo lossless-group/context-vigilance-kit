@@ -1,8 +1,20 @@
 ---
+site_uuid: def4d4f9-5895-4856-ab5c-cf950fa1595b
+hex_code: xlorch
+title: Create Study Everything as Code
+date_created: 2026-05-02
+date_authored_initial_draft: 2026-05-02
+date_authored_current_draft: 2026-05-02
+authors:
+- Michael Staton
+at_semantic_version: 0.0.1.0
+tags:
+- Context-Vigilance
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/context-v
 source_relative_path: Create-Study-Everything-as-Code.md
 source_repo_slug: studies
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/studies/context-v/Create-Study-Everything-as-Code.md"
 ---
 

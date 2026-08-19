@@ -21,10 +21,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.5
+site_uuid: 33841fb2-e10d-42fc-a3f5-462f39160258
+hex_code: c23cls
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: reminders/Frontmatter-Standards-for-Context-Files.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/reminders/Frontmatter-Standards-for-Context-Files.md"
 ---
 

@@ -29,10 +29,13 @@ builds_on:
 - '[[Where-Investor-Firm-Rosters-Live]]'
 date_created: 2026-05-08
 date_modified: 2026-05-08
+site_uuid: 1478283f-7f82-4b71-bce5-503162a2469f
+hex_code: lw5v09
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: plans/Add-People-Crawl-Command-to-Memopop-Native.md
 source_repo_slug: memopop-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/context-v/plans/Add-People-Crawl-Command-to-Memopop-Native.md"
 ---
 

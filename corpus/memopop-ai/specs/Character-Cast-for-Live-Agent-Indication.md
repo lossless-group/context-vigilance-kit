@@ -27,10 +27,13 @@ image_prompt: Six steam-punk portraits arranged in a horizontal row above a work
   is a dimly lit Victorian study with diagrams and ledgers.
 date_created: 2026-05-03
 date_modified: 2026-05-03
+site_uuid: 31831852-1ebd-48f2-a1f1-21954e36ada5
+hex_code: hvq916
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: specs/Character-Cast-for-Live-Agent-Indication.md
 source_repo_slug: memopop-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/context-v/specs/Character-Cast-for-Live-Agent-Indication.md"
 ---
 

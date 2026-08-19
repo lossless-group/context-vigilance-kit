@@ -1,10 +1,7 @@
 ---
 title: Create a Study of the Best Obsidian Plugins
-lede: Before we ship more plugins of our own, take a deliberate read of what's working
-  in the Obsidian community. Catalog the plugins doing the most interesting work,
-  what they get right, what we'd do differently, and which ideas are worth borrowing
-  — and pin the most relevant ones as a real study in content-farm so we read their
-  code instead of paraphrasing from training data.
+lede: Pin the 10–15 most interesting Obsidian plugins as a real study, so we read
+  their code instead of paraphrasing from training data.
 date_created: 2026-05-04
 date_modified: 2026-05-19
 status: Draft
@@ -28,10 +25,15 @@ related_files:
 related_skills:
 - study-repos-first
 - pseudomonorepos
+site_uuid: d85185ec-ebe7-4848-8863-77b8e721c21b
+hex_code: zzr5rb
+date_authored_initial_draft: 2026-05-04
+date_authored_current_draft: 2026-05-04
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: plans/Create-a-Study-of-the-Best-Obsidian-Plugins.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/plans/Create-a-Study-of-the-Best-Obsidian-Plugins.md"
 ---
 

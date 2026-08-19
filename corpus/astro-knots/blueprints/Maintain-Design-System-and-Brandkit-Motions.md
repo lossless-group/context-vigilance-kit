@@ -1,9 +1,7 @@
 ---
 title: Maintain Design System and Brand Kit Motions
-lede: Conventions for the two reference pages every Astro-Knots site ships — Brand
-  Kit (brand experience essentials) and Design System (component catalog) — including
-  scope split, URL standardization, theme/mode integration contract, and maintenance
-  motions.
+lede: Every Astro-Knots site ships `/brand-kit` for stakeholders and `/design-system`
+  for developers — this is the scope split and the upkeep.
 date_created: 2026-04-25
 date_modified: 2026-04-25
 date_last_updated: 2026-04-25
@@ -20,10 +18,15 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code on Opus 4.7
+site_uuid: 456c5528-3bbd-4abe-89c6-42f5a68e0505
+hex_code: 6tj75h
+date_authored_initial_draft: 2026-04-25
+date_authored_current_draft: 2026-04-25
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Maintain-Design-System-and-Brandkit-Motions.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/blueprints/Maintain-Design-System-and-Brandkit-Motions.md"
 ---
 

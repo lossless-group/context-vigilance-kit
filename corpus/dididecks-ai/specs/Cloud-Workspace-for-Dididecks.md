@@ -1,11 +1,7 @@
 ---
 title: Cloud Workspace for Dididecks
-lede: A cloud-hosted, browser-accessible workspace variant for dididecks-ai engagements
-  where installing the native desktop app is the wrong friction — without abandoning
-  the local-filesystem path that open-source contributors and security-graded engagements
-  still depend on. Same WorkspaceAdapter contract, additional storage and identity
-  adapters, explicit reconstruction of the privacy properties that local-fs gives
-  us for free.
+lede: A browser-accessible workspace for engagements where the native app is the wrong
+  friction — same WorkspaceAdapter contract, new adapters.
 date_authored_initial_draft: 2026-06-05
 date_authored_current_draft: 2026-06-05
 date_authored_final_draft: null
@@ -33,10 +29,13 @@ tags:
 - Open-Source-Collaborators
 - Podium-Education
 - Trigger-Engagement
+publish: false
+site_uuid: ee1531b7-edf4-4281-a349-a62d4d8d2e51
+hex_code: z2zvjz
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: specs/Cloud-Workspace-for-Dididecks.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/specs/Cloud-Workspace-for-Dididecks.md"
 ---
 

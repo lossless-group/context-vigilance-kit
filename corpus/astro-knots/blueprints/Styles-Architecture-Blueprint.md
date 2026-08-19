@@ -15,10 +15,15 @@ tags:
 - Design-Tokens
 authors:
 - Michael Staton
+site_uuid: 3d4514c9-f5bc-47f7-a65e-ac8d20f4b535
+hex_code: medb9h
+date_authored_initial_draft: 2025-11-15
+date_authored_current_draft: 2025-11-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Styles-Architecture-Blueprint.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/blueprints/Styles-Architecture-Blueprint.md"
 ---
 

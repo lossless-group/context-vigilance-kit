@@ -1,11 +1,7 @@
 ---
 title: Dependabot Alerts — Triage Playbook for Lossless Repos
-lede: 'GitHub Dependabot''s alert UI is opaque enough that we re-derive ''what does
-  this actually mean for us'' every time a new repo gets a noisy alert badge. This
-  is the standing playbook: what the alerts usually are (almost always dev-toolchain
-  transitives that never ship to users), how to diagnose what''s real, and the bulk-dismiss
-  script with categorized rationales that cleared 86 alerts across three Obsidian
-  plugins on 2026-05-17 in roughly five minutes.'
+lede: The bulk-dismiss script with categorized rationales cleared 86 Dependabot alerts
+  across three Obsidian plugins in about five minutes.
 date_created: 2026-05-17
 date_modified: 2026-05-17
 status: Reference / Playbook
@@ -26,10 +22,15 @@ applies_to:
 - Especially: Obsidian plugins (cite-wide, image-gin, perplexed-plugin, future siblings)
 - Generally: Any pseudomonorepo child whose user-facing artifact is a bundled file
     (Astro sites, plugins, CLI tools)
+site_uuid: 9f9a101f-1fa8-41b1-a0cc-3dcc9dd88939
+hex_code: y1p8hs
+date_authored_initial_draft: 2026-05-17
+date_authored_current_draft: 2026-05-17
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: issues/Dependabot-Alerts-Triage-Playbook-For-Lossless-Repos.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/issues/Dependabot-Alerts-Triage-Playbook-For-Lossless-Repos.md"
 ---
 

@@ -13,10 +13,15 @@ tags:
 - Patterns
 authors:
 - Michael Staton
+site_uuid: cb9a6315-c7b8-44bb-9cb3-da2bd4422670
+hex_code: diby1f
+date_authored_initial_draft: 2025-11-15
+date_authored_current_draft: 2025-11-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: reminders/Astro-Knots-is-not-a-True-Monorepo.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/reminders/Astro-Knots-is-not-a-True-Monorepo.md"
 ---
 

@@ -21,10 +21,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: cf099b08-f7d0-4389-9a2e-c8119ae2f43b
+hex_code: zza5g9
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: issue-resolution/Fix-Firm-Scoped-Output-Paths.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/issue-resolution/Fix-Firm-Scoped-Output-Paths.md"
 ---
 

@@ -15,10 +15,15 @@ tags:
 - Distribution
 authors:
 - Michael Staton
+site_uuid: 54d60fd7-e289-4404-89cb-f895d4d265c9
+hex_code: 9evxzh
+date_authored_initial_draft: 2024-12-18
+date_authored_current_draft: 2024-12-18
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: strategy/Exploring-Publishing-Component-Library-for-VC-Firms.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/strategy/Exploring-Publishing-Component-Library-for-VC-Firms.md"
 ---
 

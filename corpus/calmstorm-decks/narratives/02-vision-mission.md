@@ -21,10 +21,14 @@ key_stat: null
 key_stat_label: null
 cta_or_footer: Setting sail for Fund III
 sources: []
+site_uuid: 22182d84-21ec-4303-8bd5-2bd02687fb6d
+hex_code: jy8xuv
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/02-vision-mission.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/02-vision-mission.md"
 ---
 

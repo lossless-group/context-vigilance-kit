@@ -38,10 +38,14 @@ disclaimer: 'Not an offer to invest. The information contained herein is a draft
   '
 cta_or_footer: © 2023 Calm/Storm Ventures
 sources: []
+site_uuid: 44d16817-623c-438e-8995-7b3912a0e76f
+hex_code: 7lp2r7
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/01-disclaimer-confidential.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/01-disclaimer-confidential.md"
 ---
 

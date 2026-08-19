@@ -1,11 +1,7 @@
 ---
 title: Human-Curated Source Sets and Per-Firm RAG for Memo Narrative
-lede: What if 'fighting Perplexity' is the wrong frame — and the fix is to keep its
-  one-shot take as commentary, route the real research through validated harvesters,
-  then let the analyst rank and prune sources in a GUI before any prose gets written,
-  with the firm's own PDFs and transcripts as a parallel standing corpus the writer
-  can cite from? Here's the pipeline shape and the retrieval-provider option set that
-  supports it.
+lede: Keep Perplexity's take as quarantined commentary and route real research through
+  validated harvesters plus a per-firm standing RAG store.
 date_authored_initial_draft: 2026-05-22
 date_authored_current_draft: 2026-05-22
 date_authored_final_draft: null
@@ -37,10 +33,13 @@ image_prompt: A three-station workshop bench — left station is a librarian-har
   monospaced font, technical-illustration aesthetic.
 date_created: 2026-05-22
 date_modified: 2026-05-22
+site_uuid: fa617119-933c-4c03-a51c-2df5409e2632
+hex_code: 91mg1l
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: explorations/Human-Curated-Source-Sets-and-Per-Firm-RAG-for-Memo-Narrative.md
 source_repo_slug: memopop-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/context-v/explorations/Human-Curated-Source-Sets-and-Per-Firm-RAG-for-Memo-Narrative.md"
 ---
 

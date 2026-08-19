@@ -18,10 +18,15 @@ tags:
 - Arthouse-Site
 - Ideogram
 - Replicate
+site_uuid: 410f1086-8b08-4e68-ba5b-641642d88c03
+hex_code: mi9f31
+date_authored_initial_draft: 2026-05-18
+date_authored_current_draft: 2026-05-18
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: explorations/AI-Photo-to-Illustration-Transform-for-Arthouse.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/explorations/AI-Photo-to-Illustration-Transform-for-Arthouse.md"
 ---
 

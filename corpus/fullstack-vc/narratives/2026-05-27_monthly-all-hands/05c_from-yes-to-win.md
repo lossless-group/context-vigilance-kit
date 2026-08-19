@@ -11,10 +11,17 @@ tracks_teaser:
 - Internal Conviction → IC
 - Syndicate to VCs
 - Offer to LPs
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: 910ee441-fc4b-4c27-a49c-41b3b9a99b97
+hex_code: 190jk6
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/05c_from-yes-to-win.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/05c_from-yes-to-win.md"
 ---
 

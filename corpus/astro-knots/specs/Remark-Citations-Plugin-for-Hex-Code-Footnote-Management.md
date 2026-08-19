@@ -29,10 +29,13 @@ image_prompt: A flow diagram showing scattered hex-code footnote markers in a ma
   pipeline.
 date_created: 2026-04-22
 date_modified: 2026-04-22
+site_uuid: 985606ea-e86c-4658-bc37-a46828c68140
+hex_code: bk0dks
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Remark-Citations-Plugin-for-Hex-Code-Footnote-Management.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/Remark-Citations-Plugin-for-Hex-Code-Footnote-Management.md"
 ---
 

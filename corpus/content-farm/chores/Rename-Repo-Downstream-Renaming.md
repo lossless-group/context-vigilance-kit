@@ -16,10 +16,15 @@ tags:
 - Naming
 - Branding
 - Refactors
+site_uuid: cdedb7ee-c8fd-4f24-bc25-7718ec6cbe42
+hex_code: z9z0u9
+date_authored_initial_draft: 2026-05-05
+date_authored_current_draft: 2026-05-05
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: chores/Rename-Repo-Downstream-Renaming.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/chores/Rename-Repo-Downstream-Renaming.md"
 ---
 

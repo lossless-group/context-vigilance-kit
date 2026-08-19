@@ -1,8 +1,20 @@
 ---
+site_uuid: fe2030b1-1e85-4c8e-bd4f-e12f3b02b91b
+hex_code: u9i8bl
+title: Implement Deeper Analytics Tracking
+date_created: 2026-05-08
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
+authors:
+- Michael Staton
+at_semantic_version: 0.0.1.0
+tags:
+- Prompt
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: prompts/Implement-Deeper-Analytics-Tracking.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/prompts/Implement-Deeper-Analytics-Tracking.md"
 ---
 

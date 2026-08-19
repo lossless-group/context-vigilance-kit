@@ -18,10 +18,15 @@ tags:
 - Naming
 - Branding
 - Refactors
+site_uuid: 49b5412f-5a7d-42a8-ab85-4235a9228e23
+hex_code: ae2h95
+date_authored_initial_draft: 2026-05-05
+date_authored_current_draft: 2026-05-05
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: chores/Tidy-Naming-Repo-Mentions-of-Obsidian-and-Plugin.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/chores/Tidy-Naming-Repo-Mentions-of-Obsidian-and-Plugin.md"
 ---
 

@@ -1,10 +1,7 @@
 ---
 title: Firm — VC firm / backer firm metadata
-lede: One firm.md per firm-anchored directory — the metadata about the VC firm that
-  the deck is either authored by or referencing as a backer. Present in calmstorm
-  (single-firm) and chroma (multi-investor) layouts; absent from humain (flat operating-company
-  layout — the operating company IS the firm and its metadata lives in DESIGN.md +
-  the deck content itself, not a firm.md).
+lede: One `firm.md` per firm-anchored directory — present in calmstorm and chroma's
+  multi-investor layout, absent from humain's flat one.
 date_authored_initial_draft: 2026-06-07
 date_last_updated: 2026-06-07
 at_semantic_version: 0.0.1.0
@@ -14,10 +11,16 @@ applies_to:
 - client-sites/chroma-decks
 not_applicable_to:
 - client-sites/humain-vc-decks (flat operating-company variant — no firm container)
+date_created: 2026-06-07
+date_modified: 2026-06-07
+publish: false
+site_uuid: ac89a5c5-9ca5-40c4-b044-f6ec6e8549da
+hex_code: 2u3xv9
+date_authored_current_draft: 2026-06-07
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: models/Firm-Data-Model.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/models/Firm-Data-Model.md"
 ---
 

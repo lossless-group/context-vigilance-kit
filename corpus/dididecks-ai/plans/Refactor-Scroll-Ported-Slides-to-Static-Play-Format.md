@@ -1,15 +1,8 @@
 ---
 title: Refactor scroll-ported slides into true static play-format slides (per-client,
   repeat for every deck)
-lede: Operational plan, reusable across every dididecks client engagement, for converting
-  per-slide files that were COPIED from scroll-deck sections (and therefore still
-  carry scroll-mode idioms — vw/vh/clamp viewport units, IntersectionObserver-driven
-  reveals, marquees, transitions, breakpoint media queries) into the static-only HTML/CSS/Tailwind
-  form @dididecks/shell's /play and /print routes require. The calmstorm-decks `src/slides/by-title/`
-  fileset is the reference implementation; this plan extracts its discipline so any
-  client deck (chroma-decks today, future engagements tomorrow) can be ported the
-  same way. Includes the rationale, the checklist, the per-slide procedure, the verification
-  loop, and the anti-patterns to flag during code review.
+lede: A reusable procedure for stripping scroll idioms — vw/vh units, reveals, marquees
+  — from copied slides so `/play` and `/print` render them.
 date_authored_initial_draft: 2026-05-14
 date_authored_current_draft: 2026-05-14
 date_authored_final_draft: 2026-05-14
@@ -41,10 +34,15 @@ tags:
 - Phase-1-To-Phase-2-Bridge
 authors:
 - Michael Staton
+date_created: 2026-05-14
+date_modified: 2026-05-16
+publish: true
+site_uuid: b296e1c7-6983-47e8-a2d2-5c51cd2bbb93
+hex_code: 992gth
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Refactor-Scroll-Ported-Slides-to-Static-Play-Format.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Refactor-Scroll-Ported-Slides-to-Static-Play-Format.md"
 ---
 

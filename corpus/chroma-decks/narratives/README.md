@@ -1,8 +1,20 @@
 ---
+site_uuid: 007d24e4-deaf-4d5e-9128-e4f1a000fcef
+hex_code: p7n3dd
+title: Narratives — chroma-decks
+date_created: 2026-05-11
+date_authored_initial_draft: 2026-05-11
+date_authored_current_draft: 2026-06-19
+authors:
+- Michael Staton
+at_semantic_version: 0.0.1.0
+tags:
+- Narrative
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: narratives/README.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/narratives/README.md"
 ---
 

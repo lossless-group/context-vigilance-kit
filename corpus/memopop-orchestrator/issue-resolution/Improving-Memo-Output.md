@@ -26,10 +26,13 @@ image_prompt: An investment analyst reviewing multiple data streams and document
   of rigorous analytical process.
 date_created: 2025-11-19
 date_modified: 2025-11-19
+publish: false
+site_uuid: bedc249f-7faf-4721-872d-8f6d2dda98fe
+hex_code: jm4mko
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: issue-resolution/Improving-Memo-Output.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/issue-resolution/Improving-Memo-Output.md"
 ---
 

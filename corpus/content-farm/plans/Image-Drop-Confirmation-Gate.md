@@ -1,10 +1,7 @@
 ---
 title: Image Drop Confirmation Gate
-lede: An Obsidian plugin that intercepts every image drag-drop and paste, then asks
-  — before anything touches the disk or the network — where this image should go.
-  The default is the vault. The point is to make the decision deliberate, because
-  some of the imagery we work with is private and a chart on imgur is a phone call
-  we don't want to make.
+lede: An Obsidian plugin that asks where a dropped image goes before anything hits
+  disk or network — a private chart on imgur is a phone call.
 date_created: 2026-05-09
 date_modified: 2026-05-09
 status: Draft
@@ -23,10 +20,15 @@ tags:
 related_files:
 - plugin-modules/cite-wide/src/modals/CitationModal.ts
 - context-v/plans/Create-a-Study-of-the-Best-Obsidian-Plugins.md
+site_uuid: 3fce085b-a15c-4b37-82a2-73ae738b30bc
+hex_code: hpayce
+date_authored_initial_draft: 2026-05-09
+date_authored_current_draft: 2026-05-09
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: plans/Image-Drop-Confirmation-Gate.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/plans/Image-Drop-Confirmation-Gate.md"
 ---
 

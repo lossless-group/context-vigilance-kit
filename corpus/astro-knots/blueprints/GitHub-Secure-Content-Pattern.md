@@ -14,10 +14,15 @@ tags:
 - Private-Repos
 authors:
 - Michael Staton
+site_uuid: 56a3240e-45a4-4068-96ae-38b650bc78bc
+hex_code: pwhq2d
+date_authored_initial_draft: 2024-12-01
+date_authored_current_draft: 2024-12-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/GitHub-Secure-Content-Pattern.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/blueprints/GitHub-Secure-Content-Pattern.md"
 ---
 

@@ -20,10 +20,14 @@ tags:
 - Workspace
 - Vercel
 - Branch-Aware
+site_uuid: 6ee6602f-3454-41b9-9092-3ee94c20a03b
+hex_code: kysd25
+date_authored_initial_draft: 2026-05-03
+date_authored_current_draft: 2026-05-03
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Maintain-Branch-Aware-LFM-Dev-Mode.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/blueprints/Maintain-Branch-Aware-LFM-Dev-Mode.md"
 ---
 

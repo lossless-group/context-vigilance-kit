@@ -4,29 +4,35 @@ lede: Drop a YouTube, SoundCloud, or other listenable link into Obsidian and Ste
   turns it into a fully-frontmattered note with a streaming, AI-generated transcript
   — sources become searchable knowledge in one move.
 date_created: 2026-05-07
-date_modified: 2026-05-07
+date_modified: 2026-08-08
 authors:
 - Michael Staton
 augmented_with:
 - Pi on Claude Opus 4.7 (1M context)
-semantic_version: 0.0.0.1
+- Claude Code on Claude Opus 5 (1M context)
+semantic_version: 0.0.1.0
 tags:
 - Spec
 - Obsidian-Plugins
 - Content-Farm
 - Audio-Transcription
 - Streaming-AI
-status: Draft
+status: In Progress
+site_uuid: 1f90459b-5a73-490f-b3ac-696b9316ef2f
+hex_code: j9rma8
+date_authored_initial_draft: 2026-05-07
+date_authored_current_draft: 2026-05-07
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: specs/Stenographer-an-Obsidian-Plugin-that-transcribes-Audio-Content.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/specs/Stenographer-an-Obsidian-Plugin-that-transcribes-Audio-Content.md"
 ---
 
 # Stenographer: an Obsidian Plugin that Transcribes Audio Content
 
-<!-- developing -->
+<!-- v0.1.0 shipped 2026-08-08 as plugin-modules/stenographer -->
 
 ## Summary
 
@@ -34,7 +40,7 @@ Stenographer is an Obsidian plugin that follows a "listenable link" — YouTube,
 
 ## Prior art
 
-- [[Create-an-Audio-Transcriber-plus-Layered-Value]] — the broader vision spec that frames audio-to-note as a value-layered workflow (transcript + summary + citations + …). Stenographer is the focused first cut: provider metadata + accurate transcript, nothing more layered yet. References [`obra/Youtube2Webpage`](https://github.com/obra/Youtube2Webpage) as a working precedent for the YouTube-to-document shape.
+- [`obra/Youtube2Webpage`](https://github.com/obra/Youtube2Webpage) — a working precedent for the YouTube-to-document shape. Carried over from the one-day stub spec that preceded this one ("Create an Audio Transcriber, with extra layers of value", 2026-05-06), which held nothing else and has been removed.
 - [[../explorations/Using-APIs-to-Ingest-More-Data]] — explores third-party fetchers (Jina Reader, Firecrawl, etc.) and the "metadata to frontmatter, body to note" pattern Metafetch already implements for OpenGraph. Stenographer is the audio-shaped sibling.
 - `plugin-modules/metafetch/` — established pattern for "fetch from a URL → write frontmatter to a note" inside Obsidian.
 - `plugin-modules/perplexed/` — established pattern for streaming AI responses into the editor in real time.
@@ -130,20 +136,108 @@ To ensure compatibility with Astro-Knots and interactive media players, transcri
 
 ## Design
 
-// TBD — to be developed in dialog. Likely sections to populate: command surface, settings shape, file-creation rules (path, filename derivation, collision policy), frontmatter schema, transcript formatting (timestamps? speaker tags?), error handling, retry/resume on long transcripts.
+**As built in v0.1.0** (`plugin-modules/stenographer`). The Provider Strategy above describes the
+full three-engine ambition; v1 implements engines 1 and 3, and defers engine 2 (the scraper)
+because it is the one that requires the proxy.
+
+### The v1 constraint that shaped everything
+
+v1 was scoped as **direct-from-plugin to managed APIs, no infrastructure**. That collides with one
+non-obvious fact: **AssemblyAI, Deepgram, and ElevenLabs will not ingest a YouTube page.** They
+require a direct media URL, and producing one from YouTube means running `yt-dlp` somewhere —
+precisely the Lossless API Helper described in
+[[../explorations/Enabling-Obsidian-Plugins-to-access-Homegrown-API-Helpers]], which does not exist yet.
+
+Supadata ingests the platform URL itself. So the engine split is forced, not chosen:
+
+| Link shape | Engine | Why |
+|---|---|---|
+| YouTube / TikTok / Instagram / X / Facebook | Supadata | Only engine that accepts a platform page URL without a server |
+| Direct media URL (`.mp3`, `.m4a`, `.wav`, …) | AssemblyAI (when keyed), else Supadata `generate` | Only engine here that does speaker diarization |
+| Anything else | Supadata `generate` | Accepts arbitrary public file URLs; try rather than refuse |
+
+Routing lives in one function (`src/utils/urls.ts::chooseEngine`) and the modal renders its verdict
+live, before any credit is spent.
+
+### Command surface
+
+- `Transcribe a link` — opens the modal empty.
+- `Transcribe the link under the cursor` — prefers the editor selection, falls back to the current
+  line, so a cursor resting in a link works without precise selection.
+- Ribbon icon → same modal.
+
+Both commands converge on one modal, so there is exactly one place a transcription is configured.
+
+### Settings shape
+
+Provider keys (Supadata, AssemblyAI) · engine override (`auto` / forced) · Supadata mode
+(`native` / `generate` / `auto`) · preferred language · job timeout · transcript folder · date-prefix
+filenames · open-after-create · link-back toggle · characters-per-line · speaker labels ·
+eight configurable frontmatter field names.
+
+### File-creation rules
+
+- **Path:** configurable folder, created recursively if missing.
+- **Filename:** provider title, stripped of filesystem-illegal characters, capped at 120 chars;
+  optional `YYYY-MM-DD ` prefix. Falls back to `Transcript <epoch>` when the title is empty or
+  entirely punctuation (real on TikTok/Shorts).
+- **Collision:** append ` 2`, ` 3` — Obsidian's own convention. **Never overwrite**: a transcript can
+  represent minutes of paid API time.
+
+### Transcript formatting
+
+`:::transcript` LFM block, `[HH:MM:SS]` (or `[MM:SS]` under an hour), `**Speaker**:` prefix when the
+engine diarizes. Caption tracks arrive as 2–5 word fragments; adjacent fragments merge up to a
+configurable character budget, **but a speaker change always breaks the line** regardless of length.
+An empty or untimed result still emits a well-formed block — a half-open directive would corrupt
+every renderer downstream.
+
+### Error handling
+
+Failures are ranked by what they cost the user. Metadata is fetched first (it names the file) but
+returns `null` on failure and the run continues — losing a title is annoying, discarding a paid-for
+transcript is not. An empty transcript stops the run with an actionable message. Provider errors
+carry stable codes (`NO_API_KEY`, `AUTH_FAILED`, `NOT_FOUND`, `TRANSCRIPT_UNAVAILABLE`,
+`RATE_LIMITED`, `JOB_FAILED`, `TIMEOUT`, `ENGINE_MISMATCH`) so callers branch without string-matching.
+
+### Long content
+
+Supadata returns HTTP 202 + `jobId` for anything over ~20 minutes; Stenographer polls at 1s
+(provider guidance) and AssemblyAI at 3s, reporting elapsed seconds into the status Notice, and
+aborts on a configurable timeout (default 600s) rather than hanging. No chunking or resume in v1 —
+both providers handle long media server-side. **Resume across an Obsidian restart is not implemented**;
+a job in flight when the app closes is lost.
 
 ## Open questions
 
-- [ ] Where does the source URL come from — clipboard, modal input, current-line link, or all three?
-- [ ] Single transcription provider at v1 or a Perplexed-style multi-provider settings tab from day one?
-- [ ] Does Stenographer download the audio itself, or does it pass the URL through to a provider that ingests directly?
-- [ ] Filename derivation: provider title slug? date prefix? user prompt?
-- [ ] What happens on very long content (multi-hour podcasts) — chunking, resume, progress reporting?
-- [ ] How much should overlap with the broader [[Create-an-Audio-Transcriber-plus-Layered-Value]] spec — does Stenographer subsume it, or stay strictly the "raw transcript" cut while the broader spec covers layered value?
+- [x] **Where does the source URL come from?** All three, converging on one modal: modal input,
+      editor selection, current-line link. Clipboard is not read automatically — silently acting on
+      clipboard contents is surprising.
+- [x] **Single provider at v1 or multi-provider from day one?** Two engines from day one, because
+      the YouTube-vs-direct-audio split is a hard capability boundary, not a preference. The
+      settings tab follows the Perplexed multi-provider shape.
+- [x] **Does Stenographer download the audio itself?** No. It passes the URL through to a provider
+      that ingests directly. This is the entire reason Supadata is the primary engine.
+- [x] **Filename derivation?** Provider title slug, optional date prefix (setting), collision-safe.
+- [x] **Very long content?** Async job + polling + progress reporting + configurable timeout.
+      No chunking; no resume across restart.
+- [x] How much should overlap with the broader "layered value" framing — does Stenographer subsume it? **Resolved 2026-08-18: yes.** That spec never got past a link and a bullet, and Stenographer outgrew it within a day. It has been removed rather than left as a stub competing for the same subject. The layered value it gestured at — summary, citations, an `intelligence:` layer over the raw transcript — belongs in this spec's Wish List, not a separate document.
+
+## Deferred to v2
+
+Named here so the v1 boundary is legible rather than accidental:
+
+- **Zoom recordings.** Local Zoom files are a file-picker path, not a URL path; cloud recordings need
+  OAuth, app registration, and recording-scope permissions. Neither fits the "paste a link" surface.
+- **Streaming token-by-token** into the note body. v1 creates the note once the transcript is complete.
+  Neither engine's REST surface streams partial transcripts for pre-recorded media.
+- **The scraper engine** (`jdepoix` / `obra`) — needs the Lossless API Helper.
+- **Playlists and channels** — the Wish List above.
+- **The `intelligence:` frontmatter block** — hooks, sentiment, topics, summary.
+- **Mobile.** `isDesktopOnly: true` in v1; nothing in the code requires desktop, but it is untested.
 
 ## Related
 
-- [[Create-an-Audio-Transcriber-plus-Layered-Value]]
 - [[../explorations/Using-APIs-to-Ingest-More-Data]]
 - `plugin-modules/metafetch/`
 - `plugin-modules/perplexed/`

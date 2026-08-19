@@ -49,10 +49,14 @@ sources:
 - WHO
 - OECD
 - EFPIA
+site_uuid: d3441104-cbd9-45e4-930f-0f413a836ab3
+hex_code: vawwqa
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/05-problem-intro.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/05-problem-intro.md"
 ---
 

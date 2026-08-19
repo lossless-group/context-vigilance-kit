@@ -58,10 +58,14 @@ captions:
 
     '
 sources: []
+site_uuid: d0114fc3-0b2d-49e1-b6a0-b333706a3a83
+hex_code: j2o9g2
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/11-investment-team-LPAC.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/11-investment-team-LPAC.md"
 ---
 

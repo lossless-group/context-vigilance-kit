@@ -26,10 +26,13 @@ image_prompt: Two legal documents side by side with highlighted diff regions—o
   and a checklist of common legal flags between them.
 date_created: 2026-03-10
 date_modified: 2026-03-10
+publish: false
+site_uuid: 6fe14440-2201-41b0-b08c-efe5e3256cad
+hex_code: gmrov7
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Introducing-a-Legal-Doc-Comparator.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Introducing-a-Legal-Doc-Comparator.md"
 ---
 

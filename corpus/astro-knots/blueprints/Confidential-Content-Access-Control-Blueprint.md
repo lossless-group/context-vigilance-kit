@@ -14,10 +14,15 @@ tags:
 - Portfolio
 authors:
 - Michael Staton
+site_uuid: 63d7579c-7b21-4a73-8cd9-261e0d53781a
+hex_code: vnc2iw
+date_authored_initial_draft: 2024-12-01
+date_authored_current_draft: 2024-12-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Confidential-Content-Access-Control-Blueprint.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/blueprints/Confidential-Content-Access-Control-Blueprint.md"
 ---
 
@@ -311,8 +316,8 @@ src/
 UNIVERSAL_PORTFOLIO_PASSCODE_PLAINTEXT=HYPER2025!
 
 # Option 2: Hashed (production hardening)
-UNIVERSAL_PORTFOLIO_PASSCODE_SALT=dffbeec15f938c0659fd11909df6e044
-UNIVERSAL_PORTFOLIO_PASSCODE_HASH=194dbb229e5553a8a1a2509dc42bb02bb1c8df09078b090475803211bc723898
+UNIVERSAL_PORTFOLIO_PASSCODE_SALT=<generate: openssl rand -hex 16>
+UNIVERSAL_PORTFOLIO_PASSCODE_HASH=<sha256 of salt+passcode>
 
 # GitHub Content Repository (for confidential memos)
 GITHUB_CONTENT_PAT=github_pat_xxxxx  # Fine-grained PAT with Contents: Read-only

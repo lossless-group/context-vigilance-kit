@@ -13,10 +13,15 @@ tags:
 - Tooling
 - Stack-Preferences
 status: Active
+site_uuid: 620ecee4-366f-4895-aed9-e8de28709b75
+hex_code: kdjar6
+date_authored_initial_draft: 2026-05-07
+date_authored_current_draft: 2026-05-07
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: reminders/Preferred-Stack.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/reminders/Preferred-Stack.md"
 ---
 

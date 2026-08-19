@@ -27,10 +27,13 @@ image_prompt: A polished single-page investment summary with a sidebar showing d
   footer — printed on crisp white paper next to the thicker full memo it accompanies.
 date_created: 2026-03-23
 date_modified: 2026-03-23
+publish: false
+site_uuid: 79c342b4-32af-444b-a5a4-1f63fd191941
+hex_code: 0otyr5
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Introducing-a-One-Pager-Cover-Sheet-and-Export.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Introducing-a-One-Pager-Cover-Sheet-and-Export.md"
 ---
 

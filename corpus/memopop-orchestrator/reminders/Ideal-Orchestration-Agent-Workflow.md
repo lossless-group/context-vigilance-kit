@@ -24,10 +24,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: fe4cedc3-8831-4eb1-b3f0-fb4910a99873
+hex_code: pxmxac
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: reminders/Ideal-Orchestration-Agent-Workflow.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/reminders/Ideal-Orchestration-Agent-Workflow.md"
 ---
 

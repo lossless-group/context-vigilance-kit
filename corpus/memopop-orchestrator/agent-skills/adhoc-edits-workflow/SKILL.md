@@ -1,4 +1,15 @@
 ---
+name: adhoc-edits-workflow
+description: 'The four-step pipeline for making a one-off change to an existing deal
+  memo: land facts and citations in 1-research/ first, integrate into the right section
+  as prose, assemble the draft, then export HTML before PDF. Use whenever the user
+  asks to change, add to, correct, or update an already-generated memo — "add this
+  fact", "fix the competitor section", "the valuation is wrong", "regenerate with
+  this included". Encodes the two rules that make the edit survive: never edit the
+  assembled final draft directly, because assembly overwrites it, and never start
+  with prose before the underlying research file carries the fact and its citation.
+  Pairs with manage-memo-citations, which covers where a new citation definition has
+  to live to survive repeated assembly runs.'
 title: Ad-Hoc Edits Workflow for an Existing Memo
 lede: 'When the user asks for a one-off change to a deal memo, follow a strict four-step
   pipeline: (1) drop facts + citations into research first; (2) integrate into the
@@ -23,7 +34,7 @@ augmented_with: Claude Code (Opus 4.7)
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: agent-skills/adhoc-edits-workflow/SKILL.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/agent-skills/adhoc-edits-workflow/SKILL.md"
 ---
 

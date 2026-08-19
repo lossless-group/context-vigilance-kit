@@ -1,10 +1,7 @@
 ---
 title: Per-Deal Focal Points
-lede: Analysts know things about a company that no automated pipeline will surface
-  — the founder's prior wins, the partner thesis match, the IC concern to preempt,
-  the angle that makes this deck worth the partnership's time. Per-deal focal points
-  are the small, ordered list of human-supplied bullets that the writer agents must
-  respect as load-bearing emphasis, not optional context.
+lede: The small ordered list of analyst-supplied bullets that writer agents must treat
+  as load-bearing emphasis, not optional context.
 date_authored_initial_draft: 2026-06-08
 date_authored_current_draft: 2026-06-08
 date_authored_final_draft: null
@@ -28,10 +25,13 @@ image_prompt: A magnifying glass hovering over a single bullet point in a list, 
   annotation labels in a monospaced font, analyst's desk aesthetic.
 date_created: 2026-06-08
 date_modified: 2026-06-08
+publish: false
+site_uuid: 0398605f-c1e8-46d1-9aca-b2e389604c7a
+hex_code: 3olv1o
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Per-Deal-Focal-Points.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Per-Deal-Focal-Points.md"
 ---
 

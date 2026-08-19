@@ -1,12 +1,7 @@
 ---
 title: DeckOverlay--Play-UI — the floating overlay layer for Play-mode decks
-lede: Single mount point for /play/[deck]/[variant]/[slot]/ that composes DeckChrome
-  (paginator + slot-step nav + keyboard contract) and SlideRankPill (classifier) above
-  the active slide, plus named slots for Phase 3 presenter notes and Phase D telemetry.
-  Wraps the slide in a `<section data-slot data-variant>` so SlideRankPill's existing
-  IntersectionObserver finds exactly one section — the play-mode adapter is the section-wrap
-  itself, no special play-mode prop required. Sets `data-play-root` + `data-chrome-hidden`
-  so DeckChrome's `C` keypress fades the whole overlay together.
+lede: Single mount point on the play-slot route composing DeckChrome and SlideRankPill;
+  its `<section data-slot>` wrap is the play-mode adapter.
 artifact_kind: component
 ownership: shell
 mode: play-ui
@@ -28,10 +23,16 @@ status_tags:
 - Shipped
 - New-In-This-Pass
 - Closes-A-Plus-Plus-Gap-2
+date_created: 2026-05-15
+date_modified: 2026-05-15
+publish: true
+site_uuid: 78fa6c78-bf45-4ed5-9690-b8c0034c9581
+hex_code: k78erw
+date_authored_current_draft: 2026-05-15
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/components/DeckOverlay--Play-UI.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/components/DeckOverlay--Play-UI.md"
 ---
 

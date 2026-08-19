@@ -31,10 +31,13 @@ deck_branch: development
 proto_baseline_commit: 06d5e59
 date_created: 2026-05-11
 date_modified: 2026-05-11
+site_uuid: 408732e6-9000-46ee-b1d5-f521ce7533db
+hex_code: dat44j
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: narratives/ChromaDB_Deck-Outline__Proto.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/narratives/ChromaDB_Deck-Outline__Proto.md"
 ---
 

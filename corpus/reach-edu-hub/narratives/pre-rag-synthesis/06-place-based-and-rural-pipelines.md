@@ -23,10 +23,13 @@ authors:
 - Michael Staton
 date_created: 2026-06-18
 date_modified: 2026-06-18
+site_uuid: 3a8b19e3-5d1e-4814-bc4c-04259f24ffa1
+hex_code: 1rqsfj
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v
 source_relative_path: narratives/pre-rag-synthesis/06-place-based-and-rural-pipelines.md
 source_repo_slug: reach-edu-hub
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v/narratives/pre-rag-synthesis/06-place-based-and-rural-pipelines.md"
 ---
 

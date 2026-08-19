@@ -28,10 +28,13 @@ image_prompt: A library reading-room desk overlaid with translucent dashboards â
   glass on top. Warm parchment, restrained palette, archival mood.
 date_created: 2026-05-11
 date_modified: 2026-05-11
+publish: false
+site_uuid: c55d73ed-5109-4625-a19c-f778a132ec2e
+hex_code: 3ry85y
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: specs/Dididecks-AI-DD-Ready-Citation-and-Source-Access.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/specs/Dididecks-AI-DD-Ready-Citation-and-Source-Access.md"
 ---
 

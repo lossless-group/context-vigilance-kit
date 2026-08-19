@@ -1,15 +1,18 @@
 ---
 name: dependency-upgrade-loop
-description: Fan out across all active Astro Knots sites, upgrade dependencies in
+description: 'Fan out across all active Astro Knots sites, upgrade dependencies in
   safe → risky order (patch/minor first, then major bumps like Astro and TypeScript),
   fix breaking changes, verify builds with `pnpm build` + `pnpm exec astro check`,
   write changelog entries, and push submodules. Loops until every site is current.
   Invoke via `/loop` to self-pace across all sites, or pass a specific site name to
   target one.
+
+  '
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: agent-skills/dependency-upgrade-loop/SKILL.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/agent-skills/dependency-upgrade-loop/SKILL.md"
 ---
 

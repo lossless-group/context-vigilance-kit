@@ -1,9 +1,7 @@
 ---
 title: Prompt — Add a New Model Provider to Image Gin
-lede: The agent-facing instruction for adding a new image-generation provider to Image
-  Gin. Hands the work to a coding agent with the canonical blueprint to follow, the
-  case-study prior art (Recraft, Ideogram, Magnific), and the exact files to touch
-  — so the agent isn't reinventing the shape on every new vendor.
+lede: 'Agent-facing instruction for adding an image provider to Image Gin: the blueprint,
+  the Recraft/Ideogram/Magnific prior art, the exact files.'
 date_created: 2026-05-04
 date_modified: 2026-05-05
 status: Authoritative
@@ -22,10 +20,15 @@ tags:
 - Agent-Instruction
 - Image-Generation
 - API-Integrations
+site_uuid: aeab4285-bba3-4fa9-906a-c07f205b9844
+hex_code: keussd
+date_authored_initial_draft: 2026-05-05
+date_authored_current_draft: 2026-05-05
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/image-gin/context-v
 source_relative_path: prompts/Add-New-Model-Provider.md
 source_repo_slug: image-gin
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/plugin-modules/image-gin/context-v/prompts/Add-New-Model-Provider.md"
 ---
 

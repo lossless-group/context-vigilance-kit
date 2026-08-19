@@ -14,10 +14,15 @@ tags:
 - Venture-Capital
 authors:
 - Michael Staton
+site_uuid: 160ee0c1-c504-4128-8e52-8721197595f5
+hex_code: tgsnia
+date_authored_initial_draft: 2025-11-15
+date_authored_current_draft: 2025-11-15
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/Page__Partner-with-Us.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/prompts/Page__Partner-with-Us.md"
 ---
 

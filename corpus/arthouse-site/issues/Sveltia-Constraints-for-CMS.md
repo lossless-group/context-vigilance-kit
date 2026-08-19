@@ -1,9 +1,7 @@
 ---
 title: Sveltia CMS — Constraints That Shape Architecture
-lede: Sveltia is a clean Decap CMS rewrite with significantly better UX, but it dropped
-  Decap's plugin and custom-backend surfaces. Anything an agent or human plans on
-  top of Sveltia must respect a short, hard list of what was deliberately not carried
-  over — most importantly, the lack of a custom media library API.
+lede: 'Sveltia is not Decap: the extension points it dropped — above all the custom
+  media library API — become silent no-ops, not errors.'
 date_created: 2026-05-18
 date_modified: 2026-05-18
 authors:
@@ -19,10 +17,15 @@ tags:
 - Media-Library
 - ImageKit
 - Arthouse-Site
+site_uuid: f9a275b4-eaed-440a-ba2f-f42353b71e4a
+hex_code: nwg1qx
+date_authored_initial_draft: 2026-05-18
+date_authored_current_draft: 2026-05-18
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/arthouse-site/context-v
 source_relative_path: issues/Sveltia-Constraints-for-CMS.md
 source_repo_slug: arthouse-site
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/arthouse-site/context-v/issues/Sveltia-Constraints-for-CMS.md"
 ---
 

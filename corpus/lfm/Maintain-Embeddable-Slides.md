@@ -23,10 +23,11 @@ image_prompt: A small robot stands with a small projector on top of a computer d
 banner_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Maintain-Embeddable-Slides_banner_image_1755815513881_vG9H27ZKx.webp
 portrait_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Maintain-Embeddable-Slides_portrait_image_1755815520946_NlMeL6qdl.webp
 square_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Maintain-Embeddable-Slides_square_image_1755815527652_HEYKVBKOm.webp
+hex_code: 4jiad9
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Maintain-Embeddable-Slides.md
 source_repo_slug: lfm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "lfm/context-v/Maintain-Embeddable-Slides.md"
 ---
 

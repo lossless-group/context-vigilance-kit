@@ -8,7 +8,7 @@ description: Sub-workflow of crawl-fetch-ingest. Company-anchored expansion thro
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: agent-skills/crawl-fetch-ingest/routines/investor-credibility-ingest.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/agent-skills/crawl-fetch-ingest/routines/investor-credibility-ingest.md"
 ---
 
@@ -38,7 +38,7 @@ User says something like:
 - "go get teams and portfolios for {Firm A}, {Firm B}, {Firm C}"
 - "{operating company} is raising — give us context on the investors"
 
-The user typically supplies a **list of firm names** (Quiet Capital, Bloomberg Beta, Air Street Capital, AIX Ventures) along with the **context company** they all back (e.g., Chroma). The context company is metadata — we don't crawl it here; the parent skill's `team/` flow already handles the operating company's own people.
+The user typically supplies a **list of firm names** (the Lead plus the other firms in the round) along with the **context company** they all back (e.g., Chroma). The context company is metadata — we don't crawl it here; the parent skill's `team/` flow already handles the operating company's own people.
 
 ## Inputs
 

@@ -25,10 +25,13 @@ tags:
 authors:
 - Michael Staton
 - AI Labs Team
+site_uuid: 12eee6e7-f0ed-427d-b8af-4929a0ad14b4
+hex_code: 32nxn5
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: explorations/Implementing-Full-Text-Search-by-Default.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/explorations/Implementing-Full-Text-Search-by-Default.md"
 ---
 

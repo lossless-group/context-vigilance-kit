@@ -1,9 +1,7 @@
 ---
 title: Wikilink Path Audit — mpstaton-site
-lede: 'Every Obsidian-style wikilink in mpstaton-site''s content, grouped by top-level
-  prefix. Edit each entry to set `path_resolved: true` and fill in `resolved_url`;
-  the collected mappings become the EXTERNAL_DESTINATIONS config for the site''s wikilink
-  resolver.'
+lede: Every wikilink in mpstaton-site's content, grouped by prefix — resolve each
+  one and the mappings become `EXTERNAL_DESTINATIONS`.
 date_generated: 2026-05-08
 date_modified: 2026-05-08
 status: Generated
@@ -19,10 +17,13 @@ related:
 total_unique_paths: 354
 total_occurrences: 495
 generated_by: scripts/audit-wikilinks.ts
+site_uuid: 53914074-4574-4b5c-9cb2-2b8af0f7899b
+hex_code: vzxyb1
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: plans/Wikilink-Path-Audit__mpstaton-site.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/plans/Wikilink-Path-Audit__mpstaton-site.md"
 ---
 

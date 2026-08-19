@@ -1,13 +1,8 @@
 ---
 title: ModeToggle — three-mode color-toggle (light → dark → vibrant) with per-client
   localStorage namespace
-lede: Fixed top-right button that cycles light → dark → vibrant on click. Renders
-  three SVG icons (sun / moon / star); CSS shows only the matching icon for the current
-  `data-mode` on `<html>`. Inline-imports the `runtime/mode-switcher` factory and
-  installs the singleton at mount with a `client` prop value used as the localStorage
-  namespace (`{client}:mode`) so multiple decks deployed on the same domain don't
-  collide on mode persistence. Lifted from `chroma-decks/src/components/basics/ModeToggle.astro`
-  on 2026-06-06 as part of the chroma-to-shell promotion pass.
+lede: Fixed top-right button cycling light → dark → vibrant, persisted under a per-client
+  `{client}:mode` key so co-hosted decks don't collide.
 artifact_kind: component
 ownership: shell
 mode: both
@@ -48,10 +43,16 @@ at_semantic_version: 0.2.0
 status_tags:
 - Shipped
 - Lifted-From-Chroma
+date_created: 2026-06-06
+date_modified: 2026-06-07
+publish: true
+site_uuid: 15eefef0-e83a-4ccd-ad9d-15c1ca6e07fc
+hex_code: cwdzg7
+date_authored_current_draft: 2026-06-06
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/components/ModeToggle.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/components/ModeToggle.md"
 ---
 

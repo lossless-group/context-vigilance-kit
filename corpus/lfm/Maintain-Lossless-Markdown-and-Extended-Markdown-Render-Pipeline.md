@@ -12,10 +12,14 @@ tags:
 - Markdown
 - Extended-Markdown
 - Render-Pipeline
+site_uuid: 27073fa4-51e7-43f1-a94a-52675cc101ab
+hex_code: f8wymw
+date_authored_initial_draft: 2025-12-10
+date_authored_current_draft: 2025-12-10
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Maintain-Lossless-Markdown-and-Extended-Markdown-Render-Pipeline.md
 source_repo_slug: lfm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "lfm/context-v/Maintain-Lossless-Markdown-and-Extended-Markdown-Render-Pipeline.md"
 ---
 

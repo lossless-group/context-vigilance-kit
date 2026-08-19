@@ -1,18 +1,8 @@
 ---
 title: Restore Calmstorm's nav-chrome elegance as themable shell primitives (separate
   structure/behavior from styling)
-lede: '@dididecks/shell v0.1''s PlayChrome solved the navigation contract but discarded
-  calmstorm-decks'' deliberately elegant chrome — floating bottom-right capsule, glassy
-  white/grey/black, fade-on-idle, two-axis nav (variant cycling + section walking),
-  custom tooltips, tabular-num counter — and replaced it with a heavy dark bottom
-  bar that always claims viewport real-estate. This plan lifts the calmstorm chrome
-  forward as package-level primitives in apps/deck-shell/, with structure and behavior
-  cleanly separated from visual styling via a CSS-custom-property theming contract.
-  Consumers (chroma-decks today; future client sites tomorrow) inherit a sensible
-  neutral default (calmstorm''s plain white/grey/black) when client-specific tokens
-  aren''t supplied, and override with their own design system when they are. Hybrid
-  of port-and-replace + re-skin: port the bones, ship the calmstorm look as the universal
-  fallback, then let chroma-decks (and others) light them up with their own brand.'
+lede: PlayChrome traded calmstorm's floating glass capsule for a heavy dark bar —
+  lift the calmstorm chrome back as themable shell primitives.
 date_authored_initial_draft: 2026-05-14
 date_authored_current_draft: 2026-05-14
 date_authored_final_draft: null
@@ -40,10 +30,15 @@ tags:
 - Phase-B-Foundation
 authors:
 - Michael Staton
+date_created: 2026-05-14
+date_modified: 2026-05-16
+publish: false
+site_uuid: 48b254ea-03d4-4745-ba23-e3e117189746
+hex_code: vhz22y
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Restore-Calmstorm-Nav-Elegance-as-Themable-Shell-Primitives.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Restore-Calmstorm-Nav-Elegance-as-Themable-Shell-Primitives.md"
 ---
 

@@ -26,10 +26,13 @@ authors:
 - Michael Staton
 image_prompt: A small lighthouse with a single beam, sitting on its own island, lit
   by a beacon labeled LFM.
+site_uuid: 425dcba5-751c-42aa-8ded-a7ebd8c5982f
+hex_code: 6lnra9
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/Set-up-a-Splash-Page-with-Changelog-and-Context-V-Rendering.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/prompts/Set-up-a-Splash-Page-with-Changelog-and-Context-V-Rendering.md"
 ---
 

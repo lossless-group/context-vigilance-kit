@@ -1,9 +1,7 @@
 ---
 title: Services Section as a Tiered, Categorized Card Catalog
-lede: A Sveltia-CMS-driven Services surface where Categories sit in the top nav, service
-  Cards display in overlapping decks, each Card belongs to a Tier (progressive reveal),
-  exposes public + guarded copy, and lets the visitor add optional included_tags that
-  increment the displayed price before sending the whole composed order to WhatsApp.
+lede: A Sveltia-driven Services surface shaped Category → Card → Tier, where optional
+  tags tick the price up before the order goes to WhatsApp.
 date_created: 2026-05-20
 date_modified: 2026-05-20
 authors:
@@ -20,10 +18,15 @@ tags:
 - Tiered-Pricing
 - WhatsApp-Order
 - Public-vs-Guarded
+site_uuid: 5ae48d28-0ea1-4c30-982a-9f4aac4bd6a5
+hex_code: 8poj6u
+date_authored_initial_draft: 2026-05-20
+date_authored_current_draft: 2026-05-20
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/arthouse-site/context-v
 source_relative_path: specs/Services-Section-as-Tiered-Card-Catalog.md
 source_repo_slug: arthouse-site
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/arthouse-site/context-v/specs/Services-Section-as-Tiered-Card-Catalog.md"
 ---
 

@@ -23,10 +23,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.7
+site_uuid: 71808a57-d293-4bd2-8ed9-0ad76f47daf9
+hex_code: 48ifke
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Introducing-a-GUI-Native-Desktop-with-Tauri.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Introducing-a-GUI-Native-Desktop-with-Tauri.md"
 ---
 

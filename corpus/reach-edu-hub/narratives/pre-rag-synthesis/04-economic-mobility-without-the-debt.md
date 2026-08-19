@@ -23,10 +23,13 @@ authors:
 - Michael Staton
 date_created: 2026-06-18
 date_modified: 2026-06-18
+site_uuid: ca923ad7-5414-483d-8149-0edf7f02c8e7
+hex_code: qqkoyw
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v
 source_relative_path: narratives/pre-rag-synthesis/04-economic-mobility-without-the-debt.md
 source_repo_slug: reach-edu-hub
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v/narratives/pre-rag-synthesis/04-economic-mobility-without-the-debt.md"
 ---
 

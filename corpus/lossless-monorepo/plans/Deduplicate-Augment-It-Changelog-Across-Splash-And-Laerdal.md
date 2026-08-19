@@ -11,10 +11,15 @@ tags:
 - Laerdal
 - Single-Source-Of-Truth
 related_issue: ai-labs/augment-it/context-v/issues/Changelog-Duplicated-Across-Splash-And-Laerdal-Collection.md
+site_uuid: 495b7038-9a25-4085-a2fa-4bd3312e912b
+hex_code: 460jul
+date_authored_initial_draft: 2026-05-12
+date_authored_current_draft: 2026-05-12
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: plans/Deduplicate-Augment-It-Changelog-Across-Splash-And-Laerdal.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/plans/Deduplicate-Augment-It-Changelog-Across-Splash-And-Laerdal.md"
 ---
 

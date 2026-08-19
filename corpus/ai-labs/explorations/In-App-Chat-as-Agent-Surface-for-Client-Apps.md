@@ -1,11 +1,7 @@
 ---
 title: In-App Chat as the Agent Surface for Client Apps
-lede: Instead of trying to fit dozens of anticipated client requests — 'redesign this
-  slide', 'run the writer agent on the updated research', 'export in my brand kit'
-  — into navigation, buttons, and command menus across dididecks-ai, memopop-ai, and
-  augment-it, wire up a single chat surface inside each app that calls an LLM with
-  our patterns, skills, and project context already loaded. Paying clients use our
-  keys; lingering post-engagement clients bring their own. The chat is the menu.
+lede: Rather than design a button for every client request, wire one chat surface
+  loaded with our patterns and context. The chat is the menu.
 date_created: 2026-05-17
 date_modified: 2026-05-17
 authors:
@@ -27,10 +23,15 @@ tags:
 - Shared-Pattern
 - Microfrontend
 status: Draft
+site_uuid: 836c1f80-0e73-4783-b885-9d1719f75a6a
+hex_code: orc3qj
+date_authored_initial_draft: 2026-05-17
+date_authored_current_draft: 2026-05-17
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: explorations/In-App-Chat-as-Agent-Surface-for-Client-Apps.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/explorations/In-App-Chat-as-Agent-Surface-for-Client-Apps.md"
 ---
 

@@ -27,10 +27,13 @@ image_prompt: A craftsman's tool wall in a workshop, where some tools are unlock
   Deployed.' Warm gaslight, sawdust, restrained palette.
 date_created: 2026-05-11
 date_modified: 2026-05-11
+publish: false
+site_uuid: 53aa0ab9-b6bf-4f5c-9b75-0d1bf887d4ee
+hex_code: wmah35
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: explorations/Dididecks-AI-Business-Model.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/explorations/Dididecks-AI-Business-Model.md"
 ---
 

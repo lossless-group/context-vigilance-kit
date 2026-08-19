@@ -5,7 +5,7 @@ description: Known v1 limitations and planned extensions for the crawl-fetch-ing
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: agent-skills/crawl-fetch-ingest/future-work.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/agent-skills/crawl-fetch-ingest/future-work.md"
 ---
 

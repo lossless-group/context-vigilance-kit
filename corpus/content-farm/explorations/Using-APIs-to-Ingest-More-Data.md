@@ -19,10 +19,15 @@ tags:
 - Jina
 - Crawling
 - Portfolio-Companies
+site_uuid: 1b348d66-19f0-4141-b533-92b18cbc3a53
+hex_code: 1nq3vp
+date_authored_initial_draft: 2026-05-06
+date_authored_current_draft: 2026-05-06
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: explorations/Using-APIs-to-Ingest-More-Data.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/explorations/Using-APIs-to-Ingest-More-Data.md"
 ---
 

@@ -2,27 +2,23 @@
 title: Pulse pattern — one operator burst against one entity, expressed as N independent
   pulse-dimensions composed in a pulse-surface, each dimension potentially owning
   its own microservice
-lede: 'Building the first version of the person-enrichment remote surfaced a pattern
-  hiding inside the existing per-record / per-flow vocabulary. Operators don''t think
-  in ''steps'' when they''re enriching one person — they think in *bursts*. One Google
-  search reveals a name, a LinkedIn URL, an X handle, two alt emails, and which org
-  the person works for. That''s not five sequential UI steps; it''s one operator-attention
-  burst against one entity, and the UI should let the operator commit all of it in
-  one save. The pattern: a `pulse` is the burst itself; a `pulse-dimension` is one
-  independent editable concern within the burst (name, socials, emails, org); a `pulse-surface`
-  is the parent that loads the entity, hosts its dimensions, collects them, and writes
-  them as one observation batch. Dimensions can be nested (OrgPicker contains OrgCreate).
-  Dimensions are reusable across pulse-surfaces (NameFields is the same in person-enrichment
-  as it will be in org-enrichment). Each dimension can grow its own microservice when
-  it earns one — matching the existing pack / surface pattern.'
+lede: 'Operators enrich in bursts, not steps: one search fills name, socials, emails,
+  and org, and a pulse-surface commits all of it in one save.'
 date_created: 2026-06-15
-date_modified: 2026-06-15
+date_modified: 2026-07-21
+date_first_published: 2026-06-16
 authors:
 - Michael Staton
 augmented_with:
 - Claude Code on Claude Opus 4.7 (1M context)
-semantic_version: 0.0.0.1
-status: Draft
+- Claude Code on Claude Fable 5
+semantic_version: 0.0.0.2
+status: Shipped
+post_ship_note: 'Shipped 2026-06-16 inside apps/person-enrichment (changelog 2026-06-16_01:
+  ''Person-Enrichment-Surface-Ships-Pulse-Pattern''); the pulse-dimension components
+  live in apps/person-enrichment/src/pulse-dimensions/ and gained many-per-person
+  affiliations + org autocomplete 2026-06-17. Reuse on a second pulse-surface (org-workbench)
+  is proposed in the Augment-From-DB exploration.'
 tags:
 - Spec
 - Augment-It
@@ -32,10 +28,15 @@ tags:
 - Composable-UI
 - Operator-Built-Flows
 - Entity-Enrichment
+site_uuid: 44223ac9-d197-4d52-9193-e283bb4fbda8
+hex_code: yxg5k4
+date_authored_initial_draft: 2026-06-15
+date_authored_current_draft: 2026-06-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: specs/Pulse-Pattern.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/specs/Pulse-Pattern.md"
 ---
 

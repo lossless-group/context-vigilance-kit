@@ -37,10 +37,13 @@ diverged_from: ChromaDB_Deck-Outline__Proto.md
 diverged_at_commit: 06d5e59
 date_created: 2026-05-11
 date_modified: 2026-05-12
+site_uuid: fd333baf-3548-459c-ae96-09489d769647
+hex_code: caz2gg
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: narratives/ChromaDB_Deck-Outline__Enhanced-v1.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/narratives/ChromaDB_Deck-Outline__Enhanced-v1.md"
 ---
 

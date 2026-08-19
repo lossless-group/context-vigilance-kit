@@ -23,10 +23,15 @@ tags:
 - PDF-Export
 - Chroma
 status: Shelved
+site_uuid: b59ace5e-489f-46e6-9b00-70a3f2ff0f07
+hex_code: gedxin
+date_authored_initial_draft: 2026-05-14
+date_authored_current_draft: 2026-05-14
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: plans/Sync-Enhanced-v2-Scroll-Aesthetic-Into-Play-Deck.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/plans/Sync-Enhanced-v2-Scroll-Aesthetic-Into-Play-Deck.md"
 ---
 

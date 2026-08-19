@@ -1,10 +1,7 @@
 ---
 title: /play/[deckSlug]/[variantSlug]/ — variant-index redirect to slot 01
-lede: Enumerates every (deck, variant) pair from the consumer's deck registry and
-  302s to /play/{deck}/{variant}/01/. Today the redirect is unconditional; A++.1 will
-  gate it on `SLOTS[variantSlug]?.length` and render a friendly 'no slots yet' panel
-  for variants without entries (currently chroma's proto, enhanced-v1, enhanced-v2
-  — all return 404s after the redirect because `[slot]` only emits paths from SLOTS).
+lede: Enumerates every (deck, variant) and 302s to slot 01 — unconditionally today,
+  so slot-less variants like chroma's proto land on a 404.
 artifact_kind: route
 ownership: shell
 mode: play-ui
@@ -24,10 +21,16 @@ at_semantic_version: 0.0.1
 status_tags:
 - Partial
 - Closes-A-Plus-Plus-Gap-1-When-Fixed
+date_created: 2026-05-12
+date_modified: 2026-05-15
+publish: true
+site_uuid: ae39fef9-e914-4e80-b1db-26f93af50e64
+hex_code: fol4vb
+date_authored_current_draft: 2026-05-12
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/routes/play-index.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/routes/play-index.md"
 ---
 

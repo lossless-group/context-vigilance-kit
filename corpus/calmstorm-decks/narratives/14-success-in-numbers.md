@@ -37,10 +37,14 @@ cta_or_footer: 'Calm/Storm: the largest group of HealthTech entrepreneurs, inves
 
   '
 sources: []
+site_uuid: 69d65b5e-6a09-437d-830a-5c07a8c19998
+hex_code: 8dt2p2
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/14-success-in-numbers.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/14-success-in-numbers.md"
 ---
 

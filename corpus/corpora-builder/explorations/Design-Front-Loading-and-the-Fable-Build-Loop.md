@@ -17,10 +17,15 @@ tags:
 - Design-System
 - Context-Vigilance
 status: Open
+site_uuid: f04f5f86-8844-473c-9be6-ce9a18159c57
+hex_code: dpn4ri
+date_authored_initial_draft: 2026-07-20
+date_authored_current_draft: 2026-07-20
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/corpora-builder/context-v
 source_relative_path: explorations/Design-Front-Loading-and-the-Fable-Build-Loop.md
 source_repo_slug: corpora-builder
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/corpora-builder/context-v/explorations/Design-Front-Loading-and-the-Fable-Build-Loop.md"
 ---
 

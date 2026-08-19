@@ -1,13 +1,8 @@
 ---
 title: The Source Curation Gate — A Convergent Prune-and-Promote Surface for AI-Assisted
   Web Research
-lede: 'Three apps independently grew the same organ: a human-driven step between web
-  retrieval and content generation that ranks, prunes, and provenance-stamps sources
-  before any prose exists. This blueprint extracts that organ into one independent,
-  reusable surface — input is a raw LLM-generated resource list (usually Perplexity),
-  output is a promoted, grounded corpus the writer is structurally unable to escape.
-  It converges memopop''s filesystem-first Sources.md, augment-it''s pack-runner connector
-  palette, and dididecks'' CorpusItem provenance model into a single contract.'
+lede: Three apps grew the same organ — a human prune-and-promote step between retrieval
+  and generation that the writer cannot then escape.
 date_created: 2026-06-27
 date_modified: 2026-06-27
 authors:
@@ -36,10 +31,15 @@ related_skills:
 - crawl-fetch-ingest
 - context-vigilance
 - lossless-flavored-markdown
+site_uuid: 47541775-5643-46b0-b3d7-66fbf71c5ff2
+hex_code: yz3l5f
+date_authored_initial_draft: 2026-06-27
+date_authored_current_draft: 2026-06-27
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: blueprints/Source-Curation-Gate.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/blueprints/Source-Curation-Gate.md"
 ---
 

@@ -27,10 +27,13 @@ image_prompt: A blueprint-style cutaway of a desktop application — a transluce
   soft violet uplight, technical annotations in monospaced font.
 date_created: 2026-04-30
 date_modified: 2026-04-30
+site_uuid: 2234f38d-c925-4ac2-b286-ba7bdc3ab996
+hex_code: nlbb83
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: explorations/Moving-an-Agent-Orchestrator-to-an-API.md
 source_repo_slug: memopop-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/context-v/explorations/Moving-an-Agent-Orchestrator-to-an-API.md"
 ---
 

@@ -16,10 +16,15 @@ tags:
 - Content-Duplication
 - Laerdal
 - Splash
+site_uuid: 9583fa75-ea90-4536-8a10-95bab5e01ed7
+hex_code: 9geqjv
+date_authored_initial_draft: 2026-05-12
+date_authored_current_draft: 2026-05-12
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: issues/Changelog-Duplicated-Across-Splash-And-Laerdal-Collection.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/issues/Changelog-Duplicated-Across-Splash-And-Laerdal-Collection.md"
 ---
 

@@ -5,10 +5,20 @@ main_inquiry: What are the common filesystem naming conventions used in these op
 date_crated: 2026-05-02
 authors:
 - Michael Staton
+site_uuid: 84b3b7c1-74ab-4d45-9167-ee7d2c3184ac
+hex_code: gjmvn4
+summary: An open inquiry scaffold, not a findings document. It states one main question
+  — how the filesystem naming and tree conventions differ across the open specs pinned
+  in this study — and decomposes it into two unanswered checklists (Tree Structure
+  Analysis, Files and Purpose), every item still unchecked. There is no analysis here
+  yet and nothing to cite. An agent should treat this as the work order for a future
+  sweep across the pinned submodules, and should append answers under the existing
+  sub-inquiry headings rather than starting a new document.
+publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/open-specs-and-standards/context-v
 source_relative_path: inquiry/Filesystem-Naming-Conventions.md
 source_repo_slug: open-specs-and-standards
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/studies/open-specs-and-standards/context-v/inquiry/Filesystem-Naming-Conventions.md"
 ---
 

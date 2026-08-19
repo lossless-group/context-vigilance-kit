@@ -1,9 +1,7 @@
 ---
 title: An Internet-Friendly, Responsive UI for Long-Form Writing
-lede: A reader UI for publishing book-length content as a sequenced series of chapters
-  on the FullStack VC site. The wrapper provides chapter sequencing, navigation, and
-  reading affordances; all content-level features (callouts, citations, image directives,
-  wikilinks) stay in the Lossless Flavored Markdown plugin where they belong.
+lede: A chapter-sequencing reader UI for book-length content — the wrapper owns navigation;
+  LFM keeps every content-level feature.
 date_authored_initial_draft: 2026-04-26
 date_authored_current_draft: 2026-04-26
 date_authored_final_draft: null
@@ -44,10 +42,12 @@ tags:
 - FullStack-VC
 - Kauffman-Fellows
 - Agentic-VC-Dojo
+site_uuid: 6592ce87-071d-4def-a9ee-bc722a4f993a
+hex_code: ehql34
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/An-Internet-Friendly-Responsive-UI-for-Longform-Writing.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/An-Internet-Friendly-Responsive-UI-for-Longform-Writing.md"
 ---
 

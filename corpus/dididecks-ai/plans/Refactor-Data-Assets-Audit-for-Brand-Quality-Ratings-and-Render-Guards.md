@@ -1,16 +1,8 @@
 ---
 title: Refactor data-assets audit for per-asset quality ratings, brand-asset disambiguation,
   and deck-render guards
-lede: The /data-assets/{companies,people} audit pages today treat brand imagery as
-  a generic 'logo' field. In practice a company has FOUR distinct assets — favicon,
-  trademark, wordmark, og:image — and each can be present-but-glitchy, missing, or
-  immaculate. Decks bundle these assets at render time, and a glitchy favicon shipped
-  into an investor's inbox is a brand-credibility wound that's expensive to recover
-  from. This plan refactors the audit pages to (1) display each of the four assets
-  as its own labeled cell, (2) carry a per-asset U/C/P/Star quality rating, (3) flag
-  incomplete/missing/glitchy assets visibly, and (4) introduce a build-time render
-  guard so a flagged asset can't accidentally ship to a final deck. People audit gets
-  the parallel treatment for headshots + LinkedIn presence.
+lede: Split the audit's generic 'logo' into favicon, trademark, wordmark, og:image
+  — each with its own quality rating and a render guard.
 date_authored_initial_draft: 2026-05-17
 date_authored_current_draft: 2026-05-17
 date_last_updated: 2026-05-17
@@ -28,10 +20,15 @@ tags:
 - Companies-Audit
 authors:
 - Michael Staton
+date_created: 2026-05-17
+date_modified: 2026-05-17
+publish: false
+site_uuid: 5bb21d12-037b-4335-bfe1-ec78686a264f
+hex_code: lm10sl
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Refactor-Data-Assets-Audit-for-Brand-Quality-Ratings-and-Render-Guards.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Refactor-Data-Assets-Audit-for-Brand-Quality-Ratings-and-Render-Guards.md"
 ---
 
@@ -257,7 +254,7 @@ Includes the override semantics ("when to use `--allow-flagged`"), the "Star" pr
 ## Out of scope for this plan (named so they don't drift in)
 
 - **Automated asset-quality detection.** Computer-vision approaches that could auto-flag low-DPI, off-aspect, transparent-on-light, etc. Possibly worth a follow-up exploration; the human-rating + flag workflow is sufficient v1.
-- **Per-firm asset-quality SLAs.** "Air Street's portfolio must be ≥ P across the board before we ship a deck to them." Conceivable; not v1.
+- **Per-firm asset-quality SLAs.** "the Lead's portfolio must be ≥ P across the board before we ship a deck to them." Conceivable; not v1.
 - **Asset variants** (light-mode vs dark-mode logos, square vs landscape OG). The schema can grow to per-mode `quality:` but the v1 plan treats one canonical asset per slot.
 - **CEO photo as a separate asset.** People audit covers it under `photo:`. Companies could carry a per-row `ceo_photo:` block but that's a Phase 7 if it earns its keep.
 - **Auto-fetching missing assets** from third-party APIs (Clearbit, Logo.dev). Out of v1; the audit's job is to surface, not to remediate.
@@ -266,7 +263,7 @@ Includes the override semantics ("when to use `--allow-flagged`"), the "Star" pr
 
 - **Migration burden.** Every existing portfolio .md needs the `logo_file` → `trademark` or `wordmark` decision made by hand. ~5 min × N companies. Chroma alone has 345 entries across 4 firms; that's a focused day of work. Worth it for the deck-credibility downstream, but real.
 - **Rating subjectivity.** "P vs Star" is judgment. Two reviewers may disagree. Phase 6 workflow doc needs to give criteria so the rating doesn't drift.
-- **Per-firm vs per-asset rating.** If Air Street's portfolio is mostly C-rated assets and Chroma's is mostly Star, the firm-section header could carry an aggregate rating. Phase 4 could extend the rollup to firm-level. Defer until the per-row pattern proves out.
+- **Per-firm vs per-asset rating.** If the Lead's portfolio is mostly C-rated assets and the client's is mostly Star, the firm-section header could carry an aggregate rating. Phase 4 could extend the rollup to firm-level. Defer until the per-row pattern proves out.
 - **Star promotion semantics.** What earns Star? Is Star "this is the official press-kit asset from the company's own brand-asset folder" or "this looks great in our specific deck context"? Phase 0 resolves this.
 - **Status column collision.** Today's audit has a `Status` column ("complete" | "incomplete" etc.). The new per-asset model essentially makes the row-level `Status` a derived field. Drop the per-row `status` from .md frontmatter? Or keep it for backwards-compat? Probably derive.
 

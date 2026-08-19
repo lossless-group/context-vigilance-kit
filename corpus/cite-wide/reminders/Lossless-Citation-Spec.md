@@ -9,10 +9,24 @@ tags:
 - Extended-Markdown
 - Markdown-Citations
 - Obsidian-Flavored-Markdown
+site_uuid: b706d1c2-9a7d-4042-9ac3-bda864e91277
+hex_code: 5voo72
+date_authored_initial_draft: 2024-09-06
+date_authored_current_draft: 2024-09-06
+lede: Hex codes instead of numerics so pasted sources never collide — plus exact spacing
+  and the Claude cited_text blockquote the web strips.
+summary: 'The open spec cite-wide implements. First half: hex-code identifiers, the
+  exact inline spacing rules Obsidian''s hover-and-jump behavior depends on, reference-section
+  requirements, and the Lossless standard reference-definition shape. Second half
+  extends the spec to Anthropic''s Citations API — web-search versus document-grounded
+  citations, the trailing cited_text blockquote convention and its web-render stripping
+  rule, bibliographic sourcing for canonical versus ad-hoc sources, and one-refdef-per-location
+  for multi-location citations. Any change to citation parsing or rendering must conform
+  to this file.'
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/cite-wide/context-v
 source_relative_path: reminders/Lossless-Citation-Spec.md
 source_repo_slug: cite-wide
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/plugin-modules/cite-wide/context-v/reminders/Lossless-Citation-Spec.md"
 ---
 

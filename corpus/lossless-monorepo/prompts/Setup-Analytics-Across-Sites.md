@@ -1,12 +1,22 @@
 ---
+site_uuid: a5b144d5-aecf-4ae4-994a-a0e9dfb63bad
+hex_code: tus2jg
+title: Setup Analytics across Sites
+date_created: 2026-05-08
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-18
+authors:
+- Michael Staton
+at_semantic_version: 0.0.1.0
+tags:
+- Prompt
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: prompts/Setup-Analytics-Across-Sites.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/prompts/Setup-Analytics-Across-Sites.md"
 ---
-
-
 
 # Note to Agents:
 

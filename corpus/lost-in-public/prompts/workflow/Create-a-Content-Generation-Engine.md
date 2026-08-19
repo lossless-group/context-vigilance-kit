@@ -35,7 +35,7 @@ banner_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/prompts/workflow
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: prompts/workflow/Create-a-Content-Generation-Engine.md
 source_repo_slug: lost-in-public
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content/lost-in-public/prompts/workflow/Create-a-Content-Generation-Engine.md"
 ---
 

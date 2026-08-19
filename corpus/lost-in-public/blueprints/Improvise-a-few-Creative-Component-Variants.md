@@ -32,7 +32,7 @@ slug: improvise-a-few-creative-component-variants
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: blueprints/Improvise-a-few-Creative-Component-Variants.md
 source_repo_slug: lost-in-public
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content/lost-in-public/blueprints/Improvise-a-few-Creative-Component-Variants.md"
 ---
 

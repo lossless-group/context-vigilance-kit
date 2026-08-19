@@ -1,4 +1,16 @@
 ---
+name: thesis-bleed-cleanup
+description: 'Confine a powerful external finding to the memo sections where it structurally
+  belongs, instead of letting every section''s writer cite it. Use whenever the same
+  risk, thesis, or headline statistic appears across many sections of a generated
+  memo; whenever a reviewer says "this keeps coming up", "why is this cited six times",
+  "this doesn''t belong in this section", or asks to de-duplicate an argument rather
+  than a source; whenever a memo reads as repetitive without any single section being
+  wrong. Names the failure mode multi-agent pipelines produce — every section researcher
+  independently surfaces the same strong finding — and gives the editorial pass that
+  confines it. Includes when NOT to apply it: a genuinely cross-cutting thesis is
+  supposed to recur. The upstream fix is a pipeline change; this is the downstream
+  cleanup.'
 title: Thesis-Bleed Cleanup
 lede: Multi-agent memo pipelines bleed the same powerful external finding into every
   section's writer. The same risk thesis ends up cited 6+ times across sections where
@@ -24,7 +36,7 @@ augmented_with: Claude Code (Opus 4.7)
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: agent-skills/thesis-bleed-cleanup/SKILL.md
 source_repo_slug: memopop-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/context-v/agent-skills/thesis-bleed-cleanup/SKILL.md"
 ---
 

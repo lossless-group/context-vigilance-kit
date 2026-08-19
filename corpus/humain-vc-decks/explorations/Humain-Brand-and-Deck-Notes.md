@@ -7,10 +7,14 @@ upstream_url: https://www.humain.vc/
 related_files:
 - ../../DESIGN.md
 - ../../corpus/management-supplied/2025-10-17_Humain-Deck-VCLab.pdf
+site_uuid: 04b3fe94-77fb-40c9-96b9-c0e6e3497bc4
+hex_code: a8v67f
+date_created: 2026-06-06
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/humain-vc-decks/context-v
 source_relative_path: explorations/Humain-Brand-and-Deck-Notes.md
 source_repo_slug: humain-vc-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/humain-vc-decks/context-v/explorations/Humain-Brand-and-Deck-Notes.md"
 ---
 

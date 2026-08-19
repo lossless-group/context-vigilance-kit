@@ -10,10 +10,17 @@ links:
 - label: From Yes to Win (breakouts detail)
   href: /breakouts/from-yes-to-win
 partner: Kauffman Fellows
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: be7a6f93-ead1-4625-821b-9d72c9b3672d
+hex_code: z87nxp
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/12-close.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/12-close.md"
 ---
 

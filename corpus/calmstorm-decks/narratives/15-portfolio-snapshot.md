@@ -55,10 +55,14 @@ cta_or_footer: 'Spanning healthcare infrastructure, data interoperability, AI, p
 
   '
 sources: []
+site_uuid: d3add391-eb5a-4d49-9dd0-73f29d33406a
+hex_code: h9ljwh
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/15-portfolio-snapshot.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/15-portfolio-snapshot.md"
 ---
 

@@ -12,10 +12,15 @@ tags:
 - Augment-It
 - Canonical-Layer
 - FreedomFest
+site_uuid: f3630861-b70d-412e-b9cf-22fa1afd5a46
+hex_code: bjkhj7
+date_authored_initial_draft: 2026-07-07
+date_authored_current_draft: 2026-07-07
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: plans/SurrealDB-MCP-Plus-Skill-for-Canonical-Layer-Verification.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/plans/SurrealDB-MCP-Plus-Skill-for-Canonical-Layer-Verification.md"
 ---
 

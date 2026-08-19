@@ -11,10 +11,15 @@ tags:
 - Serverless
 - Obsidian-Plugins
 - Stenographer
+site_uuid: 3c7b25cc-93c8-4715-b743-cbdf9b29274c
+hex_code: 1qb9x1
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: explorations/Enabling-Obsidian-Plugins-to-access-Homegrown-API-Helpers.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/explorations/Enabling-Obsidian-Plugins-to-access-Homegrown-API-Helpers.md"
 ---
 

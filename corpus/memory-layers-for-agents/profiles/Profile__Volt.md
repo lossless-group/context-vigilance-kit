@@ -9,10 +9,28 @@ study: studies/memory-layers-for-agents
 profile_path: studies/memory-layers-for-agents/volt
 profile_kind: coding-agent + embedded-postgres + dual-state-context
 date_created: 2026-05-17
+site_uuid: 5a8b5cff-a6ee-4751-8329-c913b3d76002
+hex_code: seo1hr
+date_authored_initial_draft: 2026-05-17
+date_authored_current_draft: 2026-05-17
+lede: Numeric thresholds decide when to compact, and the model is only ever asked
+  to write summaries. Long-horizon coding as a DB problem.
+summary: 'Profile of Volt (Martian Engineering) as pinned in the memory-layers-for-agents
+  study. It is the only entry that is a full coding agent with memory built in rather
+  than a memory layer with agents bolted on, and the most database-shaped design in
+  the study. Covers the dual-state Lossless Context Management architecture (verbatim
+  immutable Postgres log plus a materialized DAG of summary nodes), the sprig/bindle/dN
+  hierarchy and its lineage pointers, soft and hard token thresholds with three-level
+  escalation, the Dolt-versus-Upward runtime modes, content-addressed large-file handling
+  with precomputed exploration summaries, and the LLM-Map and Agentic-Map engine-level
+  iteration primitives. The transferable lesson called out in the file is the threshold-plus-escalation
+  pattern: parameterize the control loop with explicit numbers instead of letting
+  the model decide.'
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/memory-layers-for-agents/context-v
 source_relative_path: profiles/Profile__Volt.md
 source_repo_slug: memory-layers-for-agents
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/studies/memory-layers-for-agents/context-v/profiles/Profile__Volt.md"
 ---
 

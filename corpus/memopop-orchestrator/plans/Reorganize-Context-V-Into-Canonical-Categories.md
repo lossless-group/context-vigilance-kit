@@ -22,10 +22,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: bd6a0e0f-0127-41fe-9777-e9b8ff4c97af
+hex_code: irn2rp
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: plans/Reorganize-Context-V-Into-Canonical-Categories.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/plans/Reorganize-Context-V-Into-Canonical-Categories.md"
 ---
 

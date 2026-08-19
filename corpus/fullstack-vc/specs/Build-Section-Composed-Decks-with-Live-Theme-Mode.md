@@ -34,10 +34,15 @@ tags:
 - Dididecks-AI
 authors:
 - Michael Staton
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: false
+site_uuid: 15f819e2-a34b-41c7-9550-6591cb1e65bc
+hex_code: sgd4y8
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: specs/Build-Section-Composed-Decks-with-Live-Theme-Mode.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/specs/Build-Section-Composed-Decks-with-Live-Theme-Mode.md"
 ---
 

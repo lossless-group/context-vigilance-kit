@@ -22,10 +22,15 @@ tags:
 - SurrealDB
 - Canonical-Layer
 status: Draft
+site_uuid: 82371c70-3f6a-460f-b87a-b9fa4c677dab
+hex_code: q997wb
+date_authored_initial_draft: 2026-06-15
+date_authored_current_draft: 2026-06-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: plans/Canonical-Entity-Registry-on-SurrealDB-Cloud.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/plans/Canonical-Entity-Registry-on-SurrealDB-Cloud.md"
 ---
 

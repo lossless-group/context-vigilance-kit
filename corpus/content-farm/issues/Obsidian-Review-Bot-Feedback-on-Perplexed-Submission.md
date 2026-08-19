@@ -26,10 +26,23 @@ related_files:
 - content-farm/context-v/issues/Dependabot-Alerts-Triage-Playbook-For-Lossless-Repos.md
 - content-farm/context-v/reminders/Obsidian-Marketplace-Compliance.md
 - content-farm/changelog/2026-05-18_01.md
+site_uuid: ff02717b-7ede-4e22-a56f-720c50e90eeb
+hex_code: 88jx54
+date_authored_initial_draft: 2026-05-09
+date_authored_current_draft: 2026-05-09
+lede: '165 bot findings, all in main.ts — plus the Appendix: the PR queue died mid-fix,
+  and the plugin description lives in three places.'
+summary: Historical journey doc for the perplexed marketplace submission, now marked
+  resolved. The body catalogues the 2026-05-09 eslint-bot findings item by item with
+  line numbers and fixes; Appendix A adds the post-PR-queue portal findings (A1-A11)
+  the original body could not anticipate. For a new submission, use content-farm/context-v/reminders/Obsidian-Marketplace-Compliance.md
+  instead — this file is the anchor that explains why each rule in that checklist
+  exists.
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: issues/Obsidian-Review-Bot-Feedback-on-Perplexed-Submission.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/issues/Obsidian-Review-Bot-Feedback-on-Perplexed-Submission.md"
 ---
 

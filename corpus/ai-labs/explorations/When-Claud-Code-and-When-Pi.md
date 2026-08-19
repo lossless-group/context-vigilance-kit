@@ -1,8 +1,20 @@
 ---
+site_uuid: 8cc893df-ea14-45a6-84bb-dcf2e13eaa6a
+hex_code: 4flpvt
+title: When Claud Code and When Pi
+date_created: 2026-05-08
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
+authors:
+- Michael Staton
+at_semantic_version: 0.0.1.0
+tags:
+- Exploration
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: explorations/When-Claud-Code-and-When-Pi.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/explorations/When-Claud-Code-and-When-Pi.md"
 ---
 

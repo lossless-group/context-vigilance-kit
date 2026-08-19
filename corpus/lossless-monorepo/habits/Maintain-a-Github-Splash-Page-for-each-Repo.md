@@ -15,10 +15,15 @@ tags:
 - Github-Pages
 - Splash-Page
 - Pseudomonorepos
+site_uuid: b5161e1b-55bc-4a02-947a-2bc8be2cd60a
+hex_code: qur9rm
+date_authored_initial_draft: 2025-11-14
+date_authored_current_draft: 2025-11-14
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-a-Github-Splash-Page-for-each-Repo.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/habits/Maintain-a-Github-Splash-Page-for-each-Repo.md"
 ---
 

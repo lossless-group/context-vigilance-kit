@@ -22,10 +22,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: ed7fbd73-346e-4180-8206-ed5ec45aba51
+hex_code: sb6l8v
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: issue-resolution/An-Agent-should-Reorder-and-Organize-Citations-on-Assembly.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/issue-resolution/An-Agent-should-Reorder-and-Organize-Citations-on-Assembly.md"
 ---
 

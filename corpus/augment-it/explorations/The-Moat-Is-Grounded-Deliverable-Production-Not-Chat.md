@@ -1,9 +1,7 @@
 ---
 title: The Moat Is Grounded Deliverable Production, Not Chat
-lede: Chat-over-documents is commoditizing fast; the durable value is the last mile
-  — turning a client's knowledge into the deck or memo they actually ship, with every
-  claim traceable to source. dididecks and memopop are two renderers of one grounded
-  content model.
+lede: Chat-over-documents is commoditizing; the moat is the last mile — a shippable
+  deck or memo with every claim traceable to source.
 date_created: 2026-06-18
 date_modified: 2026-06-18
 authors:
@@ -24,10 +22,15 @@ tags:
 - reach-edu
 - Citations
 status: Active
+site_uuid: 27cddadf-0c2f-4dc1-822e-70eb67591043
+hex_code: 59c8he
+date_authored_initial_draft: 2026-06-18
+date_authored_current_draft: 2026-06-18
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: explorations/The-Moat-Is-Grounded-Deliverable-Production-Not-Chat.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/explorations/The-Moat-Is-Grounded-Deliverable-Production-Not-Chat.md"
 ---
 

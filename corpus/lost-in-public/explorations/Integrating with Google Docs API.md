@@ -21,7 +21,7 @@ site_uuid: 2f0bdaf9-cdbc-4b2d-8fd7-02fc8349711f
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: explorations/Integrating with Google Docs API.md
 source_repo_slug: lost-in-public
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content/lost-in-public/explorations/Integrating with Google Docs API.md"
 ---
 

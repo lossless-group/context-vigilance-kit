@@ -22,10 +22,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: 3402e25a-82d9-4eaf-8e25-518c6cf2c858
+hex_code: 28mj4g
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: issue-resolution/Correct-Citation-Pipeline-Accuracy-in-Multi-Agent-Research.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/issue-resolution/Correct-Citation-Pipeline-Accuracy-in-Multi-Agent-Research.md"
 ---
 

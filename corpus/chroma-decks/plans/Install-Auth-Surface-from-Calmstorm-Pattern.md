@@ -25,10 +25,13 @@ authors:
 - Michael Staton
 parent_exploration: '[[../../../../../context-v/explorations/Shared-Auth-for-Applied-AI-Labs]]'
 parent_inventory: '[[../../../../context-v/specs/Calmstorm-Auth-Inventory]]'
+site_uuid: f6617fbf-5f3d-4551-8dd2-12f584d6b0ff
+hex_code: x9u8tr
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: plans/Install-Auth-Surface-from-Calmstorm-Pattern.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/plans/Install-Auth-Surface-from-Calmstorm-Pattern.md"
 ---
 

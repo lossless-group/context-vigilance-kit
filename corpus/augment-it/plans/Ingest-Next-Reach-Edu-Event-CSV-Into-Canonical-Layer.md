@@ -18,10 +18,15 @@ tags:
 - reach-edu
 - SurrealDB
 - Person-Org-Resolver
+site_uuid: 9ab8a5d8-903e-4a27-bd81-21af9ebf88b9
+hex_code: lef3yg
+date_authored_initial_draft: 2026-07-17
+date_authored_current_draft: 2026-07-17
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: plans/Ingest-Next-Reach-Edu-Event-CSV-Into-Canonical-Layer.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/plans/Ingest-Next-Reach-Edu-Event-CSV-Into-Canonical-Layer.md"
 ---
 

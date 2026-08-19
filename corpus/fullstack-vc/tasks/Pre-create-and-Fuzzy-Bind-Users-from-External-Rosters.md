@@ -32,10 +32,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-21
 date_modified: 2026-05-21
+publish: false
+site_uuid: 410540b6-2759-4dad-96a8-7a07bf2507cf
+hex_code: bwkmpo
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: tasks/Pre-create-and-Fuzzy-Bind-Users-from-External-Rosters.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/tasks/Pre-create-and-Fuzzy-Bind-Users-from-External-Rosters.md"
 ---
 

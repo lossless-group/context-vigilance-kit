@@ -42,10 +42,17 @@ audience_relevance: Most direct relevance for anyone drowning in dealflow they c
 why_a_founder_demoing_to_vcs: Toby's been wiring these tools up from the founder side
   — same workflow muscles, different vantage. Watching a builder show his pipeline-management
   stack is the inversion VCs rarely get.
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: 0e3262ac-8516-4dbe-b02b-17bf8da87a88
+hex_code: dd1coj
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/06b_toby-openclaw-obsidian.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/06b_toby-openclaw-obsidian.md"
 ---
 

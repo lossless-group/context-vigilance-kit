@@ -16,10 +16,15 @@ tags:
 - Self-Hosting
 - Team-Collaboration
 status: Open
+site_uuid: d20d7929-996d-4479-ab12-535013dafb3c
+hex_code: ftvg8i
+date_authored_initial_draft: 2026-07-20
+date_authored_current_draft: 2026-07-20
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: explorations/Self-Hosting-the-Vault-via-Ignis.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/explorations/Self-Hosting-the-Vault-via-Ignis.md"
 ---
 

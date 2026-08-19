@@ -34,10 +34,15 @@ tags:
 - Content-Collections
 authors:
 - Michael Staton
+date_created: 2026-06-22
+date_modified: 2026-06-22
+publish: true
+site_uuid: f72b43d6-fcda-467e-836c-a7c3e3ce2fae
+hex_code: hnsunm
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: specs/Two-Perspective-How-To-Docs-Engine-on-LFM.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/specs/Two-Perspective-How-To-Docs-Engine-on-LFM.md"
 ---
 

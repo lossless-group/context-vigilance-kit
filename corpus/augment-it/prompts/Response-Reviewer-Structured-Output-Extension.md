@@ -1,12 +1,7 @@
 ---
 title: Response Reviewer — Structured-Output Extension (Packs-and-Bundles Foundation)
-lede: Extend the shipped response-store schema and the shipped Response Reviewer remote
-  to support pack-shaped responses — structured candidates with confidence-band pills,
-  a five-value outcome enum, and a sibling-payload + archival-markdown shape — without
-  breaking the free-form text responses that today's prompt-runs produce. Zero packs
-  ship in this work. Zero bundles ship. The deliverable is the surface that every
-  pack will land on, exercised by a small fixture of mock pack responses so the renderer
-  can be felt in all three theme modes before any real pack exists.
+lede: Build the surface every pack lands on — candidate cards, confidence pills, outcome
+  enum — against mock fixtures. Zero packs ship here.
 date_created: 2026-05-25
 date_modified: 2026-05-25
 authors:
@@ -24,10 +19,15 @@ tags:
 - Confidence-Pill
 - Theme-System
 status: Draft
+site_uuid: 46b1d5c3-22f0-4470-99f2-e485486bc66f
+hex_code: kgxk0f
+date_authored_initial_draft: 2026-05-25
+date_authored_current_draft: 2026-05-25
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: prompts/Response-Reviewer-Structured-Output-Extension.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/prompts/Response-Reviewer-Structured-Output-Extension.md"
 ---
 

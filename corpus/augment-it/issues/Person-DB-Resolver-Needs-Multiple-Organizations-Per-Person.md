@@ -1,11 +1,8 @@
 ---
 title: 'Issue: Person · DB Resolver UI needs to accommodate multiple organizations
   per person'
-lede: Stub — the per-row org section in apps/person-db-resolver only resolves ONE
-  org affiliation per row (one org-name column, one role column, one match/create
-  action). Real bios routinely name several current and past affiliations for the
-  same person; the UI has no way to add a second, third, or Nth org against an already-resolved
-  person without re-running the whole row.
+lede: '`person-db-resolver` resolves one org per row, but Lincoln Ellis''s bio names
+  four — no way to add an Nth without re-running the row.'
 date_created: 2026-07-17
 date_modified: 2026-07-17
 authors:
@@ -21,10 +18,15 @@ tags:
 - Canonical-Entity-Registry
 - Affiliations
 - SurrealDB
+site_uuid: 884498d7-cf72-4553-a934-82448415665f
+hex_code: qcivp4
+date_authored_initial_draft: 2026-07-17
+date_authored_current_draft: 2026-07-17
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: issues/Person-DB-Resolver-Needs-Multiple-Organizations-Per-Person.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/issues/Person-DB-Resolver-Needs-Multiple-Organizations-Per-Person.md"
 ---
 

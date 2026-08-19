@@ -1,12 +1,7 @@
 ---
 title: DeckOverlay--Scroll-UI — the floating overlay layer for Scroll-mode decks
-lede: 'Single mount point that composes the persistent overlay affordances riding
-  over a Scroll-UI deck: the classifier pill (today), variant-cycling nav + counter
-  (Phase 2 via PageAsDeckWrapper), presenter notes (Phase 3), and engagement telemetry
-  (Phase D). Each is a named slot so consumers can rearrange or omit. The overlay
-  element itself is layout-neutral (`display: contents`) — its children own their
-  own fixed/absolute positioning. The Scroll-UI variant of this paired family; see
-  DeckOverlay--Play-UI for the slot-per-route sibling.'
+lede: 'Layout-neutral (`display: contents`) mount for the affordances riding over
+  a scroll deck — each a named slot consumers can rearrange.'
 artifact_kind: component
 ownership: shell
 mode: scroll-ui
@@ -26,10 +21,16 @@ at_semantic_version: 0.0.1.0
 status_tags:
 - Shipped
 - New-In-This-Pass
+date_created: 2026-05-15
+date_modified: 2026-05-15
+publish: true
+site_uuid: 2be2884d-3da7-4a7c-8c3c-24afedb0b678
+hex_code: ql5n99
+date_authored_current_draft: 2026-05-15
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/components/DeckOverlay--Scroll-UI.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/components/DeckOverlay--Scroll-UI.md"
 ---
 

@@ -4,7 +4,7 @@ date_modified: 2026-05-06
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: explorations/Self-Hosting Multi-Site Analytics Platforms.md
 source_repo_slug: lost-in-public
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content/lost-in-public/explorations/Self-Hosting Multi-Site Analytics Platforms.md"
 ---
 

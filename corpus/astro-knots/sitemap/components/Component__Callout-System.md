@@ -19,10 +19,15 @@ authors:
 related_blueprint: '[[Maintain-Themes-Mode-Across-CSS-Tailwind]]'
 related_reminder: '[[YAML-Frontmatter-Parsing-Must-Be-Lenient]]'
 canonical_source: packages/lfm-astro/components/
+site_uuid: 2c40eb76-694c-46e3-ad28-1a7f99d4a21a
+hex_code: vy9fuu
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: sitemap/components/Component__Callout-System.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/sitemap/components/Component__Callout-System.md"
 ---
 

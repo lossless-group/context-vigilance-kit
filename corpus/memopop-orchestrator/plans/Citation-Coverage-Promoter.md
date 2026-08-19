@@ -1,11 +1,7 @@
 ---
 title: 'Citation Coverage Promoter: Surface the Long Tail of Cited Sources'
-lede: 'The writer agent reliably composes prose that cites a handful of sources heavily
-  and ignores the rest. ChromaDB v0.0.10 demonstrated the pattern at scale — 33 hand-curated
-  URLs in scope, 7 actually cited, 26 ignored. This plan adds a citation-additive,
-  prose-conservative second pass between draft and assemble: same prose, more sources,
-  more even distribution. Phase 1 is prompt-level fixes; Phase 2 is the new agent;
-  Phase 3 is matching infrastructure; Phase 4 is calibration.'
+lede: 'ChromaDB v0.0.10: 33 curated URLs in scope, 7 cited, 26 ignored. A citation-additive
+  second pass between draft and assemble.'
 date_authored_initial_draft: 2026-05-22
 date_authored_current_draft: 2026-05-22
 date_authored_final_draft: null
@@ -35,10 +31,12 @@ image_prompt: A wide library reading-room cross-section seen from the side — a
   deep-violet uplight, blueprint-paper aesthetic, hand-drawn monospaced annotations.
 date_created: 2026-05-22
 date_modified: 2026-05-22
+site_uuid: f8855767-6669-4c31-8060-2337c8cd5ea5
+hex_code: 0uwzkf
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: plans/Citation-Coverage-Promoter.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/plans/Citation-Coverage-Promoter.md"
 ---
 

@@ -28,10 +28,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: ea6e4305-ab6f-449b-b0f2-c03dfa035f29
+hex_code: sftq7w
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Introducing-a-KPI-Extractor-Agent.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Introducing-a-KPI-Extractor-Agent.md"
 ---
 

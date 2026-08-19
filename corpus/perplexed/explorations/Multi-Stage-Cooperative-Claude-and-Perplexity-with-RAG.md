@@ -27,10 +27,15 @@ related:
 - '[[Partials-And-Preambles-For-Perplexed-Templates]]'
 - '[[Getting-Claude-to-Respond-With-Research]]'
 - '[[Wall-Clock-Timeout-Cuts-Off-Long-Deep-Research-Streams]]'
+site_uuid: ed0f1378-edb9-4d7b-be3f-2827b9176332
+hex_code: bj863v
+date_authored_initial_draft: 2026-05-26
+date_authored_current_draft: 2026-05-26
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: explorations/Multi-Stage-Cooperative-Claude-and-Perplexity-with-RAG.md
 source_repo_slug: perplexed
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/plugin-modules/perplexed/context-v/explorations/Multi-Stage-Cooperative-Claude-and-Perplexity-with-RAG.md"
 ---
 

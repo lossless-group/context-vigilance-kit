@@ -48,10 +48,14 @@ cta_or_footer: 'We actively connect our community, ensuring our founders benefit
 
   '
 sources: []
+site_uuid: 8982533e-3854-4f43-a39f-5e55c1c40c8b
+hex_code: kteii3
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/13-community-portfolio-service.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/13-community-portfolio-service.md"
 ---
 

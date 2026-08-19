@@ -23,10 +23,13 @@ image_prompt: A robot representing AI is in an intersection directing traffic at
 banner_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Maintain-Directives-in-Extended-Markdown-Render-Pipeline_banner_image_1755814211355_AEvMbqrBg.webp
 portrait_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Maintain-Directives-in-Extended-Markdown-Render-Pipeline_portrait_image_1755814218739_6ysZM_lpX.webp
 square_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/july/Maintain-Directives-in-Extended-Markdown-Render-Pipeline_square_image_1755814233744_VhZPczidH.webp
+hex_code: 7jzs1x
+date_authored_initial_draft: 2025-07-29
+date_authored_current_draft: 2025-07-29
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Maintain-Directives-in-Extended-Markdown-Render-Pipeline.md
 source_repo_slug: lfm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "lfm/context-v/Maintain-Directives-in-Extended-Markdown-Render-Pipeline.md"
 ---
 

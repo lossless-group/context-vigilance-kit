@@ -13,10 +13,15 @@ tags:
 - Preferences
 authors:
 - Michael Staton
+site_uuid: dd87b296-3fff-42b9-8383-bbe1d94f2b3b
+hex_code: 9vgr9q
+date_authored_initial_draft: 2026-04-28
+date_authored_current_draft: 2026-04-28
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: reminders/Write-a-Changelog-Prior-to-Meaningful-Commits.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/reminders/Write-a-Changelog-Prior-to-Meaningful-Commits.md"
 ---
 

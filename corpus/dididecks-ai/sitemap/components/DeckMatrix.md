@@ -1,14 +1,8 @@
 ---
 title: DeckMatrix — the rich audit-rated dual-surface matrix; the deck-level review
   surface, embeddable on any landing
-lede: 'Renders the full variants × slots matrix as an embeddable component. Each cell
-  pairs a Scroll-UI rating (left half) and a Play-UI rating (right half) from `data/audits/slides.json`;
-  per-variant shippability rollups land in the column headers; per-row drift indicator
-  (`≠`) flags cells where the two surfaces disagree. Used in two places: the `/toc/[deckSlug]/`
-  route mounts it directly; consumer landings (chroma + humain) embed it on their
-  `src/pages/index.astro` to give the same review surface inside the deck''s own chrome.
-  Optional `showNav={true}` adds the `DididecksNav` variant-chooser pills above the
-  matrix.'
+lede: 'The embeddable variants × slots matrix: each cell pairs a Scroll-UI and Play-UI
+  rating, with `≠` flagging where the two surfaces disagree.'
 artifact_kind: component
 ownership: shell
 mode: n/a
@@ -43,10 +37,16 @@ status_tags:
 - Shipped
 related_models:
 - '[[../../models/Slide-Audit-Registry-Data-Model]]'
+date_created: 2026-05-15
+date_modified: 2026-06-07
+publish: true
+site_uuid: 7a7ca52b-0cd0-49d7-8b55-82068b76b508
+hex_code: 7brdos
+date_authored_current_draft: 2026-05-15
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/components/DeckMatrix.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/components/DeckMatrix.md"
 ---
 

@@ -1,13 +1,7 @@
 ---
 title: Original and Enhanced Record Instances — the Record-Instance Model
-lede: augment-it does not mutate an uploaded record set, and it does not spawn a new
-  derived set per prompt run. It keeps an immutable original import and a single mutable
-  enhanced instance that accumulates every enrichment in a round. The user can promote
-  an enhanced instance to be the source of the next round, so the model is generational
-  — original → enhanced → promote → enhanced' — with an id-map that holds across every
-  generation so the eventual write-back into the system of record always knows its
-  target. Two classes of enhancement — lookup and judgment — flow through this model
-  very differently.
+lede: 'No mutation, no derived set per run: one immutable original plus one mutable
+  enhanced instance per round, promoted to seed the next.'
 date_created: 2026-05-21
 date_modified: 2026-05-21
 authors:
@@ -26,10 +20,15 @@ tags:
 - Write-Back
 - Data-Model
 status: Draft
+site_uuid: d31a21b8-8abd-4d94-8d63-911aefc448b0
+hex_code: 79mwri
+date_authored_initial_draft: 2026-05-21
+date_authored_current_draft: 2026-05-21
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: blueprints/Original-and-Enhanced-Record-Instances.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/blueprints/Original-and-Enhanced-Record-Instances.md"
 ---
 

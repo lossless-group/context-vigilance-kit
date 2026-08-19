@@ -11,10 +11,17 @@ agent_hints:
 - Counter-objection pre-mortem against partner pattern history
 - Reference call summarizer + theme extractor
 - '''Why this is our kind of deal'' framing assistant'
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: 56d42a56-3e75-48b0-8f0c-fea8cc9413f0
+hex_code: 3q2vtr
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/07-track-internal-to-ic.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/07-track-internal-to-ic.md"
 ---
 

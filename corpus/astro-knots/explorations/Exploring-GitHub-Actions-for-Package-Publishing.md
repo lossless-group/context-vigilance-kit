@@ -22,10 +22,13 @@ tags:
 authors:
 - Michael Staton
 - AI Labs Team
+site_uuid: 997c3e8e-a075-4317-bdf5-1f741d05024e
+hex_code: vfg91b
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: explorations/Exploring-GitHub-Actions-for-Package-Publishing.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/explorations/Exploring-GitHub-Actions-for-Package-Publishing.md"
 ---
 

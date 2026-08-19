@@ -27,10 +27,14 @@ at_semantic_version: 0.0.1
 status_tags:
 - Stub
 - Awaiting-Recreate
+site_uuid: f21f53ad-8a92-4217-bf67-a6f279d3b986
+hex_code: 2zl9fs
+date_authored_current_draft: 2026-05-12
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: sitemap/slides/enhanced-v3/05-bottleneck.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/sitemap/slides/enhanced-v3/05-bottleneck.md"
 ---
 

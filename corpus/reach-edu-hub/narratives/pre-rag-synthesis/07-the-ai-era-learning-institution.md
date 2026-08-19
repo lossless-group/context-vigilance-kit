@@ -24,10 +24,13 @@ authors:
 - Michael Staton
 date_created: 2026-06-18
 date_modified: 2026-06-18
+site_uuid: d3b17653-5abd-485b-97ba-d3b0f54059fa
+hex_code: yb6nid
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v
 source_relative_path: narratives/pre-rag-synthesis/07-the-ai-era-learning-institution.md
 source_repo_slug: reach-edu-hub
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v/narratives/pre-rag-synthesis/07-the-ai-era-learning-institution.md"
 ---
 

@@ -9,10 +9,28 @@ study: studies/vector-databases
 profile_path: studies/vector-databases/lancedb
 profile_kind: embedded vector database + columnar file format
 date_created: 2026-05-27
+site_uuid: 98f06e5c-1d9a-497a-abea-0236fc99624b
+hex_code: p7pens
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
+lede: 'The database *is* the file format: a `.lance` directory DuckDB, Polars, and
+  Pandas read with no LanceDB process running.'
+summary: Source-cited profile of LanceDB for the vector-databases study, occupying
+  the columnar-portability corner of the design space. Covers the Lance columnar format
+  as the single storage primitive, Arrow-typed schemas with no payload blob, `merge_insert`
+  as the upsert path, DataFusion SQL strings as the filter language (the most expressive
+  in the study), RRF hybrid search with pluggable rerankers, and the manifest-log
+  versioning that gives `checkout`, tags, and `restore`. An agent should read this
+  when the question is disk-format portability, migration cost, or querying an embedding
+  store from ordinary data tooling — the profile ends with a concrete sketch of what
+  it would look like to move the Lossless context-v / changelog / session corpora
+  off Chroma onto `.lance` tables, and an honest note that today's workload does not
+  justify it.
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/vector-databases/context-v
 source_relative_path: profiles/Profile__LanceDB.md
 source_repo_slug: vector-databases
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/studies/vector-databases/context-v/profiles/Profile__LanceDB.md"
 ---
 

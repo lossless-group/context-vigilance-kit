@@ -1,14 +1,8 @@
 ---
 title: Chroma-Decks Parity with Calmstorm-Decks, and the Path to a Shared Deck UI
   Module
-lede: Calmstorm-decks carries roughly forty UI feature-surfaces that chroma-decks
-  does not yet have. Initial framing weighed three paths (verbatim port, abstract-while-porting,
-  full monorepo split); dialog landed on a fourth and lighter shape — the wrapping
-  UI becomes `@dididecks/shell`, an Astro integration published to a private pnpm-scoped
-  npm registry, consumed by each client-site's `astro.config.mjs`. Each client-site
-  stays a standalone repo with its own Vercel deploy; content stays put; only the
-  chrome travels. Phase A is the TOC + slide-ranking UI inside the shell, which doubles
-  as the Phase 1 → Phase 2 tooling from the `deck-iteration-workflow` skill.
+lede: The 40-feature parity gap resolves into `@dididecks/shell`, an Astro integration
+  each client-site consumes — only the chrome travels.
 date_authored_initial_draft: 2026-05-12
 date_authored_current_draft: 2026-05-12
 date_authored_final_draft: null
@@ -32,10 +26,13 @@ authors:
 - Michael Staton
 date_created: 2026-05-12
 date_modified: 2026-05-12
+publish: false
+site_uuid: 64b281fc-5067-4508-bb52-5919c0cacc74
+hex_code: 0ro4xp
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: explorations/Chroma-Parity-and-the-Path-to-a-Shared-Deck-UI-Module.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/explorations/Chroma-Parity-and-the-Path-to-a-Shared-Deck-UI-Module.md"
 ---
 

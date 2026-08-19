@@ -17,10 +17,15 @@ tags:
 authors:
 - Michael Staton
 related_blueprint: '[[Managing-Complex-Markdown-Content-at-Build-Time]]'
+site_uuid: 2a680b22-24eb-4e6e-a105-c8b6fce210a6
+hex_code: 0j1zg9
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: reminders/YAML-Frontmatter-Parsing-Must-Be-Lenient.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/reminders/YAML-Frontmatter-Parsing-Must-Be-Lenient.md"
 ---
 

@@ -1,10 +1,7 @@
 ---
 title: 'Explore: Using PRs More — Why a Solo Dev Should Bother'
-lede: We're mostly solo on any given thread, so PRs feel like ceremony for an audience
-  of one. But PRs aren't really about review — they're about turning tiny working
-  commits into a clean shipped unit, providing a stable URL for changelogs, gating
-  on CI, and giving AI co-developers an audit trail. This explores what a minimum
-  viable PR practice looks like when there's only one person on one thing at a time.
+lede: 'PRs aren''t a review ritual — they''re an integration ritual: squash a granular
+  trail into one shipped unit with a stable URL and a CI gate.'
 date_authored_initial_draft: '2026-05-06'
 date_authored_current_draft: '2026-05-06'
 date_created: '2026-05-06'
@@ -24,10 +21,13 @@ tags:
 authors:
 - Michael Staton
 - AI Labs Team
+site_uuid: c1538d67-7ec2-43be-8d1b-dbfa85470e52
+hex_code: i3hcns
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: explorations/Using-PRs-More.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/explorations/Using-PRs-More.md"
 ---
 

@@ -1,10 +1,7 @@
 ---
 title: In-App Agent Chat — Walking Skeleton Plan
-lede: 'Starter kit for tomorrow''s session. Three days of conversation have produced
-  an exploration, a spec, a memory-layers exploration, and a tenancy decision. This
-  plan turns all of it into one session''s worth of concrete work: scaffold the package,
-  do the Chroma tenant migration, settle two open questions that block everything
-  downstream, and ship slide.read end-to-end as the proof the abstractions hold.'
+lede: 'One session''s work: scaffold the package, do the Chroma tenant migration,
+  and ship `slide.read` end-to-end as proof the abstractions hold.'
 date_created: 2026-05-18
 date_modified: 2026-05-18
 authors:
@@ -20,10 +17,15 @@ tags:
 - Dididecks
 - Package-Scaffold
 status: Draft
+site_uuid: 3723a8e9-8bdd-4320-8db3-8a1911d666dd
+hex_code: bnlba0
+date_authored_initial_draft: 2026-05-18
+date_authored_current_draft: 2026-05-18
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: plans/In-App-Agent-Chat-Walking-Skeleton.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/plans/In-App-Agent-Chat-Walking-Skeleton.md"
 ---
 

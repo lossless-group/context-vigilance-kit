@@ -13,10 +13,15 @@ tags:
 - Implementation-Plan
 authors:
 - Michael Staton
+site_uuid: bab955ab-70a4-4e88-9a20-28271a0befe3
+hex_code: cwht1w
+date_authored_initial_draft: 2025-12-15
+date_authored_current_draft: 2025-12-15
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/Implement-Portfolio-with-Confidential-Access-in-new-Site.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/prompts/Implement-Portfolio-with-Confidential-Access-in-new-Site.md"
 ---
 

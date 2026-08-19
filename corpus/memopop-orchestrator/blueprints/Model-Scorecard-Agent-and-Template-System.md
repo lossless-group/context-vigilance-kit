@@ -26,10 +26,13 @@ image_prompt: A VC investment scorecard with multiple dimensions being evaluated
   into a professional investment memo.
 date_created: 2025-11-27
 date_modified: 2025-11-27
+publish: false
+site_uuid: c83c4cf3-70ca-445c-98c7-bc6103d8f2b2
+hex_code: zk02fp
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: blueprints/Model-Scorecard-Agent-and-Template-System.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/blueprints/Model-Scorecard-Agent-and-Template-System.md"
 ---
 

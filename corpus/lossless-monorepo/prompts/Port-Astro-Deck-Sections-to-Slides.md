@@ -1,9 +1,7 @@
 ---
 title: Port Astro Deck Sections to Slides
-lede: Decision rules and the wrapper-import warning for taking working Astro scroll-deck
-  sections and producing fixed-aspect 16:9 slide files that play left-to-right like
-  Keynote/PPT — without leaking adaptations back into the scroll deck. The two are
-  different artifacts; treating them as one is the trap we keep falling into.
+lede: Porting a scroll-deck section to a 16:9 slide is a copy/paste adaptation into
+  an independent file, never a wrapper around the original.
 date_created: 2026-05-10
 date_modified: 2026-05-10
 authors:
@@ -28,10 +26,15 @@ related:
 - '[[deck-iteration-workflow]]'
 - '[[High-Resolution-High-Fidelity-Deck-Exports-from-Code-to-Images-&-PDFs]]'
 - '[[2026-05-10_02]]'
+site_uuid: dab15f7b-e90e-4988-9187-4c9cad4cee06
+hex_code: 2nuzun
+date_authored_initial_draft: 2026-05-10
+date_authored_current_draft: 2026-05-10
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: prompts/Port-Astro-Deck-Sections-to-Slides.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/prompts/Port-Astro-Deck-Sections-to-Slides.md"
 ---
 

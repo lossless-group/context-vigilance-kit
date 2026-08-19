@@ -18,10 +18,15 @@ tags:
 - Context-Vigilance
 - Marketing-Copy
 status: Draft
+site_uuid: c0e854c8-90de-4a70-bac3-a3de7ac49e1c
+hex_code: xddw9n
+date_authored_initial_draft: 2026-05-08
+date_authored_current_draft: 2026-05-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: plans/Context-Vigilance-Splash-Page-Narrative.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/plans/Context-Vigilance-Splash-Page-Narrative.md"
 ---
 

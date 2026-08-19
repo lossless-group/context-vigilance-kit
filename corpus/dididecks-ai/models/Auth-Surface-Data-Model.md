@@ -1,9 +1,7 @@
 ---
 title: Auth surface — Identity, Session, Token, Organization, Membership, AuthEvent
-lede: The auth tables that gate every deck. Already a SQLite-shaped DB (astro:db on
-  libSQL local, Turso remote) — so unlike the .md-on-disk models, this one is closer
-  to translation-ready. Chroma is the most recent and authoritative schema. Calmstorm
-  is an earlier-shape version. Humain doesn't have auth installed yet.
+lede: The auth tables that gate every deck — already SQLite-shaped (astro:db on libSQL,
+  Turso remote), unlike the .md-on-disk models.
 date_authored_initial_draft: 2026-06-07
 date_last_updated: 2026-06-07
 at_semantic_version: 0.0.1.0
@@ -17,10 +15,16 @@ schema_authority:
 - client-sites/calmstorm-decks/db/config.ts
 runtime_mutability: high
 storage: astro:db (libSQL local — auth.db, Turso remote — see Vercel env)
+date_created: 2026-06-07
+date_modified: 2026-06-07
+publish: false
+site_uuid: 6c722284-4c1e-45c7-81a4-dcc4401e37f5
+hex_code: 6mf373
+date_authored_current_draft: 2026-06-07
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: models/Auth-Surface-Data-Model.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/models/Auth-Surface-Data-Model.md"
 ---
 

@@ -1,15 +1,13 @@
 ---
 title: Curating Only Valid Sources Across Runs
-lede: 'The memo pipeline recycled the same sources as unique sources across sections,
-  half of them dead pages returning HTTP 200.  Downstream curation cannot fix what
-  `citation_enrichment.py` invents upstream. Verdict: Perplexity completely hallucinates
-  sources — cannot be trusted at all.*'
+lede: Downstream curation cannot fix what `citation_enrichment.py` invents upstream
+  — 65 fabricated `example.com` URLs in a single run.
 date_authored_initial_draft: 2026-05-14
 date_authored_current_draft: 2026-06-08
 date_authored_final_draft: null
 date_first_published: null
-date_last_updated: 2026-06-08
-at_semantic_version: 0.0.0.2
+date_last_updated: 2026-08-06
+at_semantic_version: 0.0.0.3
 status: Draft
 augmented_with: Claude Code (Opus 4.7)
 category: Exploration
@@ -31,11 +29,14 @@ image_prompt: A pile of paper clippings stamped "HTTP 200" being run through a s
   background, library-card aesthetic, technical annotation labels in a monospaced
   font.
 date_created: 2026-05-14
-date_modified: 2026-05-14
+date_modified: 2026-08-06
+site_uuid: bc4d446b-6f49-44ba-852e-d6304d4cc23e
+hex_code: grzwxn
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: explorations/Curating-only-valid-Sources-across-Runs.md
 source_repo_slug: memopop-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/context-v/explorations/Curating-only-valid-Sources-across-Runs.md"
 ---
 
@@ -45,7 +46,7 @@ source_path: "ai-labs/memopop-ai/context-v/explorations/Curating-only-valid-Sour
 
 The May 14 draft framed curation as the safety net that compensates for whatever the pipeline produces upstream. We then ran the test that disproved that framing.
 
-On 2026-06-07 we ran Alpha JWC's Panthalassa Series C memo with `inputs/Sources.md` set to `mode: codified` and seven analyst-curated institutional sources (IEA, IRENA, OES, Springer Nature). Codified mode is supposed to confine the research-phase agents to those URLs and forbid broad search. The downstream `citation_enrichment.py` step then runs Perplexity Sonar Pro on each `1-research/*.md` file to "enrich" it with additional citations.
+On 2026-06-07 we ran a VC client's Series C memo with `inputs/Sources.md` set to `mode: codified` and seven analyst-curated institutional sources (IEA, IRENA, OES, Springer Nature). Codified mode is supposed to confine the research-phase agents to those URLs and forbid broad search. The downstream `citation_enrichment.py` step then runs Perplexity Sonar Pro on each `1-research/*.md` file to "enrich" it with additional citations.
 
 Result: **65 fabricated `example.com` URLs across the v0.0.2 output.** Not "URLs that returned 404." Not "soft-404s that need Pass B's body sniff." Literal `example.com` placeholder URLs — the textbook example domain that exists only as IANA's reserved illustrative namespace. Perplexity invented these whole. The verdicts from the May 14 draft (`soft-404`, `paywall`, `title-swapped`, `thin`, `fetch-failed`, `hallucinated-pattern`) don't have a category for "domain that should never appear in any production URL"; they don't need to, because no reasonable upstream pipeline should be capable of emitting one. Ours was.
 
@@ -64,6 +65,14 @@ Result: **65 fabricated `example.com` URLs across the v0.0.2 output.** Not "URLs
 ### Implication for the build order in this doc
 
 Pass A (global dedupe + cross-section view) is still worth shipping — it's cheap, instant, and improves the analyst experience regardless of how upstream is fixed. Pass B (real validity check) is still worth building — but its priority has changed. **The harvester/writer split documented in [[Separating-Retrieval-from-Generation-in-Agent-Pipelines]] now takes precedence over Pass B in any prioritization conversation.** Pass B as a standalone fix is treating downstream symptoms; the architectural split addresses the root cause. Build Pass B as a defense-in-depth layer, not as the primary fix.
+
+### Update 2026-08-06 — the missing predicate, and a cheaper down-payment
+
+A graph trace of the orchestrator found the mechanical reason this document's diagnosis is correct: **every check in Pass B — and every check in the shipped `remove_invalid_sources.validate_url()` — tests whether a URL *resolves*. None tests whether it was *approved*.** Only four files in the orchestrator import the curation module at all; the writer, all eight post-gate enrichers, both cleanup gates, and the fact-corrector have no reference to `Sources.md`.
+
+That asymmetry is why the "back-and-forth war" between researcher, enricher, and validator never resolves: the producers can always win by inventing a URL that happens to be live, and a live-but-wrong URL is invisible to a reachability check. It also explains why the 30-day cache "hardens the lie" (point 2 above) — a cache keyed on fetchability can only ever memoize the wrong question.
+
+[[Constraining-Memo-Writing-to-an-Approved-Source-Set]] adds membership as a fourth verdict (`unapproved`) to the existing ladder. It does **not** displace the harvester/writer split this document prioritizes — it's the two-day down-payment on it: instead of rebuilding retrieval so bad URLs can't be *produced*, make the gate reject anything not on the analyst's list, so invention becomes *ineffective* rather than *impossible*. Pass A's `canonical_url()` normalization is a direct dependency of that work.
 
 ### If Perplexity is retained (tactical mitigation only)
 

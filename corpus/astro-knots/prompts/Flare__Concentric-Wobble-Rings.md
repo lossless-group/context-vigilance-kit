@@ -26,10 +26,13 @@ authors:
 - Michael Staton
 image_prompt: Topographic map lines radiating from an off-center point, with a cursor
   hovering between two lines pushing them apart like a magnetic field.
+site_uuid: a4482ca4-bd83-4f03-ae81-ad08cff2e09e
+hex_code: ouws9d
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/Flare__Concentric-Wobble-Rings.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/prompts/Flare__Concentric-Wobble-Rings.md"
 ---
 

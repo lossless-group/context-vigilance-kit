@@ -1,9 +1,7 @@
 ---
 title: A Component Inserter
 lede: An Obsidian command that scaffolds the right block — HTML, codefence, callout,
-  embed — at the cursor, with frontmatter-driven defaults. Makes Lossless Flavored
-  Markdown extension blocks feel like first-class citizens of the editor instead of
-  patterns you have to remember.
+  embed — at the cursor, with frontmatter-driven defaults.
 date_created: 2025-08-11
 date_modified: 2026-05-05
 status: Draft
@@ -18,10 +16,15 @@ tags:
 - LFM
 - Editor-UX
 - Component-Authoring
+site_uuid: c5299b4d-0f94-4c47-a9f6-5f6041a17863
+hex_code: pk8wnv
+date_authored_initial_draft: 2025-08-11
+date_authored_current_draft: 2025-08-11
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: plans/A-Component-Inserter.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/plans/A-Component-Inserter.md"
 ---
 

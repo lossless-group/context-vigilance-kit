@@ -6,10 +6,23 @@ status: proposed
 target_repo: cite-wide
 related:
 - '[[Auto-Hyperlink-Feature-Names-In-Tables]]'
+site_uuid: bb2e1dc4-11a8-4fab-9fc6-7cb2cf85d377
+hex_code: cityz8
+date_authored_initial_draft: 2026-05-09
+date_authored_current_draft: 2026-05-09
+lede: One backreferenced regex collapses runs like [^jtas3k] [^jtas3k] — a different
+  problem from dedupe-by-URL, which must stay untouched.
+summary: 'Proposed plan scoped tightly enough to implement without a spike: one helper
+  in cite-wide''s citationService.ts wired into two call sites. Gives the exact regex,
+  a table of where it fires and where it must not, the four edge cases that must never
+  be collapsed, and seven acceptance criteria. An agent implementing this should not
+  extend dedupeByUrlService and should not add a new command surface — the user wants
+  it built into Convert-All-To-Hex.'
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: plans/Cite-Wide-Dedupe-Inline-Repetition.md
 source_repo_slug: content-farm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "content-farm/context-v/plans/Cite-Wide-Dedupe-Inline-Repetition.md"
 ---
 

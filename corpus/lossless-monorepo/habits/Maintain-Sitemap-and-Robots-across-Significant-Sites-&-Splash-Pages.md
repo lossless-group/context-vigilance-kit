@@ -1,9 +1,7 @@
 ---
 title: Maintain sitemap.xml and robots.txt across significant sites & splash pages
-lede: 'Every Lossless Group site that wants to be found ships an auto-generated sitemap
-  (via @astrojs/sitemap), a robots.txt with an absolute Sitemap: pointer, and a discoverability
-  link tag in <head> — so search engines can crawl what we publish without us hand-maintaining
-  a URL list.'
+lede: Every site that wants to be found ships an `@astrojs/sitemap` build and a `robots.txt`
+  with an absolute `Sitemap:` pointer.
 date_created: 2026-05-09
 date_modified: 2026-05-09
 semantic_version: 0.1.0.0
@@ -18,10 +16,15 @@ tags:
 - Robots
 - Splash-Page
 - Astro-Knots
+site_uuid: e8b3aa49-caee-470a-9cce-fb48c035493b
+hex_code: 2eudug
+date_authored_initial_draft: 2026-05-09
+date_authored_current_draft: 2026-05-09
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/habits/Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md"
 ---
 

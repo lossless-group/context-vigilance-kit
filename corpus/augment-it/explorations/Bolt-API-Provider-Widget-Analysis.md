@@ -1,12 +1,8 @@
 ---
 title: Bolt-Era API Provider Widget Analysis
-lede: Lifted from `augment-it-bolt/specs/APIProviderWidget-Analysis.md`. Per-feature
-  breakdown of the bolt monolith's API provider configuration widget — the surface
-  that let users choose between Claude, GPT, and Perplexity per prompt section, with
-  per-call options. The widget itself won't survive the rewrite verbatim, but the
-  multi-provider configuration *shape* is the right starting point for the rewrite's
-  model-routing UI.
-date_created: 2026-05-18
+lede: The bolt widget picked Claude, GPT, or Perplexity per prompt section. The widget
+  dies in the rewrite; the multi-provider shape stays.
+date_created: 2025-08-08
 date_modified: 2026-05-25
 date_archived: 2026-05-25
 authors:
@@ -26,10 +22,15 @@ tags:
 status: Archived
 deferral_note: Describes the archive/bolt-code widget — kept as reference for the
   rewrite's model-routing surface.
+site_uuid: 61f5e96b-8426-4092-90e6-c21fd94c8d62
+hex_code: jnhdk0
+date_authored_initial_draft: 2025-08-08
+date_authored_current_draft: 2025-08-08
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: explorations/Bolt-API-Provider-Widget-Analysis.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/explorations/Bolt-API-Provider-Widget-Analysis.md"
 ---
 

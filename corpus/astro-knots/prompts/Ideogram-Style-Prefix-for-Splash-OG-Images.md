@@ -14,10 +14,15 @@ tags:
 - Style-prefix
 - Astro-Knots
 - Splash
+site_uuid: a15b071b-a9db-4c0c-8ef4-1cee2ef74e68
+hex_code: q0o25o
+date_authored_initial_draft: 2026-05-05
+date_authored_current_draft: 2026-05-05
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: prompts/Ideogram-Style-Prefix-for-Splash-OG-Images.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/prompts/Ideogram-Style-Prefix-for-Splash-OG-Images.md"
 ---
 

@@ -72,10 +72,14 @@ key_stat: 100+
 key_stat_label: Health Investments
 cta_or_footer: null
 sources: []
+site_uuid: 180e5332-1c32-4ee5-a886-9d36926c9961
+hex_code: 00jeu3
+date_created: 2026-05-01
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: narratives/10-track-record.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/narratives/10-track-record.md"
 ---
 

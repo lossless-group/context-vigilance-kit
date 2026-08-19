@@ -22,10 +22,12 @@ tags:
 authors:
 - Michael Staton
 augmented_with: Claude Code with Claude Opus 4.6
+site_uuid: 556f9426-7023-4db7-8bce-1359a311581b
+hex_code: vnvf5b
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Containerizing-Internal-Comments-and-Recommendations-for-Consideration.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Containerizing-Internal-Comments-and-Recommendations-for-Consideration.md"
 ---
 

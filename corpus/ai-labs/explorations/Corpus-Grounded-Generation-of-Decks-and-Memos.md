@@ -1,13 +1,8 @@
 ---
 title: Corpus-Grounded Generation — Memory & Graph Layers for Producing Decks and
   Memos Without Drift
-lede: 'The promise is obvious: point an LLM at a pile of verified PDFs, extracted
-  articles, and confirmed claims, and it should slash the time to a deck or a memo.
-  The lived reality is drift — the model quietly fills gaps from its parameters, inventing
-  research that sounds right and isn''t. This maps an end-to-end pipeline (ingest
-  → graph → retrieve → generate → verify) where memory and graph layers exist specifically
-  to make every factual sentence in a deliverable trace back to a source span, and
-  to make the model abstain when it can''t.'
+lede: A pipeline where every factual sentence in a deck or memo traces to a source
+  span — and the model abstains when it can't.
 date_created: 2026-06-19
 date_modified: 2026-06-19
 authors:
@@ -40,10 +35,15 @@ related_skills:
 - chroma-local
 - crawl-fetch-ingest
 - deck-iteration-workflow
+site_uuid: 698e0bfa-6997-4615-ae11-1694f967846f
+hex_code: 05bseu
+date_authored_initial_draft: 2026-06-19
+date_authored_current_draft: 2026-06-19
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: explorations/Corpus-Grounded-Generation-of-Decks-and-Memos.md
 source_repo_slug: ai-labs
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/context-v/explorations/Corpus-Grounded-Generation-of-Decks-and-Memos.md"
 ---
 

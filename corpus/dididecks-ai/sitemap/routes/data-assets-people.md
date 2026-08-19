@@ -1,14 +1,8 @@
 ---
 title: /data-assets/people — reviewer audit of team / advisor / portco-ceo metadata
   + headshots across every engagement layout
-lede: Static reviewer audit page that globs every `<consumer>/data/**/{team,portfolio}/*.md`
-  and renders one row per person — name, slug, role_class, title, org, link chips
-  (LinkedIn / Twitter / website), the colocated headshot preview, bio_short, confidence
-  + status pills. People are distinguished from Companies (which also live under `portfolio/`)
-  by the *presence* of a `role_class` frontmatter field. Adapts to all three known
-  data layouts (calmstorm's `data/firms/{firm}/team/`, chroma's `data/investors/{firm}/team/`
-  + flat `data/team/`, humain's flat `data/team/` + `data/portfolio/{co-slug}-ceo.md`).
-  SSR'd (`prerender = false`) for auth gating.
+lede: Reviewer audit over `data/**/{team,portfolio}/*.md` — people are told from companies
+  by the *presence* of `role_class`. SSR'd behind auth.
 artifact_kind: route
 ownership: shell
 mode: n/a
@@ -40,10 +34,16 @@ status_tags:
 - SSR-gated
 related_models:
 - '[[../../models/Person-Data-Model]]'
+date_created: 2026-05-17
+date_modified: 2026-06-07
+publish: true
+site_uuid: 82fe47b3-e846-40ed-966f-be3f1bd718ef
+hex_code: omk5vk
+date_authored_current_draft: 2026-05-17
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/routes/data-assets-people.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/routes/data-assets-people.md"
 ---
 

@@ -16,10 +16,13 @@ tags:
 - Puppeteer
 - Static-Site-Constraints
 - Known-Limitations
+site_uuid: b9b59f4e-9ae2-4261-9e03-3929ce9b623d
+hex_code: mhzgry
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
 source_relative_path: explorations/High-Resolution-High-Fidelity-Deck-Exports-from-Code-to-Images-&-PDFs.md
 source_repo_slug: calmstorm-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v/explorations/High-Resolution-High-Fidelity-Deck-Exports-from-Code-to-Images-&-PDFs.md"
 ---
 

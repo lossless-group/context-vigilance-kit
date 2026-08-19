@@ -20,10 +20,14 @@ image_prompt: A set of UI Components are going through a pipeline diagrammed as 
 banner_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/2025-sept/Maintain-Conditional-Components-on-Render.md_banner_image_1758919404148_K8_4JLgGX.webp
 portrait_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/2025-sept/Maintain-Conditional-Components-on-Render.md_portrait_image_1758919405950_UdwSB8E76.webp
 square_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/2025-sept/Maintain-Conditional-Components-on-Render.md_square_image_1758919407434_rdi7V6hNS.webp
+site_uuid: bfa62998-210f-4fe5-86dc-a5377841834d
+hex_code: 6nkati
+date_authored_initial_draft: 2025-09-26
+date_authored_current_draft: 2025-09-26
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Maintain-Conditional-Components-on-Render.md
 source_repo_slug: lfm
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "lfm/context-v/Maintain-Conditional-Components-on-Render.md"
 ---
 

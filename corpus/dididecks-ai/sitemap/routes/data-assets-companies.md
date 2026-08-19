@@ -1,15 +1,8 @@
 ---
 title: /data-assets/companies — reviewer audit of portfolio-company metadata + brand
   assets across every engagement layout
-lede: 'Static reviewer audit page that globs every `<consumer>/data/**/portfolio/*.md`
-  and renders one row per portfolio company — name, slug, sector, homepage, the colocated
-  trademark + favicon previews, confidence/status pills, and links into upstream sources.
-  Companies are distinguished from People (which also live under `portfolio/`) by
-  the *absence* of a `role_class` frontmatter field. Adapts to all three known data
-  layouts: calmstorm''s `data/firms/{firm}/portfolio/`, chroma''s `data/investors/{firm}/portfolio/`,
-  and humain''s flat `data/portfolio/` operating-company variant. SSR''d (`prerender
-  = false`) so it routes through the consumer''s auth middleware — protects portfolio
-  graphs from being public-by-accident.'
+lede: Reviewer audit over `data/**/portfolio/*.md` — companies are told from people
+  by the *absence* of `role_class`. SSR'd behind auth.
 artifact_kind: route
 ownership: shell
 mode: n/a
@@ -41,10 +34,16 @@ status_tags:
 - SSR-gated
 related_models:
 - '[[../../models/Company-Data-Model]]'
+date_created: 2026-05-17
+date_modified: 2026-06-07
+publish: true
+site_uuid: 32b3ba95-1d39-4825-a597-a7fb9a81148f
+hex_code: 0rlgwm
+date_authored_current_draft: 2026-05-17
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/routes/data-assets-companies.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/routes/data-assets-companies.md"
 ---
 

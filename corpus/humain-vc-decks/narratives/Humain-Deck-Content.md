@@ -7,10 +7,14 @@ status: extracted-from-pdf
 source_pdf: corpus/management-supplied/2025-10-17_Humain-Deck-VCLab.pdf
 extracted_at: 2026-06-06
 last_pdf_revision: 2025-02-22
+site_uuid: 4a3a0f7d-4e26-452e-b090-99cf5c06b48a
+hex_code: 71hcas
+date_created: 2026-06-06
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/humain-vc-decks/context-v
 source_relative_path: narratives/Humain-Deck-Content.md
 source_repo_slug: humain-vc-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/humain-vc-decks/context-v/narratives/Humain-Deck-Content.md"
 ---
 

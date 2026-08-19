@@ -1,9 +1,7 @@
 ---
 title: VC Self-Host Stack as a Pseudomonorepo (and a Paired Study)
-lede: 'We have two orphan dirs at the monorepo root — twenty-crm/ and twenty-deployment/
-  — that hint at a larger pattern: a curated, deployable open-source tech stack a
-  VC firm could self-host instead of paying SaaS rent. This exploration asks where
-  that pattern should live and how we''d serve clients from it.'
+lede: Two orphan dirs, `twenty-crm/` and `twenty-deployment/`, hint at a deployable
+  stack a VC firm could self-host instead of renting SaaS.
 date_created: 2026-05-19
 date_modified: 2026-05-19
 authors:
@@ -22,10 +20,15 @@ related:
 - '[[A logic behind Self-Hosted VC Stacks]]'
 - '[[pseudomonorepos]]'
 - '[[study-repos-first]]'
+site_uuid: fadf61ca-e0cc-4279-884f-b4722bd89928
+hex_code: g1c06k
+date_authored_initial_draft: 2026-05-19
+date_authored_current_draft: 2026-05-19
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: explorations/VC-Self-Host-Stack-as-Pseudomonorepo.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "context-v/explorations/VC-Self-Host-Stack-as-Pseudomonorepo.md"
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: Person — team members, advisors, portfolio CEOs
-lede: One markdown file per person, with sibling-colocated headshot. The `role_class`
-  field discriminates the person's relationship to the firm — vc-team, managing-partner,
-  advisor, portco-ceo, etc. — and the shell's /data-assets/people route surfaces everything
-  via a single glob across both team/ and portfolio/ directories.
+lede: One markdown file per person plus colocated headshot; `role_class` discriminates
+  vc-team, advisor, portco-ceo, and the rest.
 date_authored_initial_draft: 2026-06-07
 date_last_updated: 2026-06-07
 at_semantic_version: 0.0.1.0
@@ -14,10 +12,16 @@ applies_to:
 - client-sites/humain-vc-decks
 schema_authority: apps/deck-shell/src/routes/data-assets/people.astro (the route that
   reads the frontmatter — its reader is the de facto schema enforcer)
+date_created: 2026-06-07
+date_modified: 2026-06-07
+publish: false
+site_uuid: 011b8974-826e-48cf-8108-06f024d5f1e5
+hex_code: nnemqt
+date_authored_current_draft: 2026-06-07
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: models/Person-Data-Model.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/models/Person-Data-Model.md"
 ---
 

@@ -26,10 +26,13 @@ image_prompt: A filtered funnel diagram showing many company logos entering the 
   emerging at the bottom in a structured comparison grid.
 date_created: 2026-03-10
 date_modified: 2026-03-10
+publish: false
+site_uuid: 399f6859-d51f-42a8-aa80-2f0357de7e16
+hex_code: 3y1z1n
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Introducing-a-Competitive-Landscape-Research-and-Evaluation-System.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Introducing-a-Competitive-Landscape-Research-and-Evaluation-System.md"
 ---
 

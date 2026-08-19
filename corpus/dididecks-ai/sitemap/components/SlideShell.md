@@ -1,13 +1,8 @@
 ---
 title: SlideShell — shared per-slide chrome (padding, min-height, snap-align, optional
   consumer-provided mark)
-lede: 'Outer `<section>` that wraps a slide''s content with the shared layout discipline:
-  `min-height: 100vh`, fluid clamp-based padding, `scroll-snap-align: start`, flex-column
-  body wrapper with content-max-width, optional vertical alignment + background variant.
-  The original chroma version embedded `<ChromaMark>` directly; the shell version
-  exposes `<slot name="mark">` so consumers plug their own mark (Wordmark, ChromaMark,
-  HumainMark, etc.) — the shell stays brand-agnostic. Lifted from `chroma-decks/src/layouts/SlideShell.astro`
-  on 2026-06-06.'
+lede: Outer `<section>` with shared per-slide layout plus a `<slot name="mark">` —
+  consumers plug their own mark, the shell stays brand-agnostic.
 artifact_kind: component
 ownership: shell
 mode: both
@@ -50,10 +45,16 @@ at_semantic_version: 0.2.0
 status_tags:
 - Shipped
 - Lifted-From-Chroma
+date_created: 2026-06-06
+date_modified: 2026-06-07
+publish: true
+site_uuid: 9b60853a-565e-40f0-9e13-cd391a639814
+hex_code: k3u2uw
+date_authored_current_draft: 2026-06-06
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: sitemap/components/SlideShell.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/context-v/sitemap/components/SlideShell.md"
 ---
 

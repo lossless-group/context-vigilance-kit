@@ -22,10 +22,15 @@ tags:
 - Founder-vs-Memo
 - Call-Notes-Integrated
 status: Draft
+site_uuid: 3afec79e-467a-46b3-ac10-4c285fa0836c
+hex_code: auez3i
+date_authored_initial_draft: 2026-05-12
+date_authored_current_draft: 2026-05-12
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
 source_relative_path: explorations/Discrepancy-Reconciliation__Founder-Deck-vs-MemoPop.md
 source_repo_slug: chroma-decks
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/dididecks-ai/client-sites/chroma-decks/context-v/explorations/Discrepancy-Reconciliation__Founder-Deck-vs-MemoPop.md"
 ---
 

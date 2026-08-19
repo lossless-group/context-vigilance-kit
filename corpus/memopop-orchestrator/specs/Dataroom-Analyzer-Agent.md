@@ -27,10 +27,13 @@ image_prompt: A sophisticated document processing pipeline showing diverse docum
   analysis nodes, with document classification icons and data extraction visualizations.
 date_created: 2025-11-26
 date_modified: 2025-11-26
+publish: false
+site_uuid: d81bef7f-e37d-4160-8859-59a9521acac8
+hex_code: dbcr8r
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Dataroom-Analyzer-Agent.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Dataroom-Analyzer-Agent.md"
 ---
 

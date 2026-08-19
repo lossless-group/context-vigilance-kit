@@ -26,10 +26,12 @@ augmented_with: Claude Code with Claude Opus 4.7
 related:
 - context-v/Introducing-a-GUI-Native-Desktop-with-Tauri.md
 - context-v/GUI-Action-Catalog-Draft.md
+site_uuid: 1f04c6ff-dd45-42e1-a92b-a5cf12890fe5
+hex_code: tqgrvk
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Transport-Contract-and-API-Conventions.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Transport-Contract-and-API-Conventions.md"
 ---
 

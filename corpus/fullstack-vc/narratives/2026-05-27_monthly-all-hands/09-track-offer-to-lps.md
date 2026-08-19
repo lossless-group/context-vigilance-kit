@@ -14,10 +14,17 @@ agent_hints:
 - SPV doc-set assembly + status comms
 - 'LP-curiosity feeder: light updates between deals to keep the muscle warm'
 ties_to_slide_05: true
+date_created: 2026-05-27
+date_modified: 2026-05-27
+publish: true
+site_uuid: b48eb2f4-a4c0-4b1d-98f2-e23dfe2aeedc
+hex_code: z84pty
+date_authored_initial_draft: 2026-05-27
+date_authored_current_draft: 2026-05-27
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: narratives/2026-05-27_monthly-all-hands/09-track-offer-to-lps.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/sites/fullstack-vc/context-v/narratives/2026-05-27_monthly-all-hands/09-track-offer-to-lps.md"
 ---
 

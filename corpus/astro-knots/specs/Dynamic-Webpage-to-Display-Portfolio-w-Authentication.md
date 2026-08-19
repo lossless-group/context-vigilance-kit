@@ -22,10 +22,13 @@ authors:
 - Michael Staton
 - Tugce Ergul
 image_prompt: A nice portfolio page with logos.
+site_uuid: fa61384a-21a1-4466-8de5-fb0f02215d90
+hex_code: r8goje
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Dynamic-Webpage-to-Display-Portfolio-w-Authentication.md
 source_repo_slug: astro-knots
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "astro-knots/context-v/specs/Dynamic-Webpage-to-Display-Portfolio-w-Authentication.md"
 ---
 

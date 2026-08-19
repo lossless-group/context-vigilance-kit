@@ -1,22 +1,8 @@
 ---
 title: URL Auto-Detector and Clickable Rendering for List Fields — make socials, helpful_links,
   and official_updates_index_urls open-in-tab links instead of opaque JSON
-lede: 'Three of the most operationally important Augment-It fields are list-shaped
-  — `socials`, `helpful_links`, `official_updates_index_urls`. Each is either a `string[]`
-  or an `Array<{ url: string, ...metadata }>`. Today''s field renderer (shipped earlier
-  today in commit `2004770`) stringifies them as JSON, which is legible but not actionable
-  — the operator can''t click through to verify the link works, and the secondary
-  metadata (display_name, confidence, label, note) clutters the visual scan. This
-  plan adds a shape-detecting URL extractor (`formatFieldValue` becomes pluggable)
-  and renders any field whose value is a URL — scalar string, array of strings, or
-  array of objects with a `url` key — as a list of clickable `<a target="_blank" rel="noopener">`
-  links, one per URL, with the auxiliary metadata dropped from the rendered view.
-  The forcing function is the next bundle''s hard dependency: it fires only against
-  rows whose `socials`, `helpful_links`, and `official_updates_index_urls` already
-  carry ≥1 URL, so the operator must be able to skim Record Collector and visually
-  confirm ''yes there''s a link here, and yes it''s the right one'' fast. Closes the
-  audit side of [[OfficialPulse-URLs-Appear-as-Junk-in-Promoted-Versions]] — the curation/remove
-  side stays as a sibling follow-up.'
+lede: '`socials` and its list-shaped siblings render as 12px JSON; a shape-detecting
+  extractor makes every URL clickable and drops the clutter.'
 date_created: 2026-06-05
 date_modified: 2026-06-05
 authors:
@@ -38,10 +24,15 @@ tags:
 - Official-Updates-Index-Urls
 - Audit-Affordance
 status: Draft
+site_uuid: be33495c-dd37-4f37-b8e4-d18e158e61a7
+hex_code: dlrdzb
+date_authored_initial_draft: 2026-06-05
+date_authored_current_draft: 2026-06-05
+publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: plans/URL-Auto-Detector-and-Clickable-Rendering-for-List-Fields.md
 source_repo_slug: augment-it
-collated_at: '2026-07-21'
+collated_at: '2026-08-18'
 source_path: "ai-labs/augment-it/context-v/plans/URL-Auto-Detector-and-Clickable-Rendering-for-List-Fields.md"
 ---
 
