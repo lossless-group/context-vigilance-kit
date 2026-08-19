@@ -428,6 +428,53 @@ the changelog tier.
 - **Client repos last:** `calmstorm-decks`, `reach-edu-hub`, `chroma-decks`,
   `humain-vc-decks`, `lossless-decks`, `eventcut-ai`, `the-water-foundation`.
 
+### 1b. The confidentiality screen — RUN AND CLEARED, 2026-08-18
+
+All eight client-facing repos screened before any `publish` value was set. Do not
+re-run this from scratch; re-run only what has changed since.
+
+**Visibility, checked with an UNAUTHENTICATED API call** (an authenticated call
+succeeds against private repos and defeats the purpose):
+
+| Repo | Visibility |
+|---|---|
+| `reach-edu-hub` | **PUBLIC** |
+| `fullstack-vc` | **PUBLIC** |
+| `calmstorm-decks`, `chroma-decks`, `humain-vc-decks`, `lossless-decks`, `eventcut-ai`, `the-water-foundation` | private |
+
+**Credential + high-entropy screen: zero hits across all eight.** The only
+credential exposure in the whole tier remains `dididecks-ai`'s `Auth-Loose-Ends.md`,
+already gated with `private: true` and pending credential rotation.
+
+**`reach-edu-hub` — cleared by the operator, 2026-08-18.** The screen surfaced
+REACH's live fundraise position in six `pitch.md` files: $25M goal over three
+years, $6M committed, Carnegie Corporation ($2M) and Schusterman named as
+committed funders, ~$3M in motion, an August 2026 cohort close, and enrollment
+scaling 3,400 → 7,500. Two of those documents self-label "(Internal)". All of it
+sits in a public repo.
+
+**Operator ruling: fine to publish.** REACH is a non-profit running a public
+campaign and is not protecting these figures. **Do not flag this again**, and do
+not genericize it — the specificity is the point in a fundraising narrative.
+
+Two things that follow from the ruling rather than contradict it:
+
+- **The "(Internal)" labels in those two titles are now misleading.** They say
+  Internal in a public repo about material deliberately published. Worth removing
+  so the next reader does not trust the label over the reality.
+- **A passcode on the deployed site does not protect the GitHub repo.** These are
+  different surfaces, and the screen must check repository visibility rather than
+  assume the site's auth covers the source. That assumption is what would have let
+  this pass unexamined.
+
+The other 272 financial hits in `reach-edu-hub` are **publicly reported
+philanthropy figures with footnote citations** to Fortune, Forbes, and press
+releases — funder-landscape research, not client confidences. A naive
+`\$[0-9]+M` grep flags all of them; do not treat that count as a finding.
+
+**`fullstack-vc`** — clean. One financial hit, a survey quote. The repo
+self-describes as build-in-public.
+
 ### 2. Ledes — 183, of which 151 warrant one
 
 ~243,000 words to read, median 1,241 per document. The 5 genuine stubs get **no
