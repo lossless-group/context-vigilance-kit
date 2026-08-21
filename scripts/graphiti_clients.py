@@ -54,6 +54,13 @@ DEFAULT_ANTHROPIC_SMALL_MODEL = "claude-haiku-4-5-20251001"
 # all-minilm is the same 384-dim MiniLM family the Chroma collections
 # already use, which keeps the two indexes comparable.
 DEFAULT_OLLAMA_BASE_URL = "http://localhost:11434/v1"
+# Local extraction. Graphiti bills an LLM call per entity/edge extraction and
+# per dedup comparison, and dedup context grows with the graph — a full
+# changelog pass ran ~$0.58/episode on hosted Haiku. Pointing the LLM at a
+# local OpenAI-compatible endpoint (Ollama, LM Studio) makes that free.
+# Uses graphiti's *generic* OpenAI client, which does not assume strict
+# structured-output support the way the hosted clients do.
+DEFAULT_LOCAL_LLM_MODEL = "qwen3-coder:30b"
 DEFAULT_EMBED_MODEL = "all-minilm"
 DEFAULT_EMBED_DIM = 384
 
@@ -66,6 +73,8 @@ class GraphitiSettings:
     anthropic_api_key: str | None
     anthropic_model: str
     anthropic_small_model: str
+    llm_provider: str
+    llm_base_url: str
     embed_base_url: str
     embed_model: str
     embed_dim: int
@@ -83,6 +92,8 @@ class GraphitiSettings:
             anthropic_small_model=os.getenv(
                 "GRAPHITI_LLM_SMALL_MODEL", DEFAULT_ANTHROPIC_SMALL_MODEL
             ),
+            llm_provider=os.getenv("GRAPHITI_LLM_PROVIDER", "anthropic").lower(),
+            llm_base_url=os.getenv("GRAPHITI_LLM_BASE_URL", DEFAULT_OLLAMA_BASE_URL),
             embed_base_url=os.getenv("GRAPHITI_EMBED_BASE_URL", DEFAULT_OLLAMA_BASE_URL),
             embed_model=os.getenv("GRAPHITI_EMBED_MODEL", DEFAULT_EMBED_MODEL),
             embed_dim=int(os.getenv("EMBEDDING_DIM", DEFAULT_EMBED_DIM)),
@@ -165,6 +176,20 @@ def build_llm_client(settings: GraphitiSettings, require_key: bool = True):
     object, so we hand it one wired to a placeholder that is never called."""
     from graphiti_core.llm_client.anthropic_client import AnthropicClient
     from graphiti_core.llm_client.config import LLMConfig
+
+    if settings.llm_provider in ("ollama", "lmstudio", "local", "openai-generic"):
+        from graphiti_core.llm_client.openai_generic_client import OpenAIGenericClient
+
+        model = os.getenv("GRAPHITI_LLM_MODEL", DEFAULT_LOCAL_LLM_MODEL)
+        small = os.getenv("GRAPHITI_LLM_SMALL_MODEL", model)
+        return OpenAIGenericClient(
+            config=LLMConfig(
+                api_key=os.getenv("GRAPHITI_LLM_API_KEY", "local-no-key-needed"),
+                base_url=settings.llm_base_url,
+                model=model,
+                small_model=small,
+            )
+        )
 
     if not settings.anthropic_api_key and not require_key:
         return AnthropicClient(
@@ -250,10 +275,19 @@ def build_graphiti(settings: GraphitiSettings, require_llm: bool = True):
 
 
 def describe(settings: GraphitiSettings) -> str:
-    key = "set" if settings.anthropic_api_key else "MISSING"
+    local = settings.llm_provider in ("ollama", "lmstudio", "local", "openai-generic")
+    if local:
+        model = os.getenv("GRAPHITI_LLM_MODEL", DEFAULT_LOCAL_LLM_MODEL)
+        llm_line = (
+            f"  llm:         {settings.llm_provider} / {model} "
+            f"@ {settings.llm_base_url}  [local, no billing]"
+        )
+    else:
+        key = "set" if settings.anthropic_api_key else "MISSING"
+        llm_line = f"  llm:         anthropic / {settings.anthropic_model}  [api key: {key}]"
     return (
         f"  neo4j:       {settings.neo4j_uri} (user={settings.neo4j_user})\n"
-        f"  llm:         anthropic / {settings.anthropic_model}  [api key: {key}]\n"
+        f"{llm_line}\n"
         f"  embedder:    {settings.embed_model} @ {settings.embed_base_url} "
         f"({settings.embed_dim}-dim)\n"
         f"  reranker:    {settings.cross_encoder}\n"
