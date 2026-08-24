@@ -1,9 +1,9 @@
 ---
 title: Context Vigilance Kit — Sources
-description: Curated list of context-v/ directories and legacy roots that the collator pulls
-  from.
+description: Curated list of context-v/ directories and legacy roots that the collator
+  pulls from.
 date_created: '2026-05-07'
-date_modified: '2026-07-21'
+date_modified: '2026-08-24'
 schema_version: 1
 sources:
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
@@ -13,7 +13,8 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/splash/src/pages/context-v
   kind: context-v
   include: false
-  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
+  note: false-positive — Astro page route that *renders* context-v, not a source.
+    Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
   kind: context-v
   include: true
@@ -57,7 +58,8 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/id-didi-sh/splash/src/pages/context-v
   kind: context-v
   include: false
-  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
+  note: false-positive — Astro page route that *renders* context-v, not a source.
+    Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-native/context-v
   kind: context-v
   include: true
@@ -69,7 +71,8 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-site/src/pages/context-v
   kind: context-v
   include: false
-  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
+  note: false-positive — Astro page route that *renders* context-v, not a source.
+    Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
   kind: context-v
   include: true
@@ -77,12 +80,13 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/splash/src/pages/context-v
   kind: context-v
   include: false
-  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
+  note: false-positive — Astro page route that *renders* context-v, not a source.
+    Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/splash/src/rollup/context-v
   kind: context-v
   include: false
-  note: false-positive — splash rollup OUTPUT directory, not a source. Re-collating would
-    create duplicates of already-collated content. Excluded.
+  note: false-positive — splash rollup OUTPUT directory, not a source. Re-collating
+    would create duplicates of already-collated content. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/agent-harnesses/context-v
   kind: context-v
   include: true
@@ -134,8 +138,8 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/mpstaton-site/src/content/context-v
   kind: context-v
   include: false
-  note: false-positive — Astro content collection that *renders* context-v, not a source.
-    Excluded.
+  note: false-positive — Astro content collection that *renders* context-v, not a
+    source. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/twf_site/context-v
   kind: context-v
   include: true
@@ -143,12 +147,13 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/splash/src/pages/context-v
   kind: context-v
   include: false
-  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
+  note: false-positive — Astro page route that *renders* context-v, not a source.
+    Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/splash/src/rollup/context-v
   kind: context-v
   include: false
-  note: false-positive — splash rollup OUTPUT directory, not a source. Re-collating would
-    create duplicates of already-collated content. Excluded.
+  note: false-positive — splash rollup OUTPUT directory, not a source. Re-collating
+    would create duplicates of already-collated content. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
   kind: context-v
   include: true
@@ -188,12 +193,13 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/content-farm/splash/src/pages/context-v
   kind: context-v
   include: false
-  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
+  note: false-positive — Astro page route that *renders* context-v, not a source.
+    Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/content-farm/splash/src/rollup/context-v
   kind: context-v
   include: false
-  note: false-positive — splash rollup OUTPUT directory, not a source. Re-collating would
-    create duplicates of already-collated content. Excluded.
+  note: false-positive — splash rollup OUTPUT directory, not a source. Re-collating
+    would create duplicates of already-collated content. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
   kind: legacy
   include: true
@@ -208,8 +214,9 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/content/specs
   kind: open-call
   include: true
-  note: Open Call specs — Hyperloop-paper style. Mix of legacy and new; published as "we thought
-    of this, someone please build it." Flat directory; collate the whole thing.
+  note: Open Call specs — Hyperloop-paper style. Mix of legacy and new; published
+    as "we thought of this, someone please build it." Flat directory; collate the
+    whole thing.
 - path: /Users/mpstaton/code/lossless-monorepo/context-v
   kind: context-v
   include: true
@@ -221,7 +228,8 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/lfm/splash/src/pages/context-v
   kind: context-v
   include: false
-  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
+  note: false-positive — Astro page route that *renders* context-v, not a source.
+    Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/self-host-stack/context-v
   kind: context-v
   include: true
@@ -230,6 +238,58 @@ sources:
   kind: context-v
   include: true
   note: auto-discovered 2026-07-21; opted in 2026-07-21.
+- path: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/eventcut-ai/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/the-water-foundation/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/ai-labs/flave-ai/context-v
+  kind: context-v
+  include: true
+  note: auto-discovered 2026-08-24; opted in 2026-08-24.
+- path: /Users/mpstaton/code/lossless-monorepo/ai-labs/flave-ai/splash/src/pages/context-v
+  kind: context-v
+  include: false
+  note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
+- path: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/sync-and-content-version-control/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/learnstart-site/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/lossless-changelog/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/mpstaton-site/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/stenographer/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/self-host-stack/client-stacks/humain-vc/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/self-host-stack/client-stacks/lossless/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/self-host-stack/client-stacks/palmer-ai/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
+- path: /Users/mpstaton/code/lossless-monorepo/self-host-stack/client-stacks/reach-edu/context-v
+  kind: context-v
+  include: false
+  note: auto-discovered 2026-08-24; review.
 ---
 
 # Sources
