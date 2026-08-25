@@ -241,11 +241,11 @@ sources:
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/eventcut-ai/context-v
   kind: context-v
   include: false
-  note: auto-discovered 2026-08-24; review.
+  note: client material — never opt in. corpus/ is committed to a PUBLIC repo and published to GitHub Pages, so include:true publishes it. Excluded 2026-08-24.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/the-water-foundation/context-v
   kind: context-v
   include: false
-  note: auto-discovered 2026-08-24; review.
+  note: client material — never opt in. corpus/ is committed to a PUBLIC repo and published to GitHub Pages, so include:true publishes it. Excluded 2026-08-24.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/flave-ai/context-v
   kind: context-v
   include: true
@@ -256,40 +256,40 @@ sources:
   note: false-positive — Astro page route that *renders* context-v, not a source. Excluded.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/sync-and-content-version-control/context-v
   kind: context-v
-  include: false
-  note: auto-discovered 2026-08-24; review.
+  include: true
+  note: auto-discovered 2026-08-24; opted in 2026-08-24.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/learnstart-site/context-v
   kind: context-v
   include: false
   note: auto-discovered 2026-08-24; review.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/lossless-changelog/context-v
   kind: context-v
-  include: false
-  note: auto-discovered 2026-08-24; review.
+  include: true
+  note: auto-discovered 2026-08-24; opted in 2026-08-24.
 - path: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/mpstaton-site/context-v
   kind: context-v
-  include: false
-  note: auto-discovered 2026-08-24; review.
+  include: true
+  note: auto-discovered 2026-08-24; opted in 2026-08-24.
 - path: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/stenographer/context-v
   kind: context-v
-  include: false
-  note: auto-discovered 2026-08-24; review.
+  include: true
+  note: auto-discovered 2026-08-24; opted in 2026-08-24.
 - path: /Users/mpstaton/code/lossless-monorepo/self-host-stack/client-stacks/humain-vc/context-v
   kind: context-v
   include: false
-  note: auto-discovered 2026-08-24; review.
+  note: client material — never opt in. corpus/ is committed to a PUBLIC repo and published to GitHub Pages, so include:true publishes it. Excluded 2026-08-24.
 - path: /Users/mpstaton/code/lossless-monorepo/self-host-stack/client-stacks/lossless/context-v
   kind: context-v
   include: false
-  note: auto-discovered 2026-08-24; review.
+  note: client material — never opt in. corpus/ is committed to a PUBLIC repo and published to GitHub Pages, so include:true publishes it. Excluded 2026-08-24.
 - path: /Users/mpstaton/code/lossless-monorepo/self-host-stack/client-stacks/palmer-ai/context-v
   kind: context-v
   include: false
-  note: auto-discovered 2026-08-24; review.
+  note: client material — never opt in. corpus/ is committed to a PUBLIC repo and published to GitHub Pages, so include:true publishes it. Excluded 2026-08-24.
 - path: /Users/mpstaton/code/lossless-monorepo/self-host-stack/client-stacks/reach-edu/context-v
   kind: context-v
   include: false
-  note: auto-discovered 2026-08-24; review.
+  note: client material — never opt in. corpus/ is committed to a PUBLIC repo and published to GitHub Pages, so include:true publishes it. Excluded 2026-08-24.
 ---
 
 # Sources
