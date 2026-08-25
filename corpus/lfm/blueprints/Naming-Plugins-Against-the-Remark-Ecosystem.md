@@ -34,7 +34,7 @@ image_prompt: Three brass library stamps of increasing width lined up on a workb
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: blueprints/Naming-Plugins-Against-the-Remark-Ecosystem.md
 source_repo_slug: lfm
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "lfm/context-v/blueprints/Naming-Plugins-Against-the-Remark-Ecosystem.md"
 ---
 

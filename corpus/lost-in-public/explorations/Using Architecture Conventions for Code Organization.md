@@ -11,7 +11,7 @@ at_semantic_version: 0.0.0.1
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: explorations/Using Architecture Conventions for Code Organization.md
 source_repo_slug: lost-in-public
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/lost-in-public/explorations/Using Architecture Conventions for Code Organization.md"
 ---
 

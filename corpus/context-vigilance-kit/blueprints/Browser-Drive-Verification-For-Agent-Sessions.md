@@ -27,7 +27,7 @@ date_authored_current_draft: 2026-07-22
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v
 source_relative_path: blueprints/Browser-Drive-Verification-For-Agent-Sessions.md
 source_repo_slug: context-vigilance-kit
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/context-vigilance-kit/context-v/blueprints/Browser-Drive-Verification-For-Agent-Sessions.md"
 ---
 

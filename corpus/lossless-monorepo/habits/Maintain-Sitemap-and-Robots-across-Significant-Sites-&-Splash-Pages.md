@@ -24,7 +24,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/habits/Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md"
 ---
 
@@ -32,7 +32,7 @@ source_path: "context-v/habits/Maintain-Sitemap-and-Robots-across-Significant-Si
 
 > Repo-level habit. Generic to every site we publish that wants discoverability.
 > **Reference implementation:** [`ai-labs/context-vigilance-kit/splash/`](../../ai-labs/context-vigilance-kit/splash/) — `astro.config.mjs` + `public/robots.txt` + `src/layouts/BaseLayout.astro`. All five Lossless splashes (cvk, astro-knots, content-farm, memopop-site, lfm) ship this pattern.
-> **How-to skill:** [`open-graph-share-seo-geo`](../skills/open-graph-share-seo-geo/SKILL.md), specifically the `## Sitemap & robots.txt` section and [`references/sitemap-implementation.md`](../skills/open-graph-share-seo-geo/references/sitemap-implementation.md).
+> **How-to skill:** [`open-graph-share-seo-geo`](../agent-skills/open-graph-share-seo-geo/SKILL.md), specifically the `## Sitemap & robots.txt` section and [`references/sitemap-implementation.md`](../agent-skills/open-graph-share-seo-geo/references/sitemap-implementation.md).
 
 ## Why this exists
 
@@ -177,9 +177,9 @@ Verify before declaring the habit met:
   - `lfm/splash/` (17 URLs; long base path `/lossless-flavored-markdown-package/`)
 - **The Astro integration:** [`@astrojs/sitemap` docs](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 - **The standards:** [sitemaps.org](https://www.sitemaps.org/) protocol; [Google Search Central — Sitemap docs](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)
-- **How-to skill:** [`open-graph-share-seo-geo`](../skills/open-graph-share-seo-geo/SKILL.md), specifically:
-  - The [`## Sitemap & robots.txt` section](../skills/open-graph-share-seo-geo/SKILL.md) of `SKILL.md`.
-  - [`references/sitemap-implementation.md`](../skills/open-graph-share-seo-geo/references/sitemap-implementation.md) for the full porting recipe with copy-paste-ready config.
+- **How-to skill:** [`open-graph-share-seo-geo`](../agent-skills/open-graph-share-seo-geo/SKILL.md), specifically:
+  - The [`## Sitemap & robots.txt` section](../agent-skills/open-graph-share-seo-geo/SKILL.md) of `SKILL.md`.
+  - [`references/sitemap-implementation.md`](../agent-skills/open-graph-share-seo-geo/references/sitemap-implementation.md) for the full porting recipe with copy-paste-ready config.
 - **Sibling habits:**
   - [`Maintain-a-Github-Splash-Page-for-each-Repo.md`](Maintain-a-Github-Splash-Page-for-each-Repo.md) — splashes are the primary surface this habit applies to.
   - [`Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md`](Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md) — the LLM-facing companion to this habit. Both ship together; the sitemap filter explicitly excludes the llms.txt endpoints so the two don't pollute each other.

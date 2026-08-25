@@ -42,7 +42,7 @@ hex_code: 992gth
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Refactor-Scroll-Ported-Slides-to-Static-Play-Format.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Refactor-Scroll-Ported-Slides-to-Static-Play-Format.md"
 ---
 

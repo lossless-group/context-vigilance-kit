@@ -37,7 +37,7 @@ image_prompt: A shipping crate with six labelled compartments, four of them seal
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: issues/JSR-Export-Map-Omits-the-Formats-Subpaths.md
 source_repo_slug: lfm
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "lfm/context-v/issues/JSR-Export-Map-Omits-the-Formats-Subpaths.md"
 ---
 

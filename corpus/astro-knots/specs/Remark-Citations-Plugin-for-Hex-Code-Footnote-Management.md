@@ -35,7 +35,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Remark-Citations-Plugin-for-Hex-Code-Footnote-Management.md
 source_repo_slug: astro-knots
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/context-v/specs/Remark-Citations-Plugin-for-Hex-Code-Footnote-Management.md"
 ---
 

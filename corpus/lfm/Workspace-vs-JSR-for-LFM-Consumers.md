@@ -24,7 +24,7 @@ date_authored_current_draft: 2026-05-05
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Workspace-vs-JSR-for-LFM-Consumers.md
 source_repo_slug: lfm
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "lfm/context-v/Workspace-vs-JSR-for-LFM-Consumers.md"
 ---
 

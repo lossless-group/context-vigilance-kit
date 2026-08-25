@@ -27,7 +27,7 @@ hex_code: red2s5
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: blueprints/Disambiguation-Management-across-Agents.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/blueprints/Disambiguation-Management-across-Agents.md"
 ---
 

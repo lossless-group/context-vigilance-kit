@@ -22,7 +22,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: reminders/Ideal-and-Overkill-Schema-for-Max-Flexibility.md
 source_repo_slug: perplexed
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content-farm/plugin-modules/perplexed/context-v/reminders/Ideal-and-Overkill-Schema-for-Max-Flexibility.md"
 ---
 

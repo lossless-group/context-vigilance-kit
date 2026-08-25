@@ -32,7 +32,7 @@ hex_code: 0ro4xp
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: explorations/Chroma-Parity-and-the-Path-to-a-Shared-Deck-UI-Module.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/explorations/Chroma-Parity-and-the-Path-to-a-Shared-Deck-UI-Module.md"
 ---
 

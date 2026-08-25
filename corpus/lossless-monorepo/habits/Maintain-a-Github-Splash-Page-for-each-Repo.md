@@ -23,7 +23,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-a-Github-Splash-Page-for-each-Repo.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/habits/Maintain-a-Github-Splash-Page-for-each-Repo.md"
 ---
 

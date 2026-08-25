@@ -30,7 +30,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/context-v
 source_relative_path: explorations/Moving-Beyond-Simple-API-Calls.md
 source_repo_slug: content-farm
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content-farm/context-v/explorations/Moving-Beyond-Simple-API-Calls.md"
 ---
 

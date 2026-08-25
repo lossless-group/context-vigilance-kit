@@ -37,7 +37,7 @@ image_prompt: An open document that is simultaneously a stack of paper and a lat
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Flave-An-Agent-Native-Document-Format-and-Publisher.md
 source_repo_slug: specs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/specs/Flave-An-Agent-Native-Document-Format-and-Publisher.md"
 ---
 

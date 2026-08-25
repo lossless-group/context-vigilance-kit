@@ -12,7 +12,7 @@ date_modified: 2025-07-23
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: refactors/Refactor-Obsidian-Modals.md
 source_repo_slug: lost-in-public
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/lost-in-public/refactors/Refactor-Obsidian-Modals.md"
 ---
 

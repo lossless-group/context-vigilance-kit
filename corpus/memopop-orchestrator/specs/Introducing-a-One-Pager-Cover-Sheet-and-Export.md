@@ -33,7 +33,7 @@ hex_code: 0otyr5
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Introducing-a-One-Pager-Cover-Sheet-and-Export.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Introducing-a-One-Pager-Cover-Sheet-and-Export.md"
 ---
 

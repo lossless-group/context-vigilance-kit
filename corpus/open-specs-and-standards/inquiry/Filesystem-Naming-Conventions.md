@@ -18,7 +18,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/open-specs-and-standards/context-v
 source_relative_path: inquiry/Filesystem-Naming-Conventions.md
 source_repo_slug: open-specs-and-standards
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/studies/open-specs-and-standards/context-v/inquiry/Filesystem-Naming-Conventions.md"
 ---
 

@@ -33,7 +33,7 @@ hex_code: q39jg8
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Render-AST-in-Debug.md
 source_repo_slug: lfm
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "lfm/context-v/Render-AST-in-Debug.md"
 ---
 

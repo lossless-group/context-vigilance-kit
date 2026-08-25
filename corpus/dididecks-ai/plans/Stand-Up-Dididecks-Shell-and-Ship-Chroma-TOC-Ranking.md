@@ -33,7 +33,7 @@ hex_code: 21u3fp
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Stand-Up-Dididecks-Shell-and-Ship-Chroma-TOC-Ranking.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Stand-Up-Dididecks-Shell-and-Ship-Chroma-TOC-Ranking.md"
 ---
 

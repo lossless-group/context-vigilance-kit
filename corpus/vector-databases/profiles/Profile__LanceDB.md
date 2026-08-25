@@ -30,7 +30,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/vector-databases/context-v
 source_relative_path: profiles/Profile__LanceDB.md
 source_repo_slug: vector-databases
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/studies/vector-databases/context-v/profiles/Profile__LanceDB.md"
 ---
 

@@ -21,7 +21,7 @@ status: Active
 source_root: /Users/mpstaton/code/lossless-monorepo/site/context-v
 source_relative_path: handoffs/2026-08-04_Rebuild-Kickoff-Handoff.md
 source_repo_slug: site
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "site/context-v/handoffs/2026-08-04_Rebuild-Kickoff-Handoff.md"
 ---
 

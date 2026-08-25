@@ -30,7 +30,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: issues/Malformed-Site-UUIDs-At-Source-In-Content-Repo.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/issues/Malformed-Site-UUIDs-At-Source-In-Content-Repo.md"
 ---
 
@@ -62,7 +62,7 @@ as a UUID in any strict consumer. **Offending characters bolded in the notes.**
 | `6e6fbt60-22b9-4070-871d-972b3554a7c0` | `t` | `content/tooling/AI-Toolkit/Knowledge AI/Enjo AI.md` |
 
 Four of these are already quoted in
-`context-v/skills/context-vigilance/references/frontmatter-spec.md` as the worked
+`context-v/agent-skills/context-vigilance/references/frontmatter-spec.md` as the worked
 example of why an agent must shell out for identifiers. **They were documented as
 a cautionary tale and never actually repaired.**
 
@@ -102,13 +102,13 @@ on 2026-08-17; re-deriving them costs an hour.
    `---` block.**
 2. **The RFC example UUID.** `550e8400-e29b-41d4-a716-446655440000` is the
    canonical example from the UUID specification. It appears only in body examples.
-3. **Trailing comments.** `context-v/skills/*/templates/*.md` carry valid uuids
+3. **Trailing comments.** `context-v/agent-skills/*/templates/*.md` carry valid uuids
    followed by `# REGENERATE: uuidgen | …`. A regex capturing to end-of-line reads
    the comment as part of the value.
 
 ## Related
 
-- `context-v/skills/context-vigilance/references/frontmatter-spec.md` — the
+- `context-v/agent-skills/context-vigilance/references/frontmatter-spec.md` — the
   identity spec, including the generate-never-type rule and the base36 rationale
 - [[Frontmatter-Normalization-The-Context-V-Tier]] — the sweep that found these
 - **Roll-up rebuild.** The roll-up is likely to be rebuilt from GitHub CMS / CDN

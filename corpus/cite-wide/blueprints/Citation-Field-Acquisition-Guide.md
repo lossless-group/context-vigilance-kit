@@ -25,7 +25,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/cite-wide/context-v
 source_relative_path: blueprints/Citation-Field-Acquisition-Guide.md
 source_repo_slug: cite-wide
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content-farm/plugin-modules/cite-wide/context-v/blueprints/Citation-Field-Acquisition-Guide.md"
 ---
 

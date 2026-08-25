@@ -27,7 +27,7 @@ hex_code: cdjvsf
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Post-Generation-Quality-Agents.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Post-Generation-Quality-Agents.md"
 ---
 

@@ -33,7 +33,7 @@ hex_code: whoy9w
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: specs/Dididecks-AI-Visual-and-Diagram-Component-Library.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/specs/Dididecks-AI-Visual-and-Diagram-Component-Library.md"
 ---
 

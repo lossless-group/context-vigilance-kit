@@ -31,7 +31,7 @@ hex_code: ztzej8
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Port-Enhanced-v2-Scroll-Slides-to-Static-16x9-Play-Slides-for-PDF-Export.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Port-Enhanced-v2-Scroll-Slides-to-Static-16x9-Play-Slides-for-PDF-Export.md"
 ---
 

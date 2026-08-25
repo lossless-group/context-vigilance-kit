@@ -28,7 +28,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/self-host-stack/context-v
 source_relative_path: explorations/Per-Client-Self-Host-Stacks-Twenty-First-on-Railway.md
 source_repo_slug: self-host-stack
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "self-host-stack/context-v/explorations/Per-Client-Self-Host-Stacks-Twenty-First-on-Railway.md"
 ---
 

@@ -26,7 +26,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/arthouse-site/context-v
 source_relative_path: specs/Services-Section-as-Tiered-Card-Catalog.md
 source_repo_slug: arthouse-site
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/sites/arthouse-site/context-v/specs/Services-Section-as-Tiered-Card-Catalog.md"
 ---
 

@@ -30,7 +30,7 @@ site_uuid: 2d98fef7-761d-4a7b-b3d0-004dc90fb6cc
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Salute-Design-System-Generator.md
 source_repo_slug: specs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/specs/Salute-Design-System-Generator.md"
 ---
 

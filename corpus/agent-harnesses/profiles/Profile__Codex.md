@@ -30,7 +30,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/agent-harnesses/context-v
 source_relative_path: profiles/Profile__Codex.md
 source_repo_slug: agent-harnesses
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/studies/agent-harnesses/context-v/profiles/Profile__Codex.md"
 ---
 

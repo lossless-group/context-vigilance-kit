@@ -25,7 +25,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/habits/Maintain-LLM-Txt-Standard-across-Significant-Sites-&-Splash-Pages.md"
 ---
 
@@ -33,7 +33,7 @@ source_path: "context-v/habits/Maintain-LLM-Txt-Standard-across-Significant-Site
 
 > Repo-level habit. Generic to every site we publish that has content worth ingesting.
 > **Reference implementation:** [`ai-labs/context-vigilance-kit/splash/`](../../ai-labs/context-vigilance-kit/splash/) — read its `src/llms/README.md` end-to-end before scaffolding a new one.
-> **How-to skill:** [`open-graph-share-seo-geo`](../skills/open-graph-share-seo-geo/SKILL.md), specifically [`references/llms-txt-implementation.md`](../skills/open-graph-share-seo-geo/references/llms-txt-implementation.md).
+> **How-to skill:** [`open-graph-share-seo-geo`](../agent-skills/open-graph-share-seo-geo/SKILL.md), specifically [`references/llms-txt-implementation.md`](../agent-skills/open-graph-share-seo-geo/references/llms-txt-implementation.md).
 
 ## Why this exists
 
@@ -167,7 +167,7 @@ Verify before declaring the habit met:
 
 ## What this habit deliberately is not
 
-- **Not** an SEO replacement. Standard OpenGraph + JSON-LD + canonical URLs still apply. llms.txt is a separate concentric ring around them — see the [`open-graph-share-seo-geo`](../skills/open-graph-share-seo-geo/SKILL.md) skill for how the rings fit together.
+- **Not** an SEO replacement. Standard OpenGraph + JSON-LD + canonical URLs still apply. llms.txt is a separate concentric ring around them — see the [`open-graph-share-seo-geo`](../agent-skills/open-graph-share-seo-geo/SKILL.md) skill for how the rings fit together.
 - **Not** for slide-deck-only sites or one-shot fundraise pages. Crawl-and-cite is rarely the goal there; access gates often apply.
 - **Not** dynamic. The files are generated at build time, never at request time. Any freshness comes from a deliberate redeploy (which the splash habit already triggers on push to `main`).
 - **Not** a content management system. The endpoint reads from existing content collections — same source of truth as the rendered HTML pages. New content lands in the collection; the next deploy refreshes both files automatically.
@@ -177,9 +177,9 @@ Verify before declaring the habit met:
 
 - **Reference implementation:** `ai-labs/context-vigilance-kit/splash/` — `src/llms/{llms.md, llms-full.md, README.md}` plus `src/pages/{llms.txt.ts, llms-full.txt.ts}`. 460 corpus entries from 27 source repos, 132 KB index + 5.7 MB full file, built in ~30ms.
 - **The spec:** [llmstxt.org](https://llmstxt.org/) — small enough to read in 10 minutes.
-- **How-to skill:** [`open-graph-share-seo-geo`](../skills/open-graph-share-seo-geo/SKILL.md) — the broader OG/SEO/GEO conventions this fits into. Specifically:
-  - The [`## llms.txt` section](../skills/open-graph-share-seo-geo/SKILL.md) of `SKILL.md` for the rules and rationale.
-  - [`references/llms-txt-implementation.md`](../skills/open-graph-share-seo-geo/references/llms-txt-implementation.md) for the full porting recipe with copy-paste-ready endpoint code.
+- **How-to skill:** [`open-graph-share-seo-geo`](../agent-skills/open-graph-share-seo-geo/SKILL.md) — the broader OG/SEO/GEO conventions this fits into. Specifically:
+  - The [`## llms.txt` section](../agent-skills/open-graph-share-seo-geo/SKILL.md) of `SKILL.md` for the rules and rationale.
+  - [`references/llms-txt-implementation.md`](../agent-skills/open-graph-share-seo-geo/references/llms-txt-implementation.md) for the full porting recipe with copy-paste-ready endpoint code.
 - **Sibling habits:**
   - [`Maintain-a-Github-Splash-Page-for-each-Repo.md`](Maintain-a-Github-Splash-Page-for-each-Repo.md) — the splashes are the primary surface this habit applies to.
   - [`Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md`](Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages.md) — the search-engine companion to this habit. Both ship together; the sitemap filter explicitly excludes the llms.txt endpoints so the two don't pollute each other.

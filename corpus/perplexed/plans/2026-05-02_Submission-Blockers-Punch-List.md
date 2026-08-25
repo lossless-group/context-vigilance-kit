@@ -35,7 +35,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: plans/2026-05-02_Submission-Blockers-Punch-List.md
 source_repo_slug: perplexed
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content-farm/plugin-modules/perplexed/context-v/plans/2026-05-02_Submission-Blockers-Punch-List.md"
 ---
 

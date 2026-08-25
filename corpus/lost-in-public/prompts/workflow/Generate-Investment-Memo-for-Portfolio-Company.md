@@ -29,7 +29,7 @@ date_modified: 2025-11-16
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: prompts/workflow/Generate-Investment-Memo-for-Portfolio-Company.md
 source_repo_slug: lost-in-public
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/lost-in-public/prompts/workflow/Generate-Investment-Memo-for-Portfolio-Company.md"
 ---
 

@@ -26,7 +26,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/id-didi-sh/context-v
 source_relative_path: explorations/Serving-Secrets-Server-Side-as-an-MCP-Capability-Plane.md
 source_repo_slug: id-didi-sh
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/id-didi-sh/context-v/explorations/Serving-Secrets-Server-Side-as-an-MCP-Capability-Plane.md"
 ---
 

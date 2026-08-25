@@ -27,7 +27,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: explorations/Explore-GitHub-API-for-Live-KPIs.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/explorations/Explore-GitHub-API-for-Live-KPIs.md"
 ---
 

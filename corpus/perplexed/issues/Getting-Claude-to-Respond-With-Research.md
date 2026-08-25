@@ -23,7 +23,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: issues/Getting-Claude-to-Respond-With-Research.md
 source_repo_slug: perplexed
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content-farm/plugin-modules/perplexed/context-v/issues/Getting-Claude-to-Respond-With-Research.md"
 ---
 

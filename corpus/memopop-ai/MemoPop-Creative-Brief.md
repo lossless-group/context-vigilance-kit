@@ -29,7 +29,7 @@ date_authored_current_draft: 2026-05-06
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: MemoPop-Creative-Brief.md
 source_repo_slug: memopop-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/context-v/MemoPop-Creative-Brief.md"
 ---
 

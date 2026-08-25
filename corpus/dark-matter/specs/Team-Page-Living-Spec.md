@@ -27,7 +27,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/dark-matter/context-v
 source_relative_path: specs/Team-Page-Living-Spec.md
 source_repo_slug: dark-matter
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/sites/dark-matter/context-v/specs/Team-Page-Living-Spec.md"
 ---
 

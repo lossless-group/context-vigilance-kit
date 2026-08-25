@@ -24,7 +24,7 @@ date_authored_current_draft: 2025-12-15
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Managing-Complex-Markdown-Content-at-Build-Time.md
 source_repo_slug: astro-knots
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/context-v/blueprints/Managing-Complex-Markdown-Content-at-Build-Time.md"
 ---
 

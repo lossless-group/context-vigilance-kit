@@ -32,7 +32,7 @@ hex_code: in3z4q
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: Vision-for-Production-Grade-Memopop-Monorepo.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/Vision-for-Production-Grade-Memopop-Monorepo.md"
 ---
 

@@ -33,7 +33,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-a-Current-README-and-other-Docs.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/habits/Maintain-a-Current-README-and-other-Docs.md"
 ---
 
@@ -41,7 +41,7 @@ source_path: "context-v/habits/Maintain-a-Current-README-and-other-Docs.md"
 
 > Repo-level habit. Generic to every repo at every tier. Trigger-based rather than
 > periodic — it fires on a substantial change, not on a calendar. Paired with the
-> [`maintain-design-md`](../skills/maintain-design-md/SKILL.md) skill, which owns
+> [`maintain-design-md`](../agent-skills/maintain-design-md/SKILL.md) skill, which owns
 > `DESIGN.md` in full detail.
 
 ## Why this exists
@@ -183,6 +183,6 @@ was meant to be temporary.
 - [[Maintain-Sitemap-and-Robots-across-Significant-Sites-&-Splash-Pages]] — the
   other published-artifact sibling
 - [[Maintain-a-Github-Splash-Page-for-each-Repo]]
-- `context-v/skills/maintain-design-md/SKILL.md` — owns `DESIGN.md` in full
-- `context-v/skills/open-graph-share-seo-geo/SKILL.md` — the `llms.txt` mechanics
+- `context-v/agent-skills/maintain-design-md/SKILL.md` — owns `DESIGN.md` in full
+- `context-v/agent-skills/open-graph-share-seo-geo/SKILL.md` — the `llms.txt` mechanics
 - `changelog/` — where "what changed" goes; the README is "what is true now"

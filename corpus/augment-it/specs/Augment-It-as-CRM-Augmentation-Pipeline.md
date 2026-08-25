@@ -30,7 +30,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: specs/Augment-It-as-CRM-Augmentation-Pipeline.md
 source_repo_slug: augment-it
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/augment-it/context-v/specs/Augment-It-as-CRM-Augmentation-Pipeline.md"
 ---
 

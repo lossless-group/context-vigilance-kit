@@ -20,7 +20,7 @@ description: Scaffold a new dididecks-ai client workspace end-to-end — submodu
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: agent-skills/setup-new-dddecks-workspace/SKILL.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/agent-skills/setup-new-dddecks-workspace/SKILL.md"
 ---
 

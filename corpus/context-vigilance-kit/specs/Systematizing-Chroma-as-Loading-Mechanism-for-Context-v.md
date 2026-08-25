@@ -29,7 +29,7 @@ hex_code: w8aec8
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v
 source_relative_path: specs/Systematizing-Chroma-as-Loading-Mechanism-for-Context-v.md
 source_repo_slug: context-vigilance-kit
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/context-vigilance-kit/context-v/specs/Systematizing-Chroma-as-Loading-Mechanism-for-Context-v.md"
 ---
 

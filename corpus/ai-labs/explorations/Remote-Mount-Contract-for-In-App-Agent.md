@@ -30,7 +30,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: explorations/Remote-Mount-Contract-for-In-App-Agent.md
 source_repo_slug: ai-labs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/context-v/explorations/Remote-Mount-Contract-for-In-App-Agent.md"
 ---
 

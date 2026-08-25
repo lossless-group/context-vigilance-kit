@@ -30,7 +30,7 @@ hex_code: 71znuz
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Maintain-a-Dynamic-Multi-Product-Changelog.md
 source_repo_slug: astro-knots
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/context-v/specs/Maintain-a-Dynamic-Multi-Product-Changelog.md"
 ---
 

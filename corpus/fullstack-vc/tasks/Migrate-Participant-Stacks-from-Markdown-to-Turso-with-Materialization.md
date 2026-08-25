@@ -40,7 +40,7 @@ hex_code: z6wp77
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: tasks/Migrate-Participant-Stacks-from-Markdown-to-Turso-with-Materialization.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/sites/fullstack-vc/context-v/tasks/Migrate-Participant-Stacks-from-Markdown-to-Turso-with-Materialization.md"
 ---
 

@@ -14,7 +14,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/lossless-decks/context-v
 source_relative_path: slides-content/_TEMPLATE.md
 source_repo_slug: lossless-decks
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/client-sites/lossless-decks/context-v/slides-content/_TEMPLATE.md"
 ---
 

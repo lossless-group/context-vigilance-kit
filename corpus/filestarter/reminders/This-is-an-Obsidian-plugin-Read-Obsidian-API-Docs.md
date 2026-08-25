@@ -24,7 +24,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/filestarter/context-v
 source_relative_path: reminders/This-is-an-Obsidian-plugin-Read-Obsidian-API-Docs.md
 source_repo_slug: filestarter
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content-farm/plugin-modules/filestarter/context-v/reminders/This-is-an-Obsidian-plugin-Read-Obsidian-API-Docs.md"
 ---
 

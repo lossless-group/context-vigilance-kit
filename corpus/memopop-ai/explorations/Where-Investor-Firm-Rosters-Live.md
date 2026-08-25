@@ -29,7 +29,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: explorations/Where-Investor-Firm-Rosters-Live.md
 source_repo_slug: memopop-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/context-v/explorations/Where-Investor-Firm-Rosters-Live.md"
 ---
 

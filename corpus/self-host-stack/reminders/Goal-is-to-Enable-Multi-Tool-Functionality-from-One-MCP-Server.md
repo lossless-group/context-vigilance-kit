@@ -25,7 +25,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/self-host-stack/context-v
 source_relative_path: reminders/Goal-is-to-Enable-Multi-Tool-Functionality-from-One-MCP-Server.md
 source_repo_slug: self-host-stack
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "self-host-stack/context-v/reminders/Goal-is-to-Enable-Multi-Tool-Functionality-from-One-MCP-Server.md"
 ---
 

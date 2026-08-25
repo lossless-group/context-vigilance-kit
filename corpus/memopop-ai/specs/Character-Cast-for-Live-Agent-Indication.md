@@ -33,7 +33,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: specs/Character-Cast-for-Live-Agent-Indication.md
 source_repo_slug: memopop-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/context-v/specs/Character-Cast-for-Live-Agent-Indication.md"
 ---
 

@@ -14,7 +14,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/context-v
 source_relative_path: Create-Study-Everything-as-Code.md
 source_repo_slug: studies
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/studies/context-v/Create-Study-Everything-as-Code.md"
 ---
 

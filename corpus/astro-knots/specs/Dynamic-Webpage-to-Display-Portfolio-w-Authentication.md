@@ -28,7 +28,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: specs/Dynamic-Webpage-to-Display-Portfolio-w-Authentication.md
 source_repo_slug: astro-knots
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/context-v/specs/Dynamic-Webpage-to-Display-Portfolio-w-Authentication.md"
 ---
 

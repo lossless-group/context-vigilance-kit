@@ -33,7 +33,7 @@ site_uuid: 7fdc18f5-e224-4359-8327-fe642c27a241
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: AI-Powered-Link-Aggregator-for-Product-Digital-Footprint 1.md
 source_repo_slug: specs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/specs/AI-Powered-Link-Aggregator-for-Product-Digital-Footprint 1.md"
 ---
 

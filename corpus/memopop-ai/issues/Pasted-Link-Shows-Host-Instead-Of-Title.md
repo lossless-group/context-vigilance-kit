@@ -26,7 +26,7 @@ hex_code: fl5tw4
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: issues/Pasted-Link-Shows-Host-Instead-Of-Title.md
 source_repo_slug: memopop-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/context-v/issues/Pasted-Link-Shows-Host-Instead-Of-Title.md"
 ---
 

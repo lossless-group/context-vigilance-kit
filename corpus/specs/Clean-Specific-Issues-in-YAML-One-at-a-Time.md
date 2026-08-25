@@ -30,7 +30,7 @@ portrait_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/specs/2025-05-
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Clean-Specific-Issues-in-YAML-One-at-a-Time.md
 source_repo_slug: specs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/specs/Clean-Specific-Issues-in-YAML-One-at-a-Time.md"
 ---
 

@@ -28,7 +28,7 @@ date_authored_current_draft: 2026-08-08
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Maintain-Heading-Anchors-and-Share-Links.md
 source_repo_slug: lfm
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "lfm/context-v/Maintain-Heading-Anchors-and-Share-Links.md"
 ---
 

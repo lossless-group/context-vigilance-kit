@@ -20,7 +20,7 @@ description: The Lossless Group's workflow for filling in team and portfolio met
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: agent-skills/crawl-fetch-ingest/SKILL.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/agent-skills/crawl-fetch-ingest/SKILL.md"
 ---
 

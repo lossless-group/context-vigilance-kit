@@ -25,7 +25,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Guarantee-Text-Wrapping-and-No-Horizontal-Bleed-at-Any-Width.md
 source_repo_slug: astro-knots
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/context-v/blueprints/Guarantee-Text-Wrapping-and-No-Horizontal-Bleed-at-Any-Width.md"
 ---
 

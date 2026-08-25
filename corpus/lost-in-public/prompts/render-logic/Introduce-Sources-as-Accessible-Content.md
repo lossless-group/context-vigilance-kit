@@ -27,7 +27,7 @@ image_prompt: A funnel leading to a computer monitor with a website interface th
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: prompts/render-logic/Introduce-Sources-as-Accessible-Content.md
 source_repo_slug: lost-in-public
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/lost-in-public/prompts/render-logic/Introduce-Sources-as-Accessible-Content.md"
 ---
 

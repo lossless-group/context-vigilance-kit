@@ -25,7 +25,7 @@ date_authored_current_draft: 2026-08-02
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Scaffold-EventCut-and-AngelHouse-Client-Sites.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Scaffold-EventCut-and-AngelHouse-Client-Sites.md"
 ---
 

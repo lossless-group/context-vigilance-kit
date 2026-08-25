@@ -32,7 +32,7 @@ hex_code: 3y1z1n
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: specs/Introducing-a-Competitive-Landscape-Research-and-Evaluation-System.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/specs/Introducing-a-Competitive-Landscape-Research-and-Evaluation-System.md"
 ---
 

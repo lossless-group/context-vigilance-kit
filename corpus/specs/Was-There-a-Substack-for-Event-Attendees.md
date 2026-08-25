@@ -23,7 +23,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Was-There-a-Substack-for-Event-Attendees.md
 source_repo_slug: specs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/specs/Was-There-a-Substack-for-Event-Attendees.md"
 ---
 

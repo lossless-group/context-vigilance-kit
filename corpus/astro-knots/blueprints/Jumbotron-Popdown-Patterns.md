@@ -31,7 +31,7 @@ hex_code: zbfdvp
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Jumbotron-Popdown-Patterns.md
 source_repo_slug: astro-knots
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/context-v/blueprints/Jumbotron-Popdown-Patterns.md"
 ---
 

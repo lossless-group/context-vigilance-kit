@@ -27,7 +27,7 @@ banner_image: https://ik.imagekit.io/xvpgfijuw/uploads/lossless/reminders/2025-0
 source_root: /Users/mpstaton/code/lossless-monorepo/content/lost-in-public
 source_relative_path: reminders/Comprehensive-Rules-for-Code-Generation.md
 source_repo_slug: lost-in-public
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/lost-in-public/reminders/Comprehensive-Rules-for-Code-Generation.md"
 ---
 

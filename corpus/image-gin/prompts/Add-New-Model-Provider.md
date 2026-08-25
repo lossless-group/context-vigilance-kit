@@ -28,7 +28,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/image-gin/context-v
 source_relative_path: prompts/Add-New-Model-Provider.md
 source_repo_slug: image-gin
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content-farm/plugin-modules/image-gin/context-v/prompts/Add-New-Model-Provider.md"
 ---
 

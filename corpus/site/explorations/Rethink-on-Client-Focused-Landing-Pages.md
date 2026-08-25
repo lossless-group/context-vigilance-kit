@@ -20,7 +20,7 @@ status: Open
 source_root: /Users/mpstaton/code/lossless-monorepo/site/context-v
 source_relative_path: explorations/Rethink-on-Client-Focused-Landing-Pages.md
 source_repo_slug: site
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "site/context-v/explorations/Rethink-on-Client-Focused-Landing-Pages.md"
 ---
 

@@ -31,7 +31,7 @@ hex_code: w30d3g
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Maintain-Figma-Object-Embeds-using-Embed-Kit.md
 source_repo_slug: lfm
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "lfm/context-v/Maintain-Figma-Object-Embeds-using-Embed-Kit.md"
 ---
 

@@ -31,7 +31,7 @@ tags:
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: issues/Old-Git-History-May-Hold-Detail-Clients-Would-Rather-We-Kept-Quiet.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/issues/Old-Git-History-May-Hold-Detail-Clients-Would-Rather-We-Kept-Quiet.md"
 ---
 

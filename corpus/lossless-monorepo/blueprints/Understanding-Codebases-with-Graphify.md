@@ -28,7 +28,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: blueprints/Understanding-Codebases-with-Graphify.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/blueprints/Understanding-Codebases-with-Graphify.md"
 ---
 
@@ -161,6 +161,6 @@ Per the tree's Honesty Rules: surface these in the summary. A clean-looking repo
 ## Related
 
 - [[Browser-Drive-Verification-For-Agent-Sessions]] — the sibling pattern for the *runtime* half: graphify maps the code, browser-drive proves the surface.
-- `context-v/skills/pseudomonorepos/SKILL.md` — why a repo in this tree has 2,000 files of client content sitting next to its source in the first place.
-- `context-v/skills/context-vigilance/SKILL.md` — the `context-v/` corpus that the semantic layer graphs, once you add it.
+- `context-v/agent-skills/pseudomonorepos/SKILL.md` — why a repo in this tree has 2,000 files of client content sitting next to its source in the first place.
+- `context-v/agent-skills/context-vigilance/SKILL.md` — the `context-v/` corpus that the semantic layer graphs, once you add it.
 - The `graphify` skill itself (`~/.claude/skills/graphify/SKILL.md`) — the full pipeline; this blueprint is the scoping judgment on top of it.

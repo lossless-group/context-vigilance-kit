@@ -28,7 +28,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: handoffs/Federated-Design-System-Phases-0-and-1-Shipped-Nothing-Seen.md
 source_repo_slug: augment-it
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/augment-it/context-v/handoffs/Federated-Design-System-Phases-0-and-1-Shipped-Nothing-Seen.md"
 ---
 

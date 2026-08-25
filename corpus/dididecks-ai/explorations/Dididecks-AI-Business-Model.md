@@ -33,7 +33,7 @@ hex_code: wmah35
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: explorations/Dididecks-AI-Business-Model.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/explorations/Dididecks-AI-Business-Model.md"
 ---
 

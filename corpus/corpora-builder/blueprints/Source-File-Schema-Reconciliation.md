@@ -27,7 +27,7 @@ hex_code: 8d61qg
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/corpora-builder/context-v
 source_relative_path: blueprints/Source-File-Schema-Reconciliation.md
 source_repo_slug: corpora-builder
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/corpora-builder/context-v/blueprints/Source-File-Schema-Reconciliation.md"
 ---
 

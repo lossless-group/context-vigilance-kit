@@ -36,7 +36,7 @@ hex_code: db9n8l
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: issues/Optimize-for-Local-OpenGraph-Metadata-and-Image-w-Overlay.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/sites/fullstack-vc/context-v/issues/Optimize-for-Local-OpenGraph-Metadata-and-Image-w-Overlay.md"
 ---
 

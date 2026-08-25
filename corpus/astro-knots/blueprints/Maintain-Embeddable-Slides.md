@@ -36,7 +36,7 @@ summary: 'Blueprint for the Reveal.js slide-embedding pipeline shared across los
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/context-v
 source_relative_path: blueprints/Maintain-Embeddable-Slides.md
 source_repo_slug: astro-knots
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/context-v/blueprints/Maintain-Embeddable-Slides.md"
 ---
 

@@ -23,7 +23,7 @@ image_prompt: A set of window washers are cleaning a giant jumbotron at a baseba
 source_root: /Users/mpstaton/code/lossless-monorepo/content/specs
 source_relative_path: Maintain-a-Dynamic-Project-Viewer.md
 source_repo_slug: specs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content/specs/Maintain-a-Dynamic-Project-Viewer.md"
 ---
 

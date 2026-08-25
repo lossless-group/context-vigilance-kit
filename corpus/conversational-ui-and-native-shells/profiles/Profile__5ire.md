@@ -35,7 +35,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/studies/conversational-ui-and-native-shells/context-v
 source_relative_path: profiles/Profile__5ire.md
 source_repo_slug: conversational-ui-and-native-shells
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/studies/conversational-ui-and-native-shells/context-v/profiles/Profile__5ire.md"
 ---
 

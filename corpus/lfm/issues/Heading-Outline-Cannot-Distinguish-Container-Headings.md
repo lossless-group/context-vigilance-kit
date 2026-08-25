@@ -30,7 +30,7 @@ date_authored_current_draft: 2026-08-17
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: issues/Heading-Outline-Cannot-Distinguish-Container-Headings.md
 source_repo_slug: lfm
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "lfm/context-v/issues/Heading-Outline-Cannot-Distinguish-Container-Headings.md"
 ---
 

@@ -25,7 +25,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/corpora-builder/context-v
 source_relative_path: explorations/Corpora-Builder-System-Design.md
 source_repo_slug: corpora-builder
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/corpora-builder/context-v/explorations/Corpora-Builder-System-Design.md"
 ---
 

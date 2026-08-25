@@ -32,7 +32,7 @@ hex_code: b4iocm
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: reminders/Format-Memo-According-to-Template-Input.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/reminders/Format-Memo-According-to-Template-Input.md"
 ---
 

@@ -34,7 +34,7 @@ augmented_with: Claude Code (Opus 4.7)
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: agent-skills/adhoc-edits-workflow/SKILL.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/agent-skills/adhoc-edits-workflow/SKILL.md"
 ---
 

@@ -41,7 +41,7 @@ hex_code: d1w1ly
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: issues/Auth-Identity-System-Worked-but-UX-Failed-Silent-Bounces.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/sites/fullstack-vc/context-v/issues/Auth-Identity-System-Worked-but-UX-Failed-Silent-Bounces.md"
 ---
 

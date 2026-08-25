@@ -29,7 +29,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: specs/Source-Curation-Surface-Component-Spec.md
 source_repo_slug: ai-labs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/context-v/specs/Source-Curation-Surface-Component-Spec.md"
 ---
 

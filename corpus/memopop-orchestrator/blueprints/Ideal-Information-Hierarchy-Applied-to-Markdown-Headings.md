@@ -10,7 +10,7 @@ date_authored_current_draft: 2026-03-24
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: blueprints/Ideal-Information-Hierarchy-Applied-to-Markdown-Headings.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/blueprints/Ideal-Information-Hierarchy-Applied-to-Markdown-Headings.md"
 ---
 

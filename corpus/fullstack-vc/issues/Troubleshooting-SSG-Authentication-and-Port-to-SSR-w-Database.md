@@ -10,7 +10,7 @@ date_authored_current_draft: 2026-04-28
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: issues/Troubleshooting-SSG-Authentication-and-Port-to-SSR-w-Database.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/sites/fullstack-vc/context-v/issues/Troubleshooting-SSG-Authentication-and-Port-to-SSR-w-Database.md"
 ---
 

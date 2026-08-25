@@ -40,7 +40,7 @@ hex_code: sqittb
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: tasks/Redesign-Stack-Builder-with-Multi-Column-Drag-Drop.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/sites/fullstack-vc/context-v/tasks/Redesign-Stack-Builder-with-Multi-Column-Drag-Drop.md"
 ---
 

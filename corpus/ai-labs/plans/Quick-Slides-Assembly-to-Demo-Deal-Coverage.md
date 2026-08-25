@@ -34,7 +34,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: plans/Quick-Slides-Assembly-to-Demo-Deal-Coverage.md
 source_repo_slug: ai-labs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/context-v/plans/Quick-Slides-Assembly-to-Demo-Deal-Coverage.md"
 ---
 

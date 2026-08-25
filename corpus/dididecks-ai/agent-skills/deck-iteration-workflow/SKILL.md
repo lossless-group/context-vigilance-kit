@@ -8,7 +8,7 @@ description: The Lossless Group's workflow for developing slides-only Astro site
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: agent-skills/deck-iteration-workflow/SKILL.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/agent-skills/deck-iteration-workflow/SKILL.md"
 ---
 

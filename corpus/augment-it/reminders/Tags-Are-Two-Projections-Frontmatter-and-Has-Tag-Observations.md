@@ -25,7 +25,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/augment-it/context-v
 source_relative_path: reminders/Tags-Are-Two-Projections-Frontmatter-and-Has-Tag-Observations.md
 source_repo_slug: augment-it
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/augment-it/context-v/reminders/Tags-Are-Two-Projections-Frontmatter-and-Has-Tag-Observations.md"
 ---
 

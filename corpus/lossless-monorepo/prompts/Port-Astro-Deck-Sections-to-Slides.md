@@ -34,7 +34,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: prompts/Port-Astro-Deck-Sections-to-Slides.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/prompts/Port-Astro-Deck-Sections-to-Slides.md"
 ---
 

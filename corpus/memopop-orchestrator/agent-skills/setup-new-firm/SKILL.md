@@ -27,7 +27,7 @@ description: End-to-end procedure for onboarding a new VC firm into the memopop 
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/apps/memopop-orchestrator/context-v
 source_relative_path: agent-skills/setup-new-firm/SKILL.md
 source_repo_slug: memopop-orchestrator
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/apps/memopop-orchestrator/context-v/agent-skills/setup-new-firm/SKILL.md"
 ---
 

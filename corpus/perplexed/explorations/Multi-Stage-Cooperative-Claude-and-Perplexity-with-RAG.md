@@ -35,7 +35,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/perplexed/context-v
 source_relative_path: explorations/Multi-Stage-Cooperative-Claude-and-Perplexity-with-RAG.md
 source_repo_slug: perplexed
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content-farm/plugin-modules/perplexed/context-v/explorations/Multi-Stage-Cooperative-Claude-and-Perplexity-with-RAG.md"
 ---
 

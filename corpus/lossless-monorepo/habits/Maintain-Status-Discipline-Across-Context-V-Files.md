@@ -26,13 +26,13 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: habits/Maintain-Status-Discipline-Across-Context-V-Files.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/habits/Maintain-Status-Discipline-Across-Context-V-Files.md"
 ---
 
 # Maintain status discipline across context-v files
 
-> Repo-level habit. Generic to every repo that has a `context-v/`. Closely paired with the [`context-vigilance` skill](../skills/context-vigilance/SKILL.md) — specifically [`references/status-discipline.md`](../skills/context-vigilance/references/status-discipline.md), which is the load-bearing reference this habit operationalizes.
+> Repo-level habit. Generic to every repo that has a `context-v/`. Closely paired with the [`context-vigilance` skill](../agent-skills/context-vigilance/SKILL.md) — specifically [`references/status-discipline.md`](../agent-skills/context-vigilance/references/status-discipline.md), which is the load-bearing reference this habit operationalizes.
 
 ## Why this exists
 
@@ -88,7 +88,7 @@ The declared status is wrong if any of these is true:
 
 ### Step 3 — For each file, apply the right promotion
 
-Per the [status-discipline reference](../skills/context-vigilance/references/status-discipline.md), promote according to ground truth:
+Per the [status-discipline reference](../agent-skills/context-vigilance/references/status-discipline.md), promote according to ground truth:
 
 | If reality is… | Set status to | And ensure |
 |---|---|---|
@@ -143,8 +143,8 @@ If the sweep also produced a fresh inventory exploration (e.g. `Plans-Inventory-
 
 ## Related
 
-- [`context-v/skills/context-vigilance/SKILL.md`](../skills/context-vigilance/SKILL.md) — the broader framework this habit operates within.
-- [`context-v/skills/context-vigilance/references/status-discipline.md`](../skills/context-vigilance/references/status-discipline.md) — the canonical values, companion-field rules, and `## Remaining work` section convention.
-- [`context-v/skills/context-vigilance/references/frontmatter-spec.md`](../skills/context-vigilance/references/frontmatter-spec.md) — the `status:` field definition + companion-field summary.
-- [`context-v/skills/changelog-conventions/SKILL.md`](../skills/changelog-conventions/SKILL.md) — paired discipline. Every `Shipped` promotion should map to a real changelog entry the agent or human can cite.
-- [`context-v/skills/pseudomonorepos/SKILL.md`](../skills/pseudomonorepos/SKILL.md) — tree-walking discipline. In a pseudomonorepo, sweep at every level that carries a `context-v/`, not just the root.
+- [`context-v/agent-skills/context-vigilance/SKILL.md`](../agent-skills/context-vigilance/SKILL.md) — the broader framework this habit operates within.
+- [`context-v/agent-skills/context-vigilance/references/status-discipline.md`](../agent-skills/context-vigilance/references/status-discipline.md) — the canonical values, companion-field rules, and `## Remaining work` section convention.
+- [`context-v/agent-skills/context-vigilance/references/frontmatter-spec.md`](../agent-skills/context-vigilance/references/frontmatter-spec.md) — the `status:` field definition + companion-field summary.
+- [`context-v/agent-skills/changelog-conventions/SKILL.md`](../agent-skills/changelog-conventions/SKILL.md) — paired discipline. Every `Shipped` promotion should map to a real changelog entry the agent or human can cite.
+- [`context-v/agent-skills/pseudomonorepos/SKILL.md`](../agent-skills/pseudomonorepos/SKILL.md) — tree-walking discipline. In a pseudomonorepo, sweep at every level that carries a `context-v/`, not just the root.

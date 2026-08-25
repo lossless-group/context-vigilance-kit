@@ -26,7 +26,7 @@ summary: 'The open spec cite-wide implements. First half: hex-code identifiers, 
 source_root: /Users/mpstaton/code/lossless-monorepo/content-farm/plugin-modules/cite-wide/context-v
 source_relative_path: reminders/Lossless-Citation-Spec.md
 source_repo_slug: cite-wide
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "content-farm/plugin-modules/cite-wide/context-v/reminders/Lossless-Citation-Spec.md"
 ---
 

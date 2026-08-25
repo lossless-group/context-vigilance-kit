@@ -38,7 +38,7 @@ hex_code: h97rq3
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/context-v
 source_relative_path: plans/Integrate-Reach-Edu-Hub-into-Dididecks-Shell.md
 source_repo_slug: dididecks-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/context-v/plans/Integrate-Reach-Edu-Hub-into-Dididecks-Shell.md"
 ---
 

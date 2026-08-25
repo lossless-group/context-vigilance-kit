@@ -32,7 +32,7 @@ hex_code: 5rqxi5
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: plans/Constraining-Memo-Writing-to-an-Approved-Source-Set.md
 source_repo_slug: memopop-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/context-v/plans/Constraining-Memo-Writing-to-an-Approved-Source-Set.md"
 ---
 

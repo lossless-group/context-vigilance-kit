@@ -19,7 +19,7 @@ date_authored_current_draft: 2025-12-10
 source_root: /Users/mpstaton/code/lossless-monorepo/lfm/context-v
 source_relative_path: Maintain-Lossless-Markdown-and-Extended-Markdown-Render-Pipeline.md
 source_repo_slug: lfm
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "lfm/context-v/Maintain-Lossless-Markdown-and-Extended-Markdown-Render-Pipeline.md"
 ---
 

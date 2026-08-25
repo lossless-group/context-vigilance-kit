@@ -29,7 +29,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v
 source_relative_path: narratives/pre-rag-synthesis/03-the-care-economy-workforce-emergency.md
 source_repo_slug: reach-edu-hub
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/dididecks-ai/client-sites/reach-edu-hub/context-v/narratives/pre-rag-synthesis/03-the-care-economy-workforce-emergency.md"
 ---
 

@@ -29,16 +29,16 @@ sources:
   note: auto-discovered 2026-07-21; opted in 2026-07-21.
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/calmstorm-decks/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-07-21; opted in 2026-07-21.
+  include: false
+  note: 'held out 2026-08-24 pending anonymization — corpus/ is committed to a PUBLIC repo and served on GitHub Pages. Re-include only via anonymized provenance; client deck substance stays out via the per-file private flag at source.'
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/chroma-decks/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-07-21; opted in 2026-07-21.
+  include: false
+  note: 'held out 2026-08-24 pending anonymization — corpus/ is committed to a PUBLIC repo and served on GitHub Pages. Re-include only via anonymized provenance; client deck substance stays out via the per-file private flag at source.'
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/humain-vc-decks/context-v
   kind: context-v
-  include: true
-  note: auto-discovered 2026-07-21; opted in 2026-07-21.
+  include: false
+  note: 'held out 2026-08-24 pending anonymization — corpus/ is committed to a PUBLIC repo and served on GitHub Pages. Re-include only via anonymized provenance; client deck substance stays out via the per-file private flag at source.'
 - path: /Users/mpstaton/code/lossless-monorepo/ai-labs/dididecks-ai/client-sites/lossless-decks/context-v
   kind: context-v
   include: true

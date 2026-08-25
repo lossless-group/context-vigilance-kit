@@ -14,7 +14,7 @@ publish: true
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/memopop-ai/context-v
 source_relative_path: Preferred-Format-for-Changelog.md
 source_repo_slug: memopop-ai
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/memopop-ai/context-v/Preferred-Format-for-Changelog.md"
 ---
 

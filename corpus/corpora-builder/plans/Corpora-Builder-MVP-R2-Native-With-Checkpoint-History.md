@@ -26,7 +26,7 @@ hex_code: pklf13
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/corpora-builder/context-v
 source_relative_path: plans/Corpora-Builder-MVP-R2-Native-With-Checkpoint-History.md
 source_repo_slug: corpora-builder
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/corpora-builder/context-v/plans/Corpora-Builder-MVP-R2-Native-With-Checkpoint-History.md"
 ---
 
@@ -330,6 +330,15 @@ respawns on death; webview talks to the sidecar over `localhost`; SSE goes
 direct. Per [[Design-Front-Loading-and-the-Fable-Build-Loop]], `DESIGN.md`
 exists before the first component, with two-tier tokens and the three-mode
 contract from day one.
+
+> [!warning] **Phase 7 carries system binaries, not just Python**
+> `uv sync` cannot produce **Ghostscript**, which
+> [[../specs/Binary-Ingest-And-Bin-Store]] needs for PDF optimization. It is the
+> second concrete instance of W1's *"one artifact… brings every tool with it"* —
+> and unlike git, no collaborator would plausibly already have it. Phase 7's
+> packaging must provision it, along with an app icon and an installer a
+> non-technical collaborator can run. Ingest degrades safely without it
+> (`BIN-21`), so this gates the *installer*, not capture.
 
 Two gotchas already recorded in memopop's handoff, inherited free: **Tauri
 capability changes need a full dev restart** (Vite HMR will not pick up an ACL

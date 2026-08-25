@@ -22,7 +22,7 @@ status: Open
 source_root: /Users/mpstaton/code/lossless-monorepo/site/context-v
 source_relative_path: decisions/2026-08-03_Rebuild-Keep-Drop-Ledger.md
 source_repo_slug: site
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "site/context-v/decisions/2026-08-03_Rebuild-Keep-Drop-Ledger.md"
 ---
 

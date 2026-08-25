@@ -26,7 +26,7 @@ date_authored_current_draft: 2026-05-11
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v
 source_relative_path: explorations/Code-Comments-Sections-as-Context-V.md
 source_repo_slug: context-vigilance-kit
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/context-vigilance-kit/context-v/explorations/Code-Comments-Sections-as-Context-V.md"
 ---
 

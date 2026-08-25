@@ -14,7 +14,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/context-v
 source_relative_path: plans/Tidy-Root-with-Pseudo-Monorepos.md
 source_repo_slug: lossless-monorepo
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "context-v/plans/Tidy-Root-with-Pseudo-Monorepos.md"
 ---
 

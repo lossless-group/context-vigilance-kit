@@ -25,7 +25,7 @@ publish: false
 source_root: /Users/mpstaton/code/lossless-monorepo/ai-labs/context-v
 source_relative_path: blueprints/Entity-Per-Slot-Deck-Assembly-From-Public-Cards-and-Private-Artifacts.md
 source_repo_slug: ai-labs
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "ai-labs/context-v/blueprints/Entity-Per-Slot-Deck-Assembly-From-Public-Cards-and-Private-Artifacts.md"
 ---
 

@@ -35,7 +35,7 @@ hex_code: gm3hbh
 source_root: /Users/mpstaton/code/lossless-monorepo/astro-knots/sites/fullstack-vc/context-v
 source_relative_path: sitemap/pages/Page__projects-index.astro.md
 source_repo_slug: fullstack-vc
-collated_at: '2026-08-18'
+collated_at: '2026-08-24'
 source_path: "astro-knots/sites/fullstack-vc/context-v/sitemap/pages/Page__projects-index.astro.md"
 ---
 
