@@ -169,7 +169,7 @@ Everything else, unchanged and with history intact: `corpus/`, `sources.md`, `co
 - **D1 → (a), renamed `context-v-corpus`.** This repo keeps its history and becomes the corpus. A fresh repo takes the name `context-vigilance-kit` for the public kit.
 - **D5 → the corpus moves to the anchor root** at `lossless-monorepo/context-v-corpus/`. It walks the whole tree, so it belongs at the root and not under `ai-labs/`. The new kit mounts at `ai-labs/context-vigilance-kit/`. The relocation preconditions were checked first (Linux copy clean; the operator confirmed anything gitignored on the Mac is recoverable).
 - **Ordering constraint.** After the rename, GitHub redirects the old URL to `context-v-corpus` only until a new repo claims `context-vigilance-kit`. Every clone must be re-pointed (submodule entries, the Mac working copy's `origin`) **before** the new kit repo is created. Otherwise a stale clone silently fetches an unrelated repo.
-- **D2 → the corpus goes private.** It is a collaborator tool, so the public splash going offline is acceptable.
+- **D2 → the corpus stays public for now.** Private was the intent, but the website's splash pulls from public repos, and reworking that isn't worth it yet. Revisit when the splash's data path changes.
 - **D3 → the operator rewrites the history.** On the Mac: delete the GitHub repo, drop the offending commits locally, and recreate `context-v-corpus` with the clean history under the same name.
 - **D4 → `/cv:init` offers `changelog/` as an option** in the starter scaffold. To be folded into the MVP spec amendment.
 
