@@ -177,8 +177,9 @@ Everything else, unchanged and with history intact: `corpus/`, `sources.md`, `co
 - [x] GitHub repo renamed `context-vigilance-kit` → `context-v-corpus`. Its functional references were updated: Pages base path, repo links, Chroma data-dir, collator exclusions (`23207ed`). The splash now serves at `lossless-group.github.io/context-v-corpus/`.
 - [x] Corpus mounted at the anchor root and removed from `ai-labs` (anchor `2296a13a`, ai-labs `02200bc`). Anchor `AGENTS.md`, `ai-labs/CLAUDE.md`, `ai-labs/README.md`, and all three `.mcp.json` files point at the new path.
 - [x] New kit initialized at `ai-labs/context-vigilance-kit/` with fresh history. The three plugin docs and this issue were copied in, and the corpus keeps their history.
-- [ ] **Blocked on the operator:** re-point every other clone of the old URL (the Mac working copy) at `context-v-corpus`. Only then create the `context-vigilance-kit` GitHub repo and push.
-- [ ] Mount the new kit as an `ai-labs` submodule, and bump ai-labs in the anchor.
+- [x] `context-vigilance-kit` created on GitHub (public, default `master`). All three tier branches were pushed at once, so a stray push from a stale clone is rejected rather than landing corpus history here. The operator chose to go ahead before re-pointing the Mac clone.
+- [x] Mounted as the `ai-labs/context-vigilance-kit` submodule, tracking `development`.
+- [ ] **Mac working copy (when available):** its old checkout at `ai-labs/context-vigilance-kit` still has `origin` = the old URL, which now resolves to *this* repo. Re-point it with `git remote set-url origin https://github.com/lossless-group/context-v-corpus.git`. Then move its gitignored state (`.env`, `splash/.env`, `.chroma/`, `.graphiti-state/`) into a fresh `context-v-corpus/` checkout at the anchor root, and move the old checkout and its `.git/modules/ai-labs/modules/context-vigilance-kit` gitdir aside before pulling `ai-labs`.
 - [ ] Amend [[MVP-to-Claude-Code-Plugin]] so its directory contract and clone-weight paragraph reflect the split.
 - [ ] Follow-up outside this repo: `ai-labs/dididecks-ai/CLAUDE.md` still names `ai-labs/context-vigilance-kit/scripts/` as the ingest path.
 
