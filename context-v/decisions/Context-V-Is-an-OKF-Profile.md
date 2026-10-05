@@ -63,6 +63,7 @@ OKF v0.2 conformance has three rules:[^okf-spec]
 ## What changes
 
 1. **`type` on every doc.** Templates carry it, `/cv:new` and the shortcuts set it (`type: Spec`, `type: Plan`, `type: Exploration`, `type: Issue`, `type: Decision`, …), and the hook requires it on new files. Existing docs get it in a deliberate pass, never as a side effect of other work.
+   - **Folder types stay open.** Context-v's folders were always a starting set; people and agents create new ones when the work calls for it. OKF doesn't constrain that either, since it registers no types centrally.[^okf-spec] The only rule: a doc in a new folder still declares a `type`, a short descriptive value used consistently across that folder (`research/` → `type: Research Note`).
 2. **`index.md` replaces `context-v/README.md`.** It's in OKF's shape (headings plus a linked list with one-line descriptions, no frontmatter), and the root one declares `okf_version: "0.2"`. Folder-level `index.md` files are optional; `/cv:kickoff` reads them, and `/cv:reflect` keeps them current. They do for agents what the README did for people: a table of contents to read before opening anything.
 3. **Map, don't rename.** Context-v keeps its own fields. OKF fields are added only where they carry something new:
    - `description`: the one-line summary OKF tools show in indexes and search.
