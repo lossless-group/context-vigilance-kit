@@ -89,6 +89,10 @@ Append-only. What was decided, when, and what it changed.
    New files must have all five fields. On edits to older files, a field is checked only if present. Non-snake_case keys are warned about, not blocked. Nothing else is checked: `status`, versions, and tags take judgment. Bigger gates stay with the later `cv-mod`.
 6. **Build now:** `LICENSE` (MIT, as the org skills repo uses), `agent-skills/` (ported `context-vigilance` and `pseudomonorepos`, plus the seven workflow skills), `starters/`, the hook, `.claude-plugin/`, `INSTALL.md`, `DEPENDENCIES.md`, a README install block, and an amendment note on the MVP spec. **Not now:** the synthetic `examples/` project, other harness manifests, `cv status`, `cv-mod`.
 
+**2026-10-05, license (with the operator):**
+
+7. **License: MPL-2.0, not MIT** (this replaces the "MIT" in item 6). It's a file-level copyleft: changes to the kit's own files are shared back, and the kit can sit alongside anything. `LICENSING.md` adds a permission so adoption isn't scary. Copies of templates and starters, and every doc people write with the kit (their `context-v/`, changelogs, handoffs), are theirs under any terms. It also says we expect most organizations to keep their `context-v/` content proprietary, and that sharing is encouraged. The `LICENSE` text is Mozilla's official copy, checked against an independent copy on disk.
+
 ## Findings: how others reach many harnesses
 
 The `studies/open-specs-and-standards` collection pins four tools that solved this. Two families emerge.

@@ -35,4 +35,8 @@ context-vigilance-kit/
 - **[`context-v-corpus`](https://github.com/lossless-group/context-v-corpus):** The Lossless Group's own collated `context-v/` corpus across ~40 repos, with the manifests, Chroma and Graphiti ingesters, and a [public catalog](https://lossless-group.github.io/context-v-corpus/). This kit grew out of it. You don't need it to use the kit.
 - **[`lossless-agent-skills`](https://github.com/lossless-group/lossless-agent-skills):** the upstream source of the `context-vigilance` skill this plugin will vendor.
 
+## License
+
+[MPL-2.0](LICENSE), with an additional permission: what you make with the kit is yours. Copies of its templates and starters, and the `context-v/` docs you write, carry no license obligations. See [LICENSING.md](LICENSING.md).
+
 Branch tiers: `development` → `main` → `master`.
