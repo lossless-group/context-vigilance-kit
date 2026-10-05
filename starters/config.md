@@ -12,6 +12,7 @@
 # tickets) asks first unless you relax it here.
 # via: mcp:<server> | cli:<tool> | api: how the agent reaches the tool.
 
+type: Config                     # OKF requires a type on every .md; this is settings, not a doc
 context_v_config: 1
 integrations:
   tracker:
@@ -45,7 +46,7 @@ integrations:
     write: ask                   # may loop/reflect write lessons here? ask | allowed | never
   context:
     code_graph:
-      provider: none             # graphify (recommended, see DEPENDENCIES.md) | none
+      provider: none             # graphify (recommended; see the kit README) | none
     retrieval:
       provider: none             # chroma | none
 ---

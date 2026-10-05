@@ -1,6 +1,6 @@
 ---
 name: new
-description: Creates a new context-v document from the matching template, with a Train-Case filename, minted site_uuid and hex_code, today's dates, and the author from git config. Types are spec, plan, prompt, blueprint, reminder, exploration, issue, loop, and handoff. Use when the user asks to start, create, or write a new spec, plan, exploration, issue, or other context-v doc.
+description: Creates a new context-v document from the matching template, with a Train-Case filename, minted site_uuid and hex_code, today's dates, and the author from git config. Types are spec, plan, prompt, blueprint, reminder, exploration, issue, decision, loop, and handoff, or any other plural folder in context-v/. Use when the user asks to start, create, or write a new spec, plan, exploration, issue, or other context-v doc.
 argument-hint: <type> "<Title>"
 ---
 
@@ -8,7 +8,7 @@ argument-hint: <type> "<Title>"
 
 Arguments: `$ARGUMENTS`, as `<type> "<Title>"`. If the type or title is missing, ask for it in one short question.
 
-Shortcuts call this skill with the type already set: `explore`, `spec`, `plan`, `prompt`, `blueprint`, `remind`, `issue`, `handoff`. (A loop doc has no shortcut, because `/cv:loop` is the build workflow; use `new loop`.)
+Shortcuts call this skill with the type already set: `explore`, `spec`, `plan`, `prompt`, `blueprint`, `remind`, `issue`, `decide`, `handoff`. (A loop doc has no shortcut, because `/cv:loop` is the build workflow; use `new loop`.)
 
 Templates are in the `context-vigilance` skill's `templates/` folder. Follow that skill's frontmatter rules; this skill only covers the mechanics.
 
@@ -16,21 +16,24 @@ Templates are in the `context-vigilance` skill's `templates/` folder. Follow tha
 
 Copy this into your reply and tick as you go:
 
-- [ ] Type is one of: spec, plan, prompt, blueprint, reminder, exploration, issue, loop, handoff
-      → if not, suggest the closest and ask
+- [ ] Kind is one of: spec, plan, prompt, blueprint, reminder, exploration, issue, decision, loop, handoff
+      → if not, it may be a new folder: confirm its plural name with the user (e.g. `research-notes/`), then use the closest template
 - [ ] Found `context-v/` (walk up from the current folder)
       → if none exists, offer to run `init` first; don't create a stray folder
 - [ ] **Issue only:** if `context-v/config.md` sets `tracker.issues` to `tracker` or `both`, also file (or offer to file) a ticket through the configured tool, and put its URL in `tracker_url`. Ask before posting unless the config says `confirm: never`.
 - [ ] Filename: the title in Train-Case, `.md`, in the type's folder (`issues/`, `specs/`…). Handoffs: prefix with the date, `YYYY-MM-DD_Title.md`.
       → if the file exists, stop and ask; never overwrite
 - [ ] Copied the template and filled the frontmatter:
-  - `title`; today's date for all four `date_*` fields that take one
+  - `type`: **exact**, the folder's name in Train-Case (`specs/` → `Specs`, `research-notes/` → `Research-Notes`). The check rejects anything else.
+  - `title`, and `description`: one plain sentence saying what this is
+  - today's date for all four `date_*` fields that take one
   - `authors` from `git config user.name`
   - `augmented_with`: your harness and model
   - `site_uuid`: run `uuidgen | tr 'A-Z' 'a-z'` · `hex_code`: run `LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c6`
 - [ ] Removed or filled every placeholder (`TITLE HERE`, `YYYY-MM-DD`, `AUTHOR`, `HARNESS on MODEL`, `GENERATE`)
       → re-read the frontmatter; if any placeholder remains or the YAML doesn't parse, fix it
 - [ ] Wrote what you already know into the body (the user's words, the why). Left the rest as the template's prompts. Don't invent content.
+- [ ] Added it to the folder's `index.md` (create one if missing): a line `* [Title](File-Name.md) - <description>` under the folder's heading. If the folder is new, also add it to `context-v/index.md`. See `context-vigilance/references/okf.md` for the shape.
 - [ ] Linked it to related docs, and told the user the path
 
 ## Notes

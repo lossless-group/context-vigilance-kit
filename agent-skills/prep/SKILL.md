@@ -25,12 +25,12 @@ Copy this into your reply and tick as you go:
 - [ ] Wrote acceptance criteria someone can check: a command, a test, a click-path
       → if a criterion reads "works", "is fast", or "looks good", rewrite it or ask the user what would prove it
 - [ ] Marked each step or phase with its freedom (**open** / **shaped** / **exact**) where the difference matters
-- [ ] **Specs:** asked for explicit sign-off before status goes `Signed-Off`. Never set it yourself on silence.
+- [ ] **Specs:** asked for explicit sign-off before status goes `Signed-Off`. Never set it yourself on silence. On sign-off, also record it the Open Knowledge Format way: `verified: { by: "human:<their git user.name or handle>", at: <now, e.g. 2026-10-05T14:00:00Z> }`. That marks the doc *human-reviewed* for OKF tools.
 - [ ] Updated the parent's status honestly (an exploration that produced a spec gets an `## Outcome` linking it). Never deleted the parent.
 
 ## Notes
 
 - For specs, load `context-vigilance/references/developing-a-spec.md`: stub first, discuss then write, the sign-off gate.
 - Plan-mode output from your harness belongs in `context-v/plans/`, with frontmatter, not lost at session end.
-- If Archify is installed and the spec describes a system, offer an architecture diagram (see `DEPENDENCIES.md`).
+- If Archify is installed and the spec describes a system, offer an architecture diagram (see the kit's README, "Recommended companions").
 - Scope changes discovered later come back here, not into the build.

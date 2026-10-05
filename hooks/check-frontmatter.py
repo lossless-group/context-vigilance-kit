@@ -3,15 +3,19 @@
 
 Blocks (exit 2, reason on stderr, which the agent sees) only on the exact basics:
   - the YAML between the opening `---` lines parses
+  - `type` is present and is the folder's name in Train-Case (`specs/` -> `Specs`):
+    the one field the Open Knowledge Format requires
   - `title` is present
   - `date_created` / `date_modified` are YYYY-MM-DD, and modified isn't earlier
   - `site_uuid` is a lowercase UUID v4; `hex_code` is 6 chars of [a-z0-9]
   - `site_uuid` / `hex_code` don't change on edit
-New files need all five fields; existing files are checked only for fields present.
+New files need all six fields; existing files are checked only for fields present.
 Non-snake_case keys produce a note on stderr (visible in verbose mode), never a block.
 The hook never approves anything: permission prompts are untouched.
 
-Scope: *.md under a `context-v/` folder, except `extra/`, `agent-skills/`, and README.md.
+Scope: *.md under a `context-v/` folder, except `extra/`, `agent-skills/`, README.md, and
+OKF's reserved `index.md` and `log.md` (they have their own shapes), and `config.md` (settings,
+not a doc).
 Anything unexpected (bad input, unreadable file) lets the write through: this hook
 must never be the reason work can't happen.
 """
@@ -24,7 +28,8 @@ UUID_V4 = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[
 HEX_CODE = re.compile(r"^[a-z0-9]{6}$")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 SNAKE = re.compile(r"^[a-z0-9]+(_[a-z0-9]+)*$")
-REQUIRED = ("title", "date_created", "date_modified", "site_uuid", "hex_code")
+REQUIRED = ("type", "title", "date_created", "date_modified", "site_uuid", "hex_code")
+RESERVED = ("readme.md", "index.md", "log.md", "config.md")
 
 UUID_HELP = "generate it with `uuidgen | tr 'A-Z' 'a-z'` (never type one)"
 HEX_HELP = "generate it with `LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c6`"
@@ -37,7 +42,17 @@ def in_scope(path):
     after = parts[len(parts) - 1 - parts[::-1].index("context-v") + 1:]
     if not after or after[0] in ("extra", "agent-skills"):
         return False
-    return os.path.basename(path).lower() != "readme.md"
+    return os.path.basename(path).lower() not in RESERVED
+
+
+def folder_type(path):
+    """The `type` a doc must declare: its folder under context-v/, in Train-Case.
+    `research-notes/x.md` -> "Research-Notes". None for files at the context-v root."""
+    parts = os.path.normpath(path).split(os.sep)
+    after = parts[len(parts) - 1 - parts[::-1].index("context-v") + 1:]
+    if len(after) < 2:
+        return None
+    return "-".join(w[:1].upper() + w[1:] for w in after[0].split("-"))
 
 
 def split_frontmatter(text):
@@ -122,6 +137,11 @@ def check(path, new_text, old_text):
             problems.append(f"`{key}` is `{val}`; it must be YYYY-MM-DD")
     if created and modified and DATE.match(created) and DATE.match(modified) and modified < created:
         problems.append(f"`date_modified` ({modified}) is earlier than `date_created` ({created})")
+
+    expected = folder_type(path)
+    ty = as_text(data.get("type"))
+    if ty and expected and ty != expected and (is_new or as_text(old_data.get("type")) != ty):
+        problems.append(f"`type` is `{ty}`, but docs in this folder are `type: {expected}` (the folder's name, which OKF requires)")
 
     uid = as_text(data.get("site_uuid"))
     if uid and not UUID_V4.match(uid):

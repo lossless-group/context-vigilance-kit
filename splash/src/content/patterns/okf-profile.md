@@ -30,7 +30,7 @@ OKF asks for three things:
 
 1. **Every doc has frontmatter.** Context-v already requires it.
 2. **Every doc has a `type`.** In context-v it's the folder's name, in Train-Case: `type: Specs`, `type: Explorations`, `type: Decisions`, `type: Research-Notes`. Any folder, new or old, stays conformant.
-3. **`index.md` and `log.md` follow OKF's shape when present.** Context-v is replacing its folder README with a root `index.md`: a linked list of what's inside that declares `okf_version: "0.2"`.
+3. **`index.md` and `log.md` follow OKF's shape when present.** Context-v's root `index.md` is a linked list of what's inside, and declares `okf_version: "0.2"`; each folder's `index.md` lists its docs with a one-line description.
 
 Context-v keeps its own fields and adds OKF ones only where they carry something new. `verified: { by: "human:<id>" }` records a spec's sign-off, which makes the doc *human-reviewed* in OKF's trust tiers. Hex-code citations already work the way OKF keys its sources: by a stable ID, not a position.
 
@@ -44,4 +44,4 @@ One clash, handled by mapping: OKF's `status` is `draft | stable | deprecated`, 
 
 ## In the kit
 
-The decision, with the alternatives passed over and what's still open, is the kit's first `decisions/` doc: [[Context-V-Is-an-OKF-Profile]]. Templates, `/cv:new`, and the frontmatter check are being updated to set and require `type`.
+The decision, with the alternatives passed over and what's still open, is the kit's first `decisions/` doc: [[Context-V-Is-an-OKF-Profile]]. Templates, `/cv:new`, and the shortcuts set `type`; the frontmatter check requires it; `/cv:init` writes the index. The kit's own `context-v/` passes OKF's conformance rules and renders in OKF's reference visualizer.

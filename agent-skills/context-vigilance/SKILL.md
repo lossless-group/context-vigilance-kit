@@ -68,7 +68,7 @@ description: Manages a project's context-v/ folder, the living documentation tha
 - Don't know yet; weighing options → `explorations/`
 - Debugging something painful → `issues/`
 - Scratch → `extra/` · What exists where → `sitemap/`
-- A recurring process → `loops/` · State for the next session → `handoffs/` · A decision → `decisions/` · Recurring upkeep → `habits/` · Inviolable rules → `contracts/`
+- A recurring process → `loops/` · State for the next session → `handoffs/` · A decision → `decisions/` (`/cv:decide`) · Recurring upkeep → `habits/` · Inviolable rules → `contracts/`
 
 More detail: [references/doc-type-guide.md](references/doc-type-guide.md).
 
@@ -90,7 +90,9 @@ New docs start with this baseline. When editing, **respect what's there**: never
 
 ```yaml
 ---
+type: Specs
 title: "Human-readable title"
+description: "One plain sentence: what this is."
 lede: "One hook line, 140 characters max."
 publish: false
 date_created: 2026-10-05
@@ -113,6 +115,7 @@ hex_code: k3x9q2
 
 **Exact:**
 
+- **`type` is the folder's name in Train-Case** (`specs/` → `Specs`). It's the field the Open Knowledge Format requires; the check rejects a missing or mismatched one. See [references/okf.md](references/okf.md).
 - **Property names are `snake_case`.** Dates are `YYYY-MM-DD`.
 - **`site_uuid` and `hex_code` are minted once, by a command, and never changed.** Never type one; models produce UUID-shaped strings that aren't valid.
   - `site_uuid`: `uuidgen | tr 'A-Z' 'a-z'` (or `python3 -c "import uuid; print(uuid.uuid4())"`)
@@ -126,9 +129,10 @@ hex_code: k3x9q2
 - **`date_modified`** moves on every edit. **`date_authored_current_draft`** and the version move only on a *substantive* revision. Leave an empty `date_authored_final_draft` empty until the doc really is final.
 - **`publish`** is a decision, not a default. Never flip an existing value; decide it on a new file by reading the finished doc. Prefer genericizing sensitive specifics over hiding a whole doc.
 - **`lede`** says why someone would care, in one line of 140 characters or less. If it wants to grow, put the long version in a `## Why care?` section under the title. Write it after reading the doc; never extract it. A stub gets no lede.
+- **`description`** is one plain sentence saying what the doc is. Indexes and search show it.
 - **`summary`** (optional) is for agents: what the doc is *for* and what it unblocks.
 
-**The `cv` plugin's hook** checks only the **exact** basics before a write to `context-v/` (outside `extra/`): the YAML parses, `title` exists, the two dates are valid and in order, `site_uuid` and `hex_code` are well-formed and unchanged. New files need all five fields; older files are checked only for the fields they have. If it blocks a write, fix what it names and retry. Full field reference: [references/frontmatter-spec.md](references/frontmatter-spec.md).
+**The `cv` plugin's hook** checks only the **exact** basics before a write to `context-v/` (outside `extra/`): the YAML parses, `type` matches the folder, `title` exists, the two dates are valid and in order, `site_uuid` and `hex_code` are well-formed and unchanged. New files need all six fields; older files are checked only for the fields they have. If it blocks a write, fix what it names and retry. Full field reference: [references/frontmatter-spec.md](references/frontmatter-spec.md).
 
 ## Status
 
@@ -163,6 +167,7 @@ Copy this into your reply and tick as you go:
 - [ ] Started from the matching template
 - [ ] Minted `site_uuid` and `hex_code` by command; filled dates, author, `augmented_with`
 - [ ] Wrote the why first; linked related docs
+- [ ] Added the doc's line to its folder's `index.md` (`* [Title](File.md) - <description>`)
 - [ ] Re-read the frontmatter: it parses, and nothing like `YYYY-MM-DD`, `AUTHOR`, or `GENERATE` is left
       → if anything is left or it doesn't parse, fix it before saying you're done
 - [ ] Worked through the template's own "Done when" list, if it has one
@@ -180,6 +185,7 @@ Start every new doc from its template in `templates/`. Each one ends with a "Don
 - [templates/issue.md](templates/issue.md)
 - [templates/loop.md](templates/loop.md)
 - [templates/handoff.md](templates/handoff.md)
+- [templates/decision.md](templates/decision.md)
 
 ## References
 
@@ -191,10 +197,11 @@ Load the one you need; each stands alone.
 - [references/versioning.md](references/versioning.md): four-part versions and when to bump which part
 - [references/developing-a-spec.md](references/developing-a-spec.md): the spec rhythm, from stub to sign-off
 - [references/philosophy.md](references/philosophy.md): why the practice works the way it does
+- [references/okf.md](references/okf.md): context-v as an Open Knowledge Format bundle: `type`, `index.md`, field and status mappings, sign-off as `verified`
 
 ## Related skills and tools
 
-- **Workflow skills in this kit:** `init` (scaffold), `new` (create a doc; shortcuts `explore`, `spec`, `plan`, `prompt`, `blueprint`, `remind`, `issue`, `handoff`), `kickoff` (load context at session start), `prep` (explore → spec → plan), `implement` and `loop` (build), `reflect` (close out, hand off, ship).
+- **Workflow skills in this kit:** `init` (scaffold), `new` (create a doc; shortcuts `explore`, `spec`, `plan`, `prompt`, `blueprint`, `remind`, `issue`, `decide`, `handoff`), `upgrade` (pull the latest kit), `kickoff` (load context at session start), `prep` (explore → spec → plan), `implement` and `loop` (build), `reflect` (close out, hand off, ship).
 - **`pseudomonorepos`**: when the project is a tree of repos, each with its own `context-v/`.
-- **Optional companions** (see the kit's `DEPENDENCIES.md`): if `graphify-out/GRAPH_REPORT.md` exists, read it before scanning folders. It's a map of the codebase. Archify draws diagrams checked against the repo. The Chroma skills cover semantic search over `context-v/`. Use them when present; never require them.
+- **Optional companions** (see the kit's README, "Recommended companions"): if `graphify-out/GRAPH_REPORT.md` exists, read it before scanning folders. It's a map of the codebase. Archify draws diagrams checked against the repo. The Chroma skills cover semantic search over `context-v/`. Use them when present; never require them.
 - **`context-v/config.md`**, if present, says which tools fill roles like `tracker`, `chat`, and `docs`. Without it, everything stays in `context-v/`.

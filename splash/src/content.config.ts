@@ -87,7 +87,7 @@ const changelog = defineCollection({
 // The kit's own context-v/ (its specs, explorations, issues). extra/ is
 // scratch and gitignored by convention, so it is never loaded.
 const context = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!extra/**', '!**/README.md'], base: '../context-v' }),
+  loader: glob({ pattern: ['**/*.md', '!extra/**', '!**/README.md', '!**/index.md', '!**/log.md'], base: '../context-v' }),
   schema: docSchema,
 });
 

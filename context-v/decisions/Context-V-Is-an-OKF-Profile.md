@@ -14,7 +14,8 @@ authors:
 augmented_with:
   - Claude Code on Claude Opus 5.5
 at_semantic_version: 0.0.0.1
-status: Signed-Off
+status: Shipped
+date_first_published: 2026-10-05
 tags:
   - Decision
   - OKF
@@ -99,11 +100,23 @@ An OKF tool reading a raw context-v doc sees an unrecognized status value. The s
 - **`log.md`.** Whether `/cv:reflect` also appends a `log.md` (OKF's per-folder change history) alongside `changelog/`.
 - **Datetimes.** OKF timestamps are full datetimes with a UTC offset; our `date_*` fields stay date-only. OKF fields we add use OKF's form.
 
+## As built (2026-10-05)
+
+- Every template carries `type` (the folder's name) and `description`; a `decision` template and the `/cv:decide` shortcut are new.
+- `/cv:new` and its shortcuts set `type` and add the doc's line to its folder's `index.md`.
+- The frontmatter check requires `type` on new files and rejects one that doesn't match the folder. It skips `index.md`, `log.md`, and `config.md`.
+- `/cv:init` writes an OKF-shaped `context-v/index.md` (declaring `okf_version: "0.2"`) instead of a README. `/cv:kickoff` reads the indexes first; `/cv:reflect` keeps them current.
+- `/cv:prep` records a sign-off as `verified: { by: "human:<id>", at: … }`.
+- `references/okf.md` in the context-vigilance skill holds the mappings and a conformance one-liner.
+- This repo's `context-v/` has `type` and `description` on every doc, plus indexes. It passes the three conformance rules, and OKF's reference visualizer renders all six docs, including this one's *human-reviewed* trust tier and its sources.
+
+**What the visualizer showed:** zero links between docs. It follows standard markdown links only, and these docs link with `[[wikilinks]]`. That's the first hard evidence for the open links question below.
+
 ## How we'll know it worked
 
-- The kit's own `context-v/` passes OKF's three conformance rules.
-- It opens in the OKF reference visualizer without errors.
-- A newly scaffolded repo (`/cv:init`, then `/cv:explore`) is conformant from the first doc.
+- ✅ The kit's own `context-v/` passes OKF's three conformance rules.
+- ✅ It opens in the OKF reference visualizer without errors.
+- ⬜ A newly scaffolded repo (`/cv:init`, then `/cv:explore`) is conformant from the first doc. Waits on a first live install.
 
 ## Related
 

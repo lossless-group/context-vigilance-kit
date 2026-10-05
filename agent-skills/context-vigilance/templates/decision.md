@@ -1,7 +1,7 @@
 ---
-type: Plans                         # exact: the folder's name (OKF requires it)
-title: "Plan: TITLE HERE"
-description: ""                     # one plain sentence: what this is (OKF indexes and search show it)
+type: Decisions                     # exact: the folder's name (OKF requires it)
+title: "TITLE HERE"
+description: ""                     # one plain sentence: what was decided
 lede: ""                            # optional: one hook line, 140 characters max
 publish: false                      # a decision: flip only after reading the finished doc
 date_created: YYYY-MM-DD
@@ -14,40 +14,47 @@ authors:
 augmented_with:
   - HARNESS on MODEL                # e.g. Claude Code on Claude Opus 5.5
 at_semantic_version: 0.0.0.1
-status: Draft
+status: Draft                       # Signed-Off once the decider says so
 tags:
-  - Plan
-spec_reference: "[[Spec-File-Name]]"   # the spec this plan carries out, if any
+  - Decisions
+# verified: { by: "human:<id>", at: YYYY-MM-DDTHH:MM:SSZ }   # added at sign-off (OKF trust)
 site_uuid: GENERATE                 # run: uuidgen | tr 'A-Z' 'a-z'   (never type one)
 hex_code: GENERATE                  # run: LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c6
 ---
 
-# Plan: TITLE HERE
-
-> Carries out: [[Spec-File-Name]]
+# TITLE HERE
 
 ## Why care?
 
-One paragraph: what this plan gets done and why now.
+One paragraph an outsider can read: what was at stake.
 
-## Steps
+## The decision
 
-Ordered. Each step is small enough to verify before the next one starts.
+What was decided, in a sentence or two. Then who decided, and when.
 
-1. **...** Files: `...`. **Done when:** ...
-2. **...** Files: `...`. **Done when:** ...
-
-## Risks and rollback
+## What changes
 
 - ...
 
-## Acceptance criteria
+## Alternatives passed over
 
-- [ ] ...
+- **Option:** why it lost. This is the part people need six months from now.
+
+## Still open
+
+- ...
+
+## How we'll know it worked
+
+- ...
+
+## Related
+
+- [[...]]
 
 ## Done when (for this document)
 
 - [ ] Frontmatter: every `YYYY-MM-DD`, `AUTHOR`, `HARNESS on MODEL`, and `GENERATE` replaced (IDs minted by command)
-- [ ] Every step names its files and a done-condition someone can check
-      → if a step can't be verified on its own, split it or merge it with the next
-- [ ] Links to its spec (and the spec links back)
+- [ ] The decision is stated in one sentence, with who decided and when
+- [ ] At least one alternative is named, with why it lost
+      → if there were no alternatives, it may not be a decision; consider whether it belongs in a spec

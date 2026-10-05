@@ -1,6 +1,6 @@
 ---
 name: init
-description: Scaffolds a context-v/ folder at the root of the current repo (the canonical folders plus extra/ and sitemap/), adds context-v/extra/ to .gitignore, writes a short context-v/README.md, and offers an AGENTS.md pointer and an optional changelog/ folder. Use when the user asks to set up, initialize, or add context-v to a project.
+description: Scaffolds a context-v/ folder at the root of the current repo (the canonical folders plus extra/ and sitemap/), adds context-v/extra/ to .gitignore, writes an Open Knowledge Format index.md, and offers an AGENTS.md pointer and an optional changelog/ folder. Use when the user asks to set up, initialize, or add context-v to a project.
 disable-model-invocation: true
 ---
 
@@ -19,7 +19,7 @@ Copy this into your reply and tick as you go:
       → if one exists, **stop scaffolding**: report what's there, and only add missing folders if the user says so
 - [ ] Created the canonical folders, each with a `.gitkeep` so they commit: `specs/ plans/ prompts/ blueprints/ reminders/ agent-skills/ explorations/ issues/ extra/ sitemap/`
 - [ ] Did **not** create the experimental folders (`loops/ handoffs/ decisions/ habits/ contracts/`); they appear when first used
-- [ ] Copied `starters/context-v/README.md` to `context-v/README.md` (skip if one exists)
+- [ ] Copied `starters/context-v/index.md` to `context-v/index.md` (skip if one exists). It's the folder's table of contents in Open Knowledge Format shape, and declares `okf_version: "0.2"`. A plain `context-v/README.md` isn't OKF-conformant; if one exists, offer to fold it into `index.md`, don't delete it unasked.
 - [ ] Added `context-v/extra/` to `.gitignore` (create the file if missing; don't duplicate the line)
 - [ ] Offered the agent pointer: "Add a short section to AGENTS.md so every agent knows about context-v?" On yes, append `starters/AGENTS.snippet.md` to `AGENTS.md`, creating it if needed. Never overwrite an existing file.
 - [ ] Offered `changelog/` (a dated ship log at the repo root). On yes, create it with `starters/changelog/README.md`.

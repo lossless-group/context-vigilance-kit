@@ -1,5 +1,7 @@
 ---
+type: Handoffs                         # exact: the folder's name (OKF requires it)
 title: "Handoff: TITLE HERE"
+description: ""                     # one plain sentence: what this is (OKF indexes and search show it)
 lede: ""                            # optional: one hook line, 140 characters max
 publish: false                      # a decision: flip only after reading the finished doc
 date_created: YYYY-MM-DD

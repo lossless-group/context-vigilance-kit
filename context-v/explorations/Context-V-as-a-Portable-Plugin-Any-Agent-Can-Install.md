@@ -1,5 +1,7 @@
 ---
+type: Explorations
 title: "Context-V as a Portable Plugin Any Agent Can Install"
+description: "How the kit installs into any coding agent, with Claude Code first: the design and its decisions log."
 lede: "A human pastes one line, and their agent does the rest. The last mile of the cv plugin is an install contract written for agents, with Claude Code as the first harness, not the only one."
 summary: "Picks up the plugin work after the kit split. Surveys how Superpowers, OpenSpec, Spec Kit, and GSD reach many harnesses, reviews the new Claude Code mods as the home for gates and a status pane, and proposes six changes to the MVP spec: commands ship as user-invocable skills in `agent-skills/`, the repo root is the plugin, the arc gains `loop` (VP of Engineering) and `reflect` (close-out and release), install climbs three rungs (native plugin, skills-folder drop-in, AGENTS.md floor), an agent-readable INSTALL.md is the entry point, and integrations (tracker, chat, docs, design, deploy, agent memory, context tools) are roles bound to tools in an optional context-v/config.md with names-only .env.example entries. Ends with the ordered build list and its done-conditions."
 publish: true

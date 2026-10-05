@@ -1,5 +1,7 @@
 ---
+type: Issues
 title: "Issue: Plugin Install Would Clone the Whole Corpus"
+description: "Why the kit moved to a fresh repo, separate from the corpus whose history it would have shipped."
 lede: "Installing the cv plugin would download 55 MB of our private working history. The kit and the corpus need separate repos."
 summary: "Blocks the MVP plugin's distribution step. Records why the kit (plugin, templates, starters, neutral examples) and the corpus (collated context-v, manifests, ingesters, splash) must live in separate repositories, what goes where, and the decisions still open before the split is executed."
 publish: false

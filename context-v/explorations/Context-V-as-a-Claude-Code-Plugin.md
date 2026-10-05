@@ -1,5 +1,7 @@
 ---
+type: Explorations
 title: "Context-V as a Claude Code Plugin"
+description: "Making context-v conventions checkable with commands, hooks, and a status index, not just remembered."
 lede: "The conventions are good and the agent still forgets them. A plugin turns context-v's workflows into commands and its frontmatter into queries — so a loop's preconditions get checked instead of remembered."
 date_created: 2026-08-20
 date_modified: 2026-08-20

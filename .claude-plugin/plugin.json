@@ -1,7 +1,7 @@
 {
   "name": "cv",
   "description": "Context Vigilance: keep a context-v/ folder of living docs (specs, plans, explorations, issues, handoffs) that people and agents share, with workflow skills from kickoff to ship.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": { "name": "The Lossless Group", "url": "https://github.com/lossless-group" },
   "homepage": "https://github.com/lossless-group/context-vigilance-kit",
   "repository": "https://github.com/lossless-group/context-vigilance-kit",
