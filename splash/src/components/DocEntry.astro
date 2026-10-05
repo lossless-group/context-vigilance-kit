@@ -1,0 +1,164 @@
+---
+/**
+ * A single doc's detail view, lifted from the corpus splash's entry page.
+ * Owns the Pagefind markers: data-pagefind-body on <main>, kind:/tag: filters,
+ * and data-pagefind-ignore on chrome.
+ */
+import { formatDate, toDate } from '@lib/date';
+
+interface Props {
+  data: Record<string, any>;
+  id: string;
+  /** Pagefind `kind:` facet and the crumb label, e.g. "Pattern", "Changelog". */
+  kind: string;
+  backHref: string;
+  backLabel: string;
+  /** Optional sub-crumb, e.g. the context-v folder. */
+  crumb?: string;
+  /** Optional path shown in the props block. */
+  path?: string;
+  /** Link to the source file on GitHub. */
+  sourceUrl?: string;
+}
+
+const { data, id, kind, backHref, backLabel, crumb, path, sourceUrl } = Astro.props;
+
+const created = toDate(data.date_created);
+const modified = toDate(data.date_modified);
+const d = modified ?? created;
+const title = data.title ?? id;
+const lede = data.lede ?? data.description ?? data.summary;
+const tags: string[] = data.tags || [];
+const authors: string[] = data.authors || [];
+const augmentedWith: string[] = data.augmented_with || [];
+const version = data.at_semantic_version ?? data.semantic_version;
+---
+
+<main class="entry" data-pagefind-body data-pagefind-meta={`title:${title}`}>
+  <span data-pagefind-filter={`kind:${kind}`} hidden></span>
+  <span data-pagefind-meta={`kind:${kind}`} hidden></span>
+  {tags.map((t) => <span data-pagefind-filter={`tag:${t}`} hidden></span>)}
+
+  <div class="container-narrow">
+    <p class="entry__back mono" data-pagefind-ignore>
+      <a href={backHref}>← {backLabel}</a>
+      {crumb && <span class="entry__crumb">/ <span class="entry__crumb-repo">{crumb}</span></span>}
+    </p>
+
+    <header class="entry__header">
+      <div class="entry__meta mono" data-pagefind-ignore>
+        {d && <time datetime={d.toISOString()}>{formatDate(d)}</time>}
+        <span class="from-tag">{kind}</span>
+        {version && <span class="entry__ver">{version}</span>}
+        {data.status && <span class="pill" data-status={data.status}>{data.status}</span>}
+      </div>
+      <h1>{title}</h1>
+      {lede && <p class="entry__lede">{lede}</p>}
+
+      <dl class="entry__props" data-pagefind-ignore>
+        {path && (
+          <>
+            <dt>Path</dt>
+            <dd class="mono">
+              {sourceUrl ? <a href={sourceUrl} target="_blank" rel="noopener">{path}</a> : path}
+            </dd>
+          </>
+        )}
+        {authors.length > 0 && (
+          <>
+            <dt>Authors</dt>
+            <dd>{authors.join(', ')}</dd>
+          </>
+        )}
+        {augmentedWith.length > 0 && (
+          <>
+            <dt>Augmented with</dt>
+            <dd class="entry__props-dim">{augmentedWith.join(', ')}</dd>
+          </>
+        )}
+        {tags.length > 0 && (
+          <>
+            <dt>Tags</dt>
+            <dd class="mono entry__props-dim">{tags.join(' · ')}</dd>
+          </>
+        )}
+      </dl>
+    </header>
+
+    <article class="prose entry__body">
+      <slot />
+    </article>
+  </div>
+</main>
+
+<style>
+  .entry { padding: var(--space-10) 0 var(--space-16); }
+  .entry__back {
+    font-size: 0.82rem;
+    margin-bottom: var(--space-6);
+    display: flex;
+    gap: var(--space-2);
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .entry__back a { color: var(--color-text-dim); }
+  .entry__back a:hover { color: var(--color-accent); }
+  .entry__crumb { color: var(--color-text-faint); }
+  .entry__crumb-repo { color: var(--color-thread); }
+
+  .entry__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .entry__meta {
+    display: flex;
+    gap: var(--space-3);
+    align-items: baseline;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--color-text-dim);
+  }
+  .entry__ver { color: var(--color-accent); }
+  .entry__header h1 {
+    font-size: clamp(1.85rem, 4vw, 2.6rem);
+    color: var(--color-text);
+    letter-spacing: -0.025em;
+  }
+  .entry__lede {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--color-text-soft);
+    max-width: 60ch;
+  }
+
+  .entry__props {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: var(--space-2) var(--space-4);
+    font-family: var(--font__mono);
+    font-size: 0.82rem;
+    margin: 0;
+    margin-top: var(--space-2);
+  }
+  .entry__props dt {
+    color: var(--color-text-dim);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-top: 0.18em;
+  }
+  .entry__props dd {
+    margin: 0;
+    color: var(--color-text-soft);
+    overflow-wrap: anywhere;
+  }
+  .entry__props dd a { color: var(--color-text-soft); }
+  .entry__props dd a:hover { color: var(--color-accent); }
+  .entry__props-dim { color: var(--color-text-dim); }
+
+  .entry__body { max-width: 72ch; }
+</style>

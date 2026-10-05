@@ -1,0 +1,44 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import DocEntry from '@components/DocEntry.astro';
+import { toDate } from '@lib/date';
+import { deriveKind } from '@lib/kind';
+import { isPublished, REPO_BLOB } from '@lib/repo';
+
+export async function getStaticPaths() {
+  const all = await getCollection('context');
+  return all
+    .filter((e) => isPublished(e.data as any))
+    .map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data as any;
+const base = import.meta.env.BASE_URL;
+const kind = deriveKind(entry.id, entry.id);
+const path = `context-v/${entry.id}.md`;
+---
+
+<BaseLayout
+  title={data.title ?? entry.id}
+  description={data.lede ?? data.summary}
+  ogType="article"
+  publishedTime={toDate(data.date_created)?.toISOString()}
+  modifiedTime={toDate(data.date_modified)?.toISOString()}
+  tags={data.tags}
+>
+  <DocEntry
+    data={data}
+    id={entry.id}
+    kind={kind.label}
+    backHref={`${base}context-v/`}
+    backLabel="The kit's docs"
+    crumb={`${kind.slug}/`}
+    path={path}
+    sourceUrl={`${REPO_BLOB}/${path}`}
+  >
+    <Content />
+  </DocEntry>
+</BaseLayout>

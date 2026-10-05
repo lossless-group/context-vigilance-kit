@@ -6,6 +6,8 @@
 
 This repo is the **installable kit**: a Claude Code plugin (`cv`) carrying the practice's skill, a handful of `/cv:*` commands, document templates, a starter scaffold, and neutral examples. Installing it should give you the practice and nothing else — no corpus, no vector database, no Python environment.
 
+**Site:** [lossless-group.github.io/context-vigilance-kit](https://lossless-group.github.io/context-vigilance-kit/): getting started, the patterns, and the changelog.
+
 ## Status: pre-release
 
 Nothing is installable yet. The design is settled and the build has not started:

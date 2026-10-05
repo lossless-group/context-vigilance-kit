@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SortControls from '@components/SortControls.astro';
+import DocList from '@components/DocList.astro';
+import { STATIC_SEO } from '@lib/seo';
+import { isPublished } from '@lib/repo';
+
+const entries = (await getCollection('changelog')).filter((e) => isPublished(e.data as any));
+const base = import.meta.env.BASE_URL;
+const items = entries.map((e) => ({
+  href: `${base}changelog/${e.id}/`,
+  data: e.data as any,
+  id: e.id,
+  kindLabel: 'Changelog',
+}));
+---
+
+<BaseLayout title={STATIC_SEO.changelog.title} description={STATIC_SEO.changelog.description}>
+  <main class="page">
+    <div class="container">
+      <header class="page__header">
+        <p class="folio" data-num="§ 05">The Ship Log</p>
+        <h1>Changelog.</h1>
+        <p class="page__lede">
+          What changed in the kit, written for someone who has never seen it.
+          Every entry leads with <span class="highlight">why you'd care</span>, then what's new.
+        </p>
+      </header>
+
+      <SortControls
+        name="changelog"
+        defaultKey="modified"
+        defaultDirection="desc"
+        options={[
+          { key: 'modified', label: 'Modified' },
+          { key: 'created', label: 'Created' },
+          { key: 'title', label: 'Title' },
+        ]}
+      />
+
+      <DocList items={items} sortName="changelog" />
+    </div>
+  </main>
+</BaseLayout>

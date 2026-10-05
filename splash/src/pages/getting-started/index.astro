@@ -1,0 +1,300 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { STATIC_SEO } from '@lib/seo';
+import { REPO_URL, REPO_BLOB } from '@lib/repo';
+
+const base = import.meta.env.BASE_URL;
+
+const CYCLE = [
+  { cmd: '/cv:init', role: 'scaffold', body: 'Creates context-v/ with its folders, gitignores extra/, and offers an AGENTS.md pointer and a changelog/.' },
+  { cmd: '/cv:new exploration "…"', role: 'write', body: 'Starts a doc from a template with real IDs and dates. Also spec, plan, prompt, blueprint, reminder, issue, loop, handoff.' },
+  { cmd: '/cv:prep', role: 'product manager', body: 'Walks an idea up the ladder: exploration → spec → plan, with acceptance criteria someone can check. Writes no code.' },
+  { cmd: '/cv:implement <plan>', role: 'lead engineer', body: 'Builds one signed-off spec or plan, verifying each step by running it, and closes its status honestly.' },
+  { cmd: '/cv:loop <plan>', role: 'VP of engineering', body: 'Builds a bigger one with subagents, under your own process, written down once in context-v/loops/.' },
+  { cmd: '/cv:reflect', role: 'closing out', body: 'Writes the as-built state, files issues, a changelog entry and a handoff, then commits and pushes.' },
+  { cmd: '/cv:kickoff', role: 'next session', body: 'Reads the latest handoff and proposes the few docs worth loading before you start.' },
+];
+
+const COMPANIONS = [
+  {
+    name: 'Graphify',
+    what: 'A map of your codebase: a knowledge graph built by parsing the code, with no LLM and no database in the way, so it takes seconds. /cv:kickoff reads it before scanning folders.',
+    install: 'uv tool install graphifyy\ngraphify install',
+    href: 'https://github.com/safishamsi/graphify',
+  },
+  {
+    name: 'Archify',
+    what: 'Architecture, workflow, and sequence diagrams checked against your repo. /cv:prep can put one in a spec; /cv:reflect can draw the as-built version.',
+    install: 'npx skills add tt-a1i/archify -g',
+    href: 'https://github.com/tt-a1i/archify',
+  },
+  {
+    name: 'Chroma skills',
+    what: 'Correct guidance for semantic search, for when your context-v/ grows past what folder scans handle well.',
+    install: 'npx skills add chroma-core/agent-skills --skill "chroma-local"',
+    href: 'https://github.com/chroma-core/agent-skills',
+    disclosure: 'Disclosure: the kit\'s author is an investor in Chroma.',
+  },
+];
+---
+
+<BaseLayout title={STATIC_SEO.gettingStarted.title} description={STATIC_SEO.gettingStarted.description}>
+  <main class="page" data-pagefind-body data-pagefind-meta="title:Getting started">
+    <span data-pagefind-filter="kind:Guide" hidden></span>
+    <span data-pagefind-meta="kind:Guide" hidden></span>
+    <div class="container">
+      <header class="page__header">
+        <p class="folio" data-num="§ 02" data-pagefind-ignore>Getting Started</p>
+        <h1>Two commands, then your first cycle.</h1>
+        <p class="page__lede">
+          The kit is a plugin: the practice as a skill, seven workflow commands, templates, and
+          one small safety check. <span class="highlight">No database, no config, no server.</span>
+          It works the moment it's installed.
+        </p>
+      </header>
+
+      <section class="gs" aria-labelledby="install">
+        <h2 id="install" class="gs__h"><span class="gs__num mono">1</span> Install</h2>
+
+        <div class="gs__grid">
+          <article class="card">
+            <p class="eyebrow">Claude Code</p>
+            <pre class="code"><code>/plugin marketplace add lossless-group/context-vigilance-kit
+/plugin install cv@context-vigilance-kit</code></pre>
+            <p class="card__note">
+              Straight from GitHub, no approval needed. Commands appear as <code>/cv:…</code>.
+              From a terminal, the same thing is <code>claude plugin marketplace add …</code> and
+              <code>claude plugin install …</code>.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="eyebrow">Any other agent</p>
+            <p class="card__body">
+              Codex, Cursor, OpenCode, Pi, and other tools that read
+              <a href="https://agentskills.io" target="_blank" rel="noopener">Agent Skills</a>:
+              clone the repo and copy the folders in <code>agent-skills/</code> into your tool's
+              skills folder. Then ask for a skill by name: <em>"use the init skill."</em>
+            </p>
+            <pre class="code"><code>git clone {REPO_URL}.git
+cp -R context-vigilance-kit/agent-skills/* ~/.agents/skills/</code></pre>
+          </article>
+
+          <article class="card">
+            <p class="eyebrow">Anything that reads AGENTS.md</p>
+            <p class="card__body">
+              No skills support at all? Paste the
+              <a href={`${REPO_BLOB}/starters/AGENTS.snippet.md`} target="_blank" rel="noopener">AGENTS.md snippet</a>
+              into your project. It points the agent at the practice, and that alone gets you
+              most of the way.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="gs" aria-labelledby="cycle">
+        <h2 id="cycle" class="gs__h"><span class="gs__num mono">2</span> Run your first cycle</h2>
+        <p class="gs__lede">
+          Each command puts the agent in a role. In Claude Code you type them; in other tools,
+          name the skill. Start in any repo, even an empty one.
+        </p>
+        <ol class="cycle">
+          {CYCLE.map((s) => (
+            <li class="cycle__step">
+              <code class="cycle__cmd">{s.cmd}</code>
+              <span class="cycle__role mono">{s.role}</span>
+              <p class="cycle__body">{s.body}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="gs" aria-labelledby="what">
+        <h2 id="what" class="gs__h"><span class="gs__num mono">3</span> What you'll have</h2>
+        <div class="gs__split">
+          <pre class="code"><code>your-repo/
+├── AGENTS.md            ← one short section pointing agents here
+├── changelog/           ← optional: a dated ship log
+└── context-v/
+    ├── specs/  plans/  prompts/
+    ├── blueprints/  reminders/  agent-skills/
+    ├── explorations/  issues/
+    ├── extra/           ← scratch, gitignored
+    └── sitemap/</code></pre>
+          <div>
+            <p class="gs__lede">
+              Folders like <code>loops/</code>, <code>handoffs/</code>, and <code>decisions/</code>
+              appear when a workflow first needs them. Every doc starts from a template with
+              frontmatter filled in, including two IDs generated by command.
+            </p>
+            <p class="gs__lede">
+              <strong>One check runs on its own.</strong> Before your agent writes to
+              <code>context-v/</code>, the plugin makes sure the frontmatter parses and the
+              dates and IDs are well-formed. If not, the write is blocked with a message saying
+              exactly what to fix. Everything else is judgment, and stays that way.
+            </p>
+            <p class="gs__lede">
+              Not sure why something is the way it is? <a href={`${base}patterns/`}>The patterns</a>
+              explain each convention and where it came from.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="gs" aria-labelledby="companions">
+        <h2 id="companions" class="gs__h"><span class="gs__num mono">4</span> Recommended companions</h2>
+        <p class="gs__lede">
+          Optional, and installed from their own projects so they stay current. The kit's skills
+          use them when they're present and never require them.
+        </p>
+        <div class="gs__grid">
+          {COMPANIONS.map((c) => (
+            <article class="card">
+              <p class="eyebrow">{c.name}</p>
+              <p class="card__body">{c.what}</p>
+              <pre class="code"><code>{c.install}</code></pre>
+              <p class="card__note">
+                <a href={c.href} target="_blank" rel="noopener">{c.href.replace('https://github.com/', '')} →</a>
+                {c.disclosure && <><br />{c.disclosure}</>}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="gs" aria-labelledby="config">
+        <h2 id="config" class="gs__h"><span class="gs__num mono">5</span> When you outgrow the defaults</h2>
+        <p class="gs__lede">
+          Use a ticket system, a team chat, a docs site? Copy
+          <a href={`${REPO_BLOB}/starters/config.md`} target="_blank" rel="noopener"><code>starters/config.md</code></a>
+          to <code>context-v/config.md</code> and say which tool fills each role: tracker, chat,
+          docs, design, memory. Skills name roles, so they work with whatever you choose.
+          Secrets never go in it; it names environment variables instead.
+        </p>
+        <p class="gs__lede gs__lede--dim">
+          The kit is <a href={`${REPO_BLOB}/LICENSING.md`} target="_blank" rel="noopener">MPL-2.0</a>.
+          What you make with it, including everything in your <code>context-v/</code>, is yours.
+        </p>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .gs {
+    padding: var(--space-10) 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .gs__h {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    letter-spacing: -0.025em;
+    margin: 0 0 var(--space-6);
+  }
+  .gs__num {
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    padding: 0 8px;
+  }
+  .gs__lede {
+    color: var(--color-text-soft);
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 72ch;
+    margin-bottom: var(--space-4);
+  }
+  .gs__lede--dim { color: var(--color-text-dim); font-size: 0.92rem; }
+  .gs__lede strong { color: var(--color-text); }
+  .gs a { color: var(--color-accent); }
+
+  .gs__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+  .gs__split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: var(--space-8);
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .gs__split { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-5);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+    min-width: 0;
+  }
+  .card__body { color: var(--color-text-soft); font-size: 0.94rem; line-height: 1.55; }
+  .card__note { color: var(--color-text-dim); font-size: 0.82rem; line-height: 1.5; }
+
+  .code {
+    margin: 0;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-soft);
+    font-family: var(--font__mono);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .gs__split .code { white-space: pre; overflow-x: auto; }
+  .gs code:not(pre code) {
+    font-family: var(--font__mono);
+    font-size: 0.86em;
+    background: color-mix(in oklab, var(--color-text) 6%, transparent);
+    padding: 1px 5px;
+    border-radius: var(--radius-sm);
+  }
+
+  .cycle {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: step;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .cycle__step {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: minmax(0, 15rem) 9rem minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: baseline;
+    padding: var(--space-4) var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+  }
+  .cycle__cmd {
+    font-family: var(--font__mono);
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+  .cycle__role {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-thread);
+  }
+  .cycle__body { color: var(--color-text-soft); font-size: 0.92rem; line-height: 1.55; }
+  @media (max-width: 860px) {
+    .cycle__step { grid-template-columns: 1fr; gap: var(--space-2); }
+  }
+</style>

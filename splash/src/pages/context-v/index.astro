@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SortControls from '@components/SortControls.astro';
+import DocList from '@components/DocList.astro';
+import { STATIC_SEO } from '@lib/seo';
+import { deriveKind } from '@lib/kind';
+import { isPublished } from '@lib/repo';
+
+const entries = (await getCollection('context')).filter((e) => isPublished(e.data as any));
+const base = import.meta.env.BASE_URL;
+
+// Group by context-v folder, the way the practice organizes them.
+const groups = new Map<string, { label: string; items: any[] }>();
+for (const e of entries) {
+  const kind = deriveKind(e.id, e.id);
+  if (!groups.has(kind.slug)) groups.set(kind.slug, { label: kind.label, items: [] });
+  groups.get(kind.slug)!.items.push({
+    href: `${base}context-v/${e.id}/`,
+    data: e.data as any,
+    id: e.id,
+    kindLabel: kind.label,
+    path: `context-v/${e.id}.md`,
+  });
+}
+const ordered = [...groups.entries()].sort(([a], [b]) => a.localeCompare(b));
+---
+
+<BaseLayout title={STATIC_SEO.context.title} description={STATIC_SEO.context.description}>
+  <main class="page">
+    <div class="container">
+      <header class="page__header">
+        <p class="folio" data-num="§ 06">Dogfood</p>
+        <h1>The kit's own context-v.</h1>
+        <p class="page__lede">
+          The kit is built with the practice it ships. These are its specs, explorations, and
+          decisions, <span class="highlight">including the parts we changed our minds about</span>.
+          Grouped by folder, newest first.
+        </p>
+        <p class="page__lede page__lede--soft">
+          Want to see the practice at scale? <a href="https://lossless-group.github.io/context-v-corpus/" target="_blank" rel="noopener">The corpus</a>
+          collects 1,000+ of our docs across 40 projects.
+        </p>
+      </header>
+
+      <SortControls
+        name="context-v"
+        defaultKey="modified"
+        defaultDirection="desc"
+        options={[
+          { key: 'modified', label: 'Modified' },
+          { key: 'created', label: 'Created' },
+          { key: 'title', label: 'Title' },
+        ]}
+      />
+
+      {ordered.map(([slug, g]) => (
+        <section class="group">
+          <h2 class="group__title">
+            <span class="group__slug">{slug}/</span>
+            <span class="group__count">{g.items.length} {g.items.length === 1 ? 'doc' : 'docs'}</span>
+          </h2>
+          <DocList items={g.items} sortName="context-v" />
+        </section>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

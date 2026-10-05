@@ -1,0 +1,149 @@
+---
+/**
+ * A sortable list of docs, lifted from the corpus splash's list view.
+ * Server pre-sorts by date_modified desc so the static HTML matches the
+ * SortControls default; each <li> carries data-sort-* attributes.
+ */
+import { formatDate, toDate } from '@lib/date';
+
+interface Item {
+  href: string;
+  data: Record<string, any>;
+  id: string;
+  kindLabel?: string;
+  path?: string;
+}
+
+interface Props {
+  items: Item[];
+  sortName: string;
+}
+
+const { items, sortName } = Astro.props;
+
+const sorted = [...items].sort((a, b) => {
+  const am = toDate(a.data.date_modified ?? a.data.date_created);
+  const bm = toDate(b.data.date_modified ?? b.data.date_created);
+  const ta = am ? am.getTime() : 0;
+  const tb = bm ? bm.getTime() : 0;
+  if (tb !== ta) return tb - ta;
+  return a.id < b.id ? -1 : 1;
+});
+---
+
+<ul class="entry-list" data-pagefind-ignore="all" data-sort-target={sortName}>
+  {sorted.map((item) => {
+    const data = item.data;
+    const created = toDate(data.date_created);
+    const modified = toDate(data.date_modified);
+    const d = modified ?? created;
+    const title = (data.title ?? item.id).toString();
+    const tags: string[] = data.tags || [];
+    return (
+      <li
+        class="entry-list__item"
+        data-sort-modified={modified ? modified.toISOString() : ''}
+        data-sort-created={created ? created.toISOString() : ''}
+        data-sort-title={title.toLowerCase()}
+      >
+        <a href={item.href}>
+          <div class="entry-list__meta mono">
+            {d && <time datetime={d.toISOString()}>{formatDate(d)}</time>}
+            {item.kindLabel && <span class="entry-list__kind">{item.kindLabel}</span>}
+            {data.status && <span class="pill" data-status={data.status}>{data.status}</span>}
+          </div>
+          <h3 class="entry-list__title">{title}</h3>
+          {(data.lede || data.description || data.summary) && (
+            <p class="entry-list__lede">{data.lede || data.description || data.summary}</p>
+          )}
+          {tags.length > 0 && (
+            <ul class="entry-list__tags" aria-label="Tags">
+              {tags.map((t) => <li class="entry-list__tag">{t}</li>)}
+            </ul>
+          )}
+          {item.path && <div class="entry-list__path mono">{item.path}</div>}
+        </a>
+      </li>
+    );
+  })}
+</ul>
+
+<style>
+  .entry-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .entry-list__item a {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-5) 0;
+    border-bottom: 1px dashed var(--color-border);
+    color: var(--color-text);
+    transition: padding-left var(--transition-fast);
+  }
+  .entry-list__item a:hover {
+    text-decoration: none;
+    padding-left: var(--space-3);
+  }
+  .entry-list__item a:hover .entry-list__title { color: var(--color-accent); }
+
+  .entry-list__meta {
+    display: flex;
+    gap: var(--space-3);
+    align-items: baseline;
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+    color: var(--color-text-dim);
+  }
+  .entry-list__kind {
+    color: var(--color-thread);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .entry-list__title {
+    font-size: 1.1rem;
+    font-family: var(--font__display);
+    font-weight: 500;
+    margin: 0;
+    transition: color var(--transition-fast);
+    letter-spacing: -0.02em;
+  }
+  .entry-list__lede {
+    color: var(--color-text-soft);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    max-width: 80ch;
+  }
+  .entry-list__path {
+    color: var(--color-text-faint);
+    font-size: 0.72rem;
+    overflow-wrap: anywhere;
+  }
+  .entry-list__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+    list-style: none;
+    padding: 0;
+  }
+  .entry-list__tag {
+    font-family: var(--font__mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    color: var(--color-text-dim);
+    padding: 2px 7px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: color-mix(in oklab, var(--color-text) 3%, transparent);
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .entry-list__item a:hover .entry-list__tag {
+    border-color: var(--color-border-strong);
+  }
+</style>

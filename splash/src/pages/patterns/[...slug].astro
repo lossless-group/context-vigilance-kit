@@ -1,0 +1,53 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import DocEntry from '@components/DocEntry.astro';
+
+export async function getStaticPaths() {
+  const all = await getCollection('patterns');
+  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data as any;
+const base = import.meta.env.BASE_URL;
+
+// Previous / next in curated order, across all maturities.
+const all = (await getCollection('patterns')).sort(
+  (a, b) => ((a.data as any).order ?? 99) - ((b.data as any).order ?? 99),
+);
+const i = all.findIndex((p) => p.id === entry.id);
+const prev = i > 0 ? all[i - 1] : undefined;
+const next = i < all.length - 1 ? all[i + 1] : undefined;
+---
+
+<BaseLayout title={data.title ?? entry.id} description={data.lede} ogType="article" tags={data.tags}>
+  <DocEntry
+    data={{ ...data, status: data.maturity }}
+    id={entry.id}
+    kind="Pattern"
+    backHref={`${base}patterns/`}
+    backLabel="Patterns"
+    crumb={data.mode}
+  >
+    <Content />
+    <nav class="pattern-nav" aria-label="More patterns" data-pagefind-ignore>
+      {prev ? <a href={`${base}patterns/${prev.id}/`}>← {(prev.data as any).title}</a> : <span></span>}
+      {next && <a href={`${base}patterns/${next.id}/`}>{(next.data as any).title} →</a>}
+    </nav>
+  </DocEntry>
+</BaseLayout>
+
+<style>
+  .pattern-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-top: var(--space-12);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    font-family: var(--font__mono);
+    font-size: 0.84rem;
+  }
+</style>

@@ -1,0 +1,143 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { STATIC_SEO } from '@lib/seo';
+
+const all = await getCollection('patterns');
+const base = import.meta.env.BASE_URL;
+
+const MATURITY = [
+  {
+    key: 'Canonical',
+    note: 'Settled. Every repo that uses context-v should expect these, and the kit\'s skills assume them.',
+  },
+  {
+    key: 'Experimental',
+    note: 'In active use, shape still moving. Expect variation between repos; it is surfaced, not normalized.',
+  },
+  {
+    key: 'Emerging',
+    note: 'New with the plugin. Proven in a few places, written down so they can earn their way up.',
+  },
+] as const;
+
+const byMaturity = (key: string) =>
+  all
+    .filter((p) => ((p.data as any).maturity ?? 'Emerging') === key)
+    .sort((a, b) => ((a.data as any).order ?? 99) - ((b.data as any).order ?? 99));
+
+const MODE_CLASS: Record<string, string> = {
+  prep: 'pattern--prep',
+  reflection: 'pattern--reflection',
+  journey: 'pattern--journey',
+  practice: 'pattern--practice',
+};
+---
+
+<BaseLayout title={STATIC_SEO.patterns.title} description={STATIC_SEO.patterns.description}>
+  <main class="page">
+    <div class="container">
+      <header class="page__header">
+        <p class="folio" data-num="§ 03">The Patterns</p>
+        <h1>What the practice grew into.</h1>
+        <p class="page__lede">
+          Context Vigilance started as eight folders. Years of writing specs, explorations, and
+          post-mortems with agents added the rest: the conventions that kept docs trustworthy,
+          and the experiments still finding their shape.
+          <span class="highlight">Norms, not rules</span>: each pattern says why it exists, so you
+          can decide whether it fits.
+        </p>
+      </header>
+
+      {MATURITY.map((m) => {
+        const items = byMaturity(m.key);
+        if (items.length === 0) return null;
+        return (
+          <section class="group">
+            <h2 class="group__title">
+              <span class="group__slug">{m.key}</span>
+              <span class="group__count">{items.length} patterns</span>
+            </h2>
+            <p class="group__note">{m.note}</p>
+            <ul class="patterns" data-pagefind-ignore="all">
+              {items.map((p) => {
+                const d = p.data as any;
+                return (
+                  <li class={`pattern ${MODE_CLASS[d.mode] ?? ''}`}>
+                    <a href={`${base}patterns/${p.id}/`}>
+                      <span class="pattern__mode mono">{d.mode ?? 'practice'}</span>
+                      <h3 class="pattern__title">{d.title ?? p.id}</h3>
+                      {d.lede && <p class="pattern__lede">{d.lede}</p>}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        );
+      })}
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .patterns {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+  .pattern a {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    height: 100%;
+    padding: var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+    color: var(--color-text);
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+  }
+  .pattern a::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--cell-color, var(--color-accent));
+  }
+  .pattern--prep        { --cell-color: var(--color-accent); }
+  .pattern--reflection  { --cell-color: var(--color-accent-warm); }
+  .pattern--journey     { --cell-color: var(--color-thread); }
+  .pattern--practice    { --cell-color: var(--color-text-dim); }
+  .pattern a:hover {
+    text-decoration: none;
+    border-color: var(--color-border-strong);
+    transform: translateY(-1px);
+  }
+  .pattern a:hover .pattern__title { color: var(--color-accent); }
+  .pattern__mode {
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cell-color, var(--color-accent));
+  }
+  .pattern__title {
+    font-family: var(--font__display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    transition: color var(--transition-fast);
+  }
+  .pattern__lede {
+    color: var(--color-text-soft);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+</style>
