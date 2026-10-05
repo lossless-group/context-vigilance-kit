@@ -20,6 +20,14 @@ interface Props {
 }
 
 const { steps, compact = false } = Astro.props;
+
+// A command may only wrap at a space, or right after a "/" in a long path or
+// URL. Never mid-name: "lossless-" / "group" reads as a different command.
+function segments(token: string): string[] {
+  // Split after a "/" that follows a name and precedes one: keeps "/plugin" and
+  // "https://" whole, splits "lossless-group/context-vigilance-kit".
+  return token.split(/(?<=[^/]\/)(?=[^/])/);
+}
 ---
 
 <ol class:list={['cmd-steps', { 'cmd-steps--compact': compact }]}>
@@ -29,7 +37,11 @@ const { steps, compact = false } = Astro.props;
       <div class="cmd-step__body">
         {s.note && <p class="cmd-step__note">{s.note}</p>}
         <div class="cmd-step__box">
-          <code class="cmd-step__cmd">{s.cmd}</code>
+          <code class="cmd-step__cmd">{s.cmd.split(' ').map((tok, j) => (
+            <>{j > 0 && ' '}{segments(tok).map((seg, k) => (
+              <>{k > 0 && <wbr />}<span class="cmd-step__tok">{seg}</span></>
+            ))}</>
+          ))}</code>
           <button
             type="button"
             class="cmd-step__copy mono"
@@ -122,10 +134,12 @@ const { steps, compact = false } = Astro.props;
     font-size: 0.8rem;
     line-height: 1.5;
     color: var(--color-text);
-    overflow-wrap: anywhere;
+    /* Wrap only at spaces and after "/" (see segments()). */
+    white-space: normal;
     background: none;
     padding: 0;
   }
+  .cmd-step__tok { white-space: nowrap; }
   .cmd-step__copy {
     flex: none;
     padding: 4px 10px;

@@ -121,14 +121,19 @@ const COMPANIONS = [
       <section class="gs" aria-labelledby="what">
         <h2 id="what" class="gs__h"><span class="gs__num mono">3</span> What you'll have</h2>
         <div class="gs__split">
-          <pre class="code"><code>your-repo/
-├── AGENTS.md            ← one short section pointing agents here
-├── changelog/           ← optional: a dated ship log
+          <pre class="code tree"><code>your-repo/
+├── AGENTS.md          # points agents here
+├── changelog/         # optional ship log
 └── context-v/
-    ├── specs/  plans/  prompts/
-    ├── blueprints/  reminders/  agent-skills/
-    ├── explorations/  issues/
-    ├── extra/           ← scratch, gitignored
+    ├── specs/
+    ├── plans/
+    ├── prompts/
+    ├── blueprints/
+    ├── reminders/
+    ├── agent-skills/
+    ├── explorations/
+    ├── issues/
+    ├── extra/         # scratch, gitignored
     └── sitemap/</code></pre>
           <div>
             <p class="gs__lede">
@@ -227,7 +232,7 @@ const COMPANIONS = [
   }
   .gs__split {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
     gap: var(--space-8);
     align-items: start;
   }
@@ -261,7 +266,7 @@ const COMPANIONS = [
     white-space: pre-wrap;
     overflow-wrap: anywhere;
   }
-  .gs__split .code { white-space: pre; overflow-x: auto; }
+  .gs__split .code { white-space: pre; overflow-x: auto; max-width: 100%; }
   .gs code:not(pre code) {
     font-family: var(--font__mono);
     font-size: 0.86em;
