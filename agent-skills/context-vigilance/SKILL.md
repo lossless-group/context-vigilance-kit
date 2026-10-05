@@ -51,11 +51,11 @@ description: Manages a project's context-v/ folder, the living documentation tha
 - **`habits/`**: recurring maintenance with a trigger and a scope ("keep the README true", "sweep stale statuses monthly").
 - **`contracts/`**: things that must never be violated: standing rules for agents, or exact data and API interfaces.
 
-**The folders are a starting set, not a closed list.** New folder types are welcome when the work calls for one: `research/`, `narratives/`, `profiles/`, whatever fits. Name it in plain words, say in its first doc what belongs there, and tell the user you created it.
+**The folders are a starting set, not a closed list.** New folder types are welcome when the work calls for one: `narratives/`, `profiles/`, `research-notes/`, whatever fits. **exact:** folder names are plural and kebab-case. Say in its first doc what belongs there, and tell the user you created it.
 
 **Found a folder that isn't listed?** Don't fight it. Read it, work out which mode it serves, and ask the user whether to keep it, fold it into an existing folder, or promote it to a convention. When unsure, keep it.
 
-**Every doc declares a `type`, whatever folder it's in.** It's the one field the Open Knowledge Format requires, so it keeps any folder, new or old, readable by OKF tools. Canonical folders use their usual values (`Spec`, `Plan`, `Exploration`, `Issue`, `Decision`, …). A new folder gets a short descriptive value, used consistently across that folder: `research/` → `type: Research Note`.
+**Every doc declares a `type`, whatever folder it's in.** It's the one field the Open Knowledge Format requires, so it keeps any folder, new or old, readable by OKF tools. **exact:** `type` is the folder's own name, plural, in Train-Case: `specs/` → `type: Specs`, `explorations/` → `type: Explorations`, `decisions/` → `type: Decisions`, `loops/` → `type: Loops`, `research-notes/` → `type: Research-Notes`. The type always matches the folder, so it's never a judgment call.
 
 ## Which folder?
 
