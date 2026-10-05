@@ -6,9 +6,8 @@
  * assembler: it loads the template, computes link lists, and substitutes
  * tokens. To change the voice, edit the markdown, not this file.
  *
- * The site deploys under a path (/context-vigilance-kit/), so the file lives
- * at https://lossless-group.github.io/context-vigilance-kit/llms.txt. Tools
- * pointed at that URL work; root-level discovery needs a custom domain.
+ * On GitHub Pages the site lives under a path (/context-vigilance-kit/), so
+ * root-level discovery doesn't work there; on Vercel (base '/') it does.
  */
 
 import type { APIRoute } from 'astro';
