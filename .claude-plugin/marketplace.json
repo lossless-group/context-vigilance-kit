@@ -1,0 +1,13 @@
+{
+  "name": "context-vigilance-kit",
+  "description": "The Context Vigilance practice for coding agents.",
+  "owner": { "name": "The Lossless Group", "url": "https://github.com/lossless-group" },
+  "plugins": [
+    {
+      "name": "cv",
+      "description": "Context Vigilance: living docs for people and agents, with workflow skills from kickoff to ship.",
+      "version": "0.1.0",
+      "source": "./"
+    }
+  ]
+}

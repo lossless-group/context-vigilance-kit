@@ -13,6 +13,7 @@ Nothing is installable yet. The design is settled and the build has not started:
 - **What the plugin is and isn't:** [`context-v/specs/MVP-to-Claude-Code-Plugin.md`](context-v/specs/MVP-to-Claude-Code-Plugin.md)
 - **The full command catalog**, including the later tiers: [`context-v/specs/Commands-and-Agent-Skills-for-Context-V.md`](context-v/specs/Commands-and-Agent-Skills-for-Context-V.md)
 - **Making frontmatter status checkable:** [`context-v/explorations/Context-V-as-a-Claude-Code-Plugin.md`](context-v/explorations/Context-V-as-a-Claude-Code-Plugin.md)
+- **Installing into any agent, and where Claude Code mods fit:** [`context-v/explorations/Context-V-as-a-Portable-Plugin-Any-Agent-Can-Install.md`](context-v/explorations/Context-V-as-a-Portable-Plugin-Any-Agent-Can-Install.md)
 - **Why this repo is separate from the corpus:** [`context-v/issues/Plugin-Install-Would-Clone-the-Whole-Corpus.md`](context-v/issues/Plugin-Install-Would-Clone-the-Whole-Corpus.md)
 
 ## What will live here
