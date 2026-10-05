@@ -6,7 +6,7 @@
 
 This repo is the **installable kit**: a plugin (`cv`) that gives your agent the practice, workflow commands that each put it in a role, templates, and one small safety check. No database, no config, no server.
 
-**Site:** [context-v.vercel.app](https://context-v.vercel.app/) (moving to `context-v.dev`) · mirror at [lossless-group.github.io/context-vigilance-kit](https://lossless-group.github.io/context-vigilance-kit/). Getting started, twenty patterns, and the changelog.
+**Site:** [context-v.vercel.app](https://context-v.vercel.app/) (moving to `context-v.dev`) · mirror at [lossless-group.github.io/context-vigilance-kit](https://lossless-group.github.io/context-vigilance-kit/). Getting started, the patterns, and the changelog.
 
 ## Install
 
@@ -58,6 +58,15 @@ Each command puts the agent in a role. In Claude Code you type them; in other to
 
 **One check runs on its own.** Before your agent writes to `context-v/`, the plugin checks that the frontmatter parses, has a title, valid dates, and well-formed, unchanged IDs. If not, the write is blocked with a message saying exactly what to fix. Everything else is judgment, and stays that way. (Needs `python3`; without it the check just doesn't run.)
 
+## Folders, types, and the Open Knowledge Format
+
+`/cv:init` lays down the canonical folders (`specs/`, `plans/`, `explorations/`, `issues/`, …), but they're a starting set. Create new ones when the work calls for it. Two rules keep it all readable:
+
+- **Folder names are plural:** `research-notes/`, not `research-note/`. `extra/` (scratch, gitignored) and `sitemap/` are the long-standing singular exceptions.
+- **Every doc's `type` is its folder's name** in Train-Case: `type: Specs`, `type: Explorations`, `type: Decisions`, `type: Research-Notes`.
+
+That `type` field is the one thing the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/open-knowledge-format) (OKF) requires, so a `context-v/` folder is an OKF v0.2 bundle: any OKF tool can read it. Context-v is a *profile* of OKF, adding its folders, lifecycle, versions, and IDs on top. The reasoning, the status mapping, and what's still open are in [the decision](context-v/decisions/Context-V-Is-an-OKF-Profile.md). *(Being built: the templates, `/cv:new`, and the frontmatter check don't set or require `type` yet.)*
+
 ## Recommended companions
 
 Optional, installed from their own projects so they stay current. The kit's skills use them when present and never require them.
@@ -83,7 +92,7 @@ context-vigilance-kit/
 ├── hooks/                 # the frontmatter check
 ├── starters/              # what /cv:init lays down, plus config.md
 ├── splash/                # the site (Astro), deployed to Vercel and GitHub Pages
-├── context-v/             # this kit's own specs, explorations, decisions
+├── context-v/             # this kit's own specs, explorations, issues, decisions
 ├── changelog/
 ├── LICENSE                # MPL-2.0
 └── LICENSING.md           # what you make with the kit is yours
@@ -93,6 +102,7 @@ context-vigilance-kit/
 
 ## How it was designed
 
+- **Context-v is an OKF profile (decision):** [`context-v/decisions/Context-V-Is-an-OKF-Profile.md`](context-v/decisions/Context-V-Is-an-OKF-Profile.md)
 - **The plan and its decisions log:** [`context-v/explorations/Context-V-as-a-Portable-Plugin-Any-Agent-Can-Install.md`](context-v/explorations/Context-V-as-a-Portable-Plugin-Any-Agent-Can-Install.md)
 - **The original MVP spec:** [`context-v/specs/MVP-to-Claude-Code-Plugin.md`](context-v/specs/MVP-to-Claude-Code-Plugin.md) (partly superseded by the exploration's decisions)
 - **Making frontmatter status checkable:** [`context-v/explorations/Context-V-as-a-Claude-Code-Plugin.md`](context-v/explorations/Context-V-as-a-Claude-Code-Plugin.md)
