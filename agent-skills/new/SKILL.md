@@ -8,6 +8,8 @@ argument-hint: <type> "<Title>"
 
 Arguments: `$ARGUMENTS`, as `<type> "<Title>"`. If the type or title is missing, ask for it in one short question.
 
+Shortcuts call this skill with the type already set: `explore`, `spec`, `plan`, `prompt`, `blueprint`, `remind`, `issue`, `handoff`. (A loop doc has no shortcut, because `/cv:loop` is the build workflow; use `new loop`.)
+
 Templates are in the `context-vigilance` skill's `templates/` folder. Follow that skill's frontmatter rules; this skill only covers the mechanics.
 
 ## Checklist

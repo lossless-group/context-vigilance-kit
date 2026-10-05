@@ -23,7 +23,7 @@ Copy this into your reply and tick as you go:
 - [ ] Added `context-v/extra/` to `.gitignore` (create the file if missing; don't duplicate the line)
 - [ ] Offered the agent pointer: "Add a short section to AGENTS.md so every agent knows about context-v?" On yes, append `starters/AGENTS.snippet.md` to `AGENTS.md`, creating it if needed. Never overwrite an existing file.
 - [ ] Offered `changelog/` (a dated ship log at the repo root). On yes, create it with `starters/changelog/README.md`.
-- [ ] Listed what was created, then suggested a first move: `new exploration "<what you're figuring out>"`, or `new spec` if the user already knows what to build
+- [ ] Listed what was created, then suggested a first move: `/cv:explore "<what you're figuring out>"`, or `/cv:spec` if the user already knows what to build
 
 ## Notes
 

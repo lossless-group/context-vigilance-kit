@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 
 const CYCLE = [
   { cmd: '/cv:init', role: 'scaffold', body: 'Creates context-v/ with its folders, gitignores extra/, and offers an AGENTS.md pointer and a changelog/.' },
-  { cmd: '/cv:new exploration "…"', role: 'write', body: 'Starts a doc from a template with real IDs and dates. Also spec, plan, prompt, blueprint, reminder, issue, loop, handoff.' },
+  { cmd: '/cv:explore "…"', role: 'write', body: 'Starts a doc from a template with real IDs and dates. One shortcut per kind: /cv:spec, /cv:plan, /cv:prompt, /cv:blueprint, /cv:remind, /cv:issue, /cv:handoff. Or /cv:new <kind> for any of them.' },
   { cmd: '/cv:prep', role: 'product manager', body: 'Walks an idea up the ladder: exploration → spec → plan, with acceptance criteria someone can check. Writes no code.' },
   { cmd: '/cv:implement <plan>', role: 'lead engineer', body: 'Builds one signed-off spec or plan, verifying each step by running it, and closes its status honestly.' },
   { cmd: '/cv:loop <plan>', role: 'VP of engineering', body: 'Builds a bigger one with subagents, under your own process, written down once in context-v/loops/.' },

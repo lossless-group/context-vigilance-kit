@@ -190,7 +190,7 @@ Load the one you need; each stands alone.
 
 ## Related skills and tools
 
-- **Workflow skills in this kit:** `init` (scaffold), `new` (create a doc), `kickoff` (load context at session start), `prep` (explore → spec → plan), `implement` and `loop` (build), `reflect` (close out, hand off, ship).
+- **Workflow skills in this kit:** `init` (scaffold), `new` (create a doc; shortcuts `explore`, `spec`, `plan`, `prompt`, `blueprint`, `remind`, `issue`, `handoff`), `kickoff` (load context at session start), `prep` (explore → spec → plan), `implement` and `loop` (build), `reflect` (close out, hand off, ship).
 - **`pseudomonorepos`**: when the project is a tree of repos, each with its own `context-v/`.
 - **Optional companions** (see the kit's `DEPENDENCIES.md`): if `graphify-out/GRAPH_REPORT.md` exists, read it before scanning folders. It's a map of the codebase. Archify draws diagrams checked against the repo. The Chroma skills cover semantic search over `context-v/`. Use them when present; never require them.
 - **`context-v/config.md`**, if present, says which tools fill roles like `tracker`, `chat`, and `docs`. Without it, everything stays in `context-v/`.

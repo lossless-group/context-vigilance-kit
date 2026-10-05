@@ -17,4 +17,4 @@ This folder is the project's living documentation, written for three readers: th
 
 Folders like `loops/`, `handoffs/`, and `decisions/` appear when they're first needed.
 
-**Working with an agent:** ask it to `kickoff` at the start of a session, `new spec "…"` to start a doc, `prep` to turn an idea into a plan, `implement` or `loop` to build it, and `reflect` to wrap up. These come from the [context-vigilance-kit](https://github.com/lossless-group/context-vigilance-kit).
+**Working with an agent:** ask it to `kickoff` at the start of a session, `explore "…"` or `spec "…"` to start a doc, `prep` to turn an idea into a plan, `implement` or `loop` to build it, and `reflect` to wrap up. These come from the [context-vigilance-kit](https://github.com/lossless-group/context-vigilance-kit).
