@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { STATIC_SEO } from '@lib/seo';
 import { REPO_URL, REPO_BLOB } from '@lib/repo';
+import CommandSteps from '@components/CommandSteps.astro';
 
 const base = import.meta.env.BASE_URL;
 
@@ -19,19 +20,22 @@ const COMPANIONS = [
   {
     name: 'Graphify',
     what: 'A map of your codebase: a knowledge graph built by parsing the code, with no LLM and no database in the way, so it takes seconds. /cv:kickoff reads it before scanning folders.',
-    install: 'uv tool install graphifyy\ngraphify install',
+    install: [
+      { cmd: 'uv tool install graphifyy', note: 'Install the command-line tool.' },
+      { cmd: 'graphify install', note: 'Add its skill to your agent.' },
+    ],
     href: 'https://github.com/safishamsi/graphify',
   },
   {
     name: 'Archify',
     what: 'Architecture, workflow, and sequence diagrams checked against your repo. /cv:prep can put one in a spec; /cv:reflect can draw the as-built version.',
-    install: 'npx skills add tt-a1i/archify -g',
+    install: [{ cmd: 'npx skills add tt-a1i/archify -g' }],
     href: 'https://github.com/tt-a1i/archify',
   },
   {
     name: 'Chroma skills',
     what: 'Correct guidance for semantic search, for when your context-v/ grows past what folder scans handle well.',
-    install: 'npx skills add chroma-core/agent-skills --skill "chroma-local"',
+    install: [{ cmd: 'npx skills add chroma-core/agent-skills --skill "chroma-local"' }],
     href: 'https://github.com/chroma-core/agent-skills',
     disclosure: 'Disclosure: the kit\'s author is an investor in Chroma.',
   },
@@ -59,12 +63,15 @@ const COMPANIONS = [
         <div class="gs__grid">
           <article class="card">
             <p class="eyebrow">Claude Code</p>
-            <pre class="code"><code>/plugin marketplace add lossless-group/context-vigilance-kit
-/plugin install cv@context-vigilance-kit</code></pre>
+            <p class="card__body">In a Claude Code session:</p>
+            <CommandSteps steps={[
+              { cmd: '/plugin marketplace add lossless-group/context-vigilance-kit', note: 'Add the kit as a plugin source.' },
+              { cmd: '/plugin install cv@context-vigilance-kit', note: 'Install the plugin.' },
+              { cmd: '/cv:init', note: 'Set up context-v/ in your repo.' },
+            ]} />
             <p class="card__note">
-              Straight from GitHub, no approval needed. Commands appear as <code>/cv:…</code>.
-              From a terminal, the same thing is <code>claude plugin marketplace add …</code> and
-              <code>claude plugin install …</code>.
+              Straight from GitHub, no approval needed. In a terminal instead of a session, use
+              <code>claude plugin marketplace add …</code> and <code>claude plugin install …</code>.
             </p>
           </article>
 
@@ -72,12 +79,14 @@ const COMPANIONS = [
             <p class="eyebrow">Any other agent</p>
             <p class="card__body">
               Codex, Cursor, OpenCode, Pi, and other tools that read
-              <a href="https://agentskills.io" target="_blank" rel="noopener">Agent Skills</a>:
-              clone the repo and copy the folders in <code>agent-skills/</code> into your tool's
-              skills folder. Then ask for a skill by name: <em>"use the init skill."</em>
+              <a href="https://agentskills.io" target="_blank" rel="noopener">Agent Skills</a>.
+              In a terminal:
             </p>
-            <pre class="code"><code>git clone {REPO_URL}.git
-cp -R context-vigilance-kit/agent-skills/* ~/.agents/skills/</code></pre>
+            <CommandSteps steps={[
+              { cmd: `git clone ${REPO_URL}.git`, note: 'Download the kit.' },
+              { cmd: 'cp -R context-vigilance-kit/agent-skills/* ~/.agents/skills/', note: "Copy its skills into your tool's skills folder (this is the common one; check your tool's docs)." },
+            ]} />
+            <p class="card__note">Then ask your agent for a skill by name: <em>"use the init skill."</em></p>
           </article>
 
           <article class="card">
@@ -152,7 +161,7 @@ cp -R context-vigilance-kit/agent-skills/* ~/.agents/skills/</code></pre>
             <article class="card">
               <p class="eyebrow">{c.name}</p>
               <p class="card__body">{c.what}</p>
-              <pre class="code"><code>{c.install}</code></pre>
+              <CommandSteps steps={c.install} />
               <p class="card__note">
                 <a href={c.href} target="_blank" rel="noopener">{c.href.replace('https://github.com/', '')} →</a>
                 {c.disclosure && <><br />{c.disclosure}</>}

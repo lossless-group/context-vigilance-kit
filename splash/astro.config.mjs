@@ -28,6 +28,11 @@ export default defineConfig({
   base: onVercel || process.env.SITE_URL ? '/' : '/context-vigilance-kit/',
   trailingSlash: 'ignore',
 
+  // Astro 7's HTML compression drops the whitespace between a word and an
+  // inline element that starts on the next source line ("read<a>Agent
+  // Skills</a>" instead of "read Agent Skills"). Keep source whitespace.
+  compressHTML: false,
+
   integrations: [
     // astro-pagefind runs Pagefind against `dist/` after `astro build` and
     // copies pagefind/* into the published output. Search runs entirely

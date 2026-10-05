@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import SearchBox from '@components/SearchBox.astro';
+import CommandSteps from '@components/CommandSteps.astro';
 import { STATIC_SEO } from '@lib/seo';
 import { formatDate, toDate } from '@lib/date';
 import { COGNITIVE_MODE } from '@lib/kind';
@@ -119,9 +120,13 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
 
         <aside class="hero__stats" aria-label="Install">
           <p class="eyebrow">Install in Claude Code</p>
-          <pre class="install mono"><code><span class="install__prompt">›</span> /plugin marketplace add lossless-group/context-vigilance-kit
-<span class="install__prompt">›</span> /plugin install cv@context-vigilance-kit
-<span class="install__prompt">›</span> /cv:init</code></pre>
+          <div class="install">
+            <CommandSteps compact steps={[
+              { cmd: '/plugin marketplace add lossless-group/context-vigilance-kit' },
+              { cmd: '/plugin install cv@context-vigilance-kit' },
+              { cmd: '/cv:init' },
+            ]} />
+          </div>
           <div class="stat__row">
             <div class="stat">
               <span class="stat__num">7</span>
@@ -845,19 +850,7 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
   }
 
   /* ─── Install card (hero right column; replaces the corpus live count) ── */
-  .install {
-    margin: var(--space-3) 0 var(--space-5);
-    padding: var(--space-3) var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    background: var(--color-bg);
-    font-size: 0.74rem;
-    line-height: 1.7;
-    color: var(--color-text);
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-  }
-  .install__prompt { color: var(--color-accent); font-weight: 600; }
+  .install { margin: var(--space-3) 0 var(--space-5); }
   .hero__stats .stat__row + .stat__row { margin-top: var(--space-4); }
   .stats__footnote a { color: var(--color-text-soft); }
   .stats__footnote a:hover { color: var(--color-accent); }

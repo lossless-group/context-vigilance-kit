@@ -1,0 +1,154 @@
+---
+/**
+ * Numbered install steps: one command per box, each with its own copy button.
+ * A step can carry a short note above its command.
+ *
+ *   <CommandSteps steps={[
+ *     { cmd: '/plugin marketplace add lossless-group/context-vigilance-kit' },
+ *     { cmd: '/plugin install cv@context-vigilance-kit' },
+ *   ]} />
+ */
+interface Step {
+  cmd: string;
+  note?: string;
+}
+
+interface Props {
+  steps: Step[];
+  /** Tighter spacing for narrow cards (e.g. the home hero). */
+  compact?: boolean;
+}
+
+const { steps, compact = false } = Astro.props;
+---
+
+<ol class:list={['cmd-steps', { 'cmd-steps--compact': compact }]}>
+  {steps.map((s, i) => (
+    <li class="cmd-step">
+      <span class="cmd-step__num mono" aria-hidden="true">{i + 1}</span>
+      <div class="cmd-step__body">
+        {s.note && <p class="cmd-step__note">{s.note}</p>}
+        <div class="cmd-step__box">
+          <code class="cmd-step__cmd">{s.cmd}</code>
+          <button
+            type="button"
+            class="cmd-step__copy mono"
+            data-copy={s.cmd}
+            aria-label={`Copy: ${s.cmd}`}
+          >
+            Copy
+          </button>
+        </div>
+      </div>
+    </li>
+  ))}
+</ol>
+
+<script>
+  // One delegated listener for every CommandSteps block on the page.
+  document.addEventListener('click', async (event) => {
+    const btn = (event.target as HTMLElement | null)?.closest<HTMLButtonElement>('[data-copy]');
+    if (!btn || !btn.classList.contains('cmd-step__copy')) return;
+    const text = btn.dataset.copy ?? '';
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = 'Copied';
+      btn.classList.add('is-copied');
+    } catch {
+      // Clipboard blocked (e.g. insecure context): select the command instead.
+      const code = btn.previousElementSibling;
+      if (code) {
+        const range = document.createRange();
+        range.selectNodeContents(code);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+      }
+      btn.textContent = 'Selected';
+    }
+    window.setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('is-copied');
+    }, 1600);
+  });
+</script>
+
+<style>
+  .cmd-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .cmd-step {
+    display: grid;
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+    gap: var(--space-3);
+    align-items: start;
+  }
+  .cmd-step__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-top: 0.45rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    font-size: 0.74rem;
+    color: var(--color-accent);
+  }
+  .cmd-step__note {
+    color: var(--color-text-dim);
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin: 0 0 var(--space-2);
+  }
+  .cmd-step__box {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-soft);
+  }
+  .cmd-step__cmd {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font__mono);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    overflow-wrap: anywhere;
+    background: none;
+    padding: 0;
+  }
+  .cmd-step__copy {
+    flex: none;
+    padding: 4px 10px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-elevated);
+    color: var(--color-text-soft);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .cmd-step__copy:hover,
+  .cmd-step__copy:focus-visible {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+  .cmd-step__copy.is-copied {
+    color: var(--color-thread);
+    border-color: var(--color-thread);
+  }
+
+  .cmd-steps--compact { gap: var(--space-2); }
+  .cmd-steps--compact .cmd-step__cmd { font-size: 0.74rem; }
+  .cmd-steps--compact .cmd-step__num { margin-top: 0.3rem; }
+</style>
