@@ -30,6 +30,6 @@ Share images (OG cards) are defined in `src/lib/seo.ts` and hosted on ImageKit.
 
 ## Deploy
 
-`.github/workflows/pages.yml` builds `splash/` and deploys it on every push to `main`. Pages must be set to **GitHub Actions** in the repo settings (the workflow's `enablement: true` bootstraps this on first run).
+`.github/workflows/pages.yml` builds `splash/` and deploys it on every push to `master` (the stable tier, and the branch plugin installs read). Pages must be set to **GitHub Actions** in the repo settings (the workflow's `enablement: true` bootstraps this on first run).
 
 Analytics (OpenPanel) only load in production and only when the repo Variable `OPENPANEL_CLIENT_ID` is set. Without it, the site simply has no analytics.
