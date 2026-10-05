@@ -29,9 +29,9 @@ jobs:
           fetch-depth: 1
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
-          version: 10
+          version: 12
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -41,7 +41,7 @@ jobs:
           cache-dependency-path: splash/pnpm-lock.yaml
 
       - name: Install
-        run: pnpm install --frozen-lockfile=false --ignore-workspace
+        run: pnpm install --frozen-lockfile=false
 
       - name: Build
         run: pnpm build

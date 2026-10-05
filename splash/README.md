@@ -10,7 +10,7 @@ The design is lifted from the [context-v-corpus splash](https://lossless-group.g
 
 ```bash
 cd splash
-pnpm install --ignore-workspace
+pnpm install      # pnpm 12; build approvals live in splash/pnpm-workspace.yaml (allowBuilds)
 pnpm dev          # http://localhost:4321/context-vigilance-kit/
 pnpm build && pnpm preview   # needed to try search (the Pagefind index is built at build time)
 ```
@@ -45,7 +45,7 @@ One build, two hosts. `astro.config.mjs` picks the base path from the environmen
 2. **Root Directory: `splash`.** Vercel reads `splash/vercel.json` (framework Astro, `pnpm install`, `pnpm build`, output `dist`).
 3. **Production branch: `master`**, to match the Pages deploy (Settings → Git).
 4. Environment variable `OPENPANEL_CLIENT_ID` (Production), see below.
-5. Don't add a `packageManager` pin to `package.json`; it breaks Vercel's pnpm. `splash/.npmrc` points `@jsr` at `npm.jsr.io` so the LFM package installs without anyone's global config.
+5. Don't add a `packageManager` pin to `package.json`. Build-script approvals for pnpm 12 live in `splash/pnpm-workspace.yaml` (`allowBuilds`); don't install with `--ignore-workspace`, which skips that file and fails with `ERR_PNPM_IGNORED_BUILDS`. `splash/.npmrc` points `@jsr` at `npm.jsr.io` so the LFM package installs without anyone's global config.
 
 ## Analytics (OpenPanel)
 
