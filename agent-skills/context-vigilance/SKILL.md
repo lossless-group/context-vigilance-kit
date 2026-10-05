@@ -51,7 +51,7 @@ description: Manages a project's context-v/ folder, the living documentation tha
 - **`habits/`**: recurring maintenance with a trigger and a scope ("keep the README true", "sweep stale statuses monthly").
 - **`contracts/`**: things that must never be violated: standing rules for agents, or exact data and API interfaces.
 
-**The folders are a starting set, not a closed list.** New folder types are welcome when the work calls for one: `narratives/`, `profiles/`, `research-notes/`, whatever fits. **exact:** folder names are plural and kebab-case. Say in its first doc what belongs there, and tell the user you created it.
+**The folders are a starting set, not a closed list.** New folder types are welcome when the work calls for one: `narratives/`, `profiles/`, `research-notes/`, whatever fits. **exact:** folder names are plural and kebab-case. Two long-standing exceptions stay singular: `extra/` (scratch, outside the bundle) and `sitemap/` (one map of the project). Say in its first doc what belongs there, and tell the user you created it.
 
 **Found a folder that isn't listed?** Don't fight it. Read it, work out which mode it serves, and ask the user whether to keep it, fold it into an existing folder, or promote it to a convention. When unsure, keep it.
 

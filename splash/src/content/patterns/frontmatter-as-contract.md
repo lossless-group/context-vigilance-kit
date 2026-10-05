@@ -16,7 +16,7 @@ tags:
 ---
 ## What it is
 
-Every doc starts with YAML frontmatter: `title`, `lede`, dates, `authors`, `augmented_with`, `at_semantic_version`, `status`, `tags`, and two identity fields.
+Every doc starts with YAML frontmatter: `type`, `title`, `lede`, dates, `authors`, `augmented_with`, `at_semantic_version`, `status`, `tags`, and two identity fields.
 
 ## Why
 
@@ -25,10 +25,12 @@ Frontmatter is what list views, search, share cards, retrieval tools, and an age
 ## How
 
 - **Exact:** keys are `snake_case`, dates are `YYYY-MM-DD`, tags and status values are Train-Case.
+- **Exact:** `type` is the doc's folder name in Train-Case (`type: Specs`, `type: Decisions`). It's the one field the [[okf-profile|Open Knowledge Format]] requires.
 - **Respect what's there.** Never delete a key you don't recognize. Not knowing what it does is a reason to leave it.
 - `authors` is humans only; agents go in `augmented_with`.
 
 ```yaml
+type: Specs
 title: "Payment Retry Policy"
 lede: "Failed charges retry on a schedule customers can predict."
 status: Draft

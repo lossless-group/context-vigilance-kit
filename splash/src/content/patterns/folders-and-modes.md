@@ -33,6 +33,8 @@ An agent arriving cold needs to know where to look and where to write. A fixed v
 ## How
 
 - Not sure where a doc goes? Ask what kind of thinking it holds, not what topic it's about.
+- The set is a start, not a limit. New folders are welcome when the work calls for one (`narratives/`, `profiles/`, `research-notes/`). Folder names are plural; `extra/` and `sitemap/` are the long-standing singular exceptions.
+- Every doc's `type` is its folder's name, in Train-Case: `specs/` → `type: Specs`, `research-notes/` → `type: Research-Notes`. That one field is what makes any folder readable by [[okf-profile|Open Knowledge Format]] tools.
 - A folder outside the set is fine. Read it, name its mode, and decide with the team whether to keep it, fold it, or promote it.
 
 ## In the kit
