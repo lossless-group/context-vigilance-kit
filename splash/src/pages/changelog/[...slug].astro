@@ -1,5 +1,8 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
+import AstroMarkdown from '@components/markdown/AstroMarkdown.astro';
+import Sources from '@components/markdown/Sources.astro';
+import { renderable } from '@lib/markdown';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import DocEntry from '@components/DocEntry.astro';
 import { toDate } from '@lib/date';
@@ -13,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { tree, citations } = await renderable(entry.body);
 const data = entry.data as any;
 const base = import.meta.env.BASE_URL;
 const path = `changelog/${entry.id}.md`;
@@ -36,6 +39,7 @@ const path = `changelog/${entry.id}.md`;
     path={path}
     sourceUrl={`${REPO_BLOB}/${path}`}
   >
-    <Content />
+    <AstroMarkdown node={tree} />
+    {citations.length > 0 && <Sources citations={citations} />}
   </DocEntry>
 </BaseLayout>

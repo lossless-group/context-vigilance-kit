@@ -1,5 +1,8 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
+import AstroMarkdown from '@components/markdown/AstroMarkdown.astro';
+import Sources from '@components/markdown/Sources.astro';
+import { renderable } from '@lib/markdown';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import DocEntry from '@components/DocEntry.astro';
 
@@ -9,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { tree, citations } = await renderable(entry.body);
 const data = entry.data as any;
 const base = import.meta.env.BASE_URL;
 
@@ -31,7 +34,8 @@ const next = i < all.length - 1 ? all[i + 1] : undefined;
     backLabel="Patterns"
     crumb={data.mode}
   >
-    <Content />
+    <AstroMarkdown node={tree} />
+    {citations.length > 0 && <Sources citations={citations} />}
     <nav class="pattern-nav" aria-label="More patterns" data-pagefind-ignore>
       {prev ? <a href={`${base}patterns/${prev.id}/`}>← {(prev.data as any).title}</a> : <span></span>}
       {next && <a href={`${base}patterns/${next.id}/`}>{(next.data as any).title} →</a>}

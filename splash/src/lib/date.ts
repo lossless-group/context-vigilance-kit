@@ -21,10 +21,13 @@ export function toDate(v: unknown): Date | undefined {
 
 /** Format a Date as e.g. "May 3, 2026". */
 export function formatDate(d: Date): string {
+  // Frontmatter dates are calendar dates, parsed as midnight UTC. Format in
+  // UTC too, or a build machine west of Greenwich shows the day before.
   return d.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
+    timeZone: 'UTC',
   });
 }
 
