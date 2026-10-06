@@ -153,7 +153,7 @@ Change status when something real happened (shipped, deferred, superseded), neve
 
 - **Lead with why, for an outsider.** The first paragraph should make sense to someone with no context. Technical depth comes later.
 - **Fork early.** When you notice yourself scrolling past sections to reach the one that matters, split: the pattern into a blueprint, the build into a spec, a debugging trail into an issue, each linked from the parent. The parent keeps the map; children carry the detail. See [references/philosophy.md](references/philosophy.md).
-- **Cross-link.** `[[Wikilinks]]` (best if the folder is opened in Obsidian), relative Markdown links, or backtick paths: whichever serves the reader. Prompts link their spec; reminders link their blueprint; plans link their spec.
+- **Cross-link** in the style `context-v/config.md` declares under `links:` (default: `[[Wikilinks]]`, resolved by filename). Without a config, match the docs around you. Prompts link their spec; reminders link their blueprint; plans link their spec.
 - **Filenames are Train-Case:** `Payment-Retry-Policy.md`.
 - **Specs have a rhythm**: stub first, discuss then write, sign-off gate before building. Load [references/developing-a-spec.md](references/developing-a-spec.md) whenever starting or developing a spec with the user.
 

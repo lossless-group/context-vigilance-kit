@@ -96,7 +96,7 @@ An OKF tool reading a raw context-v doc sees an unrecognized status value. The s
 
 - **`agent-skills/` sits outside the bundle.** Skill files follow the Agent Skills spec, and adding `type` to `SKILL.md` may trip strict skill validators; their `references/` files have no frontmatter at all. OKF already expects schemas like `.proto` files to live beside a bundle, not inside it.
 - **`extra/`** is scratch with no frontmatter, but it's gitignored, so a cloned bundle never contains it.
-- **Links.** OKF recommends bundle-relative markdown links (`[x](/specs/x.md)`). Context-v writers often use `[[wikilinks]]`, which OKF tools tolerate but can't follow. Undecided whether new docs should prefer OKF links.
+- ~~**Links.**~~ **Settled 2026-10-06: wikilinks stay.** OKF doesn't require any link style; conformance is frontmatter and `type` only. A repo declares its link syntax in `context-v/config.md` under `links:` (default: wikilinks, resolved by filename). OKF's reference visualizer only follows markdown links, which is a limitation of that demo tool; a 31-line patch makes it follow wikilinks too.
 - **`log.md`.** Whether `/cv:reflect` also appends a `log.md` (OKF's per-folder change history) alongside `changelog/`.
 - **Datetimes.** OKF timestamps are full datetimes with a UTC offset; our `date_*` fields stay date-only. OKF fields we add use OKF's form.
 
@@ -110,7 +110,7 @@ An OKF tool reading a raw context-v doc sees an unrecognized status value. The s
 - `references/okf.md` in the context-vigilance skill holds the mappings and a conformance one-liner.
 - This repo's `context-v/` has `type` and `description` on every doc, plus indexes. It passes the three conformance rules, and OKF's reference visualizer renders all six docs, including this one's *human-reviewed* trust tier and its sources.
 
-**What the visualizer showed:** zero links between docs. It follows standard markdown links only, and these docs link with `[[wikilinks]]`. That's the first hard evidence for the open links question below.
+**What the visualizer showed:** zero links between docs, because that demo tool follows only standard markdown links. That's a tool limitation, not an OKF requirement (see *Still open*, now settled).
 
 ## How we'll know it worked
 

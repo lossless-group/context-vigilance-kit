@@ -115,6 +115,10 @@ Ageing accelerates toward 2.1B people over 60 by 2050.[^k3x9q2]
 [^k3x9q2]: The research the claim rests on
 ```
 
+## Links
+
+OKF doesn't require any link style: a bundle with `[[wikilinks]]` is fully conformant. Context-v's link style is declared in `context-v/config.md` under `links:` (default: wikilinks, resolved by filename). Some OKF tools only follow standard markdown links; that's a tool limitation, not a conformance issue.
+
 ## Outside the bundle
 
 - **`agent-skills/`:** skills follow the Agent Skills spec, and their reference files have no frontmatter. Treat the folder as beside the bundle, the way OKF expects schemas to sit beside it.

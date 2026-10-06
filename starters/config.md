@@ -14,6 +14,22 @@
 
 type: Config                     # OKF requires a type on every .md; this is settings, not a doc
 context_v_config: 1
+
+# How docs link to each other. Agents write links this way; tools that read
+# this file know how to resolve them.
+links:
+  style: wikilink                # wikilink | markdown (what new docs use)
+  wikilink:
+    forms:                       # every form these docs may contain
+      - "[[Name]]"
+      - "[[Name|label]]"
+      - "[[folder/Name]]"
+      - "[[Name#heading]]"
+    resolve_by: filename         # filename: [[Name]] matches Name.md anywhere in context-v/
+    unresolved: keep-as-text     # a link to a doc not written yet is fine
+  markdown:
+    form: relative               # relative ([x](../specs/x.md)) | bundle-root ([x](/specs/x.md))
+
 integrations:
   tracker:
     provider: context-v          # context-v | github-issues | github-projects | plane | linear | jira
