@@ -6,7 +6,7 @@
 
 This repo is the **installable kit**: a plugin (`cv`) that gives your agent the practice, workflow commands that each put it in a role, templates, and one small safety check. No database, no config, no server.
 
-**Site:** [context-v.vercel.app](https://context-v.vercel.app/) (moving to `context-v.dev`) · mirror at [lossless-group.github.io/context-vigilance-kit](https://lossless-group.github.io/context-vigilance-kit/). Getting started, the patterns, and the changelog.
+**Site:** [context-v.dev](https://context-v.dev/) · mirror at [lossless-group.github.io/context-vigilance-kit](https://lossless-group.github.io/context-vigilance-kit/). Getting started, the patterns, and the changelog.
 
 ## Install
 

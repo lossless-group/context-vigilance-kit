@@ -1,0 +1,164 @@
+<svg class="cvflow" viewBox="30 40 904 460" data-reader-fit="intrinsic-height" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="cvflow-title cvflow-desc" data-preset="classic" data-quality-profile="showcase">
+        <title id="cvflow-title">Our Recommended Flow</title>
+        <desc id="cvflow-desc">Build row: Explore, Decide, Spec, Plan, then Loop (as a team) or Implement (solo), then Reflect. Learn row: Reflect leads to Issues, which become Reminders, Blueprints, and Agent Skills.</desc>
+        <!-- Definitions -->
+        <defs>
+          <marker id="cvflow-arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" class="m-default" />
+          </marker>
+          <marker id="cvflow-arrowhead-emphasis" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" class="m-emphasis" />
+          </marker>
+          <marker id="cvflow-arrowhead-security" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" class="m-security" />
+          </marker>
+          <marker id="cvflow-arrowhead-dashed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" class="m-dashed" />
+          </marker>
+        </defs>
+
+        <!-- Swimlanes -->
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="884" height="178" rx="10" class="c-lane" stroke-width="1"/>
+        <text x="54" y="74" class="t-dim" font-size="10" font-weight="600">01 / Build: decide, then make</text>
+
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="250" width="884" height="238" rx="10" class="c-lane" stroke-width="1"/>
+        <text x="54" y="272" class="t-dim" font-size="10" font-weight="600">02 / Learn: what the cycle taught us</text>
+
+        <!-- Phase headers -->
+
+
+        <!-- Workflow groups -->
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="group" data-composition-frame-id="group-0" x="632" y="90" width="132" height="136" rx="9" class="c-lane" stroke-width="1"/>
+        <text x="642" y="88" class="t-backend" font-size="7" font-weight="600">Build it</text>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="group" data-composition-frame-id="group-1" x="500" y="288" width="132" height="196" rx="9" class="c-lane" stroke-width="1"/>
+        <text x="510" y="286" class="t-messagebus" font-size="7" font-weight="600">Lasting know-how</text>
+
+        <!-- Edge paths -->
+        <path data-edge-from="decide" data-edge-to="spec" data-edge-key="0" data-edge-id="decide-spec" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="324,159;352,159" d="M 324 159 L 352 159" class="a-default" stroke-width="1.4" marker-end="url(#cvflow-arrowhead)"/>
+        <path data-edge-from="explore" data-edge-to="decide" data-edge-key="1" data-edge-id="explore-decide" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="172,159;200,159" d="M 172 159 L 200 159" class="a-default" stroke-width="1.4" marker-end="url(#cvflow-arrowhead)"/>
+        <path data-edge-from="implement" data-edge-to="reflect" data-edge-key="2" data-edge-id="implement-reflect" data-edge-role="branch" data-composition-points="760,199;776,199;776,166;792,166" d="M 760 199 L 776 199 L 776 166 L 792 166" class="a-dashed" stroke-width="1.4" marker-end="url(#cvflow-arrowhead-dashed)"/>
+        <path data-edge-from="issues" data-edge-to="blueprints" data-edge-key="3" data-edge-id="issues-blueprints" data-edge-role="branch" data-composition-points="792,387;628,387" d="M 792 387 L 628 387" class="a-default" stroke-width="1.4" marker-end="url(#cvflow-arrowhead)"/>
+        <path data-edge-from="issues" data-edge-to="reminders" data-edge-key="4" data-edge-id="issues-reminders" data-edge-role="branch" data-composition-points="792,377;710,377;710,317;628,317" d="M 792 377 L 710 377 L 710 317 L 628 317" class="a-default" stroke-width="1.4" marker-end="url(#cvflow-arrowhead)"/>
+        <path data-edge-from="issues" data-edge-to="skills" data-edge-key="5" data-edge-id="issues-skills" data-edge-role="branch" data-composition-points="792,397;710,397;710,457;628,457" d="M 792 397 L 710 397 L 710 457 L 628 457" class="a-default" stroke-width="1.4" marker-end="url(#cvflow-arrowhead)"/>
+        <path data-edge-from="loop" data-edge-to="reflect" data-edge-key="6" data-edge-id="loop-reflect" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="760,119;854,119;854,133" d="M 760 119 L 854 119 L 854 133" class="a-emphasis" stroke-width="1.8" marker-end="url(#cvflow-arrowhead-emphasis)"/>
+        <path data-edge-from="plan" data-edge-to="implement" data-edge-key="7" data-edge-id="plan-implement" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="566,185;566,199;636,199" d="M 566 185 L 566 199 L 636 199" class="a-dashed" stroke-width="1.4" marker-end="url(#cvflow-arrowhead-dashed)"/>
+        <path data-edge-from="plan" data-edge-to="loop" data-edge-key="8" data-edge-id="plan-loop" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="566,133;566,119;636,119" d="M 566 133 L 566 119 L 636 119" class="a-emphasis" stroke-width="1.8" marker-end="url(#cvflow-arrowhead-emphasis)"/>
+        <path data-edge-from="reflect" data-edge-to="issues" data-edge-key="9" data-edge-id="reflect-issues" data-edge-role="branch" data-composition-points="854,185;854,361" d="M 854 185 L 854 361" class="a-default" stroke-width="1.4" marker-end="url(#cvflow-arrowhead)"/>
+        <path data-edge-from="spec" data-edge-to="plan" data-edge-key="10" data-edge-id="spec-plan" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="476,159;504,159" d="M 476 159 L 504 159" class="a-default" stroke-width="1.4" marker-end="url(#cvflow-arrowhead)"/>
+
+        <!-- Nodes -->
+        <g id="node-explore" data-node-id="explore" data-node-label="Explore" tabindex="0" role="button" aria-label="Focus Explore, /cv:explore, Build: decide, then make" aria-pressed="false" data-node-kind="external" data-node-sublabel="/cv:explore" data-node-context="Build: decide, then make">
+          <title>Explore · /cv:explore · Build: decide, then make</title>
+          <rect x="48" y="133" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="48" y="133" width="124" height="52" rx="6" class="c-external" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="110" y="154" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Explore</text>
+          <text data-detail="context" x="110" y="171" class="t-muted" font-size="8" text-anchor="middle">/cv:explore</text>
+        </g>
+
+        <g id="node-decide" data-node-id="decide" data-node-label="Decide" tabindex="0" role="button" aria-label="Focus Decide, /cv:decide, Build: decide, then make" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="/cv:decide" data-node-context="Build: decide, then make">
+          <title>Decide · /cv:decide · Build: decide, then make</title>
+          <rect x="200" y="133" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="200" y="133" width="124" height="52" rx="6" class="c-frontend" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="262" y="154" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Decide</text>
+          <text data-detail="context" x="262" y="171" class="t-muted" font-size="8" text-anchor="middle">/cv:decide</text>
+        </g>
+
+        <g id="node-spec" data-node-id="spec" data-node-label="Spec" tabindex="0" role="button" aria-label="Focus Spec, /cv:spec, Build: decide, then make" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="/cv:spec" data-node-context="Build: decide, then make">
+          <title>Spec · /cv:spec · Build: decide, then make</title>
+          <rect x="352" y="133" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="352" y="133" width="124" height="52" rx="6" class="c-frontend" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="414" y="154" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Spec</text>
+          <text data-detail="context" x="414" y="171" class="t-muted" font-size="8" text-anchor="middle">/cv:spec</text>
+        </g>
+
+        <g id="node-plan" data-node-id="plan" data-node-label="Plan" tabindex="0" role="button" aria-label="Focus Plan, /cv:plan, Build: decide, then make" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="/cv:plan" data-node-context="Build: decide, then make">
+          <title>Plan · /cv:plan · Build: decide, then make</title>
+          <rect x="504" y="133" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="504" y="133" width="124" height="52" rx="6" class="c-frontend" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="566" y="154" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Plan</text>
+          <text data-detail="context" x="566" y="171" class="t-muted" font-size="8" text-anchor="middle">/cv:plan</text>
+        </g>
+
+        <g id="node-implement" data-node-id="implement" data-node-label="Implement" tabindex="0" role="button" aria-label="Focus Implement, /cv:implement: solo, Build: decide, then make › Build it" aria-pressed="false" data-node-kind="backend" data-node-sublabel="/cv:implement: solo" data-node-context="Build: decide, then make › Build it">
+          <title>Implement · /cv:implement: solo · Build: decide, then make › Build it</title>
+          <rect x="636" y="173" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="636" y="173" width="124" height="52" rx="6" class="c-backend" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="698" y="194" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Implement</text>
+          <text data-detail="context" x="698" y="211" class="t-muted" font-size="8" text-anchor="middle">/cv:implement: solo</text>
+        </g>
+
+        <g id="node-loop" data-node-id="loop" data-node-label="Loop" tabindex="0" role="button" aria-label="Focus Loop, /cv:loop: a team, Build: decide, then make › Build it" aria-pressed="false" data-node-kind="backend" data-node-sublabel="/cv:loop: a team" data-node-context="Build: decide, then make › Build it">
+          <title>Loop · /cv:loop: a team · Build: decide, then make › Build it</title>
+          <rect x="636" y="93" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="636" y="93" width="124" height="52" rx="6" class="c-backend" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="698" y="114" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Loop</text>
+          <text data-detail="context" x="698" y="131" class="t-muted" font-size="8" text-anchor="middle">/cv:loop: a team</text>
+        </g>
+
+        <g id="node-reflect" data-node-id="reflect" data-node-label="Reflect" tabindex="0" role="button" aria-label="Focus Reflect, /cv:reflect, Build: decide, then make" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="/cv:reflect" data-node-context="Build: decide, then make">
+          <title>Reflect · /cv:reflect · Build: decide, then make</title>
+          <rect x="792" y="133" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="792" y="133" width="124" height="52" rx="6" class="c-messagebus" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="854" y="154" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Reflect</text>
+          <text data-detail="context" x="854" y="171" class="t-muted" font-size="8" text-anchor="middle">/cv:reflect</text>
+        </g>
+
+        <g id="node-blueprints" data-node-id="blueprints" data-node-label="Blueprints" tabindex="0" role="button" aria-label="Focus Blueprints, the pattern behind it, Learn: what the cycle taught us › Lasting know-how" aria-pressed="false" data-node-kind="database" data-node-sublabel="the pattern behind it" data-node-context="Learn: what the cycle taught us › Lasting know-how">
+          <title>Blueprints · the pattern behind it · Learn: what the cycle taught us › Lasting know-how</title>
+          <rect x="504" y="361" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="504" y="361" width="124" height="52" rx="6" class="c-database" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="566" y="382" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Blueprints</text>
+          <text data-detail="context" x="566" y="399" class="t-muted" font-size="8" text-anchor="middle">the pattern behind it</text>
+        </g>
+
+        <g id="node-reminders" data-node-id="reminders" data-node-label="Reminders" tabindex="0" role="button" aria-label="Focus Reminders, don&#39;t repeat it, Learn: what the cycle taught us › Lasting know-how" aria-pressed="false" data-node-kind="database" data-node-sublabel="don&#39;t repeat it" data-node-context="Learn: what the cycle taught us › Lasting know-how">
+          <title>Reminders · don&#39;t repeat it · Learn: what the cycle taught us › Lasting know-how</title>
+          <rect x="504" y="291" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="504" y="291" width="124" height="52" rx="6" class="c-database" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="566" y="312" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Reminders</text>
+          <text data-detail="context" x="566" y="329" class="t-muted" font-size="8" text-anchor="middle">don&#39;t repeat it</text>
+        </g>
+
+        <g id="node-skills" data-node-id="skills" data-node-label="Agent Skills" tabindex="0" role="button" aria-label="Focus Agent Skills, know-how to load, Learn: what the cycle taught us › Lasting know-how" aria-pressed="false" data-node-kind="database" data-node-sublabel="know-how to load" data-node-context="Learn: what the cycle taught us › Lasting know-how">
+          <title>Agent Skills · know-how to load · Learn: what the cycle taught us › Lasting know-how</title>
+          <rect x="504" y="431" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="504" y="431" width="124" height="52" rx="6" class="c-database" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="566" y="452" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Agent Skills</text>
+          <text data-detail="context" x="566" y="469" class="t-muted" font-size="8" text-anchor="middle">know-how to load</text>
+        </g>
+
+        <g id="node-issues" data-node-id="issues" data-node-label="Issues" tabindex="0" role="button" aria-label="Focus Issues, what broke, and why, Learn: what the cycle taught us" aria-pressed="false" data-node-kind="external" data-node-sublabel="what broke, and why" data-node-context="Learn: what the cycle taught us">
+          <title>Issues · what broke, and why · Learn: what the cycle taught us</title>
+          <rect x="792" y="361" width="124" height="52" rx="6" class="c-mask"/>
+          <rect x="792" y="361" width="124" height="52" rx="6" class="c-external" stroke-width="1.5"/>
+          
+          <text data-node-label="" data-detail-anchor="" x="854" y="382" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Issues</text>
+          <text data-detail="context" x="854" y="399" class="t-muted" font-size="8" text-anchor="middle">what broke, and why</text>
+        </g>
+
+        <!-- Edge labels -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Legend -->
+
+      </svg>

@@ -1,0 +1,101 @@
+---
+/**
+ * "Our Recommended Flow": the Archify-generated workflow diagram, inlined so
+ * it inherits the site's theme. Source and regeneration steps:
+ * src/diagrams/README.md. Archify's semantic classes are mapped to theme
+ * tokens below, using the site's mode colors:
+ *   prep (decide/spec/plan)        → accent        (c-frontend)
+ *   journey (explore/issues)       → thread        (c-external)
+ *   build (loop/implement)         → neutral text  (c-backend)
+ *   reflect + reflection outputs   → accent-warm   (c-messagebus, c-database)
+ */
+import flowSvg from '../diagrams/recommended-flow.svg?raw';
+---
+
+<figure class="cvflow-wrap">
+  <div class="cvflow-scroll" set:html={flowSvg} />
+  <figcaption class="cvflow-cap mono">
+    <span><span class="cvflow-key cvflow-key--prep"></span>prep</span>
+    <span><span class="cvflow-key cvflow-key--journey"></span>journey</span>
+    <span><span class="cvflow-key cvflow-key--build"></span>build</span>
+    <span><span class="cvflow-key cvflow-key--reflect"></span>reflection</span>
+    <span class="cvflow-cap__dash">- - - solo path</span>
+  </figcaption>
+</figure>
+
+<style>
+  .cvflow-wrap {
+    margin: 0 0 var(--space-8);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+  }
+  .cvflow-scroll { overflow-x: auto; }
+
+  /* The SVG is injected with set:html, so its rules must be global, scoped by
+     the .cvflow class Archify's output carries after clean-up. */
+  .cvflow-scroll :global(svg.cvflow) {
+    display: block;
+    width: 100%;
+    min-width: 720px;
+    height: auto;
+    font-family: var(--font__mono);
+    /* Archify variables → site tokens */
+    --mask: var(--color-bg-elevated);
+    --lane-fill: color-mix(in oklab, var(--color-text) 2%, transparent);
+    --lane-stroke: var(--color-border-strong);
+    --text: var(--color-text);
+    --text-muted: var(--color-text-soft);
+    --text-dim: var(--color-text-dim);
+    --arrow: var(--color-text-dim);
+    --arrow-emphasis: var(--color-accent);
+    --frontend-stroke: var(--color-accent);
+    --frontend-fill: color-mix(in oklab, var(--color-accent) 12%, var(--color-bg-elevated));
+    --external-stroke: var(--color-thread);
+    --external-fill: color-mix(in oklab, var(--color-thread) 10%, var(--color-bg-elevated));
+    --backend-stroke: var(--color-text-soft);
+    --backend-fill: color-mix(in oklab, var(--color-text) 6%, var(--color-bg-elevated));
+    --messagebus-stroke: var(--color-accent-warm);
+    --messagebus-fill: color-mix(in oklab, var(--color-accent-warm) 18%, var(--color-bg-elevated));
+    --database-stroke: var(--color-accent-warm);
+    --database-fill: color-mix(in oklab, var(--color-accent-warm) 8%, var(--color-bg-elevated));
+  }
+  .cvflow-scroll :global(.cvflow .c-mask) { fill: var(--mask); stroke: none; }
+  .cvflow-scroll :global(.cvflow .c-lane) { fill: var(--lane-fill); stroke: var(--lane-stroke); stroke-dasharray: 6, 6; }
+  .cvflow-scroll :global(.cvflow .c-lane-rule) { stroke: var(--lane-stroke); fill: none; opacity: 0.7; }
+  .cvflow-scroll :global(.cvflow .c-lane-wash) { fill: var(--lane-fill); stroke: none; }
+  .cvflow-scroll :global(.cvflow .c-frontend) { fill: var(--frontend-fill); stroke: var(--frontend-stroke); }
+  .cvflow-scroll :global(.cvflow .c-backend) { fill: var(--backend-fill); stroke: var(--backend-stroke); }
+  .cvflow-scroll :global(.cvflow .c-database) { fill: var(--database-fill); stroke: var(--database-stroke); }
+  .cvflow-scroll :global(.cvflow .c-messagebus) { fill: var(--messagebus-fill); stroke: var(--messagebus-stroke); }
+  .cvflow-scroll :global(.cvflow .c-external) { fill: var(--external-fill); stroke: var(--external-stroke); }
+  .cvflow-scroll :global(.cvflow .t-primary) { fill: var(--text); }
+  .cvflow-scroll :global(.cvflow .t-muted) { fill: var(--text-muted); }
+  .cvflow-scroll :global(.cvflow .t-dim) { fill: var(--text-dim); }
+  .cvflow-scroll :global(.cvflow .t-backend) { fill: var(--color-text-soft); }
+  .cvflow-scroll :global(.cvflow .t-messagebus) { fill: var(--color-accent-warm); }
+  .cvflow-scroll :global(.cvflow .a-default) { stroke: var(--arrow); fill: none; }
+  .cvflow-scroll :global(.cvflow .a-emphasis) { stroke: var(--arrow-emphasis); fill: none; }
+  .cvflow-scroll :global(.cvflow .a-dashed) { stroke: var(--arrow); fill: none; stroke-dasharray: 4, 4; }
+  .cvflow-scroll :global(.cvflow .m-default),
+  .cvflow-scroll :global(.cvflow .m-dashed) { fill: var(--arrow); }
+  .cvflow-scroll :global(.cvflow .m-emphasis) { fill: var(--arrow-emphasis); }
+
+  .cvflow-cap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-3);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--color-text-dim);
+  }
+  .cvflow-cap > span { display: inline-flex; align-items: center; gap: 6px; }
+  .cvflow-key { width: 10px; height: 10px; border-radius: 2px; border: 1.5px solid; display: inline-block; }
+  .cvflow-key--prep { border-color: var(--color-accent); }
+  .cvflow-key--journey { border-color: var(--color-thread); }
+  .cvflow-key--build { border-color: var(--color-text-soft); }
+  .cvflow-key--reflect { border-color: var(--color-accent-warm); }
+  .cvflow-cap__dash { margin-left: auto; }
+</style>

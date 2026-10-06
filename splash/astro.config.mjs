@@ -13,14 +13,17 @@ import sitemap from '@astrojs/sitemap';
 //                 (project page, base '/context-vigilance-kit/')
 //   Vercel:       served from the domain root (base '/')
 //
-// Vercel sets VERCEL=1 during builds, and VERCEL_PROJECT_PRODUCTION_URL to the
-// project's production domain. SITE_URL overrides both, e.g. once a custom
-// domain is attached.
+// Vercel sets VERCEL=1 during builds and VERCEL_ENV to production / preview.
+// Production builds use the custom domain, context-v.dev, so canonical URLs,
+// the sitemap, robots.txt, and llms.txt all name it. Preview builds use their
+// own deployment URL. SITE_URL overrides everything.
 const onVercel = process.env.VERCEL === '1';
 const site =
   process.env.SITE_URL ??
-  (onVercel && process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  (onVercel
+    ? process.env.VERCEL_ENV === 'production'
+      ? 'https://context-v.dev'
+      : `https://${process.env.VERCEL_URL ?? process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : 'https://lossless-group.github.io');
 
 export default defineConfig({

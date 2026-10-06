@@ -35,7 +35,7 @@ One build, two hosts. `astro.config.mjs` picks the base path from the environmen
 | Host | URL | Base | How it deploys |
 |---|---|---|---|
 | GitHub Pages | `lossless-group.github.io/context-vigilance-kit/` | `/context-vigilance-kit/` | `.github/workflows/pages.yml` on every push to `master` (the stable tier, and the branch plugin installs read) |
-| Vercel | the project's domain | `/` | Vercel's Git integration (detected via `VERCEL=1`) |
+| Vercel | [context-v.dev](https://context-v.dev/) | `/` | Vercel's Git integration (detected via `VERCEL=1`); production builds use `https://context-v.dev` as the site URL |
 
 `SITE_URL` overrides both, e.g. `SITE_URL=https://contextvigilance.com` once a custom domain is attached. `robots.txt`, the sitemap, canonical URLs, and `llms.txt` all follow it.
 

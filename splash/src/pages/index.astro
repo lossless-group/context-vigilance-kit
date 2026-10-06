@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import SearchBox from '@components/SearchBox.astro';
 import CommandSteps from '@components/CommandSteps.astro';
+import RecommendedFlow from '@components/RecommendedFlow.astro';
 import { STATIC_SEO } from '@lib/seo';
 import { formatDate, toDate } from '@lib/date';
 import { COGNITIVE_MODE } from '@lib/kind';
@@ -57,16 +58,6 @@ const EXPERIMENTAL_TIER: { slug: string; blurb: string; pattern: string }[] = [
   { slug: 'decisions', pattern: 'decisions',       blurb: 'The moment intent changed: what, when, why, and the alternatives passed over.' },
   { slug: 'habits',    pattern: 'habits',          blurb: 'Recurring upkeep with a trigger and a scope: "Maintain X across Y."' },
   { slug: 'contracts', pattern: 'contracts',       blurb: 'Not suggestions: standing rules for agents, or exact interfaces data must follow.' },
-];
-
-const CYCLE = [
-  { cmd: 'init',      role: 'scaffold' },
-  { cmd: 'new',       role: 'write' },
-  { cmd: 'kickoff',   role: 'load context' },
-  { cmd: 'prep',      role: 'product manager' },
-  { cmd: 'implement', role: 'lead engineer' },
-  { cmd: 'loop',      role: 'VP of engineering' },
-  { cmd: 'reflect',   role: 'close out' },
 ];
 
 const MODE_LABEL: Record<'prep' | 'reflection' | 'journey', string> = {
@@ -261,28 +252,22 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
       </div>
     </section>
 
-    <!-- ─── ACT 3 — THE CYCLE ────────────────────────────────────────── -->
-    <section class="cycle-act">
+    <!-- ─── ACT 3 — THE FLOW ─────────────────────────────────────────── -->
+    <section class="cycle-act" id="flow">
       <div class="container">
         <header class="section__head">
-          <p class="folio" data-num="§ 03">The Cycle</p>
-          <h2 class="section__title">Seven commands. Each one gives the agent a role.</h2>
+          <p class="folio" data-num="§ 03">The Flow</p>
+          <h2 class="section__title">Our recommended flow.</h2>
           <p class="section__lede">
-            A product manager who won't write code until the spec says how we'll know it works.
-            A lead engineer who verifies by running things. A VP of engineering who runs your
-            process, not ours. <span class="highlight">And a close-out that leaves the next session
-            a note.</span>
+            Explore until the question is clear, decide, write the spec, plan it, then build:
+            as a team with <code class="chip">/cv:loop</code>, or solo with
+            <code class="chip">/cv:implement</code>. <span class="highlight">Then reflect</span>, and
+            what the cycle taught you becomes issues, and from there reminders, blueprints, and
+            agent skills the next cycle starts with.
           </p>
         </header>
 
-        <ol class="cycle-row">
-          {CYCLE.map((s) => (
-            <li class="cycle-row__step">
-              <span class="cycle-row__cmd mono">/cv:{s.cmd}</span>
-              <span class="cycle-row__role mono">{s.role}</span>
-            </li>
-          ))}
-        </ol>
+        <RecommendedFlow />
 
         <div class="proof__cta">
           <a class="btn btn-primary" href={`${base}getting-started/#cycle`}>Walk through a first cycle →</a>
@@ -859,40 +844,5 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
   .tail__slug[href]:hover { color: var(--color-accent); }
   .tail__copy a { color: var(--color-accent); }
 
-  /* ─── The cycle (Act 3) ───────────────────────────────────────────── */
-  .cycle-row {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 var(--space-8);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--space-3);
-    counter-reset: cyc;
-  }
-  .cycle-row__step {
-    counter-increment: cyc;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-bg-elevated);
-    position: relative;
-  }
-  .cycle-row__step::before {
-    content: counter(cyc, decimal-leading-zero);
-    font-family: var(--font__mono);
-    font-size: 0.66rem;
-    color: var(--color-text-faint);
-    letter-spacing: 0.1em;
-  }
-  .cycle-row__cmd { color: var(--color-accent); font-weight: 600; font-size: 0.9rem; }
-  .cycle-row__role {
-    color: var(--color-thread);
-    font-size: 0.66rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
   .invite__sign a { color: var(--color-accent); }
 </style>

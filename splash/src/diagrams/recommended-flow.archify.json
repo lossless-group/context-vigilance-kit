@@ -1,0 +1,247 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Our Recommended Flow",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": ".archify/workflow-recommended-flow-20261006-140604/recommended-flow.html",
+    "legend": {
+      "mode": "hidden"
+    }
+  },
+  "lanes": [
+    {
+      "id": "build",
+      "label": "Build: decide, then make"
+    },
+    {
+      "id": "learn",
+      "label": "Learn: what the cycle taught us"
+    }
+  ],
+  "groups": [
+    {
+      "id": "make",
+      "label": "Build it",
+      "lane": "build",
+      "fromCol": 4,
+      "toCol": 4,
+      "variant": "emphasis"
+    },
+    {
+      "id": "keep",
+      "label": "Lasting know-how",
+      "lane": "learn",
+      "fromCol": 3,
+      "toCol": 3,
+      "variant": "dashed"
+    }
+  ],
+  "mainPath": [
+    "explore",
+    "decide",
+    "spec",
+    "plan",
+    "loop",
+    "reflect"
+  ],
+  "nodes": [
+    {
+      "id": "explore",
+      "lane": "build",
+      "col": 0,
+      "type": "external",
+      "icon": "none",
+      "label": "Explore",
+      "sublabel": "/cv:explore",
+      "width": 124
+    },
+    {
+      "id": "decide",
+      "lane": "build",
+      "col": 1,
+      "type": "frontend",
+      "icon": "none",
+      "label": "Decide",
+      "sublabel": "/cv:decide",
+      "width": 124
+    },
+    {
+      "id": "spec",
+      "lane": "build",
+      "col": 2,
+      "type": "frontend",
+      "icon": "none",
+      "label": "Spec",
+      "sublabel": "/cv:spec",
+      "width": 124
+    },
+    {
+      "id": "plan",
+      "lane": "build",
+      "col": 3,
+      "type": "frontend",
+      "icon": "none",
+      "label": "Plan",
+      "sublabel": "/cv:plan",
+      "width": 124
+    },
+    {
+      "id": "loop",
+      "lane": "build",
+      "col": 4,
+      "type": "backend",
+      "icon": "none",
+      "label": "Loop",
+      "sublabel": "/cv:loop: a team",
+      "width": 124,
+      "yOffset": -40
+    },
+    {
+      "id": "implement",
+      "lane": "build",
+      "col": 4,
+      "type": "backend",
+      "icon": "none",
+      "label": "Implement",
+      "sublabel": "/cv:implement: solo",
+      "width": 124,
+      "yOffset": 40
+    },
+    {
+      "id": "reflect",
+      "lane": "build",
+      "col": 5,
+      "type": "messagebus",
+      "icon": "none",
+      "label": "Reflect",
+      "sublabel": "/cv:reflect",
+      "width": 124
+    },
+    {
+      "id": "issues",
+      "lane": "learn",
+      "col": 5,
+      "type": "external",
+      "icon": "none",
+      "label": "Issues",
+      "sublabel": "what broke, and why",
+      "width": 124
+    },
+    {
+      "id": "reminders",
+      "lane": "learn",
+      "col": 3,
+      "type": "database",
+      "icon": "none",
+      "label": "Reminders",
+      "sublabel": "don't repeat it",
+      "width": 124,
+      "yOffset": -70
+    },
+    {
+      "id": "blueprints",
+      "lane": "learn",
+      "col": 3,
+      "type": "database",
+      "icon": "none",
+      "label": "Blueprints",
+      "sublabel": "the pattern behind it",
+      "width": 124,
+      "yOffset": 0
+    },
+    {
+      "id": "skills",
+      "lane": "learn",
+      "col": 3,
+      "type": "database",
+      "icon": "none",
+      "label": "Agent Skills",
+      "sublabel": "know-how to load",
+      "width": 124,
+      "yOffset": 70
+    }
+  ],
+  "edges": [
+    {
+      "id": "explore-decide",
+      "from": "explore",
+      "to": "decide",
+      "role": "main"
+    },
+    {
+      "id": "decide-spec",
+      "from": "decide",
+      "to": "spec",
+      "role": "main"
+    },
+    {
+      "id": "spec-plan",
+      "from": "spec",
+      "to": "plan",
+      "role": "main"
+    },
+    {
+      "id": "plan-loop",
+      "from": "plan",
+      "to": "loop",
+      "role": "main",
+      "variant": "emphasis"
+    },
+    {
+      "id": "plan-implement",
+      "from": "plan",
+      "to": "implement",
+      "role": "branch",
+      "variant": "dashed"
+    },
+    {
+      "id": "loop-reflect",
+      "from": "loop",
+      "to": "reflect",
+      "role": "main",
+      "variant": "emphasis"
+    },
+    {
+      "id": "implement-reflect",
+      "from": "implement",
+      "to": "reflect",
+      "role": "branch",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "reflect-issues",
+      "from": "reflect",
+      "to": "issues",
+      "role": "branch",
+      "route": "straight"
+    },
+    {
+      "id": "issues-reminders",
+      "from": "issues",
+      "to": "reminders",
+      "role": "branch",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "issues-blueprints",
+      "from": "issues",
+      "to": "blueprints",
+      "role": "branch",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "issues-skills",
+      "from": "issues",
+      "to": "skills",
+      "role": "branch",
+      "fromSide": "left",
+      "toSide": "right"
+    }
+  ]
+}
