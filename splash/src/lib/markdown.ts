@@ -7,7 +7,7 @@
  * components/markdown/AstroMarkdown.astro, so callouts, hex-code citations,
  * code blocks, and images all follow LFM.
  *
- * Wikilinks (`[[Name]]`, `[[path/Name.md]]`, `[[Name|label]]`) are resolved
+ * Wikilinks (`[[Name]]`, `[[path/Name.md]]`, `[[path/Name.md|alias]]`) are resolved
  * before parsing: a kit doc or pattern on this site links to its page; any
  * other path links to the file on GitHub; a bare name with no match stays as
  * plain text.
@@ -48,7 +48,8 @@ export async function resolveWikilinks(body: string): Promise<string> {
     const target = rawTarget.trim().replace(/^(\.\.\/)+/, '').replace(/^\.\//, '');
     const noExt = target.replace(/\.md$/i, '');
     const name = noExt.split('/').pop()!;
-    const label = (alias ?? name).trim();
+    // No alias? Show the filename the way an alias would: - and _ as spaces.
+    const label = (alias ?? name.replace(/[-_]+/g, ' ')).trim();
     const key = noExt.replace(/^context-v\//, '').toLowerCase();
     const href = idx.get(key) ?? idx.get(name.toLowerCase());
     if (href) return `[${label}](${base}${href})`;

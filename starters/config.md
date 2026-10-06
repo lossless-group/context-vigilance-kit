@@ -20,12 +20,19 @@ context_v_config: 1
 links:
   style: wikilink                # wikilink | markdown (what new docs use)
   wikilink:
+    # Preferred form (Obsidian): the file's path, then a pipe, then an alias:
+    # the display text, usually the filename with - and _ turned into spaces.
+    # Filenames stay space-free for filesystems, scrapers, and scripts;
+    # readers see clean text.
+    preferred: "[[specs/Payment-Retry-Policy.md|Payment Retry Policy]]"
     forms:                       # every form these docs may contain
-      - "[[Name]]"
-      - "[[Name|label]]"
-      - "[[folder/Name]]"
-      - "[[Name#heading]]"
-    resolve_by: filename         # filename: [[Name]] matches Name.md anywhere in context-v/
+      - "[[path/to/File-Name.md|Display Text]]"
+      - "[[path/to/File-Name.md]]"
+      - "[[File-Name|Display Text]]"
+      - "[[File-Name]]"
+      - "[[File-Name#Heading|Display Text]]"
+    paths_from: context-v        # paths are relative to context-v/ (a leading "context-v/" is also accepted)
+    resolve_by: path-then-filename   # try the path; if it doesn't match, find File-Name.md anywhere in context-v/
     unresolved: keep-as-text     # a link to a doc not written yet is fine
   markdown:
     form: relative               # relative ([x](../specs/x.md)) | bundle-root ([x](/specs/x.md))

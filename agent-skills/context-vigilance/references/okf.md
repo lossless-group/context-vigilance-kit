@@ -117,7 +117,7 @@ Ageing accelerates toward 2.1B people over 60 by 2050.[^k3x9q2]
 
 ## Links
 
-OKF doesn't require any link style: a bundle with `[[wikilinks]]` is fully conformant. Context-v's link style is declared in `context-v/config.md` under `links:` (default: wikilinks, resolved by filename). Some OKF tools only follow standard markdown links; that's a tool limitation, not a conformance issue.
+OKF doesn't require any link style: a bundle with `[[wikilinks]]` is fully conformant. Context-v's link style is declared in `context-v/config.md` under `links:`. The default is a wikilink with path and alias, `[[specs/Payment-Retry-Policy.md|Payment Retry Policy]]`, resolved by path, then by filename. Some OKF tools only follow standard markdown links; that's a tool limitation, not a conformance issue.
 
 ## Outside the bundle
 
