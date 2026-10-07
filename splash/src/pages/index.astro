@@ -78,6 +78,34 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
 
     <!-- ─── ACT 1 — HOOK ─────────────────────────────────────────────── -->
     <section class="hero">
+      <div class="container">
+        <div class="pattern-band">
+          <div class="pattern-band__copy">
+            <div class="pattern-band__top">
+              <p class="eyebrow">The whole idea</p>
+              <a class="okf-stamp mono" href={`${base}patterns/okf-profile/`} title="Every context-v doc is valid Open Knowledge Format">
+                <span class="okf-stamp__check" aria-hidden="true">✓</span> OKF Compliant
+              </a>
+            </div>
+            <p class="pattern-band__claim">
+              A <em>dead simple</em>, <em>highly flexible</em>, <em>surprisingly effective</em>
+              pattern for context &amp; memory.
+            </p>
+            <p class="pattern-band__punch">
+              Just add a folder to every repo: <code class="pattern-band__folder">context-v/</code>
+            </p>
+          </div>
+          <pre class="pattern-band__tree mono" aria-label="A repo with a context-v folder beside its code"><span class="tree__dim">your-repo/</span>
+<span class="tree__dim">├── src/</span>
+<span class="tree__dim">├── README.md</span>
+<span class="tree__hit">└── context-v/</span>   <span class="tree__note">← markdown, in git</span>
+<span class="tree__sub">    ├── specs/</span>
+<span class="tree__sub">    ├── explorations/</span>
+<span class="tree__sub">    ├── reminders/</span>
+<span class="tree__sub">    └── …</span></pre>
+        </div>
+      </div>
+
       <div class="container hero__inner">
         <div class="hero__copy">
           <p class="folio" data-num="§ 01">The Hook</p>
@@ -317,13 +345,11 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
       <div class="container">
         <header class="section__head section__head--centered">
           <p class="folio" data-num="§ 05">The Invitation</p>
-          <h2 class="section__title">This isn't our IP.</h2>
+          <h2 class="section__title">A common pattern, openly shared.</h2>
           <p class="section__lede">
-            The directory pattern, the file format, the practice — they're an
-            <span class="highlight">open specification</span>, in the spirit of the original
-            Hyperloop paper. We thought of this; here's how it works; someone please build it,
-            fork it, improve on it, or adopt it as-is. The kit is MPL-2.0, and what you make with
-            it is yours.
+            We've used this context-v pattern across 40+ repos. We like it: for us it has worked
+            better than popular variants like <span class="highlight">Spec Kit and OpenSpec</span>.
+            Steal what you like, abandon what you don't. Make it your own. MPL-2.0 license.
           </p>
         </header>
 
@@ -427,8 +453,8 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
   }
 
   .hero__title {
-    font-size: clamp(2rem, 4.8vw, 3.4rem);
-    line-height: 1.08;
+    font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+    line-height: 1.12;
     letter-spacing: -0.035em;
     margin: var(--space-3) 0 var(--space-6);
   }
@@ -519,6 +545,85 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
     letter-spacing: 0.06em;
   }
 
+  /* The one-line pattern, full width under the hero columns */
+  .pattern-band {
+    margin-bottom: var(--space-12);
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+    gap: var(--space-8);
+    align-items: center;
+    padding: var(--space-6);
+    border: 1px solid var(--color-border-strong);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-soft);
+  }
+  @media (max-width: 980px) {
+    .pattern-band { grid-template-columns: 1fr; gap: var(--space-5); padding: var(--space-5); }
+  }
+  .pattern-band__claim {
+    font-family: var(--font__display);
+    font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
+    margin: var(--space-2) 0 var(--space-4);
+  }
+  .pattern-band__claim em { font-style: normal; color: var(--color-accent); }
+  .pattern-band__punch {
+    font-size: 1.08rem;
+    color: var(--color-text-soft);
+  }
+  .pattern-band__folder {
+    font-family: var(--font__mono);
+    font-weight: 600;
+    color: var(--color-thread);
+    padding: 2px 8px;
+    border: 1px solid var(--color-thread);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+  }
+  .pattern-band__tree {
+    margin: 0;
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    font-size: 0.84rem;
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+  .tree__dim  { color: var(--color-text-faint); }
+  .tree__hit  { color: var(--color-thread); font-weight: 600; }
+  .tree__sub  { color: var(--color-text-soft); }
+  .tree__note { color: var(--color-accent); }
+
+  .pattern-band__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+  .okf-stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 2px solid var(--color-accent-warm);
+    border-radius: var(--radius-sm);
+    outline: 1px solid var(--color-accent-warm);
+    outline-offset: 2px;
+    color: var(--color-accent-warm);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
+    transition: transform var(--transition-fast);
+  }
+  .okf-stamp:hover { text-decoration: none; transform: rotate(0deg); }
+  .okf-stamp__check { font-size: 0.9rem; letter-spacing: 0; }
   /* Pull-quote ribbon under the hero */
   .hero__pullquote {
     margin-top: var(--space-12);
