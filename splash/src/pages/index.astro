@@ -340,11 +340,121 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
       </div>
     </section>
 
-    <!-- ─── ACT 5 — INVITATION ───────────────────────────────────────── -->
+    <!-- ─── ACT 5 — FAQ ──────────────────────────────────────────────── -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <header class="section__head">
+          <p class="folio" data-num="§ 05">The Questions</p>
+          <h2 class="section__title">Fair questions.</h2>
+        </header>
+
+        <div class="faq__list">
+          <details class="faq__item" open>
+            <summary class="faq__q">
+              Doesn't all that context overload the context window, raise token costs, and slow the agent down?
+            </summary>
+            <div class="faq__a">
+              <p>
+                <strong>It doesn't for us, because we don't autoload it.</strong> A context-v folder
+                sits on disk until something asks for it. Context reaches the agent four ways,
+                roughly in order of how often:
+              </p>
+              <ol class="faq__steps">
+                <li>
+                  <span class="faq__step-name">Pointed at.</span>
+                  A <a href={`${base}patterns/handoffs/`}>handoff doc</a> in
+                  <code class="chip">context-v/handoffs/</code>, or a reference to the specific docs
+                  the task needs. The agent loads those, and nothing else.
+                </li>
+                <li>
+                  <span class="faq__step-name">Found.</span>
+                  The agent's own ripgrep and find scans turn up what it needs almost every time.
+                </li>
+                <li>
+                  <span class="faq__step-name">Mapped.</span>
+                  Our more complex repos keep Graphify output the agent can use to find what it
+                  needs when loading docs by hand falls short, which is rare.
+                </li>
+                <li>
+                  <span class="faq__step-name">Queried.</span>
+                  Every context-v file is regularly rolled up into
+                  <a href="https://lossless-group.github.io/context-v-corpus/" target="_blank" rel="noopener">a corpus</a>
+                  at the pseudomonorepo root, then pushed into a Chroma vector database that every
+                  project reaches over MCP. Agents query it when it's relevant.
+                </li>
+              </ol>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">
+              Without hard checks that block a merge when docs and code drift apart, how do the docs stay true?
+            </summary>
+            <div class="faq__a">
+              <p>
+                <strong>They drift a little, and that's fine.</strong> We assume the implementation
+                will diverge somewhat from its context-v docs, and treat that as natural rather than
+                as a failure to block.
+              </p>
+              <p>
+                The <a href={`${base}patterns/three-date-families/`}>date fields</a> in the frontmatter
+                make hard checks mostly moot. A doc that's old and hasn't been modified or versioned
+                recently isn't autoloaded into a session, so in practice it doesn't collide with
+                current work.
+              </p>
+              <p>
+                During <strong>Reflect</strong>, we update the docs a cycle used to match what was
+                actually built. Some projects also keep a <code class="chip">sitemap/</code> folder,
+                and we're trying a <code class="chip">mirrors/</code> folder that describes the
+                current state of the code and application.
+              </p>
+              <p>
+                We haven't tried a fully automated software factory that builds and maintains code
+                with no human oversight, and we're not sure it's a good idea yet. Still, each
+                iteration gets faster and better with less oversight than the last. So maybe we're
+                heading that way anyway.
+              </p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">
+              "Code becomes regenerable" is a bold claim. Have you actually regenerated something real?
+            </summary>
+            <div class="faq__a">
+              <p>
+                <strong>Sort of.</strong> From the context-v docs, we've upgraded tech stacks,
+                migrated between stacks and languages, and decomposed a monolith into a federated
+                architecture. Each took two or three passes, with almost no prompt engineering
+                beyond "Please rebuild this."
+              </p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">
+              Don't agents get worse with more context? With 13 folders, indexes, and handoffs, how do you keep what they read in check?
+            </summary>
+            <div class="faq__a">
+              <p>
+                <strong>Most of it never gets read in a given session</strong>, since nothing is
+                autoloaded (see the first question). Where we do see trouble is when a long session
+                truly fills the context window. The model gets something like anxiety, the closest
+                human analogy: iteration slows, mistakes increase, and randomness creeps in.
+              </p>
+              <p>
+                So we stop implementing, co-write a <a href={`${base}patterns/handoffs/`}>handoff
+                doc</a>, close the session, and start fresh. It works, for reasons we don't fully
+                understand, a bit like rebooting an old Windows PC.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ACT 6 — INVITATION ───────────────────────────────────────── -->
     <section class="invite">
       <div class="container">
         <header class="section__head section__head--centered">
-          <p class="folio" data-num="§ 05">The Invitation</p>
+          <p class="folio" data-num="§ 06">The Invitation</p>
           <h2 class="section__title">A common pattern, openly shared.</h2>
           <p class="section__lede">
             We've used this context-v pattern across 40+ repos. We like it: for us it has worked
@@ -899,6 +1009,59 @@ const MODE_BLURB: Record<'prep' | 'reflection' | 'journey', string> = {
     gap: var(--space-3);
     justify-content: center;
   }
+
+  /* ─── FAQ (Act 5) ────────────────────────────────────────────────── */
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    max-width: 880px;
+  }
+  .faq__item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+  }
+  .faq__item[open] { border-color: var(--color-border-strong); }
+  .faq__q {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    font-family: var(--font__display);
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-text);
+  }
+  .faq__q::-webkit-details-marker { display: none; }
+  .faq__q::before {
+    content: '+';
+    flex: 0 0 auto;
+    font-family: var(--font__mono);
+    color: var(--color-accent);
+  }
+  .faq__item[open] .faq__q::before { content: '−'; }
+  .faq__q:hover { color: var(--color-accent); }
+  .faq__a {
+    padding: 0 var(--space-5) var(--space-5) calc(var(--space-5) + 1.3em);
+    color: var(--color-text-soft);
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+  .faq__a strong { color: var(--color-text); }
+  .faq__a p + p { margin-top: var(--space-3); }
+  .faq__a a { color: var(--color-accent); }
+  .faq__steps {
+    margin: var(--space-3) 0 0;
+    padding-left: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .faq__steps li::marker { color: var(--color-accent); font-family: var(--font__mono); }
+  .faq__step-name { color: var(--color-text); font-weight: 600; }
 
   /* ─── Invitation (Act 4) ─────────────────────────────────────────── */
   .invite__grid {
