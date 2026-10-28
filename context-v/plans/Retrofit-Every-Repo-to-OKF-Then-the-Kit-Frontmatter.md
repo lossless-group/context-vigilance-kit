@@ -43,6 +43,7 @@ We made the rule after writing a thousand docs without it. The first survey of t
 5. **No reading pass.** Only values that are facts get written. The corpus is a roll-up, so it is refreshed after the sweep, not edited.
 6. **Push to `main` and `master` is authorized** for this sweep.
 7. **The anchor's `context-v/` is the trunk:** leftovers, or the broadest practice abstractions (stack preferences, workflow preferences). It's swept like any repo when at parity. Loose docs sitting directly in any repo's `context-v/` root are logged for filing, not typed.
+8. **Agents edit by hand. No script writes frontmatter.** Scripted frontmatter edits have caused real damage in this tree. Every change to a doc is made by an agent reading that doc and editing it with its editor's Edit tool, one doc at a time. Scripts and commands may only *read*: the parity gate (git), the survey (inventory and verification), `git log` for dates, `uuidgen` for IDs the agent then pastes in.
 
 ## Scope
 
@@ -83,9 +84,9 @@ Dirty files *outside* `context-v/`, and a working copy checked out on a feature 
 One subagent per repo, briefed by a VP Eng orchestrator (`/cv:loop`, with this plan as the target).
 
 1. `git worktree add <scratch>/<repo> origin/development`: a separate checkout, so the operator's working copy is never switched, stashed, or edited.
-2. Run Phase 1 there, verify, write its changelog entry, commit.
+2. Make the Phase 1 edits there by hand: open each doc, read its frontmatter, add what's missing with the Edit tool. Then verify, write the changelog entry, commit.
 3. Push the one commit to all three tiers at once: `git push --atomic origin HEAD:development HEAD:main HEAD:master`. At parity, that's a fast-forward on each.
-4. Run Phase 2 on top, the same way: verify, changelog entry, commit, atomic push.
+4. Make the Phase 2 edits on top, the same way, by hand: verify, changelog entry, commit, atomic push.
 5. If a push is rejected (someone pushed meanwhile), parity is broken: stop, log the repo, move on.
 6. Fast-forward the operator's local tier branches that aren't checked out (`git fetch origin development:development`, and so on). The checked-out branch is left for the operator to pull; the run's report lists them.
 7. `git worktree remove`.
@@ -120,14 +121,14 @@ Each field is written only when it's absent, and only from a fact. Existing valu
 
 ### Verification, per repo, before each push
 
-- [ ] `okf_retrofit.py --check` passes (Phase 1: the conformance check in `references/okf.md` prints nothing)
-- [ ] The diff touches only frontmatter lines, new `index.md` files, and the changelog entry: body hashes match before and after
+- [ ] A read-only survey scan of the repo (`scan.py <repo> --scope repo --no-git`) reports no docs missing `type` (Phase 1), and the conformance check in `references/okf.md` prints nothing
+- [ ] The agent reads its own `git diff` in full: it touches only frontmatter lines, new `index.md` files, and the changelog entry; no body line changed
 - [ ] No line in the diff contains today's date outside the changelog entry and its own frontmatter
 
 ## Order and pacing
 
-1. **Build the tool first:** `agent-skills/upgrade/scripts/okf_retrofit.py` with `--gate` (the parity check, printing the log row), `--phase okf|frontmatter`, `--dry-run` (prints the diff), and `--check`. It lives in the `upgrade` skill so any adopter of the kit can run the same retrofit with `/cv:upgrade`. Standard library only, no YAML round-trips: edits are line insertions in the frontmatter block, per the sweep rules in `references/frontmatter-spec.md`.
-2. **Gate the whole tree first** and write both lists. That alone shows how much of the tree qualifies.
+1. **No editing tool gets built.** The sweep is agent work (decision 8). What the kit gains instead is the agent brief: these phase checklists, written into the `upgrade` skill so any adopter can hand the same retrofit to an agent with `/cv:upgrade`.
+2. **Gate the whole tree first** (read-only git commands) and write both lists. That alone shows how much of the tree qualifies.
 3. **Pilot:** two small qualifying repos, end to end, then a pause for the operator to read the diffs and the four changelog entries.
 4. **Then newest commit first**, up to four repos in parallel. Repos are separate git repos, so parallel agents never share a checkout.
 5. **Wrap-up:**
