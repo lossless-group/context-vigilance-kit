@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Survey map · context-vigilance-kit</title>
+<script>(function(){var m;try{m=localStorage.getItem('cv-survey-mode')}catch(e){}
+var h=/mode=(light|dark|vibrant)/.exec(location.hash);if(h)m=h[1];
+if(!/^(light|dark|vibrant)$/.test(m||''))m='dark';document.documentElement.setAttribute('data-mode',m)})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+--color__amber:#fbbf24;--color__amber-deep:#b45309;--color__amber-soft:#fde68a;
+--color__sodium:#f97316;--color__sodium-deep:#9a3412;--color__sodium-soft:#fed7aa;
+--color__lime:#a3e635;--color__lime-deep:#4d7c0f;--color__lime-soft:#d9f99d;
+--color__neon-amber:#ffd60a;--color__neon-sodium:#ff7a1a;--color__iris:#818cf8;
+--color__paper:#f7f6f1;--color__paper-soft:#efece2;--color__paper-deep:#e2dfd1;
+--color__ink:#0a0c10;--color__ink-soft:#11141b;--color__ink-deep:#060709;--color__charcoal:#161a23;
+--color__slate-700:#2a2f3a;--color__slate-600:#3b414f;--color__slate-500:#5b6273;--color__slate-400:#8b91a3;
+--color__slate-300:#b4b9c7;--color__slate-200:#d4d8e0;--color__slate-100:#e8eaef;
+--font__display:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+--font__sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+--font__mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+--radius-sm:2px;--radius-md:3px;--radius-lg:6px;--grid-pitch:28px;
+}
+:root,:root[data-mode='dark']{
+--color-bg:var(--color__ink);--color-bg-soft:var(--color__ink-soft);--color-bg-elevated:var(--color__charcoal);
+--color-bg-card:rgba(22,26,35,.78);
+--color-text:#e8eaef;--color-text-soft:var(--color__slate-200);--color-text-dim:var(--color__slate-400);
+--color-text-dimmer:var(--color__slate-500);--color-text-faint:var(--color__slate-600);
+--color-accent:var(--color__amber);--color-accent-soft:var(--color__amber-soft);
+--color-accent-warm:var(--color__sodium);--color-accent-hot:var(--color__sodium-deep);
+--color-thread:var(--color__lime);--color-thread-soft:var(--color__lime-soft);
+--color-border:rgba(232,234,239,.08);--color-border-strong:rgba(232,234,239,.18);
+--color-border-accent:rgba(251,191,36,.45);--color-grid-dot:rgba(232,234,239,.06);
+--bucket-in_flight:var(--color__sodium);--bucket-open:var(--color__amber);--bucket-done:var(--color__lime);
+--bucket-reference:var(--color__iris);--bucket-parked:var(--color__slate-400);--bucket-closed:var(--color__slate-600);
+--bucket-unmapped:#f472b6;--bucket-none:var(--color__slate-700);
+--fresh-week:var(--color__lime);--fresh-month:color-mix(in oklab,var(--color__lime) 55%,var(--color__slate-600));
+--fresh-quarter:var(--color__slate-600);--fresh-older:var(--color__slate-700);
+--heat:var(--color__amber);--track:rgba(232,234,239,.05);
+color-scheme:dark;
+}
+:root[data-mode='light']{
+--color-bg:var(--color__paper);--color-bg-soft:var(--color__paper-soft);--color-bg-elevated:#fffefa;
+--color-bg-card:rgba(255,254,250,.9);
+--color-text:var(--color__ink);--color-text-soft:var(--color__slate-700);--color-text-dim:var(--color__slate-500);
+--color-text-dimmer:#6b7280;--color-text-faint:var(--color__slate-400);
+--color-accent:var(--color__amber-deep);--color-accent-soft:var(--color__amber);
+--color-accent-warm:var(--color__sodium-deep);--color-accent-hot:var(--color__sodium);
+--color-thread:var(--color__lime-deep);--color-thread-soft:var(--color__lime);
+--color-border:rgba(10,12,16,.10);--color-border-strong:rgba(10,12,16,.22);
+--color-border-accent:rgba(180,83,9,.45);--color-grid-dot:rgba(10,12,16,.06);
+--bucket-in_flight:var(--color__sodium);--bucket-open:#e0a100;--bucket-done:var(--color__lime-deep);
+--bucket-reference:#5b63d3;--bucket-parked:var(--color__slate-400);--bucket-closed:var(--color__slate-600);
+--bucket-unmapped:#db2777;--bucket-none:var(--color__slate-200);
+--fresh-week:var(--color__lime-deep);--fresh-month:color-mix(in oklab,var(--color__lime-deep) 50%,var(--color__slate-300));
+--fresh-quarter:var(--color__slate-300);--fresh-older:var(--color__slate-200);
+--heat:var(--color__amber-deep);--track:rgba(10,12,16,.05);
+color-scheme:light;
+}
+:root[data-mode='vibrant']{
+--color-bg:var(--color__ink-deep);--color-bg-soft:#0a0a14;--color-bg-elevated:#14122a;
+--color-bg-card:rgba(20,18,42,.74);
+--color-text:#fff8e8;--color-text-soft:#f0e0b8;--color-text-dim:#c8b890;--color-text-dimmer:#807058;--color-text-faint:#4a4030;
+--color-accent:var(--color__neon-amber);--color-accent-soft:#ffe55a;
+--color-accent-warm:var(--color__neon-sodium);--color-accent-hot:var(--color__iris);
+--color-thread:var(--color__lime);--color-thread-soft:#c8ff5a;
+--color-border:rgba(255,214,10,.16);--color-border-strong:rgba(255,214,10,.36);
+--color-border-accent:rgba(255,122,26,.6);--color-grid-dot:rgba(255,214,10,.10);
+--bucket-in_flight:var(--color__neon-sodium);--bucket-open:var(--color__neon-amber);--bucket-done:#c8ff5a;
+--bucket-reference:var(--color__iris);--bucket-parked:#807058;--bucket-closed:#4a4030;
+--bucket-unmapped:#ff4fd8;--bucket-none:#2a2440;
+--fresh-week:#c8ff5a;--fresh-month:color-mix(in oklab,#c8ff5a 50%,#4a4030);
+--fresh-quarter:#4a4030;--fresh-older:#2a2440;
+--heat:var(--color__neon-sodium);--track:rgba(255,214,10,.06);
+color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}
+html{background:var(--color-bg)}
+body{min-height:100vh;background:var(--color-bg);color:var(--color-text);font:15px/1.55 var(--font__sans);
+-webkit-font-smoothing:antialiased;overflow-x:hidden;
+background-image:radial-gradient(var(--color-grid-dot) 1px,transparent 1px);background-size:var(--grid-pitch) var(--grid-pitch)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 16px 80px}
+header.top{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:flex-start;justify-content:space-between;margin-bottom:20px}
+h1{font:500 clamp(20px,3vw,28px)/1.2 var(--font__display);letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--color-accent)}
+h2{font:500 15px/1.3 var(--font__display);letter-spacing:.02em;text-transform:uppercase;color:var(--color-text-dim);margin:36px 0 12px}
+.sub{font:12px/1.5 var(--font__mono);color:var(--color-text-dim);margin-top:6px;word-break:break-all}
+.modes{display:inline-flex;border:1px solid var(--color-border-strong);border-radius:var(--radius-lg);padding:3px;gap:2px;background:var(--color-bg-card)}
+.modes button{font:12px var(--font__mono);background:none;border:0;color:var(--color-text-dim);padding:5px 10px;border-radius:var(--radius-md);cursor:pointer}
+.modes button[aria-checked='true']{background:var(--color-accent);color:var(--color-bg)}
+dl.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--color-border);
+border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:18px}
+dl.stats div{background:var(--color-bg-card);padding:12px 14px}
+dt{font:11px var(--font__mono);text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-dim)}
+dd{font:500 22px/1.2 var(--font__display);color:var(--color-text)}
+.controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:14px 0}
+.controls input[type=search]{flex:1 1 260px;min-width:0;font:14px var(--font__mono);padding:8px 12px;border-radius:var(--radius-lg);
+border:1px solid var(--color-border-strong);background:var(--color-bg-elevated);color:var(--color-text)}
+.controls input[type=search]:focus{outline:2px solid var(--color-border-accent);outline-offset:1px}
+.controls label{font:12px var(--font__mono);color:var(--color-text-dim);display:flex;gap:6px;align-items:center;cursor:pointer}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;list-style:none;font:12px var(--font__mono);color:var(--color-text-dim)}
+.legend b{color:var(--color-text);font-weight:500}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legends{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-bg-card)}
+.legends .k{font:11px var(--font__mono);text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-faint);margin-right:8px}
+.b-in_flight{background:var(--bucket-in_flight)}.b-open{background:var(--bucket-open)}.b-done{background:var(--bucket-done)}
+.b-reference{background:var(--bucket-reference)}.b-parked{background:var(--bucket-parked)}.b-closed{background:var(--bucket-closed)}
+.b-unmapped{background:var(--bucket-unmapped)}.b-none{background:var(--bucket-none)}
+.f-week{background:var(--fresh-week)}.f-month{background:var(--fresh-month)}.f-quarter{background:var(--fresh-quarter)}.f-older{background:var(--fresh-older)}
+.colhead,.row{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(80px,220px) minmax(50px,90px) 44px;gap:12px;align-items:center}
+.colhead{font:11px var(--font__mono);text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-faint);padding:0 10px 6px 30px}
+.colhead span:nth-child(n+2){text-align:right}.colhead span:nth-child(3),.colhead span:nth-child(4){text-align:left}
+.tree{border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-bg-card);padding:6px}
+details>summary{list-style:none;cursor:pointer}details>summary::-webkit-details-marker{display:none}
+.row{padding:6px 10px;border-radius:var(--radius-md);position:relative}
+.row:hover{background:var(--color-border)}
+.row .name{font:500 14px var(--font__display);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-left:20px;position:relative}
+.row .name::before{content:'▸';position:absolute;left:2px;color:var(--color-text-faint);transition:transform .14s}
+details[open]>.row .name::before{transform:rotate(90deg)}
+.repo.leaf>.row .name::before{content:'·'}
+.count{font:13px var(--font__mono);text-align:right;color:var(--color-text-soft)}
+.count small{display:block;font-size:10px;color:var(--color-text-faint)}
+.tasks{font:12px var(--font__mono);text-align:right;color:var(--color-accent-warm)}
+.bar,.fresh{display:flex;height:10px;border-radius:2px;overflow:hidden;background:var(--track);gap:1px}
+.fresh{height:6px}
+.bar i,.fresh i{display:block;min-width:2px}
+.kids{margin-left:18px;border-left:1px dashed var(--color-border-strong);padding-left:4px}
+.repo.empty>.row{opacity:.42}
+body:has(#hide-empty:checked) .repo.empty:not(:has(.repo:not(.empty))){display:none}
+.row--folder .name{font:13px var(--font__mono);color:var(--color-text-soft)}
+.row--folder .bar{height:7px}
+.row--group .name{color:var(--color-accent)}
+ol.docs{list-style:none;margin:2px 0 8px 30px;border-left:1px solid var(--color-border);padding-left:10px}
+ol.docs li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:baseline;padding:3px 4px;font-size:13px}
+ol.docs li a{text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ol.docs li a:hover{color:var(--color-accent);text-decoration:underline}
+.chip{font:11px var(--font__mono);padding:1px 7px;border-radius:999px;border:1px solid currentColor;white-space:nowrap;max-width:16ch;overflow:hidden;text-overflow:ellipsis}
+.chip.c-in_flight{color:var(--bucket-in_flight)}.chip.c-open{color:var(--bucket-open)}.chip.c-done{color:var(--bucket-done)}
+.chip.c-reference{color:var(--bucket-reference)}.chip.c-parked,.chip.c-closed,.chip.c-none{color:var(--color-text-dim)}.chip.c-unmapped{color:var(--bucket-unmapped)}
+.date{font:11px var(--font__mono);color:var(--color-text-dim)}.date.stale{color:var(--color-accent-warm)}
+.hidden{display:none!important}
+mark{background:color-mix(in oklab,var(--color-accent) 35%,transparent);color:inherit;border-radius:2px}
+.gridwrap{overflow-x:auto;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-bg-card)}
+table.heat{border-collapse:separate;border-spacing:2px;font:12px var(--font__mono);width:100%;min-width:640px}
+table.heat th{font-weight:400;color:var(--color-text-dim);padding:4px 6px}
+table.heat thead th{text-align:center;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+table.heat tbody th{text-align:left;white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis;color:var(--color-text-soft)}
+table.heat td{text-align:center;padding:5px 0;border-radius:var(--radius-sm);min-width:44px}
+td.z{background:var(--track)}
+td.h{background:color-mix(in oklab,var(--heat) var(--pct),transparent);color:var(--color-text)}
+td.h.stale{box-shadow:inset 0 0 0 2px var(--bucket-unmapped)}
+.note{font:12px var(--font__mono);color:var(--color-text-dim);margin-top:8px}
+@media (max-width:640px){
+.row,.colhead{grid-template-columns:minmax(0,1fr) 56px 36px}
+.row .bar,.row .fresh{grid-column:1 / -1}
+.row .bar{order:4}.row .fresh{order:5}
+.colhead span:nth-child(3),.colhead span:nth-child(4){display:none}
+.kids{margin-left:8px}
+}
+</style>
+<style>
+.cp{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;
+  margin-left:.4em;padding:.1em .45em;min-height:1.6em;border:1px solid var(--color-border-strong,currentColor);
+  border-radius:3px;background:transparent;color:var(--color-text-dim,inherit);
+  font:500 .68rem/1 var(--font__mono,ui-monospace,monospace);letter-spacing:.04em;cursor:pointer;
+  text-transform:lowercase;white-space:nowrap}
+.cp:hover,.cp:focus-visible{color:var(--color-accent,inherit);border-color:var(--color-accent,currentColor);outline:none}
+.cp.is-copied{color:var(--color-thread,inherit);border-color:var(--color-thread,currentColor)}
+</style>
+<script>function cpBtn(p){return '<button type="button" class="cp" data-path="'+String(p).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')+'" title="Copy '+String(p).replace(/"/g,'&quot;')+'" aria-label="Copy path">copy path</button>'}</script>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div>
+    <h1>Survey map · <em>context-vigilance-kit</em></h1>
+    <p class="sub">repo scope · /Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit · generated 2026-10-28 16:11:28</p>
+  </div>
+  <div class="modes" role="radiogroup" aria-label="Color mode">
+    <button type="button" role="radio" data-mode="light" aria-checked="false">light</button>
+    <button type="button" role="radio" data-mode="dark" aria-checked="true">dark</button>
+    <button type="button" role="radio" data-mode="vibrant" aria-checked="false">vibrant</button>
+  </div>
+</header>
+
+<dl class="stats"><div><dt>repos</dt><dd>1</dd></div><div><dt>context-v</dt><dd>2</dd></div><div><dt>docs</dt><dd>8</dd></div><div><dt>in flight</dt><dd>1</dd></div><div><dt>open tasks</dt><dd>32</dd></div><div><dt>stale</dt><dd>1</dd></div></dl>
+
+<div class="legends">
+  <ul class="legend"><li class="k">status</li><li><i class="sw b-in_flight"></i>In flight <b>1</b></li><li><i class="sw b-open"></i>Open <b>5</b></li><li><i class="sw b-done"></i>Done <b>2</b></li></ul>
+  <ul class="legend"><li class="k">updated</li><li><i class="sw f-week"></i>≤ 7d <b>2</b></li><li><i class="sw f-month"></i>≤ 30d <b>3</b></li><li><i class="sw f-quarter"></i>≤ 90d <b>2</b></li><li><i class="sw f-older"></i>> 90d <b>1</b></li><li class="k">stale = open or in flight, untouched 90d+</li></ul>
+</div>
+
+<h2>Where the thinking lives</h2>
+<div class="controls">
+  <input id="q" type="search" placeholder="filter docs by title, path, or status…" aria-label="Filter docs">
+  <span id="q-status" class="sub" aria-live="polite"></span>
+  <label><input type="checkbox" id="hide-empty"> hide 0 repos without context-v</label>
+  <button id="expand" type="button" class="modes" style="padding:5px 10px;font:12px var(--font__mono);color:var(--color-text-dim);cursor:pointer">expand all</button>
+</div>
+<div class="colhead" aria-hidden="true"><span>repo / folder</span><span>docs</span><span>status mix</span><span>freshness</span><span>☐</span></div>
+<nav class="tree" aria-label="Repos and their context-v folders"><details class="repo" data-path="." open><summary class="row"><span class="name" title=".">context-vigilance-kit (scope root)</span><span class="count">8</span><span class="bar" role="img" aria-label="1 in flight, 5 open, 2 done"><i class="b-in_flight" style="flex-grow:1" title="In flight: 1"></i><i class="b-open" style="flex-grow:5" title="Open: 5"></i><i class="b-done" style="flex-grow:2" title="Done: 2"></i></span><span class="fresh" role="img" aria-label="5 of 8 updated in the last 30 days"><i class="f-week" style="flex-grow:2" title="updated this week: 2"></i><i class="f-month" style="flex-grow:3" title="updated this month: 3"></i><i class="f-quarter" style="flex-grow:2" title="updated this quarter: 2"></i><i class="f-older" style="flex-grow:1" title="older than 90 days: 1"></i></span><span class="tasks" title="open checkboxes">32</span></summary><div class="kids"><details class="folder" data-key=".|specs"><summary class="row row--folder"><span class="name">specs</span><span class="count">3</span><span class="bar" role="img" aria-label="3 open"><i class="b-open" style="flex-grow:3" title="Open: 3"></i></span><span class="fresh" role="img" aria-label="1 of 3 updated in the last 30 days"><i class="f-week" style="flex-grow:1" title="updated this week: 1"></i><i class="f-quarter" style="flex-grow:1" title="updated this quarter: 1"></i><i class="f-older" style="flex-grow:1" title="older than 90 days: 1"></i></span><span class="tasks">9</span></summary><ol class="docs" data-key=".|specs"></ol></details><details class="folder" data-key=".|plans"><summary class="row row--folder"><span class="name">plans</span><span class="count">1</span><span class="bar" role="img" aria-label="1 in flight"><i class="b-in_flight" style="flex-grow:1" title="In flight: 1"></i></span><span class="fresh" role="img" aria-label="1 of 1 updated in the last 30 days"><i class="f-week" style="flex-grow:1" title="updated this week: 1"></i></span><span class="tasks">20</span></summary><ol class="docs" data-key=".|plans"></ol></details><details class="folder" data-key=".|explorations"><summary class="row row--folder"><span class="name">explorations</span><span class="count">2</span><span class="bar" role="img" aria-label="2 open"><i class="b-open" style="flex-grow:2" title="Open: 2"></i></span><span class="fresh" role="img" aria-label="1 of 2 updated in the last 30 days"><i class="f-month" style="flex-grow:1" title="updated this month: 1"></i><i class="f-quarter" style="flex-grow:1" title="updated this quarter: 1"></i></span><span class="tasks"></span></summary><ol class="docs" data-key=".|explorations"></ol></details><details class="folder" data-key=".|issues"><summary class="row row--folder"><span class="name">issues</span><span class="count">1</span><span class="bar" role="img" aria-label="1 done"><i class="b-done" style="flex-grow:1" title="Done: 1"></i></span><span class="fresh" role="img" aria-label="1 of 1 updated in the last 30 days"><i class="f-month" style="flex-grow:1" title="updated this month: 1"></i></span><span class="tasks">3</span></summary><ol class="docs" data-key=".|issues"></ol></details><details class="folder" data-key=".|decisions"><summary class="row row--folder"><span class="name">decisions</span><span class="count">1</span><span class="bar" role="img" aria-label="1 done"><i class="b-done" style="flex-grow:1" title="Done: 1"></i></span><span class="fresh" role="img" aria-label="1 of 1 updated in the last 30 days"><i class="f-month" style="flex-grow:1" title="updated this month: 1"></i></span><span class="tasks"></span></summary><ol class="docs" data-key=".|decisions"></ol></details></div></details></nav>
+
+<h2>Heat grid · repo × folder</h2>
+<div class="gridwrap"><table class="heat">
+<thead><tr><th></th><th scope="col"><span>specs</span></th><th scope="col"><span>plans</span></th><th scope="col"><span>prompts</span></th><th scope="col"><span>blueprints</span></th><th scope="col"><span>reminders</span></th><th scope="col"><span>explorations</span></th><th scope="col"><span>issues</span></th><th scope="col"><span>handoffs</span></th><th scope="col"><span>decisions</span></th><th scope="col"><span>other</span></th></tr></thead>
+<tbody><tr><th scope="row" title=".">context-vigilance-kit</th><td class="h" style="--pct:90%" title=". / specs: 3 docs, 1 stale">3</td><td class="h" style="--pct:51%" title=". / plans: 1 docs, 0 stale">1</td><td class="z"></td><td class="z"></td><td class="z"></td><td class="h" style="--pct:74%" title=". / explorations: 2 docs, 0 stale">2</td><td class="h" style="--pct:51%" title=". / issues: 1 docs, 0 stale">1</td><td class="z"></td><td class="h" style="--pct:51%" title=". / decisions: 1 docs, 0 stale">1</td><td class="z"></td></tr></tbody>
+</table></div>
+<p class="note">Shade = doc count (log scale). Outlined cells: more than half the docs are stale.</p>
+</div>
+<script type="application/json" id="survey-data">{"parents":{".":null},"docs":{".|decisions":[["Context-V Is an OKF Profile","file:///Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/decisions/Context-V-Is-an-OKF-Profile.md","context-v/decisions/Context-V-Is-an-OKF-Profile.md","Shipped","done","2026-10-05",0,0,"/Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/decisions/Context-V-Is-an-OKF-Profile.md"]],".|explorations":[["Context-V as a Claude Code Plugin","file:///Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/explorations/Context-V-as-a-Claude-Code-Plugin.md","context-v/explorations/Context-V-as-a-Claude-Code-Plugin.md","Draft","open","2026-08-20",0,0,"/Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/explorations/Context-V-as-a-Claude-Code-Plugin.md"],["Context-V as a Portable Plugin Any Agent Can Install","file:///Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/explorations/Context-V-as-a-Portable-Plugin-Any-Agent-Can-Install.md","context-v/explorations/Context-V-as-a-Portable-Plugin-Any-Agent-Can-Install.md","Open","open","2026-10-05",0,0,"/Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/explorations/Context-V-as-a-Portable-Plugin-Any-Agent-Can-Install.md"]],".|issues":[["Issue: Plugin Install Would Clone the Whole Corpus","file:///Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/issues/Plugin-Install-Would-Clone-the-Whole-Corpus.md","context-v/issues/Plugin-Install-Would-Clone-the-Whole-Corpus.md","Partially-Resolved","done","2026-10-01",3,0,"/Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/issues/Plugin-Install-Would-Clone-the-Whole-Corpus.md"]],".|plans":[["Plan: Retrofit Every Repo to OKF, Then to the Kit's Frontmatter","file:///Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/plans/Retrofit-Every-Repo-to-OKF-Then-the-Kit-Frontmatter.md","context-v/plans/Retrofit-Every-Repo-to-OKF-Then-the-Kit-Frontmatter.md","Signed-Off","in_flight","2026-10-28",20,0,"/Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/plans/Retrofit-Every-Repo-to-OKF-Then-the-Kit-Frontmatter.md"]],".|specs":[["Commands and Agent Skills for context-v","file:///Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/specs/Commands-and-Agent-Skills-for-Context-V.md","context-v/specs/Commands-and-Agent-Skills-for-Context-V.md","Draft","open","2026-06-01",0,1,"/Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/specs/Commands-and-Agent-Skills-for-Context-V.md"],["MVP: context-v as a Claude Code Plugin","file:///Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/specs/MVP-to-Claude-Code-Plugin.md","context-v/specs/MVP-to-Claude-Code-Plugin.md","Draft","open","2026-08-02",0,0,"/Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/specs/MVP-to-Claude-Code-Plugin.md"],["Survey: a Scoped Dashboard of context-v","file:///Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/specs/Survey-a-Scoped-Dashboard-of-Context-V.md","context-v/specs/Survey-a-Scoped-Dashboard-of-Context-V.md","Draft","open","2026-10-28",9,0,"/Users/mpstaton/code/lossless-monorepo/ai-labs/context-vigilance-kit/context-v/specs/Survey-a-Scoped-Dashboard-of-Context-V.md"]]}}</script>
+<script>
+(function(){
+var root=document.documentElement,KEY='cv-survey-mode';
+var btns=document.querySelectorAll('.modes button');
+function set(m){root.setAttribute('data-mode',m);try{localStorage.setItem(KEY,m)}catch(e){}
+  btns.forEach(function(b){b.setAttribute('aria-checked',String(b.dataset.mode===m))})}
+btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.mode)})});
+set(root.getAttribute('data-mode')||'dark');
+
+var DATA=JSON.parse(document.getElementById('survey-data').textContent);
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function hi(s,q){var t=esc(s);if(!q)return t;var i=t.toLowerCase().indexOf(esc(q).toLowerCase());
+  return i<0?t:t.slice(0,i)+'<mark>'+t.slice(i,i+esc(q).length)+'</mark>'+t.slice(i+esc(q).length)}
+function match(d,q){return !q||(d[0]+' '+d[2]+' '+d[3]).toLowerCase().indexOf(q)>=0}
+function fill(ol,q){
+  var rows=(DATA.docs[ol.dataset.key]||[]).filter(function(d){return match(d,q)});
+  rows.sort(function(a,b){return a[5]<b[5]?1:-1});
+  ol.innerHTML=rows.map(function(d){
+    return '<li><a href="'+esc(d[1])+'" title="'+esc(d[2])+'">'+hi(d[0],q)+'</a>'+cpBtn(d[8])+
+      '<span class="chip c-'+d[4]+'" title="'+esc(d[3])+'">'+esc(d[3]||'no status')+'</span>'+
+      '<span class="date'+(d[7]?' stale':'')+'">'+esc(d[5])+(d[6]?' · ☐'+d[6]:'')+'</span></li>'}).join('');
+  ol.dataset.filled=q||'*';
+}
+document.querySelectorAll('details.folder').forEach(function(f){
+  f.addEventListener('toggle',function(){var ol=f.querySelector('ol.docs');
+    if(f.open&&ol.dataset.filled!==(cur||'*'))fill(ol,cur)})});
+
+var cur='',input=document.getElementById('q'),status=document.getElementById('q-status'),t;
+var repos=document.querySelectorAll('details.repo'),folders=document.querySelectorAll('details.folder'),groups=document.querySelectorAll('details.cvgroup');
+function apply(){
+  cur=input.value.trim().toLowerCase();
+  if(!cur){repos.forEach(function(r){r.classList.remove('hidden')});groups.forEach(function(g){g.classList.remove('hidden')});
+    folders.forEach(function(f){f.classList.remove('hidden');var ol=f.querySelector('ol.docs');if(f.open)fill(ol,'');else ol.dataset.filled=''});
+    status.textContent='';return}
+  var hitRepos={},hitFolders={},n=0;
+  Object.keys(DATA.docs).forEach(function(k){var c=DATA.docs[k].filter(function(d){return match(d,cur)}).length;
+    if(c){n+=c;hitFolders[k]=1;var p=k.split('|')[0];while(p!=null&&!hitRepos[p]){hitRepos[p]=1;p=DATA.parents[p]}}});
+  repos.forEach(function(r){var on=!!hitRepos[r.dataset.path];r.classList.toggle('hidden',!on);if(on)r.open=true});
+  folders.forEach(function(f){var on=!!hitFolders[f.dataset.key];f.classList.toggle('hidden',!on);
+    if(on){f.open=true;var g=f.closest('details.cvgroup');if(g)g.open=true;fill(f.querySelector('ol.docs'),cur)}});
+  groups.forEach(function(g){g.classList.toggle('hidden',!g.querySelector('details.folder:not(.hidden)'))});
+  status.textContent=n+' docs match';
+}
+input.addEventListener('input',function(){clearTimeout(t);t=setTimeout(apply,140)});
+var hq=/[#&]q=([^&]*)/.exec(location.hash);if(hq){input.value=decodeURIComponent(hq[1]);apply()}
+document.getElementById('expand').addEventListener('click',function(){
+  var open=this.dataset.state!=='open';this.dataset.state=open?'open':'';this.textContent=open?'collapse all':'expand all';
+  repos.forEach(function(r){r.open=open})});
+})();
+</script>
+<script>
+(function(){
+  function fallback(text){
+    var t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');
+    t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();
+    try{document.execCommand('copy')}catch(e){}document.body.removeChild(t);
+  }
+  document.addEventListener('click',function(ev){
+    var b=ev.target.closest&&ev.target.closest('.cp');if(!b)return;
+    ev.preventDefault();ev.stopPropagation();
+    var p=b.getAttribute('data-path'),done=function(){
+      b.classList.add('is-copied');b.textContent='copied';
+      setTimeout(function(){b.classList.remove('is-copied');b.textContent='copy path'},1200)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(p).then(done,function(){fallback(p);done()});
+    }else{fallback(p);done()}
+  },true);
+})();
+</script>
+</body>
+</html>

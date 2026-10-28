@@ -18,6 +18,12 @@ export const STATIC_SEO = {
       'Install the cv plugin in Claude Code with two commands (or drop the skills into any agent), ' +
       'then run your first cycle: init, new, prep, implement, reflect.',
   },
+  survey: {
+    title: 'Survey',
+    description:
+      'One command turns every context-v/ folder in scope into a dashboard, a task list, and a map: ' +
+      'what is in flight, what is stuck, what needs cleanup, and which repos are moving.',
+  },
   patterns: {
     title: 'Patterns',
     description:

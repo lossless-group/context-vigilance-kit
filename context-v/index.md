@@ -6,6 +6,7 @@ okf_version: "0.2"
 
 * [Decisions](decisions/) - What was decided, when, and the alternatives passed over
 * [Specs](specs/) - What the kit is building and why
+* [Plans](plans/) - Ordered, scoped steps toward a spec
 
 # Journey: finding out
 

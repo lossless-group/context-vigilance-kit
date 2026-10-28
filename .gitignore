@@ -4,3 +4,6 @@ context-v/extra/
 
 # prep-images-for-embed staging (the CDN holds the served bytes)
 .image-staging/
+
+# Python bytecode (the survey scripts import each other)
+__pycache__/

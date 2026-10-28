@@ -100,7 +100,7 @@ context-vigilance-kit/
 └── LICENSING.md           # what you make with the kit is yours
 ```
 
-**One rule for this repo:** nothing generated from real project content is committed here. Examples and patterns are synthetic, and skills ported from our own tree are stripped of anything specific to one organization. That rule is why this repo is separate from the corpus.
+**One rule for this repo:** it's for sharing. Skills ported from our own tree are stripped of anything specific to one organization, and our tree-wide context lives in the corpus, not here. Examples can be real: the [survey examples](splash/public/examples/survey/) are views of our own tree, copied from the corpus.
 
 ## How it was designed
 

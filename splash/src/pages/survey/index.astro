@@ -1,0 +1,292 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { STATIC_SEO } from '@lib/seo';
+import { REPO_URL } from '@lib/repo';
+import CommandSteps from '@components/CommandSteps.astro';
+
+const base = import.meta.env.BASE_URL;
+// The survey is on the development branch until /cv:survey ships in a release.
+const SURVEY_SRC = `${REPO_URL}/tree/development/agent-skills/survey`;
+const SPEC = `${REPO_URL}/blob/development/context-v/specs/Survey-a-Scoped-Dashboard-of-Context-V.md`;
+const IK = 'https://ik.imagekit.io/xvpgfijuw/context-vigilance-kit/survey-dashboard-spikes';
+
+const SCOPES = [
+  { flag: '--scope repo', name: 'Repo', body: "One repo's context-v/, child repos left out. A status page for one project." },
+  { flag: '--scope tree', name: 'Tree', body: 'A repo and every repo below it. Run at the top of a tree of repos, it is the global view.' },
+  { flag: '--scope lineage', name: 'Lineage', body: 'A repo and every repo above it: what the parents decided that governs this one.' },
+  { flag: '--repos a,b,c', name: 'Pick', body: "Just the repos you name: the handful relevant to today's work." },
+];
+
+const VIEWS = [
+  {
+    name: 'Board',
+    ask: 'What should I work on?',
+    body: 'Columns by lifecycle: open, in flight, recently done, parked. Beside them, every unchecked checkbox in a live plan or spec, with its line number.',
+    img: `${IK}/Survey__Board--Dark_20261028T161457Z.jpg`,
+    alt: 'Board view of a whole tree of repos in dark mode: a stat strip, then Open, In flight, Done and Parked columns of doc cards beside a rail of unchecked checkbox items with line numbers',
+    file: 'survey-board.html',
+  },
+  {
+    name: 'Ledger',
+    ask: 'Where is the work piling up?',
+    body: 'A repo × lifecycle matrix, shaded by volume; every cell clicks through to its docs. Below it, the health panel and a filterable table of every doc.',
+    img: `${IK}/Survey__Ledger--Dark_20261028T161457Z.jpg`,
+    alt: 'Ledger view in dark mode: totals of 1,032 docs across 50 repos, then a repo-by-lifecycle matrix whose amber-shaded cells show where open, in-flight and done docs pile up',
+    file: 'survey-ledger.html',
+  },
+  {
+    name: 'Map',
+    ask: 'Where does the thinking live?',
+    body: "The tree itself: repos nested as they sit on disk, each with a status-mix bar and a freshness strip. Search opens a match's parents.",
+    file: 'survey-map.html',
+  },
+];
+
+const JOBS = [
+  {
+    name: 'Status',
+    body: "What's in flight, open, stuck, and done, at the scope you asked for. Statuses in the wild are messy; the survey keeps every raw value and adds a lifecycle bucket.",
+  },
+  {
+    name: 'Cleanup',
+    body: "The empty skeletons, the stale stubs, the docs whose checkboxes are all ticked but whose status still says Draft, the missing type and the statuses that fit nothing. Listed, never edited: you clean up on purpose.",
+  },
+  {
+    name: 'Thinking like a CTO',
+    body: "Which repos are moving, by commits and agent-assisted share. Which specs are signed off with nobody building them, which need a decision, which issues are ready to hand to someone.",
+  },
+];
+---
+
+<BaseLayout title={STATIC_SEO.survey.title} description={STATIC_SEO.survey.description}>
+  <main class="page" data-pagefind-body data-pagefind-meta="title:Survey">
+    <span data-pagefind-filter="kind:Guide" hidden></span>
+    <span data-pagefind-meta="kind:Guide" hidden></span>
+    <div class="container">
+      <header class="page__header">
+        <p class="folio" data-num="§ 04" data-pagefind-ignore>Survey · in development</p>
+        <h1>See the state of your context.</h1>
+        <p class="page__lede">
+          Graphify maps your code. The survey maps your <code>context-v/</code> folders: one command
+          turns every one of them in scope into a dashboard, a task list, and a map.
+          <span class="highlight">One repo, a whole tree of repos, or anything between.</span>
+        </p>
+      </header>
+
+      <section class="gs" aria-labelledby="jobs">
+        <h2 id="jobs" class="gs__h"><span class="gs__num mono">1</span> Three jobs</h2>
+        <div class="gs__grid">
+          {JOBS.map((j) => (
+            <article class="card">
+              <p class="eyebrow">{j.name}</p>
+              <p class="card__body">{j.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="gs" aria-labelledby="views">
+        <h2 id="views" class="gs__h"><span class="gs__num mono">2</span> Three views, three modes</h2>
+        <p class="gs__lede">
+          One self-contained HTML page per view: it opens from disk, works offline, and switches between
+          light, dark, and vibrant. Every doc has a <strong>copy path</strong> button, so you can hand it
+          straight to an agent: <em>"work on this one."</em> These are real surveys of our own tree, as of
+          late October 2026.
+        </p>
+        <div class="views">
+          {VIEWS.map((v, i) => (
+            <article class="view">
+              {v.img && (
+                <a class="view__shot" href={`${base}examples/survey/global/${v.file}`} target="_blank" rel="noopener">
+                  <img src={`${v.img}?tr=w-900`} alt={v.alt} width="900" height="575" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+                </a>
+              )}
+              <div class="view__text">
+                <p class="eyebrow">{v.name}</p>
+                <h3 class="view__ask">{v.ask}</h3>
+                <p class="card__body">{v.body}</p>
+                <p class="view__links mono">
+                  Open the example:
+                  <a href={`${base}examples/survey/global/${v.file}`} target="_blank" rel="noopener">whole tree</a>
+                  ·
+                  <a href={`${base}examples/survey/kit/${v.file}`} target="_blank" rel="noopener">one repo</a>
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p class="gs__lede gs__lede--dim">
+          The whole-tree examples cover about a hundred repos and a thousand docs. Links in them point
+          at files on our own laptop; the copy-path buttons still work.
+        </p>
+      </section>
+
+      <section class="gs" aria-labelledby="scopes">
+        <h2 id="scopes" class="gs__h"><span class="gs__num mono">3</span> Scopes</h2>
+        <p class="gs__lede">
+          Scope comes from where you run it, plus one flag. A repo is any folder with a
+          <code>.git</code>, so submodules count, and each <code>context-v/</code> belongs to the nearest
+          repo above it.
+        </p>
+        <ol class="cycle">
+          {SCOPES.map((s) => (
+            <li class="cycle__step">
+              <code class="cycle__cmd">{s.flag}</code>
+              <span class="cycle__role mono">{s.name}</span>
+              <p class="cycle__body">{s.body}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="gs" aria-labelledby="run">
+        <h2 id="run" class="gs__h"><span class="gs__num mono">4</span> Run it today</h2>
+        <p class="gs__lede">
+          The survey will ship as <code>/cv:survey</code>. Until then it's three Python scripts on the
+          kit's development branch, standard library only:
+        </p>
+        <div class="gs__grid">
+          <article class="card">
+            <p class="eyebrow">From a clone of the kit</p>
+            <CommandSteps steps={[
+              { cmd: 'python3 agent-skills/survey/scripts/scan.py ~/code/your-repo', note: 'Scan. Writes survey.json to context-v/extra/survey/, which the practice already gitignores.' },
+              { cmd: 'python3 agent-skills/survey/scripts/report.py <that survey.json>', note: 'SURVEY.md: the same picture, sized for an agent to read.' },
+              { cmd: 'python3 agent-skills/survey/scripts/spike_board.py <that survey.json>', note: 'The Board page. spike_ledger.py and spike_map.py make the other two.' },
+            ]} />
+          </article>
+          <article class="card">
+            <p class="eyebrow">Useful flags</p>
+            <p class="card__body">
+              <code>--scope</code> and <code>--repos</code> pick the scope. <code>--no-git</code> skips
+              commit history (faster; no momentum). <code>--public</code> drops private docs and
+              absolute paths, for a page you'll publish.
+            </p>
+            <p class="card__note">
+              Read the <a href={SPEC} target="_blank" rel="noopener">spec</a> or the
+              <a href={SURVEY_SRC} target="_blank" rel="noopener">source</a>. The three pages are spikes,
+              being merged into one.
+            </p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .gs {
+    padding: var(--space-10) 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .gs__h {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    letter-spacing: -0.025em;
+    margin: 0 0 var(--space-6);
+  }
+  .gs__num {
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    padding: 0 8px;
+  }
+  .gs__lede {
+    color: var(--color-text-soft);
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 72ch;
+    margin-bottom: var(--space-4);
+  }
+  .gs__lede--dim { color: var(--color-text-dim); font-size: 0.92rem; margin-top: var(--space-4); }
+  .gs__lede strong { color: var(--color-text); }
+  .gs a { color: var(--color-accent); }
+  .gs code:not(pre code), .page__lede code {
+    font-family: var(--font__mono);
+    font-size: 0.86em;
+    background: color-mix(in oklab, var(--color-text) 6%, transparent);
+    padding: 1px 5px;
+    border-radius: var(--radius-sm);
+  }
+
+  .gs__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-5);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+    min-width: 0;
+  }
+  .card__body { color: var(--color-text-soft); font-size: 0.94rem; line-height: 1.55; }
+  .card__note { color: var(--color-text-dim); font-size: 0.82rem; line-height: 1.5; }
+
+  .views { display: grid; gap: var(--space-6); }
+  .view {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: var(--space-6);
+    align-items: center;
+    padding: var(--space-5);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+  }
+  .view:not(:has(.view__shot)) { grid-template-columns: 1fr; }
+  .view__shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+  .view__text { display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
+  .view__ask { font-size: 1.25rem; letter-spacing: -0.02em; margin: 0; }
+  .view__links { font-size: 0.8rem; color: var(--color-text-dim); }
+  @media (max-width: 860px) {
+    .view { grid-template-columns: 1fr; }
+  }
+
+  .cycle {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .cycle__step {
+    display: grid;
+    grid-template-columns: minmax(0, 15rem) 9rem minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: baseline;
+    padding: var(--space-4) var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+  }
+  .cycle__cmd {
+    font-family: var(--font__mono);
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+  .cycle__role {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-thread);
+  }
+  .cycle__body { color: var(--color-text-soft); font-size: 0.92rem; line-height: 1.55; }
+  @media (max-width: 860px) {
+    .cycle__step { grid-template-columns: 1fr; gap: var(--space-2); }
+  }
+</style>
