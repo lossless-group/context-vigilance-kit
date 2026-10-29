@@ -1,6 +1,6 @@
 ---
 name: context-vigilance
-description: Manages a project's context-v/ folder, the living documentation that humans and agents share (specs, plans, prompts, blueprints, reminders, explorations, issues, agent-skills, plus extra/, sitemap/, and the experimental loops/, handoffs/, decisions/, habits/, contracts/). Use whenever creating, editing, or organizing any file under a context-v/ folder, choosing which folder a doc belongs in, writing doc frontmatter, or when the user asks about context engineering, AI co-development workflow, or "context-v". Covers folder roles, frontmatter, four-part versioning, status lifecycle, and cross-linking.
+description: Manages a project's context-v/ folder, the living documentation that humans and agents share (specs, plans, prompts, blueprints, reminders, explorations, issues, agent-skills, plus extra/, sitemap/, and the experimental loops/, handoffs/, decisions/, habits/, contracts/, docs/). Use whenever creating, editing, or organizing any file under a context-v/ folder, choosing which folder a doc belongs in, writing doc frontmatter, or when the user asks about context engineering, AI co-development workflow, or "context-v". Covers folder roles, frontmatter, four-part versioning, status lifecycle, and cross-linking.
 ---
 
 # Context Vigilance
@@ -50,6 +50,7 @@ description: Manages a project's context-v/ folder, the living documentation tha
 - **`decisions/`**: the moment a decision was made: what, when, by whom, alternatives passed over.
 - **`habits/`**: recurring maintenance with a trigger and a scope ("keep the README true", "sweep stale statuses monthly").
 - **`contracts/`**: things that must never be violated: standing rules for agents, or exact data and API interfaces.
+- **`docs/`**: user guides: how a person sets up, runs, or uses the project. For the human operating it; a blueprint explains the design, a doc explains the use.
 
 **The folders are a starting set, not a closed list.** New folder types are welcome when the work calls for one: `narratives/`, `profiles/`, `research-notes/`, whatever fits. **exact:** folder names are plural and kebab-case. Two long-standing exceptions stay singular: `extra/` (scratch, outside the bundle) and `sitemap/` (one map of the project). Say in its first doc what belongs there, and tell the user you created it.
 
@@ -68,7 +69,7 @@ description: Manages a project's context-v/ folder, the living documentation tha
 - Don't know yet; weighing options → `explorations/`
 - Debugging something painful → `issues/`
 - Scratch → `extra/` · What exists where → `sitemap/`
-- A recurring process → `loops/` · State for the next session → `handoffs/` · A decision → `decisions/` (`/cv:decide`) · Recurring upkeep → `habits/` · Inviolable rules → `contracts/`
+- A recurring process → `loops/` · State for the next session → `handoffs/` · A decision → `decisions/` (`/cv:decide`) · Recurring upkeep → `habits/` · Inviolable rules → `contracts/` · A user guide → `docs/`
 
 More detail: [references/doc-type-guide.md](references/doc-type-guide.md).
 
