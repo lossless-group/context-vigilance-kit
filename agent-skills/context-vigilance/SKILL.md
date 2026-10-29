@@ -35,7 +35,7 @@ description: Manages a project's context-v/ folder, the living documentation tha
 
 **Journey: finding out**
 
-- **`explorations/`**: the destination is unclear: research, options, tradeoffs. Ends when you know enough to write a spec, or decide you don't need one.
+- **`explorations/`**: the destination is unclear: research, options, tradeoffs. Ends when you know enough to write a spec, or decide you don't need one. Already know what you want and just need it down? That's a brief (`briefs/`).
 - **`issues/`**: the winding path through a hard problem, wrong guesses included, so nobody retraces it. (If the team uses a ticket system, see the `tracker` role in `context-v/config.md`.)
 
 **Utility, any project**
