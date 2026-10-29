@@ -38,12 +38,18 @@ We made the rule after writing a thousand docs without it. The first survey of t
 
 1. **Only sweep repos at branch parity.** `development`, `main`, and `master` must all be present and at the same commit. Anything else is logged, not fixed: it needs its own troubleshooting.
 2. **Missing tiers get created**, from the tier(s) that exist, when those agree.
-3. **Two changelog entries per repo:** one for OKF compliance, one for the metadata template.
+3. **Up to two changelog entries per repo:** one for OKF compliance, one for the metadata template. The second is written only when Phase 2 actually changed something; a repo whose docs already carry the template gets one entry, not an entry describing a change that didn't happen (pilot, `lossless-changelog`, 2026-10-28).
 4. **Compliance changes are not content changes.** No sweep ever writes today's date into `date_modified`, `date_last_updated`, `date_authored_current_draft`, or bumps `at_semantic_version`.
 5. **No reading pass.** Only values that are facts get written. The corpus is a roll-up, so it is refreshed after the sweep, not edited.
 6. **Push to `main` and `master` is authorized** for this sweep.
 7. **The anchor's `context-v/` is the trunk:** leftovers, or the broadest practice abstractions (stack preferences, workflow preferences). It's swept like any repo when at parity. Loose docs sitting directly in any repo's `context-v/` root are logged for filing, not typed.
 8. **Agents edit by hand. No script writes frontmatter.** Scripted frontmatter edits have caused real damage in this tree. Every change to a doc is made by an agent reading that doc and editing it with its editor's Edit tool, one doc at a time. Scripts and commands may only *read*: the parity gate (git), the survey (inventory and verification), `git log` for dates, `uuidgen` for IDs the agent then pastes in.
+
+### Added after the pilot (2026-10-29, operator)
+
+9. **Soft-impose the metadata standards, not just the missing keys.** The standards are now comprehensive and settling, so Phase 2 also brings existing frontmatter up to them, by hand, value preserved: non-standard key spellings renamed (`version:` → `at_semantic_version:`), `status` and `tags` values in Title-Case (`draft` → `Draft`, `in review` → `In-Review`), and `authors` / `augmented_with` / `tags` written as YAML lists when they're a bare string. See the normalization table under Phase 2.
+10. **`date_modified` older than the file's last commit is fine.** Files get moved and renamed constantly in this tree, and a move is a commit. Never "correct" an existing `date_modified` from git.
+11. **Author spelling variants stay as written.** `Michael P. Staton` is not swept to `Michael Staton`; the aggregation layer resolves variants through an authors list with aliases. See `astro-knots/sites/lossless-changelog/context-v/plans/Maintain-an-Authors-List-Enables-Naming-Aliases.md`.
 
 ## Scope
 
@@ -113,6 +119,17 @@ Each field is written only when it's absent, and only from a fact. Existing valu
 | `site_uuid`, `hex_code` | minted by command (`uuidgen`, `/dev/urandom`), checked tree-wide for duplicates first | typed by a model |
 | `authors` | human commit authors of the file; agent co-authors filtered out | an agent |
 | `created:`, `date:` (legacy keys) | renamed to `date_created`, `date_authored_initial_draft`, values verbatim, **only after grepping the repo for readers of the old key** | a rename that breaks an ingester |
+
+**Normalization of existing values (decision 9).** Same discipline: by hand, one doc at a time, the value kept verbatim apart from the change named here.
+
+| Found | Becomes | Never |
+|---|---|---|
+| `version: 0.1.0.0` (no `at_semantic_version` present) | `at_semantic_version: 0.1.0.0` | bumping the value; touching `semantic_version:`, which is a permanent alias |
+| `status: draft`, `status: in review` | `status: Draft`, `status: In-Review` (Title-Case, hyphenated) | changing which status it is |
+| `tags` values in lowercase or kebab-case | Title-Case, hyphenated (`markdown-rendering` → `Markdown-Rendering`) | adding, dropping, or merging tags |
+| `authors: Name` or `augmented_with: Tool on Model` as a bare string | a one-item YAML list | changing the name or model string |
+| `date_modified` earlier than the last commit | left alone (decision 10) | "correcting" it from git |
+| an author spelling variant | left alone (decision 11) | rewriting it to the canonical name |
 
 **Not written:** `description`, `lede`, `tags`, `publish` (they need reading), `status` (it must reflect reality), `at_semantic_version`, `augmented_with`, and every `date_authored_*` beyond the fallback above. No empty placeholder keys either: a key appears only with a real value. The survey's cleanup worklist carries the rest forward.
 
