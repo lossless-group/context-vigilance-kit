@@ -24,7 +24,7 @@ SKIP_DIRS = {
     "node_modules", "dist", ".git", ".astro", ".venv", "venv", "__pycache__", ".next",
     "build", ".chroma", "graphify-out", ".pnpm-store", ".turbo", ".cache", ".vercel",
 }
-RESERVED = {"readme.md", "index.md", "log.md", "config.md"}
+RESERVED = {"index.md", "log.md", "config.md"}
 TASK_FOLDERS = {"plans", "prompts", "handoffs", "specs", "issues", "loops"}
 REFERENCE_FOLDERS = {"blueprints", "reminders", "habits", "contracts", "agent-skills", "sitemap"}
 
@@ -372,7 +372,8 @@ def scan_doc(path, cv_dir, repo_rel, root, stale_cutoff):
         flags.append("yaml_error")
     if yaml_text is not None:
         declared = as_text(fm.get("type"))
-        if not declared:
+        # Skills follow the Agent Skills spec and sit beside the OKF bundle, not in it.
+        if not declared and folder != "agent-skills":
             flags.append("no_type")
         elif folder not in ("(root)", "agent-skills") and declared != train_case(folder):
             flags.append("type_mismatch")
@@ -449,7 +450,19 @@ def docs_in(cv_dir):
                     continue
             elif name.lower() in RESERVED:
                 continue
+            # A folder README with frontmatter is a doc like any other (it needs a
+            # type and an index line); a plain README is repo furniture.
+            elif name.lower() == "readme.md" and not has_frontmatter(os.path.join(dirpath, name)):
+                continue
             yield os.path.join(dirpath, name)
+
+
+def has_frontmatter(path):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return f.readline().strip() == "---"
+    except OSError:
+        return False
 
 
 # ── public mode ─────────────────────────────────────────────────────────────

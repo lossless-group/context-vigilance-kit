@@ -38,13 +38,16 @@ Copy this into your reply and tick as you go:
 
 New kit versions sometimes add conventions, such as a required field or a new index file. Existing docs are **never** changed as a side effect (the drift policy). Instead:
 
-- [ ] Checked this repo's `context-v/` against the current conventions and listed only what differs, with counts. Examples:
-  - docs with no `type` (or a `type` that isn't the folder's name)
-  - `context-v/README.md` with no `context-v/index.md`
-  - folders with no `index.md`
+- [ ] Checked this repo's `context-v/` against the current conventions and listed only what differs, with counts. The `survey` skill's scanner does most of this. Check for:
+  - docs with no `type` (or a `type` that isn't the folder's name), including folder READMEs that have frontmatter
+  - `context-v/README.md` with no `context-v/index.md`, or folders with no `index.md`
+  - statuses not on the vocabulary in `status-discipline.md`
+  - repo names, package names, or statuses (`Draft`, `Stub`) used as tags
+  - `"[]"` placeholders in date keys
+  - a site or splash that would render `index.md` files as pages
   - new commands the repo's `AGENTS.md` snippet doesn't mention
-- [ ] Offered each as its own choice: "Add `type` to 23 docs?" Do only what the user picks, as one focused pass per change.
-- [ ] After any pass, re-checked that every touched doc's frontmatter parses
+- [ ] Offered each as its own choice: "Add `type` to 23 docs?" Do only what the user picks. For a full pass, follow `context-vigilance/references/compliance-sweep.md`: two phases, by hand, frontmatter only, statuses decided from evidence.
+- [ ] After any pass, re-checked that every touched doc's frontmatter parses, and that the diff touches only frontmatter lines and new index files
 
 ## Notes
 

@@ -207,6 +207,7 @@ Load the one you need; each stands alone.
 - [references/developing-a-spec.md](references/developing-a-spec.md): the spec rhythm, from stub to sign-off
 - [references/philosophy.md](references/philosophy.md): why the practice works the way it does
 - [references/okf.md](references/okf.md): context-v as an Open Knowledge Format bundle: `type`, `index.md`, field and status mappings, sign-off as `verified`
+- [references/compliance-sweep.md](references/compliance-sweep.md): bringing an existing context-v/ up to the conventions: two phases, by hand, frontmatter only, statuses decided from evidence
 
 ## Related skills and tools
 
