@@ -25,6 +25,8 @@ A `context-v/` bundle is compliant when:
 
 Docs sitting directly in the bundle root, outside every folder, aren't typed: list them and file them in a folder later.
 
+A repo's root `README.md` isn't part of the bundle. If it has frontmatter (or gets some), its `type` is `Repo-Readme`, the same in every repo. GitHub renders frontmatter as a table above the README, so keep it to the baseline identity keys.
+
 ## The two rules that matter most
 
 - **Edit by hand, one file at a time, frontmatter only.** Read the file, make the edit, read the diff. Never let a script write a `.md` file and never round-trip frontmatter through a YAML library: either one reorders keys, collapses multi-line ledes, or re-quotes values, and a small parser difference can break a static-site build or an Obsidian vault across hundreds of files at once. Scripts may *read* (scan, count, grep, git log); they never write docs.
