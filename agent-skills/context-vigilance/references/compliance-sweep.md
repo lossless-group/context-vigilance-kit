@@ -20,7 +20,7 @@ A `context-v/` bundle is compliant when:
 2. **The bundle root has `index.md`** with `okf_version: "0.2"`, and **every folder has an `index.md`**, one line per doc: `* [Title](File.md) - text`, the text being the description, else the lede, else nothing.
 3. **Baseline frontmatter is filled from facts**: `title`, `date_created`, `date_modified`, `authors`, `site_uuid`, `hex_code` (see `frontmatter-spec.md`).
 4. **`status` is on the vocabulary and true** (see `status-discipline.md`).
-5. **Values are normalized**: list fields are lists, tags and statuses are Train-Case, tags are topics (not repo or package names), placeholder dates are empty.
+5. **Values are normalized**: list fields are lists, tags and statuses are Train-Case, tags are topics (not repo or package names), placeholder dates are empty, ledes are plain text (remove the markup and keep the words).
 6. **Nothing renders an index as a page**: any site or splash that loads `context-v/` skips `index.md`.
 
 Docs sitting directly in the bundle root, outside every folder, aren't typed: list them and file them in a folder later.

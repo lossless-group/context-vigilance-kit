@@ -75,6 +75,7 @@ If an existing file lacks baseline fields, **don't add them during unrelated edi
 **`lede`** exists because `title` says *what a thing is* and a `description` is usually too long and too dull for a card. The lede says *why you'd care*, at a glance.
 
 - **Hard budget: 140 characters, target 90–130, two rendered lines.** Social unfurls truncate around 200 characters and list cards wrap sooner, so a longer lede clips mid-sentence exactly where it's meant to work. Vague guidance like "a few sentences" doesn't hold: a batch of ledes written to that wording once averaged ~370 characters and all had to be rewritten.
+- **Plain text only.** A lede is a string, not Markdown: no backticks, asterisks, links, or wikilinks. Cards, previews, and unfurls show it raw, so markup appears as literal symbols. The fix is in the lede, not the renderer.
 - **Write one clause that lands**, not a sentence with a trailing subordinate clause.
 - **Never trade specificity for brevity.** A short generic lede ("A profile of a vector database") is worse than none.
 - When the lede wants to grow, that material belongs in a `## Why Care?` section in the body. If a doc genuinely can't be hooked in 140 characters, say so rather than papering over it.

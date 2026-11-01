@@ -130,7 +130,7 @@ hex_code: k3x9q2
 
 - **`date_modified`** moves on every edit. **`date_authored_current_draft`** and the version move only on a *substantive* revision. Leave an empty `date_authored_final_draft` empty until the doc really is final.
 - **`publish`** is a decision, not a default. Never flip an existing value; decide it on a new file by reading the finished doc. Prefer genericizing sensitive specifics over hiding a whole doc.
-- **`lede`** says why someone would care, in one line of 140 characters or less. If it wants to grow, put the long version in a `## Why care?` section under the title. Write it after reading the doc; never extract it. A stub gets no lede.
+- **`lede`** says why someone would care, in one line of plain text, 140 characters or less, with no Markdown. If it wants to grow, put the long version in a `## Why care?` section under the title. Write it after reading the doc; never extract it. A stub gets no lede.
 - **`description`** is one plain sentence saying what the doc is. Indexes and search show it.
 - **`summary`** (optional) is for agents: what the doc is *for* and what it unblocks.
 
