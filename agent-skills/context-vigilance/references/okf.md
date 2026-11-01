@@ -143,4 +143,4 @@ done
 
 No output means conformant. A folder README with frontmatter is a doc like any other: it gets its folder's `type` and a line in the folder's `index.md`. A README with no frontmatter at all is plain repo furniture and passes.
 
-A repo's root `README.md` sits outside the bundle, so OKF doesn't type it, and the folder-name rule would give every repo a different value. When a root README carries frontmatter, its type is always `Repo-Readme`, so one filter finds every repo's front page.
+A repo's root `README.md` sits outside the bundle and gets no frontmatter: GitHub, npm and plugin stores render it as a table above the repo's front page, and none of them can hide it. Its type is `Repo-Readme`, implied by its path rather than written in the file. Tools that list docs assign it from there.

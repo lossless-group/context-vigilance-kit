@@ -25,7 +25,7 @@ A `context-v/` bundle is compliant when:
 
 Docs sitting directly in the bundle root, outside every folder, aren't typed: list them and file them in a folder later.
 
-A repo's root `README.md` isn't part of the bundle. If it has frontmatter (or gets some), its `type` is `Repo-Readme`, the same in every repo. GitHub renders frontmatter as a table above the README, so keep it to the baseline identity keys.
+A repo's root `README.md` isn't part of the bundle: don't add frontmatter to it. GitHub renders frontmatter as a table above the README and can't hide it. Its type is `Repo-Readme`, implied by its path; a tool that lists it assigns that from there.
 
 ## The two rules that matter most
 
