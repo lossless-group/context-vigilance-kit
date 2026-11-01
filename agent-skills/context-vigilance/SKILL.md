@@ -140,10 +140,17 @@ hex_code: k3x9q2
 
 `status` says where a doc is in its life, and it has to be true. A folder of `Draft` plans, half of which shipped, can't be trusted.
 
-`Draft` → `In-Review` → `Signed-Off` → `Implementing` → `Shipped` · `Partially-Shipped` · `Deferred` · `Stale` · `Superseded` · `Archived`
+It's also what a workflow dashboard groups by, so the values come in families, one per kind of doc. The list will evolve.
+
+- **Planned work** (specs, plans, prompts): `Stub` → `Draft` → `In-Review` → `Signed-Off` or `Ready` → `Implementing` → `Shipped` · `Partially-Shipped`
+- **Issues:** `Open` → `Resolved`
+- **Decisions:** `Decided`
+- **Standing docs** (reminders, habits, contracts, loops, notes, blueprints): `Active` (a rule agents follow) or `Reference` (an explanation agents consult)
+- **Any doc:** `Deferred` · `Stale` · `Superseded` · `Archived`
 
 Fields that move with it:
 
+- **`Stub`**: `publish: false`; promote it to `Draft` the moment someone writes it.
 - **`Shipped`**: set `date_first_published`.
 - **`Partially-Shipped`**: add `## Remaining work (as of YYYY-MM-DD)` listing what's done and what's left.
 - **`Deferred`**: add `deferral_note`.

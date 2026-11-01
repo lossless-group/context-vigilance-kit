@@ -84,9 +84,11 @@ OKF's `status` is `draft | stable | deprecated` (absent means `stable`). Context
 
 | Context-v | OKF |
 |---|---|
-| `Draft`, `In-Review` | `draft` |
-| `Signed-Off`, `Implementing`, `Shipped`, `Partially-Shipped` | `stable` |
+| `Stub`, `Draft`, `In-Review`, `Open` | `draft` |
+| `Signed-Off`, `Ready`, `Implementing`, `Shipped`, `Partially-Shipped`, `Resolved`, `Decided`, `Active`, `Reference` | `stable` |
 | `Stale`, `Superseded`, `Archived`, `Deferred` | `deprecated` |
+
+OKF's `status` describes the doc, not the work: a `Ready` plan is a finished document about work nobody has started, so it maps to `stable`.
 
 ## Sign-off as `verified`
 

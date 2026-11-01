@@ -138,7 +138,7 @@ Add as needed; don't invent fields without precedent in the project.
 | Field | Purpose |
 |---|---|
 | `summary` | Agent-facing orientation. See above. |
-| `status` | Train-Case display string (`Draft`, `In-Review`, `Signed-Off`, `Implementing`, `Shipped`, `Partially-Shipped`, `Deferred`, `Stale`, `Superseded`, `Archived`). **Not a machine enum**: don't switch on it in code. Some values require companion fields; see `status-discipline.md`. |
+| `status` | Train-Case display string, in families: planned work (`Stub`, `Draft`, `In-Review`, `Signed-Off`, `Ready`, `Implementing`, `Shipped`, `Partially-Shipped`), issues (`Open`, `Resolved`), decisions (`Decided`), standing docs (`Active`, `Reference`), and any doc (`Deferred`, `Stale`, `Superseded`, `Archived`). **Not a machine enum**: don't switch on it in code. It's what the workflow dashboard groups by, and the list evolves. Some values require companion fields; see `status-discipline.md`. |
 | `date_authored_final_draft` | `YYYY-MM-DD`, or **present-but-empty** meaning "not final yet." Don't delete the empty key; its presence signals finality is tracked. |
 | `date_first_published` | `YYYY-MM-DD`. Set when `status` first becomes `Shipped` or `Partially-Shipped`. Never updated after. |
 | `date_work_started` / `date_work_completed` | See *Work dates*. |
