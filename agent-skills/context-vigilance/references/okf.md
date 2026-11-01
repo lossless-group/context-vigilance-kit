@@ -129,12 +129,16 @@ OKF doesn't require any link style: a bundle with `[[wikilinks]]` is fully confo
 ## Checking conformance
 
 ```bash
-# Every non-reserved .md under context-v/ (skipping extra/ and agent-skills/) needs frontmatter with a type.
+# Every .md under context-v/ except index.md and log.md (skipping extra/ and agent-skills/) needs frontmatter with a type.
 find context-v -name '*.md' -not -path '*/extra/*' -not -path '*/agent-skills/*' \
-  -not -name index.md -not -name log.md -not -name README.md |
+  -not -name index.md -not -name log.md |
 while read -r f; do
-  head -1 "$f" | grep -q '^---$' && sed -n '2,/^---$/p' "$f" | grep -q '^type: ' || echo "missing type: $f"
+  if head -1 "$f" | grep -q '^---$'; then
+    sed -n '2,/^---$/p' "$f" | grep -q '^type: ' || echo "missing type: $f"
+  elif [ "$(basename "$f")" != README.md ]; then
+    echo "no frontmatter: $f"
+  fi
 done
 ```
 
-No output means conformant.
+No output means conformant. A folder README with frontmatter is a doc like any other: it gets its folder's `type` and a line in the folder's `index.md`. A README with no frontmatter at all is plain repo furniture and passes.
