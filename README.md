@@ -68,6 +68,20 @@ Each command puts the agent in a role. In Claude Code you type them; in other to
 
 That `type` field is the one thing the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/open-knowledge-format) (OKF) requires, so a `context-v/` folder is an OKF v0.2 bundle: any OKF tool can read it. Context-v is a *profile* of OKF, adding its folders, lifecycle, versions, and IDs on top. `/cv:init` writes an OKF-shaped `context-v/index.md`, `/cv:new` sets `type` and adds each doc to its folder's index, and the frontmatter check rejects a missing or mismatched `type`. The reasoning, the status mapping, and what's still open are in [the decision](context-v/decisions/Context-V-Is-an-OKF-Profile.md); the mappings are in [`references/okf.md`](agent-skills/context-vigilance/references/okf.md). This repo's own `context-v/` passes OKF's conformance rules and renders in OKF's reference visualizer.
 
+## Versions and ledes
+
+Docs carry a version in `at_semantic_version`, and you choose the format:
+
+| Format | Example | Good for |
+|---|---|---|
+| Semantic Versioning, `major.minor.patch` | `0.1.0` | The market standard, and what package tools expect |
+| Four-part, `epoch.major.minor.patch` | `0.0.0.1` | The templates' default, with an extra number for a total pivot |
+| [Epoch SemVer](https://antfu.me/posts/epoch-semver), `{epoch * 1000 + major}.minor.patch` | `1002.3.0` | Keeping an epoch inside a valid semver version |
+
+Nothing enforces a format or asks you to migrate. Agents read all three, keep to the one a doc or repo already uses, and never convert a version. See [`references/versioning.md`](agent-skills/context-vigilance/references/versioning.md).
+
+A doc's `lede` is plain text, not Markdown, because cards, previews, and unfurls show it raw.
+
 ## Recommended companions
 
 Optional, installed from their own projects so they stay current. The kit's skills use them when present and never require them.
