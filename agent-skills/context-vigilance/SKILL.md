@@ -1,6 +1,6 @@
 ---
 name: context-vigilance
-description: Manages a project's context-v/ folder, the living documentation that humans and agents share (specs, plans, prompts, blueprints, reminders, explorations, issues, agent-skills, plus extra/, sitemap/, and the experimental loops/, handoffs/, decisions/, habits/, contracts/, docs/, briefs/). Use whenever creating, editing, or organizing any file under a context-v/ folder, choosing which folder a doc belongs in, writing doc frontmatter, or when the user asks about context engineering, AI co-development workflow, or "context-v". Covers folder roles, frontmatter, four-part versioning, status lifecycle, and cross-linking.
+description: Manages a project's context-v/ folder, the living documentation that humans and agents share (specs, plans, prompts, blueprints, reminders, explorations, issues, agent-skills, plus extra/, sitemap/, and the experimental loops/, handoffs/, decisions/, habits/, contracts/, docs/, briefs/). Use whenever creating, editing, or organizing any file under a context-v/ folder, choosing which folder a doc belongs in, writing doc frontmatter, or when the user asks about context engineering, AI co-development workflow, or "context-v". Covers folder roles, frontmatter, three- or four-part versioning, status lifecycle, and cross-linking.
 ---
 
 # Context Vigilance
@@ -82,7 +82,7 @@ Every step in this practice sits at one of three levels. Match your rigor to the
 |---|---|---|
 | **open** | Judgment. Several good answers. | Writing explorations and the body of any doc; naming next steps; whether to fork a long doc |
 | **shaped** | A template or pattern is the default; departing is fine with a reason | Doc structure (the templates); which folder; changelog entries; loop docs |
-| **exact** | One right answer. Don't improvise. | Frontmatter key names and formats; minted IDs; filenames in Train-Case; dates as `YYYY-MM-DD`; the four-part version |
+| **exact** | One right answer. Don't improvise. | Frontmatter key names and formats; minted IDs; filenames in Train-Case; dates as `YYYY-MM-DD` |
 
 Written-down loops in `loops/` record the level a team chose for each step of their own process.
 
@@ -122,7 +122,7 @@ hex_code: k3x9q2
 - **`site_uuid` and `hex_code` are minted once, by a command, and never changed.** Never type one; models produce UUID-shaped strings that aren't valid.
   - `site_uuid`: `uuidgen | tr 'A-Z' 'a-z'` (or `python3 -c "import uuid; print(uuid.uuid4())"`)
   - `hex_code`: `LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c6`
-- **`at_semantic_version` is four-part `epoch.major.minor.patch`**, starting at `0.0.0.1`. `semantic_version` is an accepted alias; never rewrite a file just to change which name it uses. See [references/versioning.md](references/versioning.md).
+- **`at_semantic_version` has three parts (`major.minor.patch`, the market standard) or four (`epoch.major.minor.patch`, the template default).** The user picks, so keep to the format already in use and count the parts before reading the digits. `semantic_version` is an accepted alias; never rewrite a file just to change which name it uses. See [references/versioning.md](references/versioning.md).
 - **`authors` is humans only**, always a list. Agents go under `augmented_with`.
 - **Tags and status values are Train-Case** (`Issue-Resolution`, `In-Review`).
 
@@ -203,7 +203,7 @@ Load the one you need; each stands alone.
 - [references/doc-type-guide.md](references/doc-type-guide.md): each folder in depth, with edge cases
 - [references/frontmatter-spec.md](references/frontmatter-spec.md): every field, date families, IDs, sensitivity
 - [references/status-discipline.md](references/status-discipline.md): the lifecycle and when to move it
-- [references/versioning.md](references/versioning.md): four-part versions and when to bump which part
+- [references/versioning.md](references/versioning.md): three- and four-part versions, how to tell them apart, and when to bump which part
 - [references/developing-a-spec.md](references/developing-a-spec.md): the spec rhythm, from stub to sign-off
 - [references/philosophy.md](references/philosophy.md): why the practice works the way it does
 - [references/okf.md](references/okf.md): context-v as an Open Knowledge Format bundle: `type`, `index.md`, field and status mappings, sign-off as `verified`
