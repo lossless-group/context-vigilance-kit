@@ -12,6 +12,7 @@ import argparse
 
 import copy_path
 import collections
+import scope_picker
 import html
 import json
 import os
@@ -58,7 +59,7 @@ def matrix(survey):
             f'<td class="cell b-{b}" style="--i:{shade(c[b], peak)}">'
             f'<a href="#docs" data-repo="{e(repo)}" data-bucket="{b}">{c[b] or ""}</a></td>'
             for b in BUCKETS)
-        out.append(f'<tr><th scope="row" class="rowh"><a href="#docs" data-repo="{e(repo)}">{e(repo)}</a></th>'
+        out.append(f'<tr data-repo="{e(repo)}"><th scope="row" class="rowh"><a href="#docs" data-repo="{e(repo)}">{e(repo)}</a></th>'
                    f'<td class="num">{c["_total"]}</td>{cells}'
                    f'<td class="num">{c["_tasks"] or ""}</td><td class="num warn">{c["_stale"] or ""}</td></tr>')
     foot = "".join(f'<td class="num">{totals[b]}</td>' for b in BUCKETS)
@@ -161,6 +162,7 @@ h1 .root{color:var(--color-accent)}
 .modes button{font:500 11px var(--font__mono);text-transform:uppercase;letter-spacing:.08em;background:none;border:0;
   color:var(--color-text-dim);padding:6px 10px;border-radius:999px;cursor:pointer}
 .modes button[aria-checked='true']{background:var(--color-accent);color:var(--color-bg)}
+.scope-row{margin:0 0 8px}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(130px,100%),1fr));gap:8px;margin-bottom:18px}
 .kpi{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:10px 12px}
 .kpi b{display:block;font:500 22px/1.1 var(--font__display);color:var(--color-text)}
@@ -259,13 +261,13 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return
 function href(d){return 'file://'+encodeURI(d.abs_path)}
 
 // doc table
-var docs=S.docs, state={q:'',repo:'',flag:'',buckets:{},sort:'updated',dir:-1,page:0,per:100};
-var qEl=document.getElementById('f-q'),rEl=document.getElementById('f-repo'),fEl=document.getElementById('f-flag');
+var docs=S.docs, state={q:'',flag:'',buckets:{},sort:'updated',dir:-1,page:0,per:100};
+var qEl=document.getElementById('f-q'),fEl=document.getElementById('f-flag');
 var tbody=document.querySelector('.docs tbody'),info=document.getElementById('pg-info');
 var chips=document.querySelectorAll('.chips .chip');
 function filtered(){var q=state.q.toLowerCase(),anyB=Object.keys(state.buckets).length>0;
   return docs.filter(function(d){
-    if(state.repo&&d.repo!==state.repo)return false;
+    if(!cvScope.has(d.repo))return false;
     if(state.flag&&d.flags.indexOf(state.flag)<0)return false;
     if(anyB&&!state.buckets[d.bucket])return false;
     if(q&&(d.title+' '+d.path+' '+(d.status||'')+' '+(d.lede||'')+' '+d.tags.join(' ')).toLowerCase().indexOf(q)<0)return false;
@@ -288,9 +290,8 @@ function render(){var rows=filtered(),k=state.sort,dir=state.dir;
   document.getElementById('pg-prev').disabled=state.page===0;document.getElementById('pg-next').disabled=state.page>=pages-1;
   document.querySelectorAll('.docs th[data-k]').forEach(function(th){th.setAttribute('aria-sort',th.dataset.k===k?(dir>0?'ascending':'descending'):'none')});
   chips.forEach(function(c){c.setAttribute('aria-pressed',state.buckets[c.dataset.bucket]?'true':'false')});
-  rEl.value=state.repo;fEl.value=state.flag}
+  fEl.value=state.flag}
 var t;qEl.addEventListener('input',function(){clearTimeout(t);t=setTimeout(function(){state.q=qEl.value;state.page=0;render()},120)});
-rEl.addEventListener('change',function(){state.repo=rEl.value;state.page=0;render()});
 fEl.addEventListener('change',function(){state.flag=fEl.value;state.page=0;render()});
 chips.forEach(function(c){c.addEventListener('click',function(){var b=c.dataset.bucket;if(state.buckets[b])delete state.buckets[b];else state.buckets[b]=1;state.page=0;render()})});
 document.querySelectorAll('.docs th[data-k]').forEach(function(th){th.addEventListener('click',function(){
@@ -299,12 +300,29 @@ document.getElementById('pg-prev').onclick=function(){state.page--;render()};
 document.getElementById('pg-next').onclick=function(){state.page++;render()};
 // matrix / health drill-down
 document.querySelectorAll('a[data-repo],a[data-flag]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();
-  state.repo=a.dataset.repo||'';state.flag=a.dataset.flag||'';state.buckets={};if(a.dataset.bucket)state.buckets[a.dataset.bucket]=1;
-  state.q='';qEl.value='';state.page=0;show('dash');render();document.getElementById('docs').scrollIntoView({behavior:'smooth'})})});
-render();
+  state.flag=a.dataset.flag||'';state.buckets={};if(a.dataset.bucket)state.buckets[a.dataset.bucket]=1;
+  state.q='';qEl.value='';state.page=0;show('dash');
+  if(a.dataset.repo)cvScope.set(a.dataset.repo);else render();
+  document.getElementById('docs').scrollIntoView({behavior:'smooth'})})});
+
+// scope: matrix rows and KPIs follow the picker; folders and health stay tree-wide
+var kpiEls=document.querySelectorAll('[data-kpi]');
+function scopeChrome(){var cur=cvScope.get(),inS=docs.filter(function(d){return cvScope.has(d.repo)}),repos={};
+  document.querySelectorAll('.matrix tbody tr[data-repo]').forEach(function(tr){tr.hidden=!cvScope.has(tr.dataset.repo)});
+  var ft=document.querySelector('.matrix tfoot');if(ft)ft.hidden=!!cur;
+  inS.forEach(function(d){repos[d.repo]=1});
+  var n={docs:inS.length,repos:Object.keys(repos).length,
+    open:inS.filter(function(d){return d.bucket==='open'}).length,in_flight:inS.filter(function(d){return d.bucket==='in_flight'}).length,
+    done:inS.filter(function(d){return d.bucket==='done'}).length,
+    boxes:inS.reduce(function(t,d){return t+(d.task_folder?d.tasks_open_count:0)},0),
+    stale:inS.filter(function(d){return d.flags.indexOf('stale')>=0}).length};
+  kpiEls.forEach(function(b){b.textContent=n[b.dataset.kpi].toLocaleString()})}
+document.addEventListener('cv-scope',function(){state.page=0;scopeChrome();render();tasks()});
+scopeChrome();render();
 
 // task list
 var T=document.getElementById('tasks-body');
+function tasks(){var docs=S.docs.filter(function(d){return cvScope.has(d.repo)});
 function docLine(d){return '<div class="item"><a href="'+href(d)+'">'+esc(d.title)+'</a>'+cpBtn(d.abs_path)+' <span class="chip b-'+d.bucket+'">'+esc(d.status||BL[d.bucket])+'</span>'
   +'<div class="sub">'+esc(d.repo)+' · '+esc(d.folder)+' · '+esc(d.updated)+(d.tasks_open_count&&d.task_folder?' · '+d.tasks_open_count+' open boxes':'')+'</div></div>'}
 var inflight=docs.filter(function(d){return d.bucket==='in_flight'&&(d.folder==='specs'||d.folder==='plans'||d.folder==='prompts')})
@@ -323,6 +341,8 @@ T.innerHTML='<h3>In flight · specs, plans, prompts ('+inflight.length+')</h3>'+
   +'<h3>Open issues ('+issues.length+')</h3>'+(issues.slice(0,80).map(docLine).join('')||'<p class="dim">None.</p>')
   +'<h3>Newest handoff per repo ('+handoffs.length+')</h3>'+(handoffs.map(docLine).join('')||'<p class="dim">No handoffs in scope.</p>')
   +'<h3>Unchecked boxes in open work ('+boxes.length+' docs'+(boxes.length>MAXB?', newest '+MAXB+' shown':'')+')</h3>'+(boxHtml||'<p class="dim">None.</p>');
+}
+tasks();
 })();
 """
 
@@ -336,13 +356,11 @@ def render(survey):
     stale = sum("stale" in d["flags"] for d in docs)
     repos_with = sum(1 for r in survey["repos"] if r["docs"])
     kpis = [
-        ("Docs", n, ""), ("Repos with context-v", repos_with, ""),
-        ("Open", totals["open"], "accent"), ("In flight", totals["in_flight"], "thread"),
-        ("Done", totals["done"], ""), ("Open boxes", tasks, "warm"), ("Stale", stale, "warm"),
+        ("docs", "Docs", n, ""), ("repos", "Repos with context-v", repos_with, ""),
+        ("open", "Open", totals["open"], "accent"), ("in_flight", "In flight", totals["in_flight"], "thread"),
+        ("done", "Done", totals["done"], ""), ("boxes", "Open boxes", tasks, "warm"), ("stale", "Stale", stale, "warm"),
     ]
-    kpi_html = "".join(f'<div class="kpi {c}"><b>{v:,}</b><span>{e(l)}</span></div>' for l, v, c in kpis)
-    repo_opts = "".join(f'<option value="{e(r["path"])}">{e(r["path"])} ({r["docs"]})</option>'
-                        for r in sorted(survey["repos"], key=lambda r: r["path"]) if r["docs"])
+    kpi_html = "".join(f'<div class="kpi {c}"><b data-kpi="{k}">{v:,}</b><span>{e(l)}</span></div>' for k, l, v, c in kpis)
     flag_counts = collections.Counter(f for d in docs for f in d["flags"])
     flag_opts = "".join(f'<option value="{f}">{e(FLAG_LABEL.get(f, f))} ({c})</option>' for f, c in flag_counts.most_common())
     chips = "".join(f'<button type="button" class="chip b-{b}" data-bucket="{b}" aria-pressed="false">{BUCKET_LABEL[b]}</button>'
@@ -380,6 +398,7 @@ def render(survey):
     <button type="button" role="radio" data-mode="vibrant" aria-checked="false" aria-label="Vibrant mode">Vibrant</button>
   </div>
 </header>
+<div class="scope-row">{scope_picker.picker(survey)}</div>
 <div class="kpis">{kpi_html}</div>
 <nav class="tabs" role="tablist">
   <a href="#dash" role="tab" data-tab="dash" aria-selected="true">Dashboard</a>
@@ -397,7 +416,6 @@ def render(survey):
   <p class="nojs-note">The doc table and task list need JavaScript; the counts above don't.</p>
   <div class="filters">
     <input id="f-q" type="search" placeholder="Search title, path, status, tags…" aria-label="Search docs">
-    <select id="f-repo" aria-label="Repo"><option value="">All repos</option>{repo_opts}</select>
     <select id="f-flag" aria-label="Health flag"><option value="">Any health</option>{flag_opts}</select>
   </div>
   <div class="filters chips" role="group" aria-label="Lifecycle buckets">{chips}</div>
@@ -429,7 +447,7 @@ def main(argv=None):
         survey = json.load(f)
     out = args.out or os.path.join(os.path.dirname(os.path.abspath(args.survey)), "survey-ledger.html")
     with open(out, "w", encoding="utf-8") as f:
-        f.write(copy_path.inject(render(survey)))
+        f.write(scope_picker.inject(copy_path.inject(render(survey))))
     print(f"ledger: {len(survey['docs'])} docs -> {out}", file=sys.stderr)
     return 0
 

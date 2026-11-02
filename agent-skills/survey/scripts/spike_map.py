@@ -12,6 +12,7 @@ Spec: context-v/specs/Survey-a-Scoped-Dashboard-of-Context-V.md
 import argparse
 
 import copy_path
+import scope_picker
 import datetime as dt
 import html
 import json
@@ -189,7 +190,7 @@ def render(survey):
             stale_cls = " stale" if stale * 2 > n else ""
             tds.append(f'<td class="h{stale_cls}" style="--pct:{pct}%" '
                        f'title="{esc(path)} / {col}: {n} docs, {stale} stale">{n}</td>')
-        grid_rows.append(f'<tr><th scope="row" title="{esc(path)}">{esc(repos[path]["name"])}</th>{"".join(tds)}</tr>')
+        grid_rows.append(f'<tr data-path="{esc(path)}"><th scope="row" title="{esc(path)}">{esc(repos[path]["name"])}</th>{"".join(tds)}</tr>')
     grid_head = "".join(f"<th scope=\"col\"><span>{c}</span></th>" for c in GRID_COLUMNS + ["other"])
 
     total = tally(docs, today)
@@ -222,6 +223,7 @@ def render(survey):
         scope=esc(survey.get("scope", "")), generated=esc(gen.replace("T", " ")),
         stale_days=survey.get("stale_days", 90), stats=stats_html,
         legend=legend, fresh_legend=fresh_legend, tree=tree, n_empty=n_empty,
+        scope_picker=scope_picker.picker(survey),
         grid_head=grid_head, grid_rows="".join(grid_rows), data=data_json)
 
 
@@ -350,6 +352,7 @@ details[open]>.row .name::before{transform:rotate(90deg)}
 .bar i,.fresh i{display:block;min-width:2px}
 .kids{margin-left:18px;border-left:1px dashed var(--color-border-strong);padding-left:4px}
 .repo.empty>.row{opacity:.42}
+.off-scope{display:none!important}
 body:has(#hide-empty:checked) .repo.empty:not(:has(.repo:not(.empty))){display:none}
 .row--folder .name{font:13px var(--font__mono);color:var(--color-text-soft)}
 .row--folder .bar{height:7px}
@@ -431,6 +434,17 @@ var hq=/[#&]q=([^&]*)/.exec(location.hash);if(hq){input.value=decodeURIComponent
 document.getElementById('expand').addEventListener('click',function(){
   var open=this.dataset.state!=='open';this.dataset.state=open?'open':'';this.textContent=open?'collapse all':'expand all';
   repos.forEach(function(r){r.open=open})});
+
+// scope: show the picked repo's subtree and the path down to it; the heat grid follows
+function scope(){var s=cvScope.get(),up={};
+  for(var p=s&&DATA.parents[s];p!=null&&!up[p];p=DATA.parents[p])up[p]=1;
+  repos.forEach(function(r){var p=r.dataset.path,on=cvScope.has(p)||!!up[p];r.classList.toggle('off-scope',!on);
+    if(s&&(up[p]||p===s))r.open=true});
+  // an ancestor's own folders aren't in scope; hide them so the path reads as a breadcrumb
+  document.querySelectorAll('details.repo').forEach(function(r){var ancestor=!!up[r.dataset.path];
+    r.querySelectorAll(':scope>.kids>details.folder,:scope>.kids>details.cvgroup').forEach(function(f){f.classList.toggle('off-scope',ancestor)})});
+  document.querySelectorAll('.heat tbody tr[data-path]').forEach(function(tr){tr.classList.toggle('off-scope',!cvScope.has(tr.dataset.path))})}
+document.addEventListener('cv-scope',scope);scope();
 })();
 """
 
@@ -468,6 +482,7 @@ TEMPLATE = """<!doctype html>
 
 <h2>Where the thinking lives</h2>
 <div class="controls">
+  {scope_picker}
   <input id="q" type="search" placeholder="filter docs by title, path, or status…" aria-label="Filter docs">
   <span id="q-status" class="sub" aria-live="polite"></span>
   <label><input type="checkbox" id="hide-empty"> hide {n_empty} repos without context-v</label>
@@ -500,7 +515,7 @@ def main(argv=None):
     out = args.out or os.path.join(os.path.dirname(os.path.abspath(args.survey)), "survey-map.html")
     page = render(survey)
     with open(out, "w", encoding="utf-8") as f:
-        f.write(copy_path.inject(page))
+        f.write(scope_picker.inject(copy_path.inject(page)))
     print(f"spike_map: {len(survey['docs'])} docs, {len(page) // 1024} KB -> {out}", file=sys.stderr)
     return 0
 

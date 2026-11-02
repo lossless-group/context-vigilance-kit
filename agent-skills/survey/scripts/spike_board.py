@@ -11,6 +11,7 @@ One self-contained file, three modes (light / dark / vibrant). Standard library 
 import argparse
 
 import copy_path
+import scope_picker
 import datetime as dt
 import html
 import json
@@ -90,15 +91,15 @@ def render(survey, today):
     docs = [slim(d) for d in survey["docs"]]
     counts = {b: sum(1 for d in docs if d["bucket"] == b) for b, _ in COLUMNS + RAIL}
     stats = [
-        ("In flight", counts["in_flight"], "thread"),
-        ("Open", counts["open"], "accent"),
-        ("Stale", sum(1 for d in docs if d["stale"]), "warm"),
-        ("Open checkboxes", sum(d["tasks_open_count"] or 0 for d in docs if d["task_folder"]), "accent"),
-        ("Unmapped status", counts["unmapped"], "hot"),
+        ("in_flight", "In flight", counts["in_flight"], "thread"),
+        ("open", "Open", counts["open"], "accent"),
+        ("stale", "Stale", sum(1 for d in docs if d["stale"]), "warm"),
+        ("boxes", "Open checkboxes", sum(d["tasks_open_count"] or 0 for d in docs if d["task_folder"]), "accent"),
+        ("unmapped", "Unmapped status", counts["unmapped"], "hot"),
     ]
     stat_html = "".join(
-        f'<div class="stat stat--{tone}"><b>{n:,}</b><span>{esc(label)}</span></div>'
-        for label, n, tone in stats)
+        f'<div class="stat stat--{tone}"><b data-stat="{key}">{n:,}</b><span>{esc(label)}</span></div>'
+        for key, label, n, tone in stats)
 
     cols_html = []
     for bucket, label in COLUMNS:
@@ -114,11 +115,6 @@ def render(survey, today):
         f'<span class="col__count">{counts[b]}</span></summary><div class="rail__cards"></div></details>'
         for b, label in RAIL)
 
-    repo_opts = ['<option value="">All repos</option>'] + [
-        f'<option value="{esc(r["path"])}">{"  " * r["depth"]}{esc(r["name"] if r["path"] != "." else survey["root_name"])}'
-        f' ({r["docs"]})</option>'
-        for r in sorted(survey["repos"], key=lambda r: r["path"].split(os.sep) if r["path"] != "." else [])
-        if r["docs"]]
     fcount = {}
     for d in docs:
         fcount[d["folder"]] = fcount.get(d["folder"], 0) + 1
@@ -143,7 +139,7 @@ def render(survey, today):
             .replace("%%ROOT%%", esc(survey["root_name"]))
             .replace("%%META%%", meta)
             .replace("%%STATS%%", stat_html)
-            .replace("%%REPOS%%", "".join(repo_opts))
+            .replace("%%SCOPE%%", scope_picker.picker(survey))
             .replace("%%CHIPS%%", chips)
             .replace("%%COLUMNS%%", "".join(cols_html))
             .replace("%%RAIL%%", rail_html)
@@ -364,7 +360,7 @@ h1, h2, h3 { font-family: var(--font__display); font-weight: 500; letter-spacing
   <div class="stats">%%STATS%%</div>
 
   <form class="filters" onsubmit="return false">
-    <select id="f-repo" aria-label="Repo">%%REPOS%%</select>
+    %%SCOPE%%
     <input id="f-q" type="search" placeholder="Search titles, status, paths…" aria-label="Search">
     <label><input id="f-stale" type="checkbox"> hide stale</label>
     <div class="chips" role="group" aria-label="Folders">%%CHIPS%%</div>
@@ -406,7 +402,7 @@ h1, h2, h3 { font-family: var(--font__display); font-weight: 500; letter-spacing
   var DATA = JSON.parse(document.getElementById('survey-data').textContent);
   var TODAY = new Date(DATA.today + 'T00:00:00');
   var PAGE = 12, TODO_PAGE = 25;
-  var state = { repo: '', q: '', hideStale: false, folders: new Set(), expanded: {}, todoLimit: TODO_PAGE };
+  var state = { q: '', hideStale: false, folders: new Set(), expanded: {}, todoLimit: TODO_PAGE };
 
   function daysAgo(s) { if (!s) return null; return Math.round((TODAY - new Date(s + 'T00:00:00')) / 864e5); }
   function rel(n) {
@@ -417,7 +413,7 @@ h1, h2, h3 { font-family: var(--font__display); font-weight: 500; letter-spacing
     return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
   function matches(d) {
-    if (state.repo && !(d.repo === state.repo || (state.repo !== '.' && d.repo.indexOf(state.repo + '/') === 0))) return false;
+    if (!cvScope.has(d.repo)) return false;
     if (state.folders.size && !state.folders.has(d.folder)) return false;
     if (state.hideStale && d.stale) return false;
     if (state.q) {
@@ -471,6 +467,19 @@ h1, h2, h3 { font-family: var(--font__display); font-weight: 500; letter-spacing
       if (g.open) fill(g.querySelector('.rail__cards'), list, 'rail-' + b);
     });
     renderTodos(docs);
+    renderStats(docs);
+  }
+
+  function renderStats(docs) {
+    var inScope = DATA.docs.filter(function (d) { return cvScope.has(d.repo); });
+    var n = {
+      in_flight: inScope.filter(function (d) { return d.bucket === 'in_flight'; }).length,
+      open: inScope.filter(function (d) { return d.bucket === 'open'; }).length,
+      stale: inScope.filter(function (d) { return d.stale; }).length,
+      boxes: inScope.reduce(function (t, d) { return t + (d.task_folder ? d.tasks_open_count || 0 : 0); }, 0),
+      unmapped: inScope.filter(function (d) { return d.bucket === 'unmapped'; }).length
+    };
+    document.querySelectorAll('[data-stat]').forEach(function (b) { b.textContent = n[b.dataset.stat].toLocaleString(); });
   }
 
   function renderTodos(docs) {
@@ -496,7 +505,7 @@ h1, h2, h3 { font-family: var(--font__display); font-weight: 500; letter-spacing
     el.innerHTML = html;
   }
 
-  document.getElementById('f-repo').addEventListener('change', function (e) { state.repo = e.target.value; render(); });
+  document.addEventListener('cv-scope', render);
   document.getElementById('f-q').addEventListener('input', function (e) { state.q = e.target.value.trim().toLowerCase(); render(); });
   document.getElementById('f-stale').addEventListener('change', function (e) { state.hideStale = e.target.checked; render(); });
   document.querySelectorAll('.chip').forEach(function (c) {
@@ -531,7 +540,7 @@ def main(argv=None):
     today = dt.date.fromisoformat(survey["generated_at"][:10])
     out = args.out or os.path.join(os.path.dirname(os.path.abspath(args.survey)), "survey-board.html")
     with open(out, "w", encoding="utf-8") as f:
-        f.write(copy_path.inject(render(survey, today)))
+        f.write(scope_picker.inject(copy_path.inject(render(survey, today))))
     print(f"board: {len(survey['docs'])} docs -> {out}", file=sys.stderr)
     return 0
 
