@@ -19,6 +19,7 @@ import os
 import re
 import subprocess
 import sys
+import urllib.parse
 
 SKIP_DIRS = {
     "node_modules", "dist", ".git", ".astro", ".venv", "venv", "__pycache__", ".next",
@@ -468,19 +469,47 @@ def has_frontmatter(path):
 # ── public mode ─────────────────────────────────────────────────────────────
 
 # Path segments whose repos never appear in a published survey: client engagements and
-# other people's code. Same boundary the roll-ups use (`rollup-sync.ts`, `collate.py`).
-PRIVATE_SEGMENTS = {"client-sites", "collaborations"}
+# other people's code. The roll-ups (`rollup-sync.ts`, `collate.py`) use the first two;
+# client-stacks/ and clients/ hold client work too, even inside a public repo.
+PRIVATE_SEGMENTS = {"client-sites", "collaborations", "client-stacks", "clients"}
 
 
-def publishable(repo_list, docs):
-    """Drop what a public page must not show, and every absolute path."""
+def github_blob(repo_dir):
+    """The repo's GitHub blob URL when GitHub says it's public, else None. Needs `gh`."""
+    url = subprocess.run(["git", "-C", repo_dir, "remote", "get-url", "origin"],
+                         capture_output=True, text=True).stdout.strip()
+    m = re.search(r"github\.com[:/](.+?)(?:\.git)?/?$", url)
+    if not m:
+        return None
+    done = subprocess.run(["gh", "api", f"repos/{m.group(1)}", "--jq", '.visibility + " " + .default_branch'],
+                          capture_output=True, text=True)
+    visibility, _, branch = done.stdout.strip().partition(" ")
+    return f"https://github.com/{m.group(1)}/blob/{branch}" if done.returncode == 0 and visibility == "public" else None
+
+
+def publishable(repo_list, docs, root, github_public=False):
+    """Drop what a public page must not show, and every absolute path.
+
+    With github_public, also drop every repo GitHub doesn't list as public (a client's
+    private repo can sit anywhere in the tree), and link each doc to its file there."""
     def private_path(path):
         return bool(PRIVATE_SEGMENTS & set(path.split(os.sep)))
 
-    docs = [d for d in docs if d["publish"] is not False and not d["private"] and not private_path(d["path"])]
+    blobs = {}
+    if github_public:
+        blobs = {r["path"]: github_blob(os.path.join(root, r["path"])) for r in repo_list
+                 if not private_path(r["path"])}
+        blobs = {path: blob for path, blob in blobs.items() if blob}
+    shown = lambda repo: not private_path(repo) and (not github_public or repo in blobs)
+
+    docs = [d for d in docs if d["publish"] is not False and not d["private"] and not private_path(d["path"])
+            and shown(d["repo"])]
     for d in docs:
         d["abs_path"] = d["path"]
-    repos = [r for r in repo_list if not private_path(r["path"])]
+        if github_public:
+            within = d["path"] if d["repo"] == "." else os.path.relpath(d["path"], d["repo"])
+            d["url"] = f"{blobs[d['repo']]}/{urllib.parse.quote(within)}"
+    repos = [r for r in repo_list if shown(r["path"])]
     for r in repos:
         r["docs"] = sum(1 for d in docs if d["repo"] == r["path"])
     return repos, docs
@@ -500,6 +529,8 @@ def main(argv=None):
     ap.add_argument("--no-git", action="store_true", help="skip git activity")
     ap.add_argument("--public", action="store_true",
                     help="safe to publish: drop private docs and client/collaborator repos, relative paths only")
+    ap.add_argument("--github-public", action="store_true",
+                    help="with --public: keep only repos GitHub lists as public, and link docs there (needs gh)")
     args = ap.parse_args(argv)
 
     started = dt.datetime.now()
@@ -570,7 +601,7 @@ def main(argv=None):
         })
 
     if args.public:
-        repo_list, docs = publishable(repo_list, docs)
+        repo_list, docs = publishable(repo_list, docs, root, args.github_public)
 
     survey = {
         "generator": "context-vigilance-kit/survey scan.py 0.0.1",

@@ -48,7 +48,7 @@ def rel(n):
 
 
 def slim(doc):
-    out = {k: doc.get(k) for k in ("path", "abs_path", "repo", "folder", "title", "status",
+    out = {k: doc.get(k) for k in ("path", "abs_path", "url", "repo", "folder", "title", "status",
                                    "bucket", "updated", "tasks_open_count", "task_folder")}
     out["stale"] = "stale" in doc.get("flags", [])
     out["tasks"] = doc.get("tasks_open", []) if doc.get("task_folder") else []
@@ -79,7 +79,7 @@ def card_html(d, today):
         badges.append(f'<span class="badge badge--tasks">☐ {d["tasks_open_count"]}</span>')
     return (
         f'<article class="card{" card--stale" if d["stale"] else ""}">'
-        f'<a class="card__title" href="file://{esc(d["abs_path"])}">{esc(d["title"])}</a>{copy_path.button(d["abs_path"])}'
+        f'<a class="card__title" href="{esc(d.get("url") or "file://" + d["abs_path"])}">{esc(d["title"])}</a>{copy_path.button(d["abs_path"])}'
         f'<div class="card__crumb">{esc(crumb)}</div>'
         f'<div class="card__meta"><span class="card__status">{esc(d["status"] or "—")}</span>'
         f'<span class="card__age">{rel(days_ago(d["updated"], today))}</span>{"".join(badges)}</div>'
@@ -438,7 +438,7 @@ h1, h2, h3 { font-family: var(--font__display); font-weight: 500; letter-spacing
     var badges = (d.stale ? '<span class="badge badge--stale">stale</span>' : '') +
       (d.tasks_open_count ? '<span class="badge badge--tasks">☐ ' + d.tasks_open_count + '</span>' : '');
     return '<article class="card' + (d.stale ? ' card--stale' : '') + '">' +
-      '<a class="card__title" href="file://' + esc(d.abs_path) + '">' + esc(d.title) + '</a>' + cpBtn(d.abs_path) +
+      '<a class="card__title" href="' + esc(d.url || 'file://' + d.abs_path) + '">' + esc(d.title) + '</a>' + cpBtn(d.abs_path) +
       '<div class="card__crumb">' + esc(crumb) + '</div>' +
       '<div class="card__meta"><span class="card__status" title="' + esc(d.status) + '">' + esc(d.status || '—') + '</span>' +
       '<span class="card__age">' + rel(daysAgo(d.updated)) + '</span>' + badges + '</div></article>';
@@ -494,7 +494,7 @@ h1, h2, h3 { font-family: var(--font__display); font-weight: 500; letter-spacing
       var crumb = (d.repo === '.' ? '' : d.repo + ' / ') + d.folder + ' · ' + rel(daysAgo(d.updated));
       var items = d.tasks.slice(0, Math.max(1, state.todoLimit - shown));
       shown += items.length;
-      html += '<div class="todo-doc"><a href="file://' + esc(d.abs_path) + '">' + esc(d.title) + '</a>' + cpBtn(d.abs_path) +
+      html += '<div class="todo-doc"><a href="' + esc(d.url || 'file://' + d.abs_path) + '">' + esc(d.title) + '</a>' + cpBtn(d.abs_path) +
         '<div class="card__crumb">' + esc(crumb) + '</div><ul>' +
         items.map(function (t) { return '<li><code>L' + t.line + '</code>' + esc(t.text) + '</li>'; }).join('') +
         (d.tasks_open_count > items.length ? '<li class="empty">+' + (d.tasks_open_count - items.length) + ' more in file</li>' : '') +

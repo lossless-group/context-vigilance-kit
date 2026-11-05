@@ -18,7 +18,7 @@ In the copies:
 
 Left out and listed in okf-export.json: docs with no parseable frontmatter or no `type`
 (they'd break conformance), and, unless --include-private, docs marked `private: true` or
-`publish: false` and everything under client-sites/ or collaborations/.
+`publish: false` and everything under client-sites/, collaborations/, client-stacks/ or clients/.
 """
 import argparse
 import collections

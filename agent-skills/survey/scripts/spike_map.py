@@ -205,7 +205,7 @@ def render(survey):
     slim = {}
     for d in docs:
         slim.setdefault(f'{d["repo"]}|{d["folder"]}', []).append([
-            d["title"], "file://" + urllib.parse.quote(d.get("abs_path") or d["path"]),
+            d["title"], d.get("url") or "file://" + urllib.parse.quote(d.get("abs_path") or d["path"]),
             d["path"], d.get("status") or "", d["bucket"], d["updated"],
             d.get("tasks_open_count", 0), int("stale" in d["flags"]), d.get("abs_path") or d["path"]])
     data = {"parents": {p: r.get("parent") for p, r in repos.items()}, "docs": slim}

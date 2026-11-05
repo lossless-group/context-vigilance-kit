@@ -258,7 +258,7 @@ if(/tab=tasks/.test(location.hash))setTimeout(function(){show('tasks')},0);
 
 var BL=%BUCKET_LABEL%, FL=%FLAG_LABEL%;
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-function href(d){return 'file://'+encodeURI(d.abs_path)}
+function href(d){return d.url||'file://'+encodeURI(d.abs_path)}
 
 // doc table
 var docs=S.docs, state={q:'',flag:'',buckets:{},sort:'updated',dir:-1,page:0,per:100};
@@ -366,7 +366,7 @@ def render(survey):
     chips = "".join(f'<button type="button" class="chip b-{b}" data-bucket="{b}" aria-pressed="false">{BUCKET_LABEL[b]}</button>'
                     for b in BUCKETS)
     # Slim the payload: the table and task list don't need everything scan.py keeps.
-    keep = ("path", "abs_path", "repo", "folder", "title", "lede", "status", "bucket", "updated",
+    keep = ("path", "abs_path", "url", "repo", "folder", "title", "lede", "status", "bucket", "updated",
             "tags", "tasks_open", "tasks_open_count", "task_folder", "flags")
     data = {"docs": [{k: d.get(k) for k in keep} for d in docs]}
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
