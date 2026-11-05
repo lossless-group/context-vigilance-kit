@@ -119,7 +119,27 @@ Ageing accelerates toward 2.1B people over 60 by 2050.[^k3x9q2]
 
 ## Links
 
-OKF doesn't require any link style: a bundle with `[[wikilinks]]` is fully conformant. Context-v's link style is declared in `context-v/config.md` under `links:`. The default is a wikilink with path and alias, `[[specs/Payment-Retry-Policy.md|Payment Retry Policy]]`, resolved by path, then by filename. Some OKF tools only follow standard markdown links; that's a tool limitation, not a conformance issue.
+OKF doesn't require any link style: a bundle with `[[wikilinks]]` is fully conformant. Context-v's link style is declared in `context-v/config.md` under `links:`. The default is an Obsidian wikilink with path and alias and no `.md`, `[[specs/Payment-Retry-Policy|Payment Retry Policy]]`, resolved by path, then by filename. Every other form is still valid, including a path with `.md` and markdown links, and the kit's tools read them all, so existing links never need converting. Some OKF tools only follow standard markdown links; that's a tool limitation, not a conformance issue.
+
+To see where links actually land, run the survey's resolver. It reads every form, including markdown links, and writes `links.json` and `LINKS.md` without touching a doc:
+
+```bash
+python3 agent-skills/survey/scripts/links.py [PATH] --scope repo   # or tree, lineage
+```
+
+It tries the path, then a unique filename in the bundle, the repo, and the tree. Several matches are reported as `ambiguous`, never guessed at. No match is `unwritten`, which is fine for a doc not written yet. A `stale path` is a link whose path is gone but whose filename still finds the doc, usually after a move.
+
+## Exporting for OKF readers
+
+The docs keep context-v's statuses and wikilinks. When a bundle goes to an OKF tool or another organization, export a copy:
+
+```bash
+python3 agent-skills/survey/scripts/okf_export.py [PATH] --out DIR   # DIR must be empty
+```
+
+In the copy, `status` is OKF's value with the original kept in `context_v_status`, and wikilinks are markdown links: relative inside the bundle, GitHub URLs across bundles, plain text when unresolved. A doc with no status exports as `draft`, because OKF reads a missing status as `stable`. Private docs and client or collaborator bundles stay out unless you pass `--include-private`. Read the copy before sending it: prose can still name a client.
+
+The export writes only to `DIR`. It isn't a sweep tool: docs in `context-v/` are still edited by hand.
 
 ## Outside the bundle
 

@@ -7,11 +7,14 @@
  * components/markdown/AstroMarkdown.astro, so callouts, hex-code citations,
  * code blocks, and images all follow LFM.
  *
- * Wikilinks (`[[Name]]`, `[[path/Name.md]]`, `[[path/Name.md|alias]]`) are resolved
- * before parsing: a kit doc or pattern on this site links to its page; any
- * other path links to the file on GitHub; a bare name with no match stays as
- * plain text.
+ * Links between docs are valid in any form: `[[Name]]`, `[[path/Name]]`,
+ * `[[path/Name|alias]]`, `[[path/Name.md|alias]]`, `[[Name#Heading|alias]]`, and
+ * markdown links like `[alias](../path/Name.md)`. They're resolved before parsing:
+ * a kit doc or pattern on this site links to its page; a file in this repo links
+ * to GitHub; anything else stays as plain text. Code is left as written.
  */
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { getCollection } from 'astro:content';
 import { parseMarkdown } from '@lossless-group/lfm';
 import { REPO_BLOB, isPublished } from './repo';
@@ -41,29 +44,54 @@ async function siteIndex(): Promise<Index> {
   return index;
 }
 
-export async function resolveWikilinks(body: string): Promise<string> {
+/** The repo-relative file a link path names, or null. Doc paths are relative to context-v/. */
+function fileInRepo(path: string): string | null {
+  const noPrefix = path.replace(/^context-v\//, '');
+  const candidates = [`context-v/${noPrefix}.md`, `context-v/${noPrefix}`, `${path}.md`, path];
+  // The site builds from splash/, one level below the repo root.
+  return candidates.find((file) => existsSync(resolve(process.cwd(), '..', file))) ?? null;
+}
+
+/** Matches the renderer's fallback heading id (AstroMarkdown.astro). */
+function headingId(heading: string): string {
+  return heading.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+}
+
+/** Code first, so a link shown as an example inside code is passed over. */
+const LINK = /(```[\s\S]*?```|~~~[\s\S]*?~~~|`[^`\n]*`)|\[\[([^[\]\n]+?)\]\]|(?<!!)\[([^\]\n]*)\]\(((?![a-z][a-z0-9+.-]*:)[^)\s]*\.md(?:#[^)\s]*)?)\)/gi;
+
+export async function resolveLinks(body: string): Promise<string> {
   const idx = await siteIndex();
   const base = import.meta.env.BASE_URL;
-  return body.replace(/\[\[([^\]|]+?)(?:\|([^\]]+))?\]\]/g, (_m, rawTarget: string, alias?: string) => {
-    const target = rawTarget.trim().replace(/^(\.\.\/)+/, '').replace(/^\.\//, '');
-    const noExt = target.replace(/\.md$/i, '');
-    const name = noExt.split('/').pop()!;
+  const render = (target: string, alias?: string) => {
+    const [rawPath, heading] = target.split('#');
+    const path = rawPath.trim().replace(/^(\.\.?\/)+/, '').replace(/^\//, '').replace(/\.md$/i, '');
+    const name = path.split('/').pop()!;
+    const anchor = heading?.trim() ? `#${headingId(heading)}` : '';
     // No alias? Show the filename the way an alias would: - and _ as spaces.
-    const label = (alias ?? name.replace(/[-_]+/g, ' ')).trim();
-    const key = noExt.replace(/^context-v\//, '').toLowerCase();
+    const label = (alias || name.replace(/[-_]+/g, ' ') || heading || '').trim();
+    if (!path) return `[${label}](${anchor})`;
+    const key = path.replace(/^context-v\//, '').toLowerCase();
     const href = idx.get(key) ?? idx.get(name.toLowerCase());
-    if (href) return `[${label}](${base}${href})`;
-    // A path that exists in this repo links to GitHub; links into other
-    // repos (../../other-repo/...) can't be resolved here, so stay as text.
-    if (target.includes('/') && !rawTarget.trim().startsWith('..')) return `[${label}](${REPO_BLOB}/${target})`;
-    return label;
+    if (href) return `[${label}](${base}${href}${anchor})`;
+    // A file in this repo links to GitHub. Anything else (a doc not written
+    // yet, a file in another repo) can't be linked from here, so stays as text.
+    const file = path.includes('/') ? fileInRepo(path) : null;
+    return file ? `[${label}](${REPO_BLOB}/${encodeURI(file)}${anchor})` : label;
+  };
+  return body.replace(LINK, (match, code, wiki, text, href) => {
+    if (code) return match;
+    if (href) return render(decodeURI(href), text);
+    // Inside a table cell the pipe is written `\|`.
+    const [target, ...alias] = wiki.replace(/\\\|/g, '|').split('|');
+    return render(target, alias.join('|'));
   });
 }
 
 export async function renderable(body: string | undefined) {
   // The page header already shows the title, so drop a leading `# Title`.
   const text = (body ?? '').replace(/^\s*#\s+[^\n]*\n/, '');
-  const tree = await parseMarkdown(await resolveWikilinks(text));
+  const tree = await parseMarkdown(await resolveLinks(text));
   const citations = ((tree as any)?.data?.citations?.ordered ?? []) as any[];
   return { tree, citations };
 }

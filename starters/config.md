@@ -15,18 +15,21 @@
 type: Config                     # OKF requires a type on every .md; this is settings, not a doc
 context_v_config: 1
 
-# How docs link to each other. Agents write links this way; tools that read
-# this file know how to resolve them.
+# How docs link to each other. Agents write new links this way, but every form
+# below and any markdown link stays valid, and tools resolve them all. Nothing
+# needs converting.
 links:
   style: wikilink                # wikilink | markdown (what new docs use)
   wikilink:
-    # Preferred form (Obsidian): the file's path, then a pipe, then an alias:
+    # Preferred form (Obsidian): the file's path without .md, then a pipe, then an alias:
     # the display text, usually the filename with - and _ turned into spaces.
     # Filenames stay space-free for filesystems, scrapers, and scripts;
     # readers see clean text.
-    preferred: "[[specs/Payment-Retry-Policy.md|Payment Retry Policy]]"
+    preferred: "[[specs/Payment-Retry-Policy|Payment Retry Policy]]"
     forms:                       # every form these docs may contain
+      - "[[path/to/File-Name|Display Text]]"
       - "[[path/to/File-Name.md|Display Text]]"
+      - "[[path/to/File-Name]]"
       - "[[path/to/File-Name.md]]"
       - "[[File-Name|Display Text]]"
       - "[[File-Name]]"
