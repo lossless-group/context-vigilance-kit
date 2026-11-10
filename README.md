@@ -102,6 +102,7 @@ context-vigilance-kit/
 ├── agent-skills/
 │   ├── context-vigilance/ # the practice: folders, frontmatter, status, templates
 │   ├── pseudomonorepos/   # trees of repos, each with its own context-v/
+│   ├── mobile-x-platform-w-tauri/  # wrap a hosted web app for iPhone and Android, with a non-developer owner
 │   ├── init/  new/  kickoff/  prep/  implement/  loop/  reflect/
 │   ├── explore/  spec/  plan/  prompt/  blueprint/  remind/  issue/  decide/  handoff/
 │   └── upgrade/
