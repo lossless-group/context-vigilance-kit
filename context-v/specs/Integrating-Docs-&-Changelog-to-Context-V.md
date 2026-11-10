@@ -48,7 +48,7 @@ The kit ships the Lossless frontmatter standard with all of it. A project can ch
 ## Goals
 
 - `docs-v/` and `changelog-v/` come with the kit as options the user selects, individually or together.
-- `docs-v/` is split by reader: `user-docs/`, `agent-docs/`, `api-docs/`, each turned on separately.
+- `docs-v/` is split by reader: `user-docs/` and `api-docs/`, each turned on separately, plus an experimental `agent-docs/`.
 - Once docs-v is on, agents keep it current as part of every change, without being asked.
 - Docs are live on the web, at a path (`example.com/docs`) or a subdomain (`docs.example.com`), in a Starlight site that renders LFM and matches the product's branding.
 - New projects get the Lossless frontmatter standard by default, editable per project.
@@ -88,16 +88,19 @@ The kit ships the Lossless frontmatter standard with all of it. A project can ch
 ```
 docs-v/
   index.md          # the front page of the docs site
-  user-docs/        # people using the product: guides, how-tos, troubleshooting
-  agent-docs/       # AI agents using the product: llms.txt sources, tool and MCP descriptions, task recipes
-  api-docs/         # developers calling the API: reference, auth, events, quickstart
+  user-docs/        # people using the product: step by step, assuming nothing
+  api-docs/         # how the API works: endpoints, events, auth, errors
+  agent-docs/       # experimental, off by default: the same product, written for agents
     openapi.yaml    # HTTP endpoints (OpenAPI 3.1), the source of truth for the reference
     asyncapi.yaml   # pub/sub channels and event payloads (AsyncAPI 3), when the API has them
   site/             # the Starlight app that serves all of it (see Serving)
 ```
 
 - Each part is optional; `init` asks which ones. A product with no API has no `api-docs/`.
-- **`agent-docs/` is for agents that *use* the product, not agents that build it.** Builder context stays in `context-v/`.
+- **The parts differ by reader, and so by how they're written:**
+  - **`user-docs/`** are for a person who knows nothing: one small step at a time, what they'll see after each, nothing assumed.
+  - **`api-docs/`** say how the API works, plainly and completely: every endpoint and event, its inputs, outputs and errors. No hand-holding.
+  - **`agent-docs/`** exist because agents need different information, at different lengths, than people do: denser, more complete, less narrative (an `llms.txt`, full reference in one file, task recipes). It's uncommon and unproven, so it's **experimental and off by default**; `init` doesn't offer it unless asked. Builder context still lives in `context-v/`.
 - **`api-docs/` keeps the machine-readable spec files as the source of truth.** Reference pages are generated from them; the hand-written pages are the guides around them (authentication, first request, subscribing to events, rate limits, errors). For a pub/sub API, AsyncAPI is to channels and events what OpenAPI is to endpoints.
 - A flat existing `docs/` is read as user docs until someone sorts it. Nothing moves on its own.
 
@@ -300,7 +303,7 @@ The spec is shipped when all of these are true:
 
 ## Open questions
 
-- [ ] **What exactly goes in `agent-docs/`?** This draft says docs for agents that *use* the product (`llms.txt` sources, tool and MCP descriptions, task recipes). Confirm, or say if it should hold something else.
+- [ ] **What shape should `agent-docs/` take?** Kept experimental (2026-11-10): agents clearly need information at different lengths and densities than people, but there's no settled pattern yet. Revisit when a project actually wants one.
 - [ ] **AsyncAPI in Starlight:** is there a maintained plugin, or does the kit ship a small generator? Check at Phase 4.
 - [ ] **Default: path or subdomain?** The draft asks every time. An API-first repo probably wants a subdomain (`api-docs.example.com` or `docs.example.com`); an app probably wants `/docs`.
 
