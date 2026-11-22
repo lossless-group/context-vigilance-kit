@@ -36,6 +36,7 @@ An agent arriving cold needs to know where to look and where to write. A fixed v
 - The set is a start, not a limit. New folders are welcome when the work calls for one (`narratives/`, `profiles/`, `research-notes/`). Folder names are plural; `extra/` and `sitemap/` are the long-standing singular exceptions.
 - Every doc's `type` is its folder's name, in Train-Case: `specs/` → `type: Specs`, `research-notes/` → `type: Research-Notes`. That one field is what makes any folder readable by [[okf-profile|Open Knowledge Format]] tools.
 - Someone else's skill goes in `agent-skills/` as a git submodule; a whole pack of them goes in `skill-packs/`. Either way it's a link to the source, never a copy. See [[skill-packs|Skill packs]].
+- What's running right now, such as a deployment or a service topology, goes in `mirrors/` (experimental). A mirror records when it was taken and from where, and is re-taken rather than edited when it drifts. `sitemap/` is the website version of the same idea.
 - A folder outside the set is fine. Read it, name its mode, and decide with the team whether to keep it, fold it, or promote it.
 
 ## In the kit

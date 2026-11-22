@@ -27,7 +27,7 @@ BUCKETS = [
 ]
 FOLDER_ORDER = ["specs", "plans", "prompts", "blueprints", "reminders", "agent-skills",
                 "explorations", "issues", "handoffs", "decisions", "loops", "habits",
-                "contracts", "sitemap"]
+                "contracts", "mirrors", "sitemap"]
 GRID_COLUMNS = ["specs", "plans", "prompts", "blueprints", "reminders", "explorations",
                 "issues", "handoffs", "decisions"]
 FRESH = [(7, "week"), (30, "month"), (90, "quarter"), (None, "older")]

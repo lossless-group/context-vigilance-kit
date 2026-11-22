@@ -42,7 +42,7 @@ description: Manages a project's context-v/ folder, the living documentation tha
 **Utility, any project**
 
 - **`extra/`**: scratch, pasted transcripts, not-yet-docs. **Gitignored**: add `context-v/extra/` to `.gitignore` when scaffolding.
-- **`sitemap/`**: what exists where: pages, routes, endpoints, screens, so an agent doesn't have to crawl the source.
+- **`sitemap/`**: what exists where: pages, routes, endpoints, screens, so an agent doesn't have to crawl the source. It's the website version of a mirror (below); keep using it where it exists.
 
 **Experimental: shape not settled; expect variation and don't normalize it**
 
@@ -53,6 +53,7 @@ description: Manages a project's context-v/ folder, the living documentation tha
 - **`contracts/`**: things that must never be violated: standing rules for agents, or exact data and API interfaces.
 - **`docs/`**: user guides: how a person sets up, runs, or uses the project. For the human operating it; a blueprint explains the design, a doc explains the use.
 - **`briefs/`**: creative thinking and intent, captured in whatever shape it arrives: what we want and why. Upstream of a spec; an exploration weighs options, a brief states the destination.
+- **`mirrors/`**: what's built and running right now (a deployment, infrastructure, a service topology), described so a person or agent can act on it without the code or a dashboard. Records `date_mirrored` and its source (`mirrors:`), and ends with how to re-take it. When it drifts, re-take it from the source; don't edit it from memory. A blueprint says how a system is designed; a mirror says what's live.
 
 **The folders are a starting set, not a closed list.** New folder types are welcome when the work calls for one: `narratives/`, `profiles/`, `research-notes/`, whatever fits. **exact:** folder names are plural and kebab-case. Two long-standing exceptions stay singular: `extra/` (scratch, outside the bundle) and `sitemap/` (one map of the project). Say in its first doc what belongs there, and tell the user you created it.
 
@@ -71,7 +72,7 @@ description: Manages a project's context-v/ folder, the living documentation tha
 - Don't know yet; weighing options → `explorations/`
 - Debugging something painful → `issues/`
 - Scratch → `extra/` · What exists where → `sitemap/`
-- A recurring process → `loops/` · State for the next session → `handoffs/` · A decision → `decisions/` (`/cv:decide`) · Recurring upkeep → `habits/` · Inviolable rules → `contracts/` · A user guide → `docs/` · Intent or a creative take → `briefs/`
+- A recurring process → `loops/` · State for the next session → `handoffs/` · A decision → `decisions/` (`/cv:decide`) · Recurring upkeep → `habits/` · Inviolable rules → `contracts/` · A user guide → `docs/` · Intent or a creative take → `briefs/` · What's live right now → `mirrors/`
 
 More detail: [references/doc-type-guide.md](references/doc-type-guide.md).
 

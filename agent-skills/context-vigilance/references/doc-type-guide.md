@@ -2,7 +2,7 @@
 
 **Contents:** Quick decision tree · Folder-by-folder · Common confusions · When two folders both fit
 
-Use this when the right folder isn't obvious. There are eight canonical folders (`specs/`, `plans/`, `prompts/`, `blueprints/`, `reminders/`, `agent-skills/`, `explorations/`, `issues/`), two universal utility folders (`extra/` for gitignored scratch, `sitemap/`), an experimental tier (`loops/`, `handoffs/`, `decisions/`, `habits/`, `contracts/`) that some projects use, and `skill-packs/` for other people's multi-skill packs.
+Use this when the right folder isn't obvious. There are eight canonical folders (`specs/`, `plans/`, `prompts/`, `blueprints/`, `reminders/`, `agent-skills/`, `explorations/`, `issues/`), two universal utility folders (`extra/` for gitignored scratch, `sitemap/`), an experimental tier (`loops/`, `handoffs/`, `decisions/`, `habits/`, `contracts/`, `mirrors/`) that some projects use, and `skill-packs/` for other people's multi-skill packs.
 
 Filenames are Train-Case: `Maintain-Embeddable-Slides.md`, `Auth-Session-Refresh-Spec.md`.
 
@@ -89,6 +89,8 @@ Do you know what you're trying to build?
 | Prompt vs. exploration | Prompt = "execute this plan." Exploration = "figure out what the plan should be." |
 | Reminder vs. blueprint | Reminder is a sharp correction. Blueprint is the underlying explanation. A reminder often *links to* a blueprint. |
 | Issue vs. exploration | Issues have a defined goal (fix the thing). Explorations have an open question. |
+| Blueprint vs. mirror | A blueprint explains how a system is **designed** and stays true while the design holds. A mirror reports what's **live right now**, says when it was taken, and is re-taken when it drifts. |
+| Sitemap vs. mirror | A sitemap maps a website's pages and routes. A mirror does the same job for anything running: apps, services, infrastructure. Keep existing sitemaps; a later migration may fold them into mirrors. |
 
 ## When two folders both fit
 
