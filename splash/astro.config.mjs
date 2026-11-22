@@ -7,16 +7,13 @@ import sitemap from '@astrojs/sitemap';
 // what the practice is, how to get started, and the patterns it has grown.
 // Reads the kit's own changelog/ and context-v/; no corpus.
 //
-// Two hosts, one build (same pattern as the hope-ai splash):
-//
-//   GitHub Pages: https://lossless-group.github.io/context-vigilance-kit/
-//                 (project page, base '/context-vigilance-kit/')
-//   Vercel:       served from the domain root (base '/')
+// Hosted on Vercel only, at the domain root (base '/'). The GitHub Pages copy
+// was retired on 2026-11-21; lossless-group.github.io belongs to the corpus.
 //
 // Vercel sets VERCEL=1 during builds and VERCEL_ENV to production / preview.
 // Production builds use the custom domain, context-v.dev, so canonical URLs,
 // the sitemap, robots.txt, and llms.txt all name it. Preview builds use their
-// own deployment URL. SITE_URL overrides everything.
+// own deployment URL. Local builds use context-v.dev. SITE_URL overrides everything.
 const onVercel = process.env.VERCEL === '1';
 const site =
   process.env.SITE_URL ??
@@ -24,11 +21,11 @@ const site =
     ? process.env.VERCEL_ENV === 'production'
       ? 'https://context-v.dev'
       : `https://${process.env.VERCEL_URL ?? process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : 'https://lossless-group.github.io');
+    : 'https://context-v.dev');
 
 export default defineConfig({
   site,
-  base: onVercel || process.env.SITE_URL ? '/' : '/context-vigilance-kit/',
+  base: '/',
   trailingSlash: 'ignore',
 
   // Astro 7's HTML compression drops the whitespace between a word and an

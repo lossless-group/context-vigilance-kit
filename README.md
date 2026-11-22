@@ -6,7 +6,7 @@
 
 This repo is the **installable kit**: a plugin (`cv`) that gives your agent the practice, workflow commands that each put it in a role, templates, and one small safety check. No database, no config, no server.
 
-**Site:** [context-v.dev](https://context-v.dev/) · mirror at [lossless-group.github.io/context-vigilance-kit](https://lossless-group.github.io/context-vigilance-kit/). Getting started, the patterns, and the changelog.
+**Site:** [context-v.dev](https://context-v.dev/). Getting started, the patterns, and the changelog.
 
 ## Install
 
@@ -109,7 +109,7 @@ context-vigilance-kit/
 │   └── upgrade/
 ├── hooks/                 # the frontmatter check
 ├── starters/              # what /cv:init lays down (context-v/index.md, AGENTS.md snippet), plus config.md
-├── splash/                # the site (Astro), deployed to Vercel and GitHub Pages
+├── splash/                # the site (Astro), deployed to Vercel at context-v.dev
 ├── context-v/             # this kit's own specs, explorations, issues, decisions
 ├── changelog/
 ├── LICENSE                # MPL-2.0
@@ -135,4 +135,4 @@ context-vigilance-kit/
 
 [MPL-2.0](LICENSE), with an additional permission: what you make with the kit is yours. Copies of its templates and starters, and the `context-v/` docs you write, carry no license obligations. See [LICENSING.md](LICENSING.md).
 
-Branch tiers: `development` → `main` → `master`. Plugin installs and the GitHub Pages deploy read `master`.
+Branch tiers: `development` → `main` → `master`. Plugin installs and the context-v.dev deploy read `master`.
