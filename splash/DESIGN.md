@@ -318,6 +318,17 @@ Accents: amber #fbbf24, sodium-orange #f97316, lime #a3e635. Background: warm cr
 edge-to-edge composition, subject filling whole canvas, photorealistic human face, neon, glassmorphism.
 ```
 
+### Trademark pack
+
+In `public/`, every piece outlined to paths (an `<img>` cannot load web fonts).
+
+| Piece | File |
+|---|---|
+| appIcon | `appIcon__Context-Vigilance.svg` |
+| favicon | `favicon.svg` |
+| wordmark | `wordmark__Context-Vigilance--{Dark,Light}-Mode.svg`: *Context Vigilance* in JetBrains Mono 600, -0.03em, with *Vigilance* in amber |
+| trademark | `trademark__Context-Vigilance--{Dark,Light}-Mode.svg`: appIcon + wordmark |
+
 ## Do's and Don'ts
 
 **Do:**
