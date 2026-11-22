@@ -76,7 +76,7 @@ const id = `search-${Math.random().toString(36).slice(2, 9)}`;
     if (!mount || mount.dataset.bound === 'true') return;
     if (typeof window.PagefindUI !== 'function') return;
 
-    new window.PagefindUI({
+    const ui = new window.PagefindUI({
       element: `#${id}`,
       bundlePath: `${base}pagefind/`,
       showImages: false,
@@ -92,6 +92,30 @@ const id = `search-${Math.random().toString(36).slice(2, 9)}`;
     });
 
     mount.dataset.bound = 'true';
+
+    // ?q= deep link (full variant only, i.e. the /search page). A link like
+    // /search/?q=handoffs opens with that search already run, and the URL
+    // follows what the reader types, so any search can be shared or handed to
+    // the sibling site. Emits `search:query` so the page can react.
+    if (variant === 'full') {
+      const announce = (q) =>
+        document.dispatchEvent(new CustomEvent('search:query', { detail: q }));
+      const initial = (new URLSearchParams(location.search).get('q') || '').trim();
+      if (initial) {
+        ui.triggerSearch(initial);
+        announce(initial);
+      }
+      mount.addEventListener('input', (e) => {
+        const t = e.target;
+        if (!(t instanceof HTMLInputElement)) return;
+        const q = t.value.trim();
+        const url = new URL(location.href);
+        if (q) url.searchParams.set('q', q);
+        else url.searchParams.delete('q');
+        history.replaceState(history.state, '', url);
+        announce(q);
+      });
+    }
 
     if (autoFocus) {
       requestAnimationFrame(() => {

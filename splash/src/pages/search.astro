@@ -2,6 +2,10 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import SearchBox from '@components/SearchBox.astro';
 import { STATIC_SEO } from '@lib/seo';
+
+// The corpus has its own search over every public context-v doc in the tree.
+// The handoff link carries whatever the reader typed here, via ?q=.
+const CORPUS_SEARCH = 'https://lossless-group.github.io/context-v-corpus/search/';
 ---
 
 <BaseLayout title={STATIC_SEO.search.title} description={STATIC_SEO.search.description}>
@@ -20,6 +24,11 @@ import { STATIC_SEO } from '@lib/seo';
 
       <SearchBox variant="full" autoFocus />
 
+      <p class="search-page__handoff">
+        Not here? The corpus has 1,000+ context-v docs from the Lossless Group's own projects.
+        <a href={CORPUS_SEARCH} data-corpus-handoff target="_blank" rel="noopener">Search the corpus →</a>
+      </p>
+
       <p class="search-page__hint mono">
         Search runs on a static index built at deploy time. In <code>astro dev</code>
         the index isn't generated — run <code>pnpm build &amp;&amp; pnpm preview</code>
@@ -28,6 +37,17 @@ import { STATIC_SEO } from '@lib/seo';
     </div>
   </main>
 </BaseLayout>
+
+<script define:vars={{ CORPUS_SEARCH }}>
+  // Keep the handoff link in step with the query (SearchBox emits search:query).
+  document.addEventListener('search:query', (e) => {
+    const link = document.querySelector('[data-corpus-handoff]');
+    if (!(link instanceof HTMLAnchorElement)) return;
+    const q = typeof e.detail === 'string' ? e.detail : '';
+    link.href = q ? `${CORPUS_SEARCH}?q=${encodeURIComponent(q)}` : CORPUS_SEARCH;
+    link.textContent = q ? `Search the corpus for “${q}” →` : 'Search the corpus →';
+  });
+</script>
 
 <style>
   .search-page { padding: var(--space-12) 0 var(--space-24); }
@@ -55,6 +75,11 @@ import { STATIC_SEO } from '@lib/seo';
     background: var(--color-bg-soft);
     color: var(--color-text);
   }
+  .search-page__handoff {
+    margin-top: var(--space-6);
+    color: var(--color-text-soft);
+  }
+  .search-page__handoff a { white-space: nowrap; }
   .search-page__hint {
     margin-top: var(--space-8);
     color: var(--color-text-faint);

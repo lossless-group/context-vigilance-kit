@@ -3,5 +3,17 @@
   "framework": "astro",
   "installCommand": "pnpm install",
   "buildCommand": "pnpm build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/corpus",
+      "destination": "https://lossless-group.github.io/context-v-corpus/",
+      "permanent": false
+    },
+    {
+      "source": "/corpus/:path*",
+      "destination": "https://lossless-group.github.io/context-v-corpus/:path*",
+      "permanent": false
+    }
+  ]
 }
