@@ -34,6 +34,15 @@ const COMPANIONS = [
     href: 'https://github.com/tt-a1i/archify',
   },
   {
+    name: 'Floorplan',
+    what: 'An interactive map of your codebase: every part, file and route with a plain-language name and a one-line description, and the calls between them. Hand it a PRD instead and it drafts a blueprint before any code exists.',
+    install: [
+      { cmd: 'claude plugin marketplace add haydenschmitty/floorplan', note: 'Add its marketplace.' },
+      { cmd: 'claude plugin install floorplan@floorplan', note: 'Install the plugin.' },
+    ],
+    href: 'https://github.com/haydenschmitty/floorplan',
+  },
+  {
     name: 'Chroma skills',
     what: 'Correct guidance for semantic search, for when your context-v/ grows past what folder scans handle well.',
     install: [{ cmd: 'npx skills add chroma-core/agent-skills --skill "chroma-local"' }],

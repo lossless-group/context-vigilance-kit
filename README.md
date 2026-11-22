@@ -88,6 +88,7 @@ Optional, installed from their own projects so they stay current. The kit's skil
 
 - **[Graphify](https://github.com/safishamsi/graphify):** a fast map of your codebase that `/cv:kickoff` reads first. `uv tool install graphifyy`, then `graphify install`.
 - **[Archify](https://github.com/tt-a1i/archify):** diagrams checked against your repo, for specs and as-built write-ups. `npx skills add tt-a1i/archify -g`
+- **[Floorplan](https://github.com/haydenschmitty/floorplan):** an interactive, plain-language map of your codebase, or a blueprint drawn from a PRD before any code exists. `claude plugin marketplace add haydenschmitty/floorplan`, then `claude plugin install floorplan@floorplan`.
 - **[Chroma skills](https://github.com/chroma-core/agent-skills):** semantic search once `context-v/` outgrows folder scans. `npx skills add chroma-core/agent-skills --skill "chroma-local"`. *Disclosure: the kit's author is an investor in Chroma.*
 
 Using a ticket system, team chat, or docs site? Copy [`starters/config.md`](starters/config.md) to `context-v/config.md` and say which tool fills each role. Without it, everything stays in `context-v/`.

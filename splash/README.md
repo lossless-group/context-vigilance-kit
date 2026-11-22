@@ -52,6 +52,7 @@ One build, two hosts. `astro.config.mjs` picks the base path from the environmen
 `src/components/Analytics.astro` loads OpenPanel in **production builds only**, and only when `OPENPANEL_CLIENT_ID` is set. Without it the site has no analytics, which is fine.
 
 - The client ID is public by design (it's in the HTML). Never put the client *secret* anywhere in this site.
+- **One client for both hosts.** Vercel (context-v.dev) and GitHub Pages use the kit's own client, never the `context-v-corpus` one. Until 2026-11-21 the Pages build carried the corpus's client ID, so mirror traffic landed in the corpus dashboard.
 - **GitHub Pages:** repo Settings → Secrets and variables → Actions → **Variables** → `OPENPANEL_CLIENT_ID`. The workflow injects it at build time.
 - **Vercel:** project Settings → Environment Variables → `OPENPANEL_CLIENT_ID`, then redeploy.
 - **In OpenPanel:** the client's **supported domains** must list every origin the site is served from (`https://lossless-group.github.io/`, the Vercel domain, any custom domain). A missing origin means every event is rejected with a 401, while the script looks perfectly healthy.
