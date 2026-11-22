@@ -1,6 +1,7 @@
 .DS_Store
 context-v/extra/
 .chroma/
+.env
 
 # prep-images-for-embed staging (the CDN holds the served bytes)
 .image-staging/
