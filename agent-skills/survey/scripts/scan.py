@@ -122,6 +122,9 @@ def walk_tree(root, include_studies, patterns):
             # Splash roll-ups (`splash/src/rollup/context-v/...`) are copies of child docs.
             if d == "rollup":
                 continue
+            # Vendored skill packs are someone else's repos, not part of the tree.
+            if d == "skill-packs" and os.path.basename(dirpath) == "context-v":
+                continue
             if d == "context-v":
                 if "src" in child_rel.split(os.sep):
                     continue
@@ -442,6 +445,10 @@ def docs_in(cv_dir):
         if top == "extra":
             dirnames[:] = []
             continue
+        if top == "skill-packs":
+            # Vendored third-party packs: only skill-packs/README.md (ours, the
+            # note on each pack) is surveyed; the packs' own files are not.
+            dirnames[:] = []
         dirnames[:] = sorted(d for d in dirnames if d not in SKIP_DIRS and not is_repo(os.path.join(dirpath, d)))
         for name in sorted(filenames):
             if not name.endswith(".md"):

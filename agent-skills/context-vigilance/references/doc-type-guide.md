@@ -2,7 +2,7 @@
 
 **Contents:** Quick decision tree · Folder-by-folder · Common confusions · When two folders both fit
 
-Use this when the right folder isn't obvious. There are eight canonical folders (`specs/`, `plans/`, `prompts/`, `blueprints/`, `reminders/`, `agent-skills/`, `explorations/`, `issues/`), two universal utility folders (`extra/` for gitignored scratch, `sitemap/`), and an experimental tier (`loops/`, `handoffs/`, `decisions/`, `habits/`, `contracts/`) that some projects use.
+Use this when the right folder isn't obvious. There are eight canonical folders (`specs/`, `plans/`, `prompts/`, `blueprints/`, `reminders/`, `agent-skills/`, `explorations/`, `issues/`), two universal utility folders (`extra/` for gitignored scratch, `sitemap/`), an experimental tier (`loops/`, `handoffs/`, `decisions/`, `habits/`, `contracts/`) that some projects use, and `skill-packs/` for other people's multi-skill packs.
 
 Filenames are Train-Case: `Maintain-Embeddable-Slides.md`, `Auth-Session-Refresh-Spec.md`.
 
@@ -58,9 +58,15 @@ Do you know what you're trying to build?
 
 ### `agent-skills/`: executable know-how
 
-**Yes, if:** it's a `SKILL.md`-shaped package an agent loads to do a recurring task the project's way.
+**Yes, if:** it's a `SKILL.md`-shaped package an agent loads to do a recurring task the project's way. That includes a single skill someone else wrote: add it as a git submodule at `agent-skills/<name>/`.
 
 **No, if:** it's an explanation for humans (→ `blueprints/`).
+
+### `skill-packs/`: other people's multi-skill packs
+
+**Yes, if:** it's a third-party repo holding several skills (on a theme, or one developer's whole setup). Add it as a git submodule at `skill-packs/<name>/` and give it an entry in `skill-packs/README.md`: source, why it's here, what it does.
+
+**No, if:** it's one skill (→ a submodule at `agent-skills/<name>/`), it's a skill you wrote (→ `agent-skills/`), or you were about to copy its files in (don't: link the source).
 
 ### `explorations/`: journeys without a known destination
 

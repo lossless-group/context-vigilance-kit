@@ -31,7 +31,8 @@ description: Manages a project's context-v/ folder, the living documentation tha
 
 - **`blueprints/`**: patterns, architecture, and the reasoning behind them: what an agent must respect to fit in.
 - **`reminders/`**: short corrections born from mistakes an agent keeps making ("we don't use X; use Y").
-- **`agent-skills/`**: skills specific to this repo (`<name>/SKILL.md`), born next to the code they serve.
+- **`agent-skills/`**: skills specific to this repo (`<name>/SKILL.md`), born next to the code they serve. A single skill someone else wrote goes here too, as a git submodule at `agent-skills/<name>/`.
+- **`skill-packs/`** *(optional)*: someone else's multi-skill packs (one theme, or one developer's whole setup). Each pack is a git submodule pointing at its source repo, never copied files. `skill-packs/README.md` says, per pack, where it comes from, why it's here and what it does. The packs' own files aren't your docs: surveys and roll-ups skip them, and nothing in them gets copied into `context-v/`.
 
 **Journey: finding out**
 
