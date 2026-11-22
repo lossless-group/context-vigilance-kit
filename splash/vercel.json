@@ -11,8 +11,18 @@
       "permanent": false
     },
     {
-      "source": "/corpus/:path*",
-      "destination": "https://lossless-group.github.io/context-v-corpus/:path*",
+      "source": "/corpus/",
+      "destination": "https://lossless-group.github.io/context-v-corpus/",
+      "permanent": false
+    },
+    {
+      "source": "/corpus/:path+/",
+      "destination": "https://lossless-group.github.io/context-v-corpus/:path+/",
+      "permanent": false
+    },
+    {
+      "source": "/corpus/:path+",
+      "destination": "https://lossless-group.github.io/context-v-corpus/:path+",
       "permanent": false
     }
   ]
