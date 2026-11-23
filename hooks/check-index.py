@@ -119,7 +119,12 @@ def report(problems, root):
     lines = ["context-v index out of date. Add these lines (keep each description to one plain sentence):"]
     for index_path, line, absent in problems:
         where = os.path.relpath(index_path, os.path.dirname(root))
-        note = " (create it, with frontmatter `type` set to the folder name in Train-Case)" if absent else ""
+        if not absent:
+            note = ""
+        elif os.path.dirname(index_path) == os.path.abspath(root):
+            note = ' (create it, with frontmatter `okf_version: "0.2"`)'
+        else:
+            note = " (create it, with frontmatter `type` set to the folder name in Train-Case)"
         lines.append(f"  {where}{note}:\n    {line}")
     return "\n".join(lines)
 
