@@ -30,4 +30,9 @@ Most of this practice is judgment, and judgment can't be enforced. But a few rul
 
 ## In the kit
 
-The `cv` plugin ships one hook: before a write to `context-v/`, it checks that the frontmatter parses, has a title, valid dates, and well-formed, unchanged IDs.
+The `cv` plugin ships two hooks:
+
+- **Before** a write to `context-v/`, it checks that the frontmatter parses, has a title, valid dates, and well-formed, unchanged IDs.
+- **After** a write, it checks that the doc is listed in its folder's `index.md`, and that every folder up to `context-v/` is listed in its parent's index. If not, it tells the agent the exact lines to add, so the index is fixed in the same turn. It never writes the index itself: the description line is the agent's.
+
+The index check also runs on a whole tree, `python3 hooks/check-index.py --all context-v`, for CI, a pre-commit hook, or a subagent's sweep.

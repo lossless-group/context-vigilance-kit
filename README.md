@@ -107,7 +107,7 @@ context-vigilance-kit/
 │   ├── init/  new/  kickoff/  prep/  implement/  loop/  reflect/
 │   ├── explore/  spec/  plan/  prompt/  blueprint/  remind/  issue/  decide/  handoff/
 │   └── upgrade/
-├── hooks/                 # the frontmatter check
+├── hooks/                 # the frontmatter check (before a write) and the index check (after one)
 ├── starters/              # what /cv:init lays down (context-v/index.md, AGENTS.md snippet), plus config.md
 ├── splash/                # the site (Astro), deployed to Vercel at context-v.dev
 ├── context-v/             # this kit's own specs, explorations, issues, decisions

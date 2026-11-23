@@ -178,7 +178,7 @@ Copy this into your reply and tick as you go:
 - [ ] Started from the matching template
 - [ ] Minted `site_uuid` and `hex_code` by command; filled dates, author, `augmented_with`
 - [ ] Wrote the why first; linked related docs
-- [ ] Added the doc's line to its folder's `index.md` (`* [Title](File.md) - <description>`)
+- [ ] Added the doc's line to its folder's `index.md` (`* [Title](File.md) - <description>`), and, if the folder is new, the folder's line to `context-v/index.md` (`* [Notes](notes/) - <what it holds>`). Do it in the same change, unasked. The `cv` plugin's index hook checks this after every write and names any line that's missing
 - [ ] Re-read the frontmatter: it parses, and nothing like `YYYY-MM-DD`, `AUTHOR`, or `GENERATE` is left
       → if anything is left or it doesn't parse, fix it before saying you're done
 - [ ] Worked through the template's own "Done when" list, if it has one
